@@ -1,0 +1,29 @@
+{
+  "name": "pipeline-frontend",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Operator console for the grounded legal-document RAG pipeline.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --noEmit",
+    "preview": "vite preview --port 5173"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.100.10",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "9.0.3",
+    "react-router-dom": "6.28.0",
+    "remark-gfm": "4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.8.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}

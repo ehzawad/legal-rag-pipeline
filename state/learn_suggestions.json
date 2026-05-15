@@ -1,0 +1,15 @@
+{
+  "draft_path": "outputs/all_categories/draft.md",
+  "edited_path": "datasets/operator-edits/messy_case_edited_memo.md",
+  "generated_at": "2026-05-14T17:25:03+00:00",
+  "suggested_gold_retrieval": [
+    {
+      "evidence_ids_from_original_draft": [
+        "d61bba9a2aabfec3:p4:c0",
+        "fd38ffa95c4f3d59:p1:c1"
+      ],
+      "query": "Lien notice citations need a page-level source rather than the structured-field synthesis chunk; retrieval should rank raw pages above derived fields for any deadline or amount.",
+      "reason": "evidence dispute should become retrieval gold or a case-level grounding annotation"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+[
+  {
+    "evidence_id": "5aaabcf14b21fd40:p1:c0",
+    "document_id": "5aaabcf14b21fd40",
+    "filename": "ao088b_subpoena_produce.pdf",
+    "page_number": 1,
+    "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action UNITED STATES DISTRICT COURT for the __________ District of __________ ) ) ) ) ) ) Plaintiff v. Civil Action No. Defendant SUBPOENA TO PRODUCE DOCUMENTS, INFORMATION, OR OBJECTS OR TO PERMIT INSPECTION OF PREMISES IN A CIVIL ACTION To: (Name of person to whom this subpoena is directed) ’ Production: YOU ARE COMMANDED to produce at the time, date, and place set forth below the following documents, electronically stored information, or objects, and to permit inspection, copying, testing, or sampling of the material: Place: Date and Time: ’ Inspection of Premises: YOU ARE COMMANDED to permit entry onto the designated premises, land, or other property possessed or controlled by you at the time, date, and location set forth below, so that the requesting party may inspect, measure, survey, photograph, test, or sample the property or any designated object or operation on it. Place: Date and Time: The following provisions of Fed. R. Civ. P. 45 are attached –",
+    "score": 0.5514215114104664,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 0,
+      "word_end": 180,
+      "chunk_hash": "2b179289ef60a7c4249d28bf55307ae57c7accd236e97b269dc08b77a751bbdb",
+      "dense_score": 0.3201664311010891,
+      "bm25_score": 0.9808952319850243,
+      "hybrid_score": 0.5514215114104664
+    }
+  },
+  {
+    "evidence_id": "5aaabcf14b21fd40:p2:c0",
+    "document_id": "5aaabcf14b21fd40",
+    "filename": "ao088b_subpoena_produce.pdf",
+    "page_number": 2,
+    "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action (Page 2) Civil Action No. PROOF OF SERVICE (This section should not be filed with the court unless required by Fed. R. Civ. P. 45.) I received this subpoena for (name of individual and title, if any) on (date) . ’ I served the subpoena by delivering a copy to the named person as follows: on (date) ; or ’ I returned the subpoena unexecuted because: . Unless the subpoena was issued on behalf of the United States, or one of its officers or agents, I have also tendered to the witness the fees for one day’s attendance, and the mileage allowed by law, in the amount of $ . My fees are $ for travel and $ for services, for a total of $ . I declare under penalty of perjury that this information is true. Date: Server’s signature Printed name and title Server’s address Additional information regarding attempted service, etc.:",
+    "score": 0.5305639864041592,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 0,
+      "word_end": 173,
+      "chunk_hash": "49854da3e155f39a7911eedef8a7d8e83548a9485e7013a5f052e5b3fcbca5da",
+      "dense_score": 0.2777907483140911,
+      "bm25_score": 1.0,
+      "hybrid_score": 0.5305639864041592
+    }
+  },
+  {
+    "evidence_id": "5aaabcf14b21fd40:p3:c2",
+    "document_id": "5aaabcf14b21fd40",
+    "filename": "ao088b_subpoena_produce.pdf",
+    "page_number": 3,
+    "text": "not appear in person at the place of production or inspection unless also commanded to appear for a deposition, hearing, or trial. (B) Objections. A person commanded to produce documents or tangible things or to permit inspection may serve on the party or attorney designated in the subpoena a written objection to inspecting, copying, testing, or sampling any or all of the materials or to inspecting the premises—or to producing electronically stored information in the form or forms requested. The objection must be served before the earlier of the time specified for compliance or 14 days after the subpoena is served. If an objection is made, the following rules apply: (i) At any time, on notice to the commanded person, the serving party may move the court for the district where compliance is required for an order compelling production or inspection. (ii) These acts may be required only as directed in the order, and the order must protect a person who is neither a party nor a party’s officer from significant expense resulting from compliance. (3) Quashing or Modifying a",
+    "score": 0.5160503914018809,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 280,
+      "word_end": 460,
+      "chunk_hash": "1bc5f9a2bc9d28e3b9e2fd61f7d766a841ff2336cce7a86350a3626173321264",
+      "dense_score": 0.2935883787800171,
+      "bm25_score": 0.9291941291281994,
+      "hybrid_score": 0.5160503914018809
+    }
+  },
+  {
+    "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+    "document_id": "a72d9aa7f0bed8eb",
+    "filename": "ao085_notice_consent_magistrate.pdf",
+    "page_number": 1,
+    "text": "without adverse substantive consequences. The name of any party withholding consent will not be revealed to any judge who may otherwise be involved with your case. Consent to a magistrate judge’s authority. The following parties consent to have a United States magistrate judge conduct all proceedings in this case including trial, the entry of final judgment, and all post-trial proceedings. Printed names of parties and attorneys Signatures of parties or attorneys Dates Reference Order IT IS ORDERED: This case is referred to a United States magistrate judge to conduct all proceedings and order the entry of a final judgment in accordance with 28 U.S.C. § 636(c) and Fed. R. Civ. P. 73. Date: District Judge’s signature Printed name and title Note: Return this form to the clerk of court only if you are consenting to the exercise of jurisdiction by a United States magistrate judge. Do not return this form to a judge.",
+    "score": 0.5099765559793703,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 140,
+      "word_end": 293,
+      "chunk_hash": "5b0d907a63b95d9e2efda8262848199e7be8d0ead0c7cf182c909c5f68217b6a",
+      "dense_score": 0.2748193346605228,
+      "bm25_score": 0.9466971098572299,
+      "hybrid_score": 0.5099765559793703
+    }
+  },
+  {
+    "evidence_id": "18aae1ac9b6c1191:p1:c2",
+    "document_id": "18aae1ac9b6c1191",
+    "filename": "sec_vprr_03000005_form_d.pdf",
+    "page_number": 1,
+    "text": "of the date it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where to File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549 Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for",
+    "score": 0.49453059132809635,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.92,
+      "extraction_method": "pdf-rendered-png",
+      "warnings": [
+        "Image-only page; OCR/transcription based on rendered image.",
+        "Some stamps and handwriting are partially illegible.",
+        "Barcode obscures part of telephone/address area.",
+        "No text layer; routing page through image-based extraction.",
+        "Page contains markers suggesting illegible, redacted, or uncertain text."
+      ],
+      "word_start": 280,
+      "word_end": 460,
+      "chunk_hash": "15430dc4ee20c1e027f63f2ddfef89ebe6aedec8fb8a2772c76e5e9fddfae5b7",
+      "dense_score": 0.22717893348905666,
+      "bm25_score": 0.9910408130291701,
+      "hybrid_score": 0.49453059132809635
+    }
+  },
+  {
+    "evidence_id": "e7a7d9482447de83:p1:c0",
+    "document_id": "e7a7d9482447de83",
+    "filename": "synthetic_noisy_lien_notice.pdf",
+    "page_number": 1,
+    "text": "NOTICE OF CLAIM OF LIEN Pursuant to State Mechanics' and Materialmen's Lien Act Cause No. 2024-CV-00318 Recorded: Book 4922 Page 071 Filed By: HARBOR VIEW HOLDINGS, LLC Against: NORTHSTAR MARKET LLC Property: Lot 14, Block C, Willow Industrial Park Plat Cabinet 7, Slide 22 [handwritten: CHECK w/ R. Singh] TO ALL PERSONS having or claiming any interest in the above-described real property, NOTICE IS HEREBY GIVEN that the undersigned, HARBOR VIEW HOLDINGS, LLC, a limited liability company organized under the laws of this State, claims a lien upon the property described above. The lien is asserted for unpaid access road maintenance charges covering the months of NOVEMBER 2023 and DECEMBER 2023, together with incidental charges, in the aggregate principal amount of $2,850.00 (Two Thousand Eight Hundred Fifty and 00/100 Dollars). Demand for payment was served by certified mail on January 9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify",
+    "score": 0.4841572423710754,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.89,
+      "extraction_method": "pdf-rendered-png",
+      "warnings": [
+        "Image-only page; transcription based on rendered image.",
+        "Some certified mail tracking digits are unclear or blank.",
+        "Handwritten notes present and transcribed with uncertainty where applicable.",
+        "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+        "No text layer; routing page through image-based extraction."
+      ],
+      "word_start": 0,
+      "word_end": 180,
+      "chunk_hash": "3a12e9e110f20f0c97cb017ef08578f33323fc51eba027b1b9cbd3efb8b7d4b3",
+      "dense_score": 0.2527968715724913,
+      "bm25_score": 0.9138265024255886,
+      "hybrid_score": 0.4841572423710754
+    }
+  },
+  {
+    "evidence_id": "e7a7d9482447de83:p1:c1",
+    "document_id": "e7a7d9482447de83",
+    "filename": "synthetic_noisy_lien_notice.pdf",
+    "page_number": 1,
+    "text": "9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify cert mail #!] Claimant reserves the right to commence a judicial action to foreclose this lien and to recover all sums due, together with costs, interest, and reasonable attorneys' fees, in accordance with applicable law. [handwritten: file by 03/15?] DATED this ____ day of February, 2024. [handwritten: see 2019 esmt] HARBOR VIEW HOLDINGS, LLC By: ______________________________ M. ALVAREZ, Authorized Member STATE OF __________ ) ) ss. COUNTY OF _________ ) Subscribed and sworn before me this ____ day of February, 2024. ____________________________",
+    "score": 0.44584292854413127,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.89,
+      "extraction_method": "pdf-rendered-png",
+      "warnings": [
+        "Image-only page; transcription based on rendered image.",
+        "Some certified mail tracking digits are unclear or blank.",
+        "Handwritten notes present and transcribed with uncertainty where applicable.",
+        "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+        "No text layer; routing page through image-based extraction."
+      ],
+      "word_start": 140,
+      "word_end": 262,
+      "chunk_hash": "d8bf623d9dc2d2a70fefe4cc99bb0ce3369b935283ac86fab7355a64579a6b79",
+      "dense_score": 0.3054125698172757,
+      "bm25_score": 0.7066421661797202,
+      "hybrid_score": 0.44584292854413127
+    }
+  },
+  {
+    "evidence_id": "d61bba9a2aabfec3:fields",
+    "document_id": "d61bba9a2aabfec3",
+    "filename": "ucsf_idl_rhwy0076.pdf",
+    "page_number": 0,
+    "text": "Extracted fields for ucsf_idl_rhwy0076.pdf:\namounts_or_deadlines: The person to be examined is required to produce specified documents at least five (5) days before the examination. Deposition to begin January 23, 1998 at 10:00 a.m. and continue thereafter until complete.\ndates: Deposition scheduled for January 23, 1998 at 10:00 a.m.; document dated December 15, 1997 at New York, New York. Fax/header artifacts appear to show 12/16/97.\ndocument_type: Renotice to Take Video Deposition\nparties: Multiple New York Supreme Court, New York County matters: Phyllis Small and Denise Fusini v. Lorillard Tobacco Company, Inc., Lorillard, Inc., [IASWB?] Corporation, Council for Tobacco Research-USA, Inc. (successor to Tobacco Industry Research Committee), and Tobacco Institute, Inc.; Mary Ann Hoskins, Executrix of the Estate of Edwin Paul Hoskins, Waltina Brown and Dante Aibain v. R.J. Reynolds Tobacco Company, RSR Nabisco, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Sharlene [SiOeerman?] and Audrey Hulse/Bulse, as executrix of Estate of Lewis [Itulee?], v. Brown & Williamson Tobacco Corporation, B.A.T. Industries P.L.C., BATUS, Inc., BATUS Holdings, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Rose Frosina, Elizabeth Colavito and Anilda Ross v. Philip Morris, Inc., Philip Morris Companies, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Catherine Zito, Peter Roberman, and George Elisseou v. The American Tobacco Company, Inc., American Brands, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.\nrecording_references: Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96 or garbled '110952(96'; Judge Charles E. Ramos. Source URL: https://www.industrydocuments.ucsf.edu/docs/rhwy0076\nunclear_items: OCR is garbled throughout. Unclear items include some party names, some defendant names, 'Howard Speilberg' spelling, videographer/company/address details, multiple attorney names, service list categories, fax numbers, and fax header text.",
+    "score": 0.4241664428544713,
+    "metadata": {
+      "evidence_kind": "derived-fields",
+      "is_field_chunk": true,
+      "confidence": 0.8083333333333332,
+      "extraction_method": "structured-fields",
+      "derived_from": "structured_extraction",
+      "source_evidence_ids": [
+        "d61bba9a2aabfec3:p1",
+        "d61bba9a2aabfec3:p2",
+        "d61bba9a2aabfec3:p3",
+        "d61bba9a2aabfec3:p4",
+        "d61bba9a2aabfec3:p5"
+      ],
+      "chunk_hash": "52df252a44ad129c4e950a08040c5d1d3df6060ce37556e07b9d3c0f368880ba",
+      "dense_score": 0.3889934630823571,
+      "bm25_score": 0.6609162624312549,
+      "hybrid_score": 0.4841664428544713,
+      "base_score": 0.4841664428544713,
+      "derived_field_chunk_penalty": 0.06
+    }
+  },
+  {
+    "evidence_id": "fd38ffa95c4f3d59:p3:c0",
+    "document_id": "fd38ffa95c4f3d59",
+    "filename": "ucsf_idl_xqjn0082_summons.pdf",
+    "page_number": 3,
+    "text": "Exhibit A 1 . Any coupon, certificate or other document evidencing a request for rebate payment made by J & K Wholesale, 405 San Fernando Road, Burbank, CA 91502 from November 1, 1991 to November 1, 1992 . 2 . Any checks, money orders or other documents evidencing actual payments made pursuant to a submission for a rebate request made by J& K Wholesale, 405 San Fernando Road, Burbank, CA 91502 . 3 . Any documents reflecting any communication, correspondence or other documents reflecting any interaction by Phillip Morris or any of its subsidiaries and J & K Wholesale, 405 San Fernando Road, Burbank, CA 91502 . 4 . Any coupon, certificate or other document evidencing a request for rebate payment made by Nageham Hanna, 238 East Santa Anita Street, #205, Burbank, CA 91502, from November 1, 1991 to November 1, 1992 . 5 . Any checks, money orders or other documents evidencing actual payments made pursuant to a submission for a rebate request made by Nageham Hanna, Nageham Hanna, 238 East Santa Anita Street, #205, Burbank, CA 91502, 6",
+    "score": 0.4177772061952759,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Text-layer/source-text quality issue: minor garbling and punctuation issues.",
+        "Items 5, 6, and 8 contain repeated or possibly erroneous party names in source text."
+      ],
+      "word_start": 0,
+      "word_end": 180,
+      "chunk_hash": "b8a6d8b81ba2838bcfd0b85931bde2c65273b90a91cd00ae7f7a78bdf5dbb355",
+      "dense_score": 0.2905937442046187,
+      "bm25_score": 0.6539750641779251,
+      "hybrid_score": 0.4177772061952759
+    }
+  },
+  {
+    "evidence_id": "fd38ffa95c4f3d59:p3:c1",
+    "document_id": "fd38ffa95c4f3d59",
+    "filename": "ucsf_idl_xqjn0082_summons.pdf",
+    "page_number": 3,
+    "text": "1, 1992 . 5 . Any checks, money orders or other documents evidencing actual payments made pursuant to a submission for a rebate request made by Nageham Hanna, Nageham Hanna, 238 East Santa Anita Street, #205, Burbank, CA 91502, 6 . Any documents reflecting any communication, correspondence or other documents reflecting any interaction by Phillip Morris or any of its subsidiaries and Nageham Hanna, Nageham Hanna, 238 East Santa Anita Street, #205, Burbank, CA 91502, 7' . Any coupon, certificate or other document evidencing a request for rebate payment made Abdulahad Touma, 238 East Santa Anita Street, #205, Burbank, CA 91502, from November 1, 1991 to November 1, 1992 . 8 . Any checks, money orders or other documents evidencing actual payments made pursuant to a submission for a rebate request made by Abdulahad Touma Nageham Hanna, 238 East Santa Anita Street, #205, Burbank, CA 91502, 9 . Any documents reflecting any interaction communication, correspondence or other documents reflecting any interaction by Phillip Morris or any of its subsidiaries and Abdulahad Touma, 238 East Santa Anita Street, #205, Burbank, CA",
+    "score": 0.41731968414495246,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Text-layer/source-text quality issue: minor garbling and punctuation issues.",
+        "Items 5, 6, and 8 contain repeated or possibly erroneous party names in source text."
+      ],
+      "word_start": 140,
+      "word_end": 320,
+      "chunk_hash": "cc99bacabc70fab5ef0ed82392a48239adf7e3cf466b8383b0197d414203430d",
+      "dense_score": 0.262943242152931,
+      "bm25_score": 0.7040187907015637,
+      "hybrid_score": 0.41731968414495246
+    }
+  }
+]

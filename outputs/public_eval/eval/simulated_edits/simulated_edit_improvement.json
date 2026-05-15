@@ -1,0 +1,118 @@
+{
+  "criterion": "edit_improvement",
+  "state_dir": "outputs/public_eval/eval/simulated_edits/state",
+  "profile_path": "outputs/public_eval/eval/simulated_edits/state/operator_profile.json",
+  "edit_memory_path": "outputs/public_eval/eval/simulated_edits/state/edit_memory.json",
+  "retrieval_feedback_path": "outputs/public_eval/eval/simulated_edits/state/retrieval_feedback.json",
+  "knowledge_layer_path": "outputs/public_eval/eval/simulated_edits/state/knowledge_layer.json",
+  "point_count": 6,
+  "passed_count": 6,
+  "pass_rate": 1.0,
+  "passed": true,
+  "points": [
+    {
+      "id": "edit-memory-before-empty",
+      "criterion": "edit_improvement",
+      "kind": "memory_empty_before",
+      "passed": true,
+      "required": true,
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "id": "edit-memory-retrieves-learned-section",
+      "criterion": "edit_improvement",
+      "kind": "memory_recall",
+      "passed": true,
+      "required": true,
+      "observed": [
+        "Avoid a 'Deadlines and Dates' section unless the task specifically asks for it.",
+        "Avoid a 'Issue' section unless the task specifically asks for it.",
+        "Consider adding a 'Evidence Reviewed' section when this task needs the same review shape.",
+        "Consider adding a 'Facts That Appear Supported' section when this task needs the same review shape.",
+        "Consider adding a 'Items Requiring Verification' section when this task needs the same review shape."
+      ],
+      "expected": "Facts That Appear Supported"
+    },
+    {
+      "id": "profile-guidance-adopts-operator-section",
+      "criterion": "edit_improvement",
+      "kind": "guidance_adoption",
+      "passed": true,
+      "required": true,
+      "observed": "Use these section labels when relevant: Evidence Reviewed, Facts That Appear Supported, Items Requiring Verification. Avoid these section labels unless specifically requested: Deadlines and Dates. Prefer concise phrasing such as: Provided records include a notice and payment record. Use cautious, evidence-bound language; qualify uncertainty with appears, based on, provided records, verify. When consolidating or shortening sections, preserve or increase inline citation density: never drop a citation that supports a kept factual claim, and prefer adding citations to any new factual sentence introduced during consolidation.",
+      "expected": "Facts That Appear Supported"
+    },
+    {
+      "id": "knowledge-rule-rendered",
+      "criterion": "edit_improvement",
+      "kind": "knowledge_guidance",
+      "passed": true,
+      "required": true,
+      "observed": "Operator-defined knowledge rules (treat as hard constraints):\n- Always flag decimal-punctuated financial values as transcription-risk pending source reconciliation.\n- Default for Jurisdiction: New York",
+      "expected": "decimal-punctuated financial values"
+    },
+    {
+      "id": "retrieval-feedback-moves-good-evidence-to-top",
+      "criterion": "edit_improvement",
+      "kind": "retrieval_rank_movement",
+      "passed": true,
+      "required": true,
+      "observed": {
+        "before_rank": [
+          "bad:p1:c0",
+          "good:p1:c0"
+        ],
+        "after_rank": [
+          "good:p1:c0",
+          "bad:p1:c0"
+        ],
+        "metadata": {
+          "good:p1:c0": {
+            "dense_score": 0.0,
+            "bm25_score": 0.42857142857142866,
+            "hybrid_score": 0.42857142857142866,
+            "base_score": 0.42857142857142866,
+            "retrieval_feedback_delta": 0.6,
+            "retrieval_feedback_boosts": 5
+          },
+          "bad:p1:c0": {
+            "dense_score": 0.0,
+            "bm25_score": 1.0,
+            "hybrid_score": 1.0,
+            "base_score": 1.0,
+            "retrieval_feedback_delta": -0.15,
+            "retrieval_feedback_demotes": 1
+          }
+        }
+      },
+      "expected": "good:p1:c0 top-1 after feedback"
+    },
+    {
+      "id": "grounding-non-regression",
+      "criterion": "edit_improvement",
+      "kind": "grounding_non_regression",
+      "passed": true,
+      "required": true,
+      "observed": {
+        "citation_id_validity": 1.0,
+        "unsupported_section_count": 0,
+        "evidence_count": 1,
+        "warning_count": 0,
+        "sentence_grounding_score": 1.0,
+        "notes": [
+          "Sentence grounding score is quote-substring validity, not semantic entailment."
+        ],
+        "claim_count": null,
+        "unsupported_claim_count": null,
+        "claim_grounding_pass_rate": null,
+        "claim_citation_coverage": null
+      },
+      "expected": "citation and quote grounding stay perfect"
+    }
+  ],
+  "notes": [
+    "Simulated edits are deterministic and routed through learn_from_files.",
+    "Improvement is structural: memory recall, guidance adoption, retrieval rank movement, and grounding non-regression."
+  ]
+}

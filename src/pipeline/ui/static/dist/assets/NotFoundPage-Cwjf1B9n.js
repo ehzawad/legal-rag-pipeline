@@ -1,0 +1,1 @@
+import{j as e,L as s}from"./index-Ql3IMDEo.js";function t(){return e.jsxs("div",{className:"card",children:[e.jsx("h3",{children:"Page not found"}),e.jsxs("p",{className:"muted",children:["Try the ",e.jsx(s,{to:"/",children:"review queue"}),", or upload documents to start a new case review."]})]})}export{t as default};

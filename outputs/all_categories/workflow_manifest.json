@@ -1,0 +1,202 @@
+{
+  "created_at": "2026-05-15T14:16:18+00:00",
+  "metadata": {
+    "case_id": "all-categories",
+    "input_dir": "datasets",
+    "task": "Review the supplied documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft.",
+    "providers": {
+      "extraction": "openai",
+      "retrieval": "openai",
+      "generation": "openai"
+    },
+    "extraction_concurrency": 4,
+    "models": {
+      "openai": "gpt-5.5",
+      "openai_embedding": "text-embedding-3-large",
+      "openai_reasoning_effort": "low"
+    },
+    "embedding_cache_dir": "",
+    "corpus_dir": "outputs/all_categories/corpus",
+    "retrieval_index": "outputs/all_categories/index/retrieval_index.json",
+    "evidence_pack": "outputs/all_categories/evidence_pack.json",
+    "features": {
+      "process_documents": true,
+      "retrieve_evidence": true,
+      "generate_draft": true,
+      "learning_guidance": true,
+      "operator_profile_guidance": true,
+      "knowledge_layer_guidance": true,
+      "exemplar_guidance": true,
+      "retrieval_feedback": true,
+      "field_chunks": true,
+      "evidence_pack": true,
+      "claim_first_drafting": true,
+      "claim_support_check": true,
+      "claim_entailment_judge": false,
+      "playbook_risk": true,
+      "max_field_chunks": 1,
+      "max_chunks_per_document": 3,
+      "field_chunk_score_penalty": 0.06
+    },
+    "playbook_path": "/Users/ehz/harnessing/a-rag-pipeline/playbooks/default_legal_playbook.json",
+    "run_fingerprint": {
+      "digest": "a378e622205fd39934075354f76552b912cbd86ba4c9ee77d64ed5a1f79f59d7",
+      "inputs": {
+        "handwritten-notes/lee_va_chancery_1863.pdf": "aa8088442976219b90e45424eb1d51ec2245ac3f2021d7a3d3a54664ebca6de7",
+        "handwritten-notes/macdougall_field_notes_1899.pdf": "941381564edefb9249eb3625090aad4b48a2bb318e0f70195fd35a585178a158",
+        "handwritten-notes/marion_county_probate_orders_1833.pdf": "8a2d5ed6d7f6d047f724e4156adbcfa8e40013e7a78cedd1ad7ae865d01594b2",
+        "inconsistently-formatted-files/cuad_hosting_agreement.pdf": "4f7f73fad7d3f00c1f17c11894ac56867d049a7de006b38f172120e5c7bf458e",
+        "inconsistently-formatted-files/scotus_tiktok_v_garland.pdf": "d244746c3cdd19744858caacfe164b127f10d330398aa2b1bed3007aaeb203b8",
+        "inconsistently-formatted-files/worcester_ma_probate.pdf": "7ffc2b2f40fdc1214f9152b21a9a5a4dd84c62619f14db825190eae3b36e12ce",
+        "low-resolution-pdfs/loc_evening_star_dc_1900.pdf": "3f8ca3abf91d595dbaf87d0ab75ffd41f078de3c4d48412dbfddba2fba8ca3b8",
+        "low-resolution-pdfs/sec_vprr_07020010_husqvarna.pdf": "685ca9a1ac699c8e02f5596653755da766f6fd8c8a13d06bb5d419f3866730ee",
+        "low-resolution-pdfs/synthetic_noisy_lien_notice.pdf": "e7a7d9482447de83bffd9d30a2bb9e1d347c154cf51d2663d540b7411f014b32",
+        "partially-illegible-records/sec_vprr_09040001.pdf": "f30939d16de6e4bb02f0ef5caa01ac5ec68f6bb174e51e29f4fdf4c7efd186d5",
+        "partially-illegible-records/sec_vprr_09045744.pdf": "faf02f393e3a7fede3bf063cc4e9a85f847e0378e9f1c4993f079a06e6f60a64",
+        "partially-illegible-records/ucsf_idl_rhwy0076.pdf": "d61bba9a2aabfec345234a3fa09820ba4dc8ad769db82aaa240c591c439547d3",
+        "scanned-pages/sec_vprr_02000259_form_fx.pdf": "f292902ed5f80a01b1e2bab40f1a7c629a2cbf79641839e0eb1d2f8f93d3644e",
+        "scanned-pages/sec_vprr_03000005_form_d.pdf": "18aae1ac9b6c11914142dca901e29b7cfc94f35ee3e26451a09397bd2dd87c34",
+        "scanned-pages/ucsf_idl_xqjn0082_summons.pdf": "fd38ffa95c4f3d59539ac2db70dcf280b909582f922628dc047297fa65e83b26",
+        "truepdf/ao085_notice_consent_magistrate.pdf": "a72d9aa7f0bed8ebf1b5599c1661ca8322fbdbfb56debf28142eae018d8584d4",
+        "truepdf/ao088b_subpoena_produce.pdf": "5aaabcf14b21fd4024eee44934afe647af0d59fdbf5b4ec63cb7fc57aa08c81c",
+        "truepdf/ao398_notice_waive_service.pdf": "41e4c39f9657785017734a4e0c92784f716118f6eb9fe036e71aeabf027c88df",
+        "truepdf/ao399_waiver_service.pdf": "6df38a70fad6719f63fc005fb65651e0e1d11db64a9b7b6746017cba4fd45d16",
+        "truepdf/ao440_summons_civil_action.pdf": "2df4ff1d30d123b8a3591d158816940712e0da0189b47ca0abf780579895fbae"
+      },
+      "task": "Review the supplied documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft.",
+      "profile_digest": "39829d86c78a5795f8447f303ebdd4acc3d017aa1f29afa85d08575cbd1f7012",
+      "playbook_digest": "c2b0cc201dc4eaee179b21a136c72b36d69a7c7f1905fb07fb605dd5d7ab66ba",
+      "providers": {
+        "extraction_provider": "openai",
+        "retrieval_provider": "openai",
+        "generation_provider": "openai",
+        "openai_model": "gpt-5.5",
+        "openai_embedding_model": "text-embedding-3-large",
+        "openai_reasoning_effort": "low",
+        "retrieval_mode": "hybrid",
+        "index_backend": "memory",
+        "hybrid_dense_weight": 0.65,
+        "hybrid_bm25_weight": 0.35,
+        "retrieval_top_k": 10,
+        "reranker_provider": "",
+        "pdf_max_pages": 30,
+        "pdf_render_dpi": 180,
+        "embedding_cache": "disabled"
+      },
+      "features": {
+        "process_documents": true,
+        "retrieve_evidence": true,
+        "generate_draft": true,
+        "learning_guidance": true,
+        "operator_profile_guidance": true,
+        "knowledge_layer_guidance": true,
+        "exemplar_guidance": true,
+        "retrieval_feedback": true,
+        "field_chunks": true,
+        "evidence_pack": true,
+        "claim_first_drafting": true,
+        "claim_support_check": true,
+        "claim_entailment_judge": false,
+        "playbook_risk": true,
+        "max_field_chunks": 1,
+        "max_chunks_per_document": 3,
+        "field_chunk_score_penalty": 0.06
+      }
+    }
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "wait_seconds": 1.0,
+    "backoff": 2.0,
+    "max_wait_seconds": 8.0
+  },
+  "stages": [
+    {
+      "name": "process_documents",
+      "status": "succeeded",
+      "started_at": "2026-05-15T14:16:18+00:00",
+      "finished_at": "2026-05-15T14:19:08+00:00",
+      "duration_seconds": 170.195,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/all_categories/processed_documents.json",
+        "outputs/all_categories/corpus/manifest.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "retrieve_evidence",
+      "status": "succeeded",
+      "started_at": "2026-05-15T14:19:08+00:00",
+      "finished_at": "2026-05-15T14:19:12+00:00",
+      "duration_seconds": 4.351,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/all_categories/retrieved_evidence.json",
+        "outputs/all_categories/index/retrieval_index.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "build_evidence_pack",
+      "status": "succeeded",
+      "started_at": "2026-05-15T14:19:12+00:00",
+      "finished_at": "2026-05-15T14:19:12+00:00",
+      "duration_seconds": 0.002,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/all_categories/evidence_pack.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "generate_draft",
+      "status": "succeeded",
+      "started_at": "2026-05-15T14:19:12+00:00",
+      "finished_at": "2026-05-15T14:20:02+00:00",
+      "duration_seconds": 49.445,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/all_categories/draft.json",
+        "outputs/all_categories/draft.md",
+        "outputs/all_categories/case_fact_summary.json",
+        "outputs/all_categories/grounding_report.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "score_playbook_risk",
+      "status": "succeeded",
+      "started_at": "2026-05-15T14:20:02+00:00",
+      "finished_at": "2026-05-15T14:20:02+00:00",
+      "duration_seconds": 0.124,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/all_categories/risk_report.json",
+        "outputs/all_categories/risk_report.md",
+        "outputs/all_categories/audit.jsonl"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    }
+  ]
+}

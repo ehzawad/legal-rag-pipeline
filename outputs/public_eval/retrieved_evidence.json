@@ -1,0 +1,221 @@
+[
+  {
+    "evidence_id": "7c0cd464fba18bbc:p1:c5",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 1,
+    "text": "as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by no means exhaustive, give some idea of the sort of activities the courts might regard as fair use under the cir- cumstances: ‘‘quotation of excerpts in a review or criti- cism for purposes of illustration or comment; quotation of short passages in a scholarly or technical work, for illustration or clarification of the author’s observa- tions; use in a parody of some of the content of the work parodied; summary of an address or article, with brief quotations, in a news report; reproduction by a li- brary of a portion of a work to replace part of a dam- aged copy; reproduction by a teacher or student of a small part of a work to illustrate a lesson; reproduction of a work in legislative or judicial proceedings or re- ports; incidental and fortuitous reproduction, in a newsreel or broadcast, of",
+    "score": 0.486589079981123,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 700,
+      "word_end": 880,
+      "chunk_hash": "b305e5facf20f9c2327526c28e382c7fd78097db831c44df87bac829eb74e2aa",
+      "dense_score": 0.21013704612480458,
+      "bm25_score": 1.0,
+      "hybrid_score": 0.486589079981123
+    }
+  },
+  {
+    "evidence_id": "7c0cd464fba18bbc:p4:c8",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 4,
+    "text": "base that will inevitably de- compose in time. The efforts of the Library of Con- gress, the American Film Institute, and other organiza- tions to rescue and preserve this irreplaceable con- tribution to our cultural life are to be applauded, and the making of duplicate copies for purposes of archival preservation certainly falls within the scope of ‘‘fair use.’’ When a copyrighted work contains unfair, inaccurate, or derogatory information concerning an individual or institution, the individual or institution may copy and reproduce such parts of the work as are necessary to permit understandable comment on the statements made in the work. The Committee has considered the question of publi- cation, in Congressional hearings and documents, of copyrighted material. Where the length of the work or excerpt published and the number of copies authorized are reasonable under the circumstances, and the work itself is directly relevant to a matter of legitimate leg- islative concern, the Committee believes that the pub- lication would constitute fair use. During the consideration of the revision bill in the 94th Congress it was proposed that independent",
+    "score": 0.40372459879999456,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 1120,
+      "word_end": 1300,
+      "chunk_hash": "0e72e83ad345c27a5967d232945467a5ded8291415ab0b85f73f37f90bdf6808",
+      "dense_score": 0.22221660194363135,
+      "bm25_score": 0.7408108786760977,
+      "hybrid_score": 0.40372459879999456
+    }
+  },
+  {
+    "evidence_id": "7c0cd464fba18bbc:p2:c4",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 2,
+    "text": "discussion of ‘‘the considerations lying behind the four criteria listed in the amended section 107, in the con- text of typical classroom situations arising today.’’ This discussion appeared on pp. 32–35 of the 1967 report, and with some changes has been retained in the Senate report on S. 22 (S. Rep. No. 94–473, pp. 63–65). The Com- mittee has reviewed this discussion, and considers that it still has value as an analysis of various aspects of the problem. At the Judiciary Subcommittee hearings in June 1975, Chairman Kastenmeier and other members urged the parties to meet together independently in an effort to achieve a meeting of the minds as to permissible educational uses of copyrighted material. The response to these suggestions was positive, and a number of meetings of three groups, dealing respectively with classroom reproduction of printed material, music, and audio-visual material, were held beginning in Sep- tember 1975. In a joint letter to Chairman Kastenmeier, dated March 19, 1976, the representatives of the Ad Hoc Com- mittee of Educational Institutions and Organizations on Copyright Law Revision, and of",
+    "score": 0.38121534086078723,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 560,
+      "word_end": 740,
+      "chunk_hash": "0916963c1d1e88b0723d484448671df40cefe0cade27bd34a677eb0ca55064cd",
+      "dense_score": 0.21688339128257425,
+      "bm25_score": 0.6864032472203256,
+      "hybrid_score": 0.38121534086078723
+    }
+  },
+  {
+    "evidence_id": "7c0cd464fba18bbc:p5:c0",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 5,
+    "text": "Page 30 TITLE 17—COPYRIGHTS § 108 newsletters have fairly modest circulations. Whether the copying of portions of a newsletter is an act of in- fringement or a fair use will necessarily turn on the facts of the individual case. However, as a general prin- ciple, it seems clear that the scope of the fair use doc- trine should be considerably narrower in the case of newsletters than in that of either mass-circulation periodicals or scientific journals. The commercial na- ture of the user is a significant factor in such cases: Copying by a profit-making user of even a small por- tion of a newsletter may have a significant impact on the commercial market for the work. The Committee has examined the use of excerpts from copyrighted works in the art work of calligra- phers. The committee believes that a single copy repro- duction of an excerpt from a copyrighted work by a cal- ligrapher for a single client does not represent an in- fringement of copyright. Likewise, a single reproduc- tion of excerpts from a copyrighted work by a student",
+    "score": 0.3536772714308214,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 0,
+      "word_end": 180,
+      "chunk_hash": "1edc481e8e9a33e354e41b58ed731bc07071408fa5aa822f3c68e170d04ed736",
+      "dense_score": 0.15453156926130204,
+      "bm25_score": 0.7235192897456432,
+      "hybrid_score": 0.3536772714308214
+    }
+  },
+  {
+    "evidence_id": "7c0cd464fba18bbc:p1:c4",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 1,
+    "text": "market for or value of the copyrighted work. The fact that a work is unpublished shall not itself bar a finding of fair use if such finding is made upon consideration of all the above fac- tors. (Pub. L. 94–553, title I, § 101, Oct. 19, 1976, 90 Stat. 2546; Pub. L. 101–650, title VI, § 607, Dec. 1, 1990, 104 Stat. 5132; Pub. L. 102–492, Oct. 24, 1992, 106 Stat. 3145.) HISTORICAL AND REVISION NOTES HOUSE REPORT NO. 94–1476 General Background of the Problem. The judicial doc- trine of fair use, one of the most important and well- established limitations on the exclusive right of copy- right owners, would be given express statutory recogni- tion for the first time in section 107. The claim that a defendant’s acts constituted a fair use rather than an infringement has been raised as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by",
+    "score": 0.35160625713558397,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 560,
+      "word_end": 740,
+      "chunk_hash": "eb194d4cb451c5c4d752d84be20847579b67d9917d7e4ac6b06bd228434b5d64",
+      "dense_score": 0.16954676788064024,
+      "bm25_score": 0.6897167371804795,
+      "hybrid_score": 0.35160625713558397
+    }
+  },
+  {
+    "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+    "document_id": "bfd73ac0ebb0f6bb",
+    "filename": "loc_evening_star_1900_01_01_0394.pdf",
+    "page_number": 1,
+    "text": "at a suitable distance above the present cause- way bridge. This driveway, with its branch along the southeast margin, are to be built at about the future grade of average filling proposed for the park, which Is several feet above the freshet line of 1889), requIring an embankment which can be made partly of material now in the park and partly of material to be dredged under operations for the improvement of the Potomac river at Washington. While a permanent roadway will be eventually required, it Is not con- sidered desirable to lay one at the outset on the new embankment, which should have tIme for settling. It Is therefore pro- posed by Col. Allen to place a temporary gravel covering, whIch material may serve as a subgrade for a future pavement or for other purposes. .Ample provision can easily he made for~drainage along and through the driveway. The estimated cost of the bridges, drainage, etc., and of the drIveway and embankment, is placed at $135,000. POTOMAC RIVER IMPROVEMENl'. The operations for the Improvement of the Potomac river during the",
+    "score": 0.34805193960141523,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page was provided as extracted text layer; verbatim page text omitted per instruction because supplied text layer is authoritative.",
+        "Source appears to be a newspaper page with advertisements and news articles, not a legal-style instrument.",
+        "Text layer contains numerous OCR artifacts, broken words, and unclear characters.",
+        "Page contains markers suggesting illegible, redacted, or uncertain text."
+      ],
+      "word_start": 4480,
+      "word_end": 4660,
+      "chunk_hash": "303b2a63ae6692b258de4697808a0eb056c4949236847bc45b95c7b141354890",
+      "dense_score": 0.14265908463229035,
+      "bm25_score": 0.7294958131155044,
+      "hybrid_score": 0.34805193960141523
+    }
+  },
+  {
+    "evidence_id": "1a021fbaf033b873:p3:c2",
+    "document_id": "1a021fbaf033b873",
+    "filename": "govinfo_usc_17_105.pdf",
+    "page_number": 3,
+    "text": "privately written works are clearly excluded from the prohibition; accordingly, a saving clause becomes su- perfluous. Retention of a saving clause has been urged on the ground that the present statutory provision is fre- quently cited, and that having the provision expressly stated in the law would avoid questions and expla- nations. The committee here observes: (1) there is noth- ing in section 105 that would relieve the Government of its obligation to secure permission in order to publish a copyrighted work; and (2) publication or other use by the Government of a private work would not affect its copyright protection in any way. The question of use of copyrighted material in documents published by the Congress and its Committees is discussed below in con- nection with section 107. Works of the United States Postal Service. The intent of section 105 [this section] is to restrict the prohibi- tion against Government copyright to works written by employees of the United States Government within the scope of their official duties. In accordance with the objectives of the Postal Reorganization Act of",
+    "score": 0.33063302339870093,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 280,
+      "word_end": 460,
+      "chunk_hash": "bf302c3c818d1bc077d61bbf6dbef831b0591727ae8b104ffe171206ed0106ff",
+      "dense_score": 0.13340318570000947,
+      "bm25_score": 0.6969170076962709,
+      "hybrid_score": 0.33063302339870093
+    }
+  },
+  {
+    "evidence_id": "1a021fbaf033b873:p2:c4",
+    "document_id": "1a021fbaf033b873",
+    "filename": "govinfo_usc_17_105.pdf",
+    "page_number": 2,
+    "text": "prepared under U.S. Government con- tract or grant. As the bill is written, the Government agency concerned could determine in each case whether to allow an independent contractor or grantee, to se- cure copyright in works prepared in whole or in part with the use of Government funds. The argument that has been made against allowing copyright in this situa- tion is that the public should not be required to pay a ‘‘double subsidy,’’ and that it is inconsistent to pro- hibit copyright in works by Government employees while permitting private copyrights in a growing body of works created by persons who are paid with Govern- ment funds. Those arguing in favor of potential copy- right protection have stressed the importance of copy- right as an incentive to creation and dissemination in this situation, and the basically different policy consid- erations, applicable to works written by Government employees and those applicable to works prepared by private organizations with the use of Federal funds. The bill deliberately avoids making any sort of out- right, unqualified prohibition against copyright in works prepared",
+    "score": 0.3169846448265334,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [],
+      "word_start": 560,
+      "word_end": 740,
+      "chunk_hash": "eb32199a117fef010bf019db4bfd28b935544c1c0e99aa76a9011dd8ae6f2c79",
+      "dense_score": 0.17918925401983815,
+      "bm25_score": 0.5728903706103959,
+      "hybrid_score": 0.3169846448265334
+    }
+  },
+  {
+    "evidence_id": "7c0cd464fba18bbc:p1:c6",
+    "document_id": "7c0cd464fba18bbc",
+    "filename": "govinfo_usc_17_107.pdf",
+    "page_number": 1,
+    "text": "copy; reproduction by a teacher or student of a small part of a work to illustrate a lesson; reproduction of a work in legislative or judicial proceedings or re- ports; incidental and fortuitous reproduction, in a newsreel or broadcast, of a work located in the scene of an event being reported.’’ Although the courts have considered and ruled upon the fair use doctrine over and over again, no real defini- tion of the concept has ever emerged. Indeed, since the doctrine is an equitable rule of reason, no generally ap- plicable definition is possible, and each case raising the question must be decided on its own facts. On the other hand, the courts have evolved a set of criteria which, though in no case definitive or determinative, provide some gauge for balancing the equities. These criteria have been stated in various ways, but essentially they can all be reduced to the four standards which have been adopted in section 107: ‘‘(1) the purpose and char- acter of the use, including whether such use is of a commercial nature or is",
+    "score": 0.31120118150115206,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+      ],
+      "word_start": 840,
+      "word_end": 1020,
+      "chunk_hash": "815fed5786eb240696fd385258d2bf1a3ba677dd48f9fabc84f354eee48e6d62",
+      "dense_score": 0.20081527486236414,
+      "bm25_score": 0.5162035795446153,
+      "hybrid_score": 0.31120118150115206
+    }
+  },
+  {
+    "evidence_id": "aa3ddc6268e610f9:p2:c0",
+    "document_id": "aa3ddc6268e610f9",
+    "filename": "govinfo_cfr_17_240_10b_5.pdf",
+    "page_number": 2,
+    "text": "• Help ○ Help ○ Finding Information ○ What's Available ○ Tutorials and Handouts ○ Other Resources • Feedback ○ Submit Feedback ○ Contact Us • Toggle the Search Widget Search Page Not Found [image] [image] [image] Help Error occurred. The page you requested cannot be found. Please report this error to askGPO. Provide the following information to help us resolve this problem: the URL of the page you were trying to access, the steps you followed to produce the error, specific search or browse terms, and/ or a screenshot of the page where the error occurred. Thank you for your patience. Homepage Search Tips Skip back to top Skip back to top",
+    "score": 0.3061659279276831,
+    "metadata": {
+      "evidence_kind": "source-page",
+      "confidence": 0.95,
+      "extraction_method": "pdf-text-layer",
+      "warnings": [
+        "extracted from text layer; page states 'Page Not Found' and does not appear to contain legal instrument content"
+      ],
+      "word_start": 0,
+      "word_end": 113,
+      "chunk_hash": "9835e1770cc97147529779f6702ddbc8ccb6d761e4043eda0304337dea44581d",
+      "dense_score": 0.17961855254380105,
+      "bm25_score": 0.5411824822120356,
+      "hybrid_score": 0.3061659279276831
+    }
+  }
+]

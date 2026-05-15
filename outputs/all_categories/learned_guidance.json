@@ -1,0 +1,8 @@
+{
+  "profile_path": "outputs/all_categories/operator_profile.json",
+  "guidance": "Use these section labels when relevant: Drafting Note, Evidence Reviewed, Facts That Appear Supported, Items Requiring Verification. Avoid these section labels unless specifically requested: Data-Quality Flags for Operator Verification, Deadlines and Dates, Obligations and Amounts, Parties and Documents Identified. Prefer concise phrasing such as: Use cautious, evidence-bound language for mixed-corpus runs. Use cautious, evidence-bound language; qualify uncertainty with provided records, verify. When consolidating or shortening sections, preserve or increase inline citation density: never drop a citation that supports a kept factual claim, and prefer adding citations to any new factual sentence introduced during consolidation.\n\nOperator-defined knowledge rules (treat as hard constraints):\n- Always treat any net-income or aggregate-revenue value with decimal punctuation in a millions context as a transcription error pending source reconciliation.",
+  "sources": {
+    "operator_profile": "outputs/all_categories/operator_profile.json",
+    "knowledge_layer": "state/knowledge_layer.json"
+  }
+}

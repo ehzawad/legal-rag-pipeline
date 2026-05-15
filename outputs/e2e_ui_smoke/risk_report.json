@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-05-15T06:08:51+00:00",
+  "playbook": {
+    "name": "default-legal-review-playbook",
+    "version": 1,
+    "description": "Starter playbook for first-pass internal review. Replace with organization-specific positions before legal reliance."
+  },
+  "summary": {
+    "position_count": 5,
+    "passed_position_count": 1,
+    "finding_count": 5,
+    "critical": 0,
+    "high": 0,
+    "medium": 3,
+    "low": 2,
+    "info": 0
+  },
+  "findings": [
+    {
+      "position_id": "limitation_of_liability",
+      "title": "Limitation of Liability",
+      "status": "missing_or_unconfirmed",
+      "severity": "medium",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Escalate uncapped or asymmetric liability positions and confirm whether the cap matches the team's standard."
+    },
+    {
+      "position_id": "indemnification",
+      "title": "Indemnification",
+      "status": "missing_or_unconfirmed",
+      "severity": "medium",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims."
+    },
+    {
+      "position_id": "data_protection",
+      "title": "Data Protection",
+      "status": "missing_or_unconfirmed",
+      "severity": "low",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Confirm DPA coverage, deletion/return duties, breach notice timing, and subprocessors when personal data appears."
+    },
+    {
+      "position_id": "term_termination",
+      "title": "Term and Termination",
+      "status": "missing_or_unconfirmed",
+      "severity": "low",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Verify notice period, renewal mechanics, and whether termination for convenience is available."
+    },
+    {
+      "position_id": "unsupported_draft_sections",
+      "title": "Unsupported Draft Sections",
+      "status": "unsupported_draft_content",
+      "severity": "medium",
+      "message": "1 draft section(s) are marked unsupported.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Route unsupported sections to operator review before relying on the draft."
+    }
+  ],
+  "passed_positions": [
+    {
+      "position_id": "governing_law",
+      "title": "Governing Law",
+      "matched_terms": [
+        "jurisdiction",
+        "new york"
+      ],
+      "evidence_ids": [
+        "295c87b911042976:fields",
+        "295c87b911042976:p2:c0"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "295c87b911042976:fields",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 0,
+      "score": 0.5672278037046246
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p1:c2",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 1,
+      "score": 0.34846853888436696
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p3:c0",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 3,
+      "score": 0.3191685491914289
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c0",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "score": 0.30682158968818163
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p1:c0",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 1,
+      "score": 0.3009421572116026
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p4:c1",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 4,
+      "score": 0.2986387183708472
+    },
+    {
+      "evidence_id": "295c87b911042976:p2:c1",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 2,
+      "score": 0.27294954493423823
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c2",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "score": 0.27190791318237295
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c3",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "score": 0.27025318751986915
+    },
+    {
+      "evidence_id": "295c87b911042976:p2:c0",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 2,
+      "score": 0.2690816741046067
+    }
+  ],
+  "disclaimer": "Deterministic playbook screen for operator review; not legal advice."
+}

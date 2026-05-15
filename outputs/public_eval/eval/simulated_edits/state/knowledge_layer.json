@@ -1,0 +1,21 @@
+{
+  "field_defaults": {
+    "Jurisdiction": {
+      "actor_id": "eval-operator",
+      "updated_at": "2026-05-15T04:15:03+00:00",
+      "value": "New York"
+    }
+  },
+  "rules": [
+    {
+      "actor_id": "eval-operator",
+      "added_at": "2026-05-15T04:15:03+00:00",
+      "evidence_ids": [
+        "doc:p1:c0"
+      ],
+      "rule": "Always flag decimal-punctuated financial values as transcription-risk pending source reconciliation.",
+      "rule_signature": "877964952a52a0f0"
+    }
+  ],
+  "version": 1
+}

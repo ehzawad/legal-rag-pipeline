@@ -1,0 +1,17 @@
+{
+  "queries": [
+    {
+      "id": "all-categories-memo-core-evidence",
+      "k": 8,
+      "task": "Review parties, obligations, deadlines, signatures, and data-quality flags across the mixed messy-document corpus.",
+      "relevant_filenames": [
+        "synthetic_noisy_lien_notice.pdf",
+        "cuad_hosting_agreement.pdf",
+        "ucsf_idl_rhwy0076.pdf",
+        "ucsf_idl_xqjn0082_summons.pdf",
+        "sec_vprr_09040001.pdf",
+        "sec_vprr_02000259_form_fx.pdf"
+      ]
+    }
+  ]
+}

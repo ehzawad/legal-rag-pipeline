@@ -1,0 +1,333 @@
+{
+  "draft_quality": {
+    "advisory_claim_support_warnings": 1,
+    "claim_citation_rate": 1.0,
+    "claim_sentence_count": 30,
+    "claim_sentence_with_inline_citation_count": 30,
+    "section_count": 4,
+    "supported_section_count": 3,
+    "supported_section_ratio": 0.75,
+    "uncited_factual_sentence_section_warnings": 2,
+    "unsupported_section_count": 1,
+    "warning_count": 6
+  },
+  "edit_improvement": {},
+  "eval_points": {},
+  "gold": {
+    "documents": {
+      "combined_term_hits": 19,
+      "combined_term_recall": 0.95,
+      "document_count": 5,
+      "field_term_hits": 18,
+      "field_term_recall": 0.9,
+      "missing_document_count": 0,
+      "page_term_hits": 16,
+      "page_term_recall": 0.8,
+      "per_document": [
+        {
+          "category": "low-resolution-pdfs",
+          "combined_hits": 4,
+          "combined_term_recall": 1.0,
+          "field_hits": 4,
+          "field_term_recall": 1.0,
+          "filename": "synthetic_noisy_lien_notice.pdf",
+          "missing": false,
+          "page_hits": 4,
+          "page_term_recall": 1.0,
+          "term_results": [
+            {
+              "hit_in": "both",
+              "term": "HARBOR VIEW HOLDINGS"
+            },
+            {
+              "hit_in": "both",
+              "term": "NORTHSTAR MARKET"
+            },
+            {
+              "hit_in": "both",
+              "term": "$2,850"
+            },
+            {
+              "hit_in": "both",
+              "term": "03/15"
+            }
+          ],
+          "terms": 4
+        },
+        {
+          "category": "inconsistently-formatted-files",
+          "combined_hits": 4,
+          "combined_term_recall": 1.0,
+          "field_hits": 4,
+          "field_term_recall": 1.0,
+          "filename": "cuad_hosting_agreement.pdf",
+          "missing": false,
+          "page_hits": 4,
+          "page_term_recall": 1.0,
+          "term_results": [
+            {
+              "hit_in": "both",
+              "term": "FreeCook"
+            },
+            {
+              "hit_in": "both",
+              "term": "Mitchell's Web Advance"
+            },
+            {
+              "hit_in": "both",
+              "term": "$5,000"
+            },
+            {
+              "hit_in": "both",
+              "term": "February 8, 2018"
+            }
+          ],
+          "terms": 4
+        },
+        {
+          "category": "scanned-pages",
+          "combined_hits": 4,
+          "combined_term_recall": 1.0,
+          "field_hits": 3,
+          "field_term_recall": 0.75,
+          "filename": "ucsf_idl_xqjn0082_summons.pdf",
+          "missing": false,
+          "page_hits": 3,
+          "page_term_recall": 0.75,
+          "term_results": [
+            {
+              "hit_in": "both",
+              "term": "MOHAMAD ABDALLAH"
+            },
+            {
+              "hit_in": "both",
+              "term": "NAGEHAM HANNA"
+            },
+            {
+              "hit_in": "fields",
+              "term": "March 31, 1994"
+            },
+            {
+              "hit_in": "page",
+              "term": "EC 009721"
+            }
+          ],
+          "terms": 4
+        },
+        {
+          "category": "partially-illegible-records",
+          "combined_hits": 4,
+          "combined_term_recall": 1.0,
+          "field_hits": 4,
+          "field_term_recall": 1.0,
+          "filename": "ucsf_idl_rhwy0076.pdf",
+          "missing": false,
+          "page_hits": 2,
+          "page_term_recall": 0.5,
+          "term_results": [
+            {
+              "hit_in": "both",
+              "term": "Howard Speilberg"
+            },
+            {
+              "hit_in": "fields",
+              "term": "January 23, 1998"
+            },
+            {
+              "hit_in": "both",
+              "term": "Council for Tobacco Research"
+            },
+            {
+              "hit_in": "fields",
+              "term": "five (5) days"
+            }
+          ],
+          "terms": 4
+        },
+        {
+          "category": "handwritten-notes",
+          "combined_hits": 3,
+          "combined_term_recall": 0.75,
+          "field_hits": 3,
+          "field_term_recall": 0.75,
+          "filename": "lee_va_chancery_1863.pdf",
+          "missing": false,
+          "page_hits": 3,
+          "page_term_recall": 0.75,
+          "term_results": [
+            {
+              "hit_in": "both",
+              "term": "Meredith C. Hurt"
+            },
+            {
+              "hit_in": "neither",
+              "term": "Wilmington T. Cole"
+            },
+            {
+              "hit_in": "both",
+              "term": "Helen M. Hurt"
+            },
+            {
+              "hit_in": "both",
+              "term": "50 acres"
+            }
+          ],
+          "terms": 4
+        }
+      ],
+      "term_count": 20
+    },
+    "retrieval": {
+      "mrr": 0.16666666666666666,
+      "note": "Scored against the persisted production retrieved_evidence.json (BM25 + text-embedding-3-large hybrid retrieval; gpt-5.5 is only used for extraction and drafting).",
+      "per_query": [
+        {
+          "hits": [
+            "synthetic_noisy_lien_notice.pdf",
+            "ucsf_idl_rhwy0076.pdf"
+          ],
+          "id": "all-categories-memo-core-evidence",
+          "k": 8,
+          "mrr": 0.16666666666666666,
+          "precision_at_k": 0.375,
+          "recall_at_k": 0.3333333333333333,
+          "relevant_evidence_ids": [],
+          "relevant_filenames": [
+            "cuad_hosting_agreement.pdf",
+            "sec_vprr_02000259_form_fx.pdf",
+            "sec_vprr_09040001.pdf",
+            "synthetic_noisy_lien_notice.pdf",
+            "ucsf_idl_rhwy0076.pdf",
+            "ucsf_idl_xqjn0082_summons.pdf"
+          ],
+          "scored_against": "relevant_filenames",
+          "task_used": "Review parties, obligations, deadlines, signatures, and data-quality flags across the mixed messy-document corpus.",
+          "top_evidence_ids": [
+            "5aaabcf14b21fd40:p1:c0",
+            "5aaabcf14b21fd40:p2:c0",
+            "5aaabcf14b21fd40:p3:c2",
+            "a72d9aa7f0bed8eb:p1:c1",
+            "18aae1ac9b6c1191:p1:c2",
+            "e7a7d9482447de83:p1:c0",
+            "e7a7d9482447de83:p1:c1",
+            "d61bba9a2aabfec3:fields"
+          ],
+          "top_filenames": [
+            "ao088b_subpoena_produce.pdf",
+            "ao088b_subpoena_produce.pdf",
+            "ao088b_subpoena_produce.pdf",
+            "ao085_notice_consent_magistrate.pdf",
+            "sec_vprr_03000005_form_d.pdf",
+            "synthetic_noisy_lien_notice.pdf",
+            "synthetic_noisy_lien_notice.pdf",
+            "ucsf_idl_rhwy0076.pdf"
+          ]
+        }
+      ],
+      "precision_at_k": 0.375,
+      "query_count": 1,
+      "recall_at_k": 0.3333333333333333,
+      "retrieval_mode": "production-retrieval"
+    }
+  },
+  "notes": [
+    "Unsupported sections are intentional review hooks, not generation failures.",
+    "Sentence grounding score is quote-substring validity, not semantic entailment.",
+    "Claim grounding pass rate is claim-graph level; section quote metrics remain separate."
+  ],
+  "processing": {
+    "average_page_confidence": 0.8941428571428578,
+    "categories": {
+      "handwritten-notes": {
+        "average_page_confidence": 0.7233333333333332,
+        "document_count": 3,
+        "page_count": 15,
+        "rendered_page_count": 10,
+        "text_layer_page_count": 5
+      },
+      "inconsistently-formatted-files": {
+        "average_page_confidence": 0.9499999999999998,
+        "document_count": 3,
+        "page_count": 13,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 13
+      },
+      "low-resolution-pdfs": {
+        "average_page_confidence": 0.8699999999999999,
+        "document_count": 3,
+        "page_count": 5,
+        "rendered_page_count": 4,
+        "text_layer_page_count": 1
+      },
+      "partially-illegible-records": {
+        "average_page_confidence": 0.9519999999999997,
+        "document_count": 3,
+        "page_count": 15,
+        "rendered_page_count": 1,
+        "text_layer_page_count": 14
+      },
+      "scanned-pages": {
+        "average_page_confidence": 0.9399999999999997,
+        "document_count": 3,
+        "page_count": 14,
+        "rendered_page_count": 10,
+        "text_layer_page_count": 4
+      },
+      "truepdf": {
+        "average_page_confidence": 0.9500000000000001,
+        "document_count": 5,
+        "page_count": 8,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 8
+      }
+    },
+    "document_count": 20,
+    "document_warning_count": 195,
+    "extraction_methods": {
+      "pdf-rendered-png": 25,
+      "pdf-text-layer": 45
+    },
+    "low_confidence_page_count": 2,
+    "nonempty_page_count": 70,
+    "nonempty_page_rate": 1.0,
+    "page_count": 70,
+    "page_warning_count": 148
+  },
+  "public_manifest": {},
+  "retrieval": {
+    "cited_evidence_id_count": 16,
+    "cited_field_chunk_count": 3,
+    "cited_field_chunk_share": 0.1875,
+    "cited_raw_page_chunk_count": 13,
+    "cited_raw_page_chunk_share": 0.8125,
+    "distinct_cited_file_count": 5,
+    "distinct_cited_files": [
+      "ao085_notice_consent_magistrate.pdf",
+      "ao088b_subpoena_produce.pdf",
+      "sec_vprr_03000005_form_d.pdf",
+      "synthetic_noisy_lien_notice.pdf",
+      "ucsf_idl_rhwy0076.pdf"
+    ],
+    "draft_evidence_count": 8,
+    "retrieved_chunk_count": 10,
+    "retrieved_field_chunk_count": 1,
+    "retrieved_raw_page_chunk_count": 9
+  },
+  "run_dir": "outputs/all_categories",
+  "static": {
+    "citation_id_validity": 1.0,
+    "claim_citation_coverage": 1.0,
+    "claim_count": 74,
+    "claim_grounding_pass_rate": 1.0,
+    "evidence_count": 8,
+    "notes": [
+      "Unsupported sections are intentional review hooks, not generation failures.",
+      "Sentence grounding score is quote-substring validity, not semantic entailment.",
+      "Claim grounding pass rate is claim-graph level; section quote metrics remain separate."
+    ],
+    "sentence_grounding_score": 1.0,
+    "unsupported_claim_count": 0,
+    "unsupported_section_count": 1,
+    "warning_count": 5
+  }
+}

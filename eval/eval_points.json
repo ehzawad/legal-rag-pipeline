@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "name": "public-legal-messy-15-eval-points",
+  "description": "Deterministic eval points grouped by document understanding, grounded drafting, and edit-memory improvement.",
+  "points": [
+    {
+      "id": "document-count-15",
+      "criterion": "document_understanding",
+      "kind": "document_count_min",
+      "min": 15,
+      "required": true
+    },
+    {
+      "id": "page-count-max-5",
+      "criterion": "document_understanding",
+      "kind": "page_count_max",
+      "max": 5,
+      "required": true
+    },
+    {
+      "id": "category-scanned-pages-3",
+      "criterion": "document_understanding",
+      "kind": "category_count_min",
+      "category": "scanned-pages",
+      "min": 3,
+      "required": true
+    },
+    {
+      "id": "category-low-resolution-pdfs-3",
+      "criterion": "document_understanding",
+      "kind": "category_count_min",
+      "category": "low-resolution-pdfs",
+      "min": 3,
+      "required": true
+    },
+    {
+      "id": "category-handwritten-notes-3",
+      "criterion": "document_understanding",
+      "kind": "category_count_min",
+      "category": "handwritten-notes",
+      "min": 3,
+      "required": true
+    },
+    {
+      "id": "category-partially-illegible-records-3",
+      "criterion": "document_understanding",
+      "kind": "category_count_min",
+      "category": "partially-illegible-records",
+      "min": 3,
+      "required": true
+    },
+    {
+      "id": "category-inconsistent-format-3",
+      "criterion": "document_understanding",
+      "kind": "category_count_min",
+      "category": "inconsistently-formatted-files",
+      "min": 3,
+      "required": true
+    },
+    {
+      "id": "loc-low-res-term-bon-marche",
+      "criterion": "document_understanding",
+      "kind": "extraction_contains_term",
+      "filename": "loc_evening_star_1900_01_01_0393.pdf",
+      "term": "BON MARCHE",
+      "category": "low-resolution-pdfs",
+      "required": false
+    },
+    {
+      "id": "govinfo-fair-use-term",
+      "criterion": "document_understanding",
+      "kind": "extraction_contains_term",
+      "filename": "govinfo_usc_17_107.pdf",
+      "term": "fair use",
+      "category": "inconsistently-formatted-files",
+      "required": true
+    },
+    {
+      "id": "sec-illegible-commission-file-term",
+      "criterion": "document_understanding",
+      "kind": "extraction_contains_term",
+      "filename": "sec_vprr_09045744.pdf",
+      "term": "Commission File No",
+      "category": "partially-illegible-records",
+      "required": false
+    },
+    {
+      "id": "citation-id-validity",
+      "criterion": "grounded_drafting",
+      "kind": "metric_min",
+      "metric": "citation_id_validity",
+      "min": 0.9,
+      "required": true
+    },
+    {
+      "id": "claim-citation-coverage",
+      "criterion": "grounded_drafting",
+      "kind": "metric_min",
+      "metric": "claim_citation_coverage",
+      "min": 0.85,
+      "required": true
+    },
+    {
+      "id": "claim-grounding-pass-rate",
+      "criterion": "grounded_drafting",
+      "kind": "metric_min",
+      "metric": "claim_grounding_pass_rate",
+      "min": 0.75,
+      "required": true
+    },
+    {
+      "id": "raw-page-citation-share",
+      "criterion": "grounded_drafting",
+      "kind": "metric_min",
+      "metric": "cited_raw_page_chunk_share",
+      "min": 0.25,
+      "required": true
+    },
+    {
+      "id": "avoid-uncited-liability-conclusion",
+      "criterion": "grounded_drafting",
+      "kind": "term_absent",
+      "target": "draft",
+      "term": "liable",
+      "required": false
+    },
+    {
+      "id": "simulated-edit-pass-rate",
+      "criterion": "edit_improvement",
+      "kind": "edit_improvement_metric_min",
+      "metric": "pass_rate",
+      "min": 1.0,
+      "required": true
+    },
+    {
+      "id": "simulated-edit-points-count",
+      "criterion": "edit_improvement",
+      "kind": "edit_improvement_metric_min",
+      "metric": "point_count",
+      "min": 6,
+      "required": true
+    }
+  ]
+}

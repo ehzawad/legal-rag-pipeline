@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-05-15T04:14:56+00:00",
+  "playbook": {
+    "name": "default-legal-review-playbook",
+    "version": 1,
+    "description": "Starter playbook for first-pass internal review. Replace with organization-specific positions before legal reliance."
+  },
+  "summary": {
+    "position_count": 5,
+    "passed_position_count": 2,
+    "finding_count": 4,
+    "critical": 0,
+    "high": 0,
+    "medium": 3,
+    "low": 1,
+    "info": 0
+  },
+  "findings": [
+    {
+      "position_id": "limitation_of_liability",
+      "title": "Limitation of Liability",
+      "status": "missing_or_unconfirmed",
+      "severity": "medium",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Escalate uncapped or asymmetric liability positions and confirm whether the cap matches the team's standard."
+    },
+    {
+      "position_id": "indemnification",
+      "title": "Indemnification",
+      "status": "missing_or_unconfirmed",
+      "severity": "medium",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims."
+    },
+    {
+      "position_id": "data_protection",
+      "title": "Data Protection",
+      "status": "missing_or_unconfirmed",
+      "severity": "low",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Confirm DPA coverage, deletion/return duties, breach notice timing, and subprocessors when personal data appears."
+    },
+    {
+      "position_id": "unsupported_draft_sections",
+      "title": "Unsupported Draft Sections",
+      "status": "unsupported_draft_content",
+      "severity": "medium",
+      "message": "3 draft section(s) are marked unsupported.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Route unsupported sections to operator review before relying on the draft."
+    }
+  ],
+  "passed_positions": [
+    {
+      "position_id": "term_termination",
+      "title": "Term and Termination",
+      "matched_terms": [
+        "notice",
+        "term",
+        "termination"
+      ],
+      "evidence_ids": []
+    },
+    {
+      "position_id": "governing_law",
+      "title": "Governing Law",
+      "matched_terms": [
+        "california",
+        "delaware",
+        "jurisdiction",
+        "new york"
+      ],
+      "evidence_ids": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "7c0cd464fba18bbc:p1:c5",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 1,
+      "score": 0.486589079981123
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p4:c8",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 4,
+      "score": 0.40372459879999456
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p2:c4",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 2,
+      "score": 0.38121534086078723
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p5:c0",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 5,
+      "score": 0.3536772714308214
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p1:c4",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 1,
+      "score": 0.35160625713558397
+    },
+    {
+      "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+      "filename": "loc_evening_star_1900_01_01_0394.pdf",
+      "page_number": 1,
+      "score": 0.34805193960141523
+    },
+    {
+      "evidence_id": "1a021fbaf033b873:p3:c2",
+      "filename": "govinfo_usc_17_105.pdf",
+      "page_number": 3,
+      "score": 0.33063302339870093
+    },
+    {
+      "evidence_id": "1a021fbaf033b873:p2:c4",
+      "filename": "govinfo_usc_17_105.pdf",
+      "page_number": 2,
+      "score": 0.3169846448265334
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p1:c6",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 1,
+      "score": 0.31120118150115206
+    },
+    {
+      "evidence_id": "aa3ddc6268e610f9:p2:c0",
+      "filename": "govinfo_cfr_17_240_10b_5.pdf",
+      "page_number": 2,
+      "score": 0.3061659279276831
+    }
+  ],
+  "disclaimer": "Deterministic playbook screen for operator review; not legal advice."
+}

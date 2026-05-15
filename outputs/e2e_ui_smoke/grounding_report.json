@@ -1,0 +1,905 @@
+{
+  "case_id": "e2e-ui-smoke",
+  "draft_type": "case_fact_summary",
+  "total_claims": 64,
+  "non_scaffolding_claims": 37,
+  "entailed": 25,
+  "uncited": 12,
+  "ungrounded": 0,
+  "not_supported": 0,
+  "contradicted": 0,
+  "unclear": 0,
+  "scaffolding": 27,
+  "citation_coverage": 0.6756756756756757,
+  "grounding_pass_rate": 0.6756756756756757,
+  "unsupported_claim_count": 12,
+  "claims": [
+    {
+      "claim_id": "claim_d3df41df3031",
+      "section_id": "documents_reviewed",
+      "section": "Documents Reviewed",
+      "claim_type": "summary",
+      "text": "Compliance Review Memo: The provided records include an Amendment No. 1 to Form F-X for sec_vprr_02000258.pdf, a Form F-X-related scanned filing for sec_vprr_02000259.pdf, and a Form D for sec_vprr_07040010.pdf.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields",
+        "ab8261141dc1f5ba:p1:c0",
+        "f292902ed5f80a01:p2:c0"
+      ],
+      "substring_grounded_count": 3,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b05dae8a1bcd",
+      "section_id": "parties",
+      "section": "Parties",
+      "claim_type": "fact",
+      "text": "The Amendment No. 1 to Form F-X identifies Kabushiki Kaisha Asahi Ginko as the filer/issuer.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5d1bfe67826e",
+      "section_id": "parties",
+      "section": "Parties",
+      "claim_type": "fact",
+      "text": "The U.S. agent for service of process in the Amendment No. 1 to Form F-X is identified as Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_70b537b288e9",
+      "section_id": "parties",
+      "section": "Parties",
+      "claim_type": "fact",
+      "text": "The signatory for the Form F-X filer is identified as Mr. Hideki Fukushima, Chief Deputy General Manager.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_87c5ed834dc1",
+      "section_id": "parties",
+      "section": "Parties",
+      "claim_type": "fact",
+      "text": "The Form D identifies Stella Station Trust as the name of the offering and the issuer.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c398b13d793a",
+      "section_id": "parties",
+      "section": "Parties",
+      "claim_type": "fact",
+      "text": "The Form D lists the issuer’s executive office address as 11690 Grooms Road, Cincinnati, OH 45242, with telephone number 513 554 1110.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d9178093334e",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D describes Stella Station Trust’s business as purchasing, holding, leasing, managing, selling, exchanging, redeveloping, subdividing, and improving real property and interests in real property.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1daec89f241e",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D indicates the filing was made under Rule 506 and marked as a new filing.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6e7026915f69",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D states the issuer did not intend to sell to non-accredited investors in the offering.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p3:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2feb1800e564",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D lists the minimum investment accepted from any individual as $0.00.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p3:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6faea2bf4c45",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D indicates joint ownership of a single unit was not permitted.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p3:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f6d5552bf071",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D lists no person paid or given commission or similar remuneration for solicitation of purchasers in connection with securities sales in the offering.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p3:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_dd6c57994c83",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D reports accredited-investor purchases of $10,400.00 and non-accredited-investor purchases of $0.00.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p4:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f3062d566d09",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D reports $0.00 for listed issuance and distribution expenses, including transfer agent fees, printing and engraving, legal fees, accounting fees, engineering fees, sales commissions, other expenses, and total expenses.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p4:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d6bc1429e736",
+      "section_id": "procedural_posture",
+      "section": "Procedural Posture",
+      "claim_type": "fact",
+      "text": "The Form F-X-related records include a related Form CB filing, file number 5-51260, barcode/reference 02000258, and SEC received/processed date of January 29, 2002.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0e0b50bcbdfa",
+      "section_id": "procedural_posture",
+      "section": "Procedural Posture",
+      "claim_type": "fact",
+      "text": "The related Form CB filing date is recorded as January 10, 2002, and the Form F-X document is recorded as signed on January 24, 2002.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_877af93ecbef",
+      "section_id": "procedural_posture",
+      "section": "Procedural Posture",
+      "claim_type": "fact",
+      "text": "The Form D page carries barcode/serial number 07040010 and a handwritten/printed number at top of 1386733.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_7534582acb23",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form F-X text states that civil suits, actions, or administrative proceedings may be commenced by service of process upon the agent for service of process, and that administrative subpoenas may be served on that agent.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:p2:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_489c0b55069a",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form F-X text states that service upon the agent is to be treated as valid and binding as if personal service had been made.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:p2:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_e93b479b623e",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form F-X text includes an undertaking to appoint a successor agent and file an amended Form F-X if the filer discharges the agent or the agent is unwilling or unable to accept service.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:p2:c1",
+        "f292902ed5f80a01:p2:c2"
+      ],
+      "substring_grounded_count": 2,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_98ecaf7e6263",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "For certain Form F-X filing contexts, the undertaking to appoint a successor agent and file an amended Form F-X runs until six years have elapsed from specified triggering dates; confirm before treating as a deadline.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "295c87b911042976:p2:c1",
+        "f292902ed5f80a01:p2:c2",
+        "295c87b911042976:fields"
+      ],
+      "substring_grounded_count": 3,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_08e54c3eb6ba",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form F-X text includes an undertaking to advise the Commission promptly of any change to the agent’s name and address.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "f292902ed5f80a01:p2:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_3a12aaf599d2",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D instructions state that five copies of the notice must be filed with the SEC, one manually signed, and unsigned copies must be photocopies of the manually signed copy or bear typed or printed signatures.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_792b7878fa52",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Form D instructions state that there is no federal filing fee.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_a9af6c174a20",
+      "section_id": "procedural_posture",
+      "section": "Procedural Posture",
+      "claim_type": "fact",
+      "text": "The Form D instructions list the filing address as the U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "ab8261141dc1f5ba:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_285b45af7fc1",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: The scanned records have no text layer, and transcription is based on visual reading or OCR from scanned images.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4c2decfdc4f4",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements, including partially unclear stamped and handwritten content.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6802acb510a9",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 1 reportedly contains scanned-page stamps and handwritten notation, with small stamp text partly unclear, a partly cut-off or unclear top stamp, and markers suggesting illegible, redacted, or uncertain text.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_88250c28fe29",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 2 reportedly has minor speckling but generally legible text.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b61cf13c70f9",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 3 reportedly contains signatures not transcribed except as [signature], and the phrase “Country of USA” appears as printed or typed with no correction inferred.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2909022d6fe7",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000259.pdf reportedly has no text layer, scan artifacts or dark lines in the top margins, and partially unclear stamped and handwritten content.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_783dfd562d4d",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 1 reportedly has a title line partly cut off or obscured after “PROCESS A,” and stamps include partially unclear text.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_700f30b4a4e3",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 3 reportedly contains a handwritten signature not transcribed beyond a marker.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_9ae96ceeb80f",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 4 reportedly has a handwritten signature and date, with the date appearing to read “January 22, 2002.”",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8aee366150e4",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_07040010.pdf reportedly provides only pages 1 through 5 of a 9-page Form D; pages 6 through 9 are absent.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4edf4cde4735",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_07040010.pdf reportedly includes partially illegible handwritten and stamped markings, repeated blank sections summarized rather than transcribed line-for-line, and state checkbox lists visible but not fully transcribed.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_042ef23ffa1f",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Items Requiring Verification: sec_vprr_07040010.pdf page 5 reportedly has a handwritten signature that is not fully legible and a handwritten date that appears to read “1-10, 2006” or similar, with unclear formatting or mark.",
+      "status": "uncited",
+      "action": "move_to_open_questions",
+      "reason": "Non-scaffolding claim has no citation.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ea8f5cda94e7",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document is a scanned image with no text layer; transcription is based on visual reading.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5f7f324d7318",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_60d9066714c3",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0fc31084c44d",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.1: Top stamp partially cut off/unclear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8583f5a89bae",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.1: No text layer; rendering page as image for OCR.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_82133751d166",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f702e59ebdc9",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.2: Scanned page; minor speckling but text generally legible.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_33dacb0641d3",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.2: No text layer; rendering page as image for OCR.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5b388f153442",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.3: Scanned page; signatures are not transcribed except as [signature].",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ead1566f0e2d",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_a64ad8a584aa",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "p.3: No text layer; rendering page as image for OCR.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6ca7fcb474e6",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "All pages have no text layer; transcription is based on scanned images.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6434920c50c4",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Some stamped and handwritten content is partially unclear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_bf587ab9bb1e",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Top margins contain scan artifacts/dark lines, but main body text is generally readable.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_37a56ed3aff0",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Title line appears partially cut off or obscured after 'PROCESS A'.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_625f21d8c2b5",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_59b6b1204d7e",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Pages are scanned images with no text layer; transcription is based on visual reading.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_de3c94e6f039",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Only pages 1 through 5 of a 9-page Form D are provided; pages 6 through 9 are absent.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_26f955a59272",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Some handwritten and stamped markings are partially illegible.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_53654e3388c8",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_61396b07ea23",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8d76d6f651ea",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_39a7ed7ff5c0",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Preprinted instruction text abbreviated in places; financial entries are clear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_7a091e824da9",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Handwritten signature is not fully legible.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f05c4c8b9f81",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8d06cc15b8c4",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Confirm all handwritten dates and signatures against source images before using them as operative deadlines or execution facts.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_553c8fb7e3fc",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Confirm whether pages 6 through 9 of the Form D are available before treating the Form D record as complete.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    }
+  ]
+}

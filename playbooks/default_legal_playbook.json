@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "name": "default-legal-review-playbook",
+  "description": "Starter playbook for first-pass internal review. Replace with organization-specific positions before legal reliance.",
+  "positions": [
+    {
+      "id": "limitation_of_liability",
+      "title": "Limitation of Liability",
+      "severity": "high",
+      "required_any": ["limitation of liability", "liability cap", "cap on liability"],
+      "preferred_any": ["12 months", "fees paid", "fees payable", "mutual cap"],
+      "escalation_terms": ["uncapped liability", "consequential damages", "indirect damages", "special damages"],
+      "guidance": "Escalate uncapped or asymmetric liability positions and confirm whether the cap matches the team's standard."
+    },
+    {
+      "id": "indemnification",
+      "title": "Indemnification",
+      "severity": "high",
+      "required_any": ["indemnify", "indemnification", "hold harmless"],
+      "preferred_any": ["third-party claims", "ip infringement", "data breach", "mutual indemnification"],
+      "escalation_terms": ["sole discretion", "unlimited indemnity", "unilateral indemnification"],
+      "guidance": "Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims."
+    },
+    {
+      "id": "data_protection",
+      "title": "Data Protection",
+      "severity": "medium",
+      "required_any": ["personal data", "confidential information", "data protection", "privacy"],
+      "preferred_any": ["breach notification", "sub-processor", "subprocessor", "delete", "return"],
+      "escalation_terms": ["no data processing agreement", "no dpa", "cross-border transfer"],
+      "guidance": "Confirm DPA coverage, deletion/return duties, breach notice timing, and subprocessors when personal data appears."
+    },
+    {
+      "id": "term_termination",
+      "title": "Term and Termination",
+      "severity": "medium",
+      "required_any": ["termination", "terminate", "term"],
+      "preferred_any": ["30 days", "thirty days", "termination for convenience", "notice"],
+      "escalation_terms": ["automatic renewal", "auto-renewal", "no termination for convenience"],
+      "guidance": "Verify notice period, renewal mechanics, and whether termination for convenience is available."
+    },
+    {
+      "id": "governing_law",
+      "title": "Governing Law",
+      "severity": "low",
+      "required_any": ["governing law", "jurisdiction", "venue"],
+      "preferred_any": ["new york", "delaware", "california", "england and wales"],
+      "escalation_terms": ["mandatory arbitration", "exclusive jurisdiction", "foreign law"],
+      "guidance": "Confirm governing law and venue match the team's accepted jurisdictions."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "documents": [
+    {
+      "filename": "synthetic_noisy_lien_notice.pdf",
+      "category": "low-resolution-pdfs",
+      "must_extract_terms": [
+        "HARBOR VIEW HOLDINGS",
+        "NORTHSTAR MARKET",
+        "$2,850",
+        "03/15"
+      ]
+    },
+    {
+      "filename": "cuad_hosting_agreement.pdf",
+      "category": "inconsistently-formatted-files",
+      "must_extract_terms": [
+        "FreeCook",
+        "Mitchell's Web Advance",
+        "$5,000",
+        "February 8, 2018"
+      ]
+    },
+    {
+      "filename": "ucsf_idl_xqjn0082_summons.pdf",
+      "category": "scanned-pages",
+      "must_extract_terms": [
+        "MOHAMAD ABDALLAH",
+        "NAGEHAM HANNA",
+        "March 31, 1994",
+        "EC 009721"
+      ]
+    },
+    {
+      "filename": "ucsf_idl_rhwy0076.pdf",
+      "category": "partially-illegible-records",
+      "must_extract_terms": [
+        "Howard Speilberg",
+        "January 23, 1998",
+        "Council for Tobacco Research",
+        "five (5) days"
+      ]
+    },
+    {
+      "filename": "lee_va_chancery_1863.pdf",
+      "category": "handwritten-notes",
+      "must_extract_terms": [
+        "Meredith C. Hurt",
+        "Wilmington T. Cole",
+        "Helen M. Hurt",
+        "50 acres"
+      ]
+    }
+  ]
+}

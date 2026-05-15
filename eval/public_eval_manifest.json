@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "name": "public-legal-messy-15",
+  "description": "Direct-download public legal-style eval bundle with 13 files across five messy-document categories, capped at five pages per file.",
+  "license_notes": "Prefer federal or official public sources. SEC filings are public EDGAR records but not necessarily federal-authored public-domain works; review source terms before redistributing downloaded copies.",
+  "task": "Review the supplied public evaluation documents and produce a grounded case fact summary covering documents reviewed, material facts that appear supported, requested actions, and data-quality flags an operator should verify.",
+  "items": [
+    {
+      "id": "sec-vprr-02000258",
+      "category": "scanned-pages",
+      "url": "https://www.sec.gov/Archives/edgar/vprr/0200/02000258.pdf",
+      "filename": "scanned-pages/sec_vprr_02000258.pdf",
+      "sha256": "295c87b911042976beaac23d76490d72b9e532c1ba1c77e9b58da82db4fab37c",
+      "bytes": 156535,
+      "pages_expected": 3,
+      "max_pages": 5,
+      "source": "SEC EDGAR Virtual Private Reference Room",
+      "license": "Public SEC filing scan; review redistribution terms before vendoring.",
+      "notes": [
+        "Image-only scanned paper filing; useful for OCR routing."
+      ]
+    },
+    {
+      "id": "sec-vprr-07040010",
+      "category": "scanned-pages",
+      "url": "https://www.sec.gov/Archives/edgar/vprr/0704/07040010.pdf",
+      "filename": "scanned-pages/sec_vprr_07040010.pdf",
+      "sha256": "ab8261141dc1f5ba487a09553bd0b7ea88f600b803a65483d688e22c0c0c1aa9",
+      "bytes": 181215,
+      "pages_expected": 5,
+      "max_pages": 5,
+      "source": "SEC EDGAR Virtual Private Reference Room",
+      "license": "Public SEC filing scan; review redistribution terms before vendoring.",
+      "notes": [
+        "Five-page paper scan; exercises the page cap boundary."
+      ]
+    },
+    {
+      "id": "loc-evening-star-0393",
+      "category": "low-resolution-pdfs",
+      "url": "https://tile.loc.gov/storage-services/service/ndnp/dlc/batch_dlc_japanesechin_ver01/data/sn83045462/00280655302/1900010101/0393.pdf",
+      "filename": "low-resolution-pdfs/loc_evening_star_1900_01_01_0393.pdf",
+      "sha256": "dd25485ef6e59780d421f0dc3cd34270e2048dce2fd2c87a61dff6b534e5cd1b",
+      "bytes": 1428646,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "Library of Congress Chronicling America",
+      "license": "Public domain or no known restrictions per Library of Congress Chronicling America rights statements.",
+      "notes": [
+        "Microfilm-derived low-resolution page with noisy OCR text."
+      ]
+    },
+    {
+      "id": "loc-evening-star-0394",
+      "category": "low-resolution-pdfs",
+      "url": "https://tile.loc.gov/storage-services/service/ndnp/dlc/batch_dlc_japanesechin_ver01/data/sn83045462/00280655302/1900010101/0394.pdf",
+      "filename": "low-resolution-pdfs/loc_evening_star_1900_01_01_0394.pdf",
+      "sha256": "bfd73ac0ebb0f6bbf7ee9ca6e01d0c73f5ed6a96110d424003017bb3dbef5aeb",
+      "bytes": 1506932,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "Library of Congress Chronicling America",
+      "license": "Public domain or no known restrictions per Library of Congress Chronicling America rights statements.",
+      "notes": [
+        "Microfilm-derived low-resolution page with noisy OCR text."
+      ]
+    },
+    {
+      "id": "loc-evening-star-0395",
+      "category": "low-resolution-pdfs",
+      "url": "https://tile.loc.gov/storage-services/service/ndnp/dlc/batch_dlc_japanesechin_ver01/data/sn83045462/00280655302/1900010101/0395.pdf",
+      "filename": "low-resolution-pdfs/loc_evening_star_1900_01_01_0395.pdf",
+      "sha256": "9b17d42e4ab07c8add1f84b814d2d9cf5d5aaa0e2c1e03f0e591481a831672e4",
+      "bytes": 1244979,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "Library of Congress Chronicling America",
+      "license": "Public domain or no known restrictions per Library of Congress Chronicling America rights statements.",
+      "notes": [
+        "Microfilm-derived low-resolution page with noisy OCR text."
+      ]
+    },
+    {
+      "id": "nara-constitution-page-1",
+      "category": "handwritten-notes",
+      "url": "https://www.archives.gov/files/founding-docs/constitution_1_of_4_630.jpg",
+      "filename": "handwritten-notes/nara_constitution_page_1.jpg",
+      "sha256": "d8eb7df75dcb0b3512523c99f1164a3f59c34cc022bd58d353fdbf0c7f9fd148",
+      "bytes": 115796,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "National Archives founding documents downloads",
+      "license": "Public domain; National Archives requests credit as original source.",
+      "notes": [
+        "Handwritten parchment image; image-only OCR stress case."
+      ]
+    },
+    {
+      "id": "nara-constitution-page-2",
+      "category": "handwritten-notes",
+      "url": "https://www.archives.gov/files/founding-docs/constitution_2_of_4_630.jpg",
+      "filename": "handwritten-notes/nara_constitution_page_2.jpg",
+      "sha256": "28f3fbdbfc141ec0f1a5df71e412ce8bb7f9a27daa5bb86d860c49d9a394943e",
+      "bytes": 109124,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "National Archives founding documents downloads",
+      "license": "Public domain; National Archives requests credit as original source.",
+      "notes": [
+        "Handwritten parchment image; image-only OCR stress case."
+      ]
+    },
+    {
+      "id": "nara-constitution-page-3",
+      "category": "handwritten-notes",
+      "url": "https://www.archives.gov/files/founding-docs/constitution_3_of_4_630.jpg",
+      "filename": "handwritten-notes/nara_constitution_page_3.jpg",
+      "sha256": "1b32120b0a226521e7b6cca19c9533be03949e055ea522988e98139501c7942d",
+      "bytes": 116607,
+      "pages_expected": 1,
+      "max_pages": 5,
+      "source": "National Archives founding documents downloads",
+      "license": "Public domain; National Archives requests credit as original source.",
+      "notes": [
+        "Handwritten parchment image; image-only OCR stress case."
+      ]
+    },
+    {
+      "id": "sec-vprr-09040008",
+      "category": "partially-illegible-records",
+      "url": "https://www.sec.gov/Archives/edgar/vprr/0904/09040008.pdf",
+      "filename": "partially-illegible-records/sec_vprr_09040008.pdf",
+      "sha256": "fe251fccb854a46a965cbce0d2b4e1cfe3d86d738e637d42a3723307ef04e8c1",
+      "bytes": 102559,
+      "pages_expected": 2,
+      "max_pages": 5,
+      "source": "SEC EDGAR Virtual Private Reference Room",
+      "license": "Public SEC filing scan; review redistribution terms before vendoring.",
+      "notes": [
+        "Fax-quality text layer with OCR artifacts."
+      ]
+    },
+    {
+      "id": "sec-vprr-09040009",
+      "category": "partially-illegible-records",
+      "url": "https://www.sec.gov/Archives/edgar/vprr/0904/09040009.pdf",
+      "filename": "partially-illegible-records/sec_vprr_09040009.pdf",
+      "sha256": "6cabc6482f0ff8335afb0302403b891ed9ddfe0e5a4281c8e8c730a06206b344",
+      "bytes": 125545,
+      "pages_expected": 3,
+      "max_pages": 5,
+      "source": "SEC EDGAR Virtual Private Reference Room",
+      "license": "Public SEC filing scan; review redistribution terms before vendoring.",
+      "notes": [
+        "Fax-quality text layer with broken characters and low-confidence layout."
+      ]
+    },
+    {
+      "id": "govinfo-usc-17-105",
+      "category": "inconsistently-formatted-files",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/pdf/USCODE-2023-title17-chap1-sec105.pdf",
+      "filename": "inconsistently-formatted-files/govinfo_usc_17_105.pdf",
+      "sha256": "1a021fbaf033b873131ac574528952f654565bfa8d781a898c9bd8459d51df6c",
+      "bytes": 131461,
+      "pages_expected": 3,
+      "max_pages": 5,
+      "source": "GovInfo U.S. Code PDF",
+      "license": "Official U.S. government publication; generally public domain for federal legal text.",
+      "notes": [
+        "Structured legal text with editorial notes and column layout."
+      ]
+    },
+    {
+      "id": "govinfo-usc-17-107",
+      "category": "inconsistently-formatted-files",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title17/pdf/USCODE-2023-title17-chap1-sec107.pdf",
+      "filename": "inconsistently-formatted-files/govinfo_usc_17_107.pdf",
+      "sha256": "7c0cd464fba18bbce74ad09ef48dff00644c5aa0304684fafd546394b3a23445",
+      "bytes": 151737,
+      "pages_expected": 5,
+      "max_pages": 5,
+      "source": "GovInfo U.S. Code PDF",
+      "license": "Official U.S. government publication; generally public domain for federal legal text.",
+      "notes": [
+        "Structured legal text with factors, notes, and table-like references."
+      ]
+    },
+    {
+      "id": "govinfo-cfr-17-240-10b-5",
+      "category": "inconsistently-formatted-files",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title17-vol5/pdf/CFR-2024-title17-vol5-sec240-10b-5.pdf",
+      "filename": "inconsistently-formatted-files/govinfo_cfr_17_240_10b_5.pdf",
+      "sha256": "aa3ddc6268e610f9051c55051868d452f86b25ec78f5182270954788b184667b",
+      "bytes": 44165,
+      "pages_expected": 4,
+      "max_pages": 5,
+      "source": "GovInfo Code of Federal Regulations PDF",
+      "license": "Official U.S. government publication; generally public domain for federal legal text.",
+      "notes": [
+        "Regulatory text with web-navigation artifacts and section formatting."
+      ]
+    }
+  ],
+  "golden_checks": {
+    "min_documents": 15,
+    "required_categories": [
+      "scanned-pages",
+      "low-resolution-pdfs",
+      "handwritten-notes",
+      "partially-illegible-records",
+      "inconsistently-formatted-files"
+    ],
+    "max_pages_per_document": 5,
+    "min_citation_id_validity": 0.9,
+    "min_sentence_grounding_score": 0.75,
+    "max_cited_field_chunk_share": 0.6
+  }
+}

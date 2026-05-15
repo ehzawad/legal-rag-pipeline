@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-05-15T14:20:02+00:00",
+  "playbook": {
+    "name": "default-legal-review-playbook",
+    "version": 1,
+    "description": "Starter playbook for first-pass internal review. Replace with organization-specific positions before legal reliance."
+  },
+  "summary": {
+    "position_count": 5,
+    "passed_position_count": 2,
+    "finding_count": 4,
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 1,
+    "info": 0
+  },
+  "findings": [
+    {
+      "position_id": "limitation_of_liability",
+      "title": "Limitation of Liability",
+      "status": "missing_or_unconfirmed",
+      "severity": "medium",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Escalate uncapped or asymmetric liability positions and confirm whether the cap matches the team's standard."
+    },
+    {
+      "position_id": "indemnification",
+      "title": "Indemnification",
+      "status": "escalation_triggered",
+      "severity": "high",
+      "message": "Escalation term(s) found: sole discretion.",
+      "matched_terms": [
+        "sole discretion"
+      ],
+      "evidence_ids": [],
+      "guidance": "Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims."
+    },
+    {
+      "position_id": "data_protection",
+      "title": "Data Protection",
+      "status": "missing_or_unconfirmed",
+      "severity": "low",
+      "message": "Required playbook concept was not found in extracted text.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Confirm DPA coverage, deletion/return duties, breach notice timing, and subprocessors when personal data appears."
+    },
+    {
+      "position_id": "unsupported_draft_sections",
+      "title": "Unsupported Draft Sections",
+      "status": "unsupported_draft_content",
+      "severity": "medium",
+      "message": "1 draft section(s) are marked unsupported.",
+      "matched_terms": [],
+      "evidence_ids": [],
+      "guidance": "Route unsupported sections to operator review before relying on the draft."
+    }
+  ],
+  "passed_positions": [
+    {
+      "position_id": "term_termination",
+      "title": "Term and Termination",
+      "matched_terms": [
+        "30 days",
+        "notice",
+        "term",
+        "termination"
+      ],
+      "evidence_ids": [
+        "5aaabcf14b21fd40:p3:c2",
+        "18aae1ac9b6c1191:p1:c2",
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1"
+      ]
+    },
+    {
+      "position_id": "governing_law",
+      "title": "Governing Law",
+      "matched_terms": [
+        "california",
+        "jurisdiction",
+        "new york",
+        "venue"
+      ],
+      "evidence_ids": [
+        "a72d9aa7f0bed8eb:p1:c1",
+        "d61bba9a2aabfec3:fields"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "5aaabcf14b21fd40:p1:c0",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 1,
+      "score": 0.5514215114104664
+    },
+    {
+      "evidence_id": "5aaabcf14b21fd40:p2:c0",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 2,
+      "score": 0.5305639864041592
+    },
+    {
+      "evidence_id": "5aaabcf14b21fd40:p3:c2",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 3,
+      "score": 0.5160503914018809
+    },
+    {
+      "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+      "filename": "ao085_notice_consent_magistrate.pdf",
+      "page_number": 1,
+      "score": 0.5099765559793703
+    },
+    {
+      "evidence_id": "18aae1ac9b6c1191:p1:c2",
+      "filename": "sec_vprr_03000005_form_d.pdf",
+      "page_number": 1,
+      "score": 0.49453059132809635
+    },
+    {
+      "evidence_id": "e7a7d9482447de83:p1:c0",
+      "filename": "synthetic_noisy_lien_notice.pdf",
+      "page_number": 1,
+      "score": 0.4841572423710754
+    },
+    {
+      "evidence_id": "e7a7d9482447de83:p1:c1",
+      "filename": "synthetic_noisy_lien_notice.pdf",
+      "page_number": 1,
+      "score": 0.44584292854413127
+    },
+    {
+      "evidence_id": "d61bba9a2aabfec3:fields",
+      "filename": "ucsf_idl_rhwy0076.pdf",
+      "page_number": 0,
+      "score": 0.4241664428544713
+    },
+    {
+      "evidence_id": "fd38ffa95c4f3d59:p3:c0",
+      "filename": "ucsf_idl_xqjn0082_summons.pdf",
+      "page_number": 3,
+      "score": 0.4177772061952759
+    },
+    {
+      "evidence_id": "fd38ffa95c4f3d59:p3:c1",
+      "filename": "ucsf_idl_xqjn0082_summons.pdf",
+      "page_number": 3,
+      "score": 0.41731968414495246
+    }
+  ],
+  "disclaimer": "Deterministic playbook screen for operator review; not legal advice."
+}

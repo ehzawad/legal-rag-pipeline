@@ -1,0 +1,21 @@
+.git
+.pytest_cache
+.ruff_cache
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.env
+secrets
+outputs
+state
+embedding_cache
+build
+# Do NOT ignore frontend source — the multi-stage Dockerfile builds it.
+# Do ignore frontend/node_modules to keep the build context small.
+frontend/node_modules
+frontend/dist
+# Skip the host-committed UI dist; the build stage emits a fresh copy.
+src/pipeline/ui/static/dist

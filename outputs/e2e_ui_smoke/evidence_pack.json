@@ -1,0 +1,376 @@
+{
+  "case_id": "e2e-ui-smoke",
+  "draft_type": "case_fact_summary",
+  "task": "Produce a first-pass internal memo about parties, obligations, deadlines, signatures, and data-quality flags from these scanned filings.",
+  "chunks": [
+    {
+      "evidence_id": "295c87b911042976:fields",
+      "document_id": "295c87b911042976",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 0,
+      "text": "Extracted fields for sec_vprr_02000258.pdf:\namounts_or_deadlines: Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates, depending on the form type; for Form CB, until six years have elapsed following the effective date of the latest amendment to such Form CB.\ndates: Date filed for related Form CB: January 10, 2002. Document signed: January 24, 2002. SEC received/processed stamps: January 29, 2002.\ndocument_type: Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking\nparties: Filer/issuer: Kabushiki Kaisha Asahi Ginko. U.S. agent for service of process: Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch. Signatory for filer: Mr. Hideki Fukushima, Chief Deputy General Manager.\nrecording_references: Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002.\nunclear_items: Small text in SEC received stamp on page 1 is partially unclear; signatures are handwritten and not fully transcribed; top stamp on page 1 partly cut off/unclear.",
+      "score": 0.5672278037046246,
+      "metadata": {
+        "evidence_kind": "derived-fields",
+        "is_field_chunk": true,
+        "confidence": 0.9216666666666667,
+        "extraction_method": "structured-fields",
+        "derived_from": "structured_extraction",
+        "source_evidence_ids": [
+          "295c87b911042976:p1",
+          "295c87b911042976:p2",
+          "295c87b911042976:p3"
+        ],
+        "chunk_hash": "3d1e29807e8a63f0c3b94b02738016cfa022062c5fb31a306a5221c8172a2fbe",
+        "dense_score": 0.4265043133917302,
+        "bm25_score": 1.0,
+        "hybrid_score": 0.6272278037046246,
+        "base_score": 0.6272278037046246,
+        "derived_field_chunk_penalty": 0.06
+      }
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p1:c2",
+      "document_id": "ab8261141dc1f5ba",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 1,
+      "text": "it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549. Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for sales of securities",
+      "score": 0.34846853888436696,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.94,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Some stamp/handwritten items are partially unclear.",
+          "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+          "No text layer; rendering page as image for OCR.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 280,
+        "word_end": 460,
+        "chunk_hash": "f4b29a06f3ddd877bb738e8524066922f7c9eaafd92cbdb026905e4a2050229f",
+        "dense_score": 0.29217064486205374,
+        "bm25_score": 0.4530217706400915,
+        "hybrid_score": 0.34846853888436696
+      }
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p3:c0",
+      "document_id": "ab8261141dc1f5ba",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 3,
+      "text": "B. INFORMATION ABOUT OFFERING 1. Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked] Answer also in Appendix, Column 2, if filing under ULOE. 2. What is the minimum investment that will be accepted from any individual? $ 0.00 3. Does the offering permit joint ownership of a single unit? Yes [unchecked] No [checked] 4. Enter the information requested for each person who has been or will be paid or given, directly or indirectly, any commission or similar remuneration for solicitation of purchasers in connection with sales of securities in the offering. If a person to be listed is an associated person or agent of a broker or dealer registered with the SEC and/or with a state or states, list the name of the broker or dealer. If more than five (5) persons to be listed are associated persons of such a broker or dealer, you may set forth the information for that broker or dealer only. Full Name: None Business or Residence Address: [blank] Name of Associated",
+      "score": 0.3191685491914289,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+          "No text layer; rendering page as image for OCR.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "12f8e22c1324460da135813be1bc861c46f8cc6508323ecc994b84924c2b65b6",
+        "dense_score": 0.22691041043726923,
+        "bm25_score": 0.49050509259201114,
+        "hybrid_score": 0.3191685491914289
+      }
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c0",
+      "document_id": "f292902ed5f80a01",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "text": "respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the",
+      "score": 0.30682158968818163,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "No text layer; OCR/transcription from scan.",
+          "No text layer; rendering page as image for OCR."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "46280999a77bd65e0e566d7feb4e6d9217889e52aa2d7615bbbec3b4cf1052ec",
+        "dense_score": 0.31392453541495063,
+        "bm25_score": 0.29363040476703917,
+        "hybrid_score": 0.30682158968818163
+      }
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p1:c0",
+      "document_id": "ab8261141dc1f5ba",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 1,
+      "text": "FORM D UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM D NOTICE OF SALE OF SECURITIES PURSUANT TO REGULATION D, SECTION 4(6), AND/OR UNIFORM LIMITED OFFERING EXEMPTION Handwritten/printed number at top: 1386733 OMB APPROVAL OMB Number: 3235-0076 Estimated average burden hours per response . . . . . . 16.00 SEC USE ONLY Barcode/serial: 07040010 Name of Offering: Stella Station Trust Filing Under (Check box(es) that apply): Rule 504 [unchecked] Rule 505 [unchecked] Rule 506 [checked] Section 4(6) [unchecked] ULOE [unchecked] Type of Filing: New Filing [checked] Amendment [unchecked] A. BASIC IDENTIFICATION DATA 1. Enter the information requested about the issuer Name of Issuer: Stella Station Trust Address of Executive Offices: 11690 Grooms Road, Cincinnati, OH 45242 Telephone Number: 513 554 1110 Address of Principal Business Operations: [blank] Brief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property Type of Business Organization: business trust [checked]; corporation [unchecked]; limited partnership, already formed [unchecked]; limited partnership, to be formed [unchecked]; other [unchecked] Actual or Estimated Date of Incorporation or",
+      "score": 0.3009421572116026,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.94,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Some stamp/handwritten items are partially unclear.",
+          "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+          "No text layer; rendering page as image for OCR.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "487e6940f8280ad605c53fc484a917fdc833ec70125452e4fd859b188d81ebb5",
+        "dense_score": 0.28140767751964846,
+        "bm25_score": 0.33722047663951743,
+        "hybrid_score": 0.3009421572116026
+      }
+    },
+    {
+      "evidence_id": "ab8261141dc1f5ba:p4:c1",
+      "document_id": "ab8261141dc1f5ba",
+      "filename": "sec_vprr_07040010.pdf",
+      "page_number": 4,
+      "text": "Amount of Purchases $10,400.00 Non-accredited Investors: Number Investors 0; Aggregate Dollar Amount of Purchases $0.00 Total (for filings under Rule 504 only): [blank] 3. If this filing is for an offering under Rule 504 or 505, enter the information requested for all securities sold by the issuer, to date, in offerings of the types indicated, in the twelve (12) months prior to the first sale of securities in this offering. Rule 505: $0.00 Regulation A: $0.00 Rule 504: $0.00 Total: $0.00 4.a. Furnish a statement of all expenses in connection with the issuance and distribution of the securities in this offering. Transfer Agent’s Fees: $0.00 Printing and Engraving Costs: $0.00 Legal Fees: $0.00 Accounting Fees: $0.00 Engineering Fees: $0.00 Sales Commissions: $0.00 Other Expenses: $0.00 Total: $0.00 4 of 9",
+      "score": 0.2986387183708472,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.96,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Preprinted instruction text abbreviated in places; financial entries are clear.",
+          "No text layer; rendering page as image for OCR.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 140,
+        "word_end": 270,
+        "chunk_hash": "0d9ffb7ef8eb6a994fab90f3a7e25079fac671c9f378dbe2962305eeec4238c5",
+        "dense_score": 0.28588981204967834,
+        "bm25_score": 0.3223152586815895,
+        "hybrid_score": 0.2986387183708472
+      }
+    },
+    {
+      "evidence_id": "295c87b911042976:p2:c1",
+      "document_id": "295c87b911042976",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 2,
+      "text": "on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date",
+      "score": 0.27294954493423823,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.96,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Scanned page; minor speckling but text generally legible.",
+          "No text layer; rendering page as image for OCR."
+        ],
+        "word_start": 140,
+        "word_end": 320,
+        "chunk_hash": "6c94e2633ff63ba09f5bb49adfcf16e8bc57fb79e16cac831f839a9a47ab2852",
+        "dense_score": 0.30466642264238136,
+        "bm25_score": 0.2140467720476867,
+        "hybrid_score": 0.27294954493423823
+      }
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c2",
+      "document_id": "f292902ed5f80a01",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "text": "F-8, Form F-80 or Form CB; (c) its status as trustee with respect to securities registered on Form F-7, F-8, F-9, F-10, F-80, or SB-2 stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time during which any of the securities subject to the indenture remain outstanding; and (d) the use of Form 1-A or other Commission form for an offering pursuant to Regulation A stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption. Each filer further undertakes to advise the Commission promptly of any change to the Agent's name and address during the",
+      "score": 0.27190791318237295,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "No text layer; OCR/transcription from scan.",
+          "No text layer; rendering page as image for OCR."
+        ],
+        "word_start": 280,
+        "word_end": 460,
+        "chunk_hash": "1055da548e1d88087125928ff01e7438667cb6b09b542ec261920b06542283f0",
+        "dense_score": 0.296915289863194,
+        "bm25_score": 0.2254656422037053,
+        "hybrid_score": 0.27190791318237295
+      }
+    },
+    {
+      "evidence_id": "f292902ed5f80a01:p2:c3",
+      "document_id": "f292902ed5f80a01",
+      "filename": "sec_vprr_02000259.pdf",
+      "page_number": 2,
+      "text": "six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption. Each filer further undertakes to advise the Commission promptly of any change to the Agent's name and address during the applicable period by amendment of this Form, referencing the file number of the relevant form in conjunction with which the amendment is being filed. G. Each person filing this Form, other than a trustee filing in accordance with General Instruction I. (a) of this Form, undertakes to make available, in person or by telephone, representatives to respond to inquiries made by the Commission staff, and to furnish promptly, when requested to do so by the Commission staff, information relating to: the Forms, Schedules and offering statements described in General Instructions I. (a), I. (b), I. (c), I. (d) and I. (f) of this Form, as applicable; the securities to which such Forms, Schedules and offering statements relate; and the transactions in such securities. ny-319773 2",
+      "score": 0.27025318751986915,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "No text layer; OCR/transcription from scan.",
+          "No text layer; rendering page as image for OCR."
+        ],
+        "word_start": 420,
+        "word_end": 585,
+        "chunk_hash": "f37c79a20cf6271894feadae84638e25402278ced24cc9371ae8c081af73db25",
+        "dense_score": 0.29040607771291793,
+        "bm25_score": 0.23282639144706432,
+        "hybrid_score": 0.27025318751986915
+      }
+    },
+    {
+      "evidence_id": "295c87b911042976:p2:c0",
+      "document_id": "295c87b911042976",
+      "filename": "sec_vprr_02000258.pdf",
+      "page_number": 2,
+      "text": "defendant or respondent, in any appropriate court in any place subject to the jurisdiction of any state or of the United States or of any of its territories or possessions or of the District of Columbia, where the investigation, proceeding or cause of action arises out of or relates to or concerns (i) any offering made or purported to be made in connection with the securities registered or qualified by the Filer on Form CB on January 10, 2002 or any purchases or sales of any security in connection therewith; (ii) the securities in relation to which the obligation to file an annual report on Form 40-F arises, or any purchases or sales of such securities; (iii) any tender offer for the securities of a Canadian issuer with respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any",
+      "score": 0.2690816741046067,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.96,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Scanned page; minor speckling but text generally legible.",
+          "No text layer; rendering page as image for OCR."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "e3c75c0199464d1d016edd0b5c45a1b7fc8d18a45e8770bd7e9f2d30837e37b6",
+        "dense_score": 0.2733533753051054,
+        "bm25_score": 0.2611485147322521,
+        "hybrid_score": 0.2690816741046067
+      }
+    }
+  ],
+  "section_hints": {
+    "case_caption": [
+      "295c87b911042976:p2:c0",
+      "f292902ed5f80a01:p2:c0",
+      "295c87b911042976:p2:c1",
+      "295c87b911042976:fields"
+    ],
+    "parties": [
+      "295c87b911042976:p2:c0",
+      "295c87b911042976:fields"
+    ],
+    "documents_reviewed": [
+      "ab8261141dc1f5ba:p1:c2",
+      "ab8261141dc1f5ba:p1:c0",
+      "f292902ed5f80a01:p2:c0",
+      "ab8261141dc1f5ba:p4:c1",
+      "f292902ed5f80a01:p2:c3"
+    ],
+    "procedural_posture": [
+      "ab8261141dc1f5ba:p1:c2",
+      "f292902ed5f80a01:p2:c0",
+      "ab8261141dc1f5ba:p1:c0",
+      "f292902ed5f80a01:p2:c3",
+      "295c87b911042976:fields"
+    ],
+    "material_facts": [
+      "ab8261141dc1f5ba:p1:c2",
+      "295c87b911042976:fields",
+      "ab8261141dc1f5ba:p1:c0"
+    ],
+    "relief_sought": [
+      "ab8261141dc1f5ba:p1:c2",
+      "ab8261141dc1f5ba:p3:c0",
+      "ab8261141dc1f5ba:p1:c0",
+      "ab8261141dc1f5ba:p4:c1",
+      "f292902ed5f80a01:p2:c3"
+    ],
+    "open_questions": [
+      "295c87b911042976:fields"
+    ]
+  },
+  "unavailable_facts": [
+    "sec_vprr_02000258.pdf: Document is a scanned image with no text layer; transcription is based on visual reading.",
+    "sec_vprr_02000258.pdf: Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements.",
+    "sec_vprr_02000258.pdf: p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+    "sec_vprr_02000258.pdf: p.1: Top stamp partially cut off/unclear.",
+    "sec_vprr_02000258.pdf: p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000258.pdf: p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_02000258.pdf: p.2: Scanned page; minor speckling but text generally legible.",
+    "sec_vprr_02000258.pdf: p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000258.pdf: p.3: Scanned page; signatures are not transcribed except as [signature].",
+    "sec_vprr_02000258.pdf: p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+    "sec_vprr_02000258.pdf: p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000258.pdf p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+    "sec_vprr_02000258.pdf p.1: Top stamp partially cut off/unclear.",
+    "sec_vprr_02000258.pdf p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000258.pdf p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_02000258.pdf p.2: Scanned page; minor speckling but text generally legible.",
+    "sec_vprr_02000258.pdf p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000258.pdf p.3: Scanned page; signatures are not transcribed except as [signature].",
+    "sec_vprr_02000258.pdf p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+    "sec_vprr_02000258.pdf p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf: All pages have no text layer; transcription is based on scanned images.",
+    "sec_vprr_02000259.pdf: Some stamped and handwritten content is partially unclear.",
+    "sec_vprr_02000259.pdf: Top margins contain scan artifacts/dark lines, but main body text is generally readable.",
+    "sec_vprr_02000259.pdf: p.1: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf: p.1: Title line appears partially cut off or obscured after 'PROCESS A'.",
+    "sec_vprr_02000259.pdf: p.1: Stamps include partially unclear text.",
+    "sec_vprr_02000259.pdf: p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf: p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_02000259.pdf: p.2: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf: p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf: p.3: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf: p.3: Signature is handwritten and not transcribed beyond marker.",
+    "sec_vprr_02000259.pdf: p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf: p.4: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf: p.4: Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+    "sec_vprr_02000259.pdf: p.4: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf p.1: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf p.1: Title line appears partially cut off or obscured after 'PROCESS A'.",
+    "sec_vprr_02000259.pdf p.1: Stamps include partially unclear text.",
+    "sec_vprr_02000259.pdf p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_02000259.pdf p.2: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf p.3: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf p.3: Signature is handwritten and not transcribed beyond marker.",
+    "sec_vprr_02000259.pdf p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_02000259.pdf p.4: No text layer; OCR/transcription from scan.",
+    "sec_vprr_02000259.pdf p.4: Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+    "sec_vprr_02000259.pdf p.4: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: Pages are scanned images with no text layer; transcription is based on visual reading.",
+    "sec_vprr_07040010.pdf: Only pages 1 through 5 of a 9-page Form D are provided; pages 6 through 9 are absent.",
+    "sec_vprr_07040010.pdf: Some handwritten and stamped markings are partially illegible.",
+    "sec_vprr_07040010.pdf: p.1: Some stamp/handwritten items are partially unclear.",
+    "sec_vprr_07040010.pdf: p.1: Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+    "sec_vprr_07040010.pdf: p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf: p.2: Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+    "sec_vprr_07040010.pdf: p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: p.3: State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+    "sec_vprr_07040010.pdf: p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: p.3: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf: p.4: Preprinted instruction text abbreviated in places; financial entries are clear.",
+    "sec_vprr_07040010.pdf: p.4: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: p.4: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf: p.5: Handwritten signature is not fully legible.",
+    "sec_vprr_07040010.pdf: p.5: Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+    "sec_vprr_07040010.pdf: p.5: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf: p.5: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf p.1: Some stamp/handwritten items are partially unclear.",
+    "sec_vprr_07040010.pdf p.1: Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+    "sec_vprr_07040010.pdf p.1: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf p.2: Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+    "sec_vprr_07040010.pdf p.2: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf p.3: State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+    "sec_vprr_07040010.pdf p.3: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf p.3: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf p.4: Preprinted instruction text abbreviated in places; financial entries are clear.",
+    "sec_vprr_07040010.pdf p.4: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf p.4: Page contains markers suggesting illegible, redacted, or uncertain text.",
+    "sec_vprr_07040010.pdf p.5: Handwritten signature is not fully legible.",
+    "sec_vprr_07040010.pdf p.5: Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+    "sec_vprr_07040010.pdf p.5: No text layer; rendering page as image for OCR.",
+    "sec_vprr_07040010.pdf p.5: Page contains markers suggesting illegible, redacted, or uncertain text."
+  ],
+  "warnings": [
+    "Input processing produced warnings that should appear as open questions."
+  ]
+}

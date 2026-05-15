@@ -1,0 +1,2409 @@
+{
+  "case_id": "e2e-ui-smoke",
+  "created_at": "2026-05-15T06:08:51+00:00",
+  "input_dir": "/Users/ehz/harnessing/a-rag-pipeline/datasets/public-eval/scanned-pages",
+  "processed_documents": [
+    {
+      "source": {
+        "path": "/Users/ehz/harnessing/a-rag-pipeline/datasets/public-eval/scanned-pages/sec_vprr_02000258.pdf",
+        "document_id": "295c87b911042976",
+        "filename": "sec_vprr_02000258.pdf",
+        "mime_type": "application/pdf",
+        "sha256": "295c87b911042976beaac23d76490d72b9e532c1ba1c77e9b58da82db4fab37c"
+      },
+      "pages": [
+        {
+          "document_id": "295c87b911042976",
+          "page_number": 1,
+          "text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nAmendment No. 1 to\n\nFORM F-X\n\nAPPOINTMENT OF AGENT FOR SERVICE OF PROCESS AND UNDERTAKING\n\n[stamp] RECD S.E.C. JAN 29 2002 [unclear] : 086\n[stamp] PROCESSED JAN 29 2002 THOMSON FINANCIAL FILING\n[handwritten] 5-51260\n[barcode] 02000258\n\nA. Name of issuer or person filing (\"Filer\") Kabushiki Kaisha Asahi Ginko\n\nB. This is [check one]\n\n[ ] an original filing for the Filer\n\n[/] an amended filing for the Filer\n\nC. Identify the filing in conjunction with which this Form is being filed:\nName of registrant Kabushiki Kaisha Asahi Ginko\nForm type Form CB\nFile Number (if known) 5-51260\nFiled by Kabushiki Kaisha Asahi Ginko\nDate Filed (if filed concurrently, so indicate) January 10, 2002\n\nD. The Filer is incorporated or organized under the laws of (Name of the jurisdiction under whose laws the issuer is organized or incorporated) Japan and has its principal place of business at (Address in full and telephone number)\n\n1-2 Otemachi 1-chome, Chiyoda-ku, Tokyo 100-8106,\nJapan\nTelephone number: +81-3-5223-6666\n\nE. The Filer designates and appoints (Name of United States person serving as agent)\nEiji Ohashi, General Manager of The Asahi Bank, Ltd. New York branch (\"Agent\") located at (Address in full in the United States and telephone number) The Asahi Bank, Ltd., New York Branch, 101 East 52nd Street, 17th Floor, New York, New York 10022, U.S.A. (212) 432-6400 as the agent of the Filer upon whom may be served any process, pleadings, subpoenas, or other papers in\n\n(a) any investigation or administrative proceeding conducted by the Commission; and\n\n(b) any civil suit or action brought against the Filer or to which the Filer has been joined as\n\nAsahi Amendment to Form F-X\nNYDOCS01/837731.1\n\n1",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.93,
+          "warnings": [
+            "Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+            "Top stamp partially cut off/unclear.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        },
+        {
+          "document_id": "295c87b911042976",
+          "page_number": 2,
+          "text": "defendant or respondent, in any appropriate court in any place subject to the jurisdiction of any state or of the United States or of any of its territories or possessions or of the District of Columbia, where the investigation, proceeding or cause of action arises out of or relates to or concerns (i) any offering made or purported to be made in connection with the securities registered or qualified by the Filer on Form CB on January 10, 2002 or any purchases or sales of any security in connection therewith; (ii) the securities in relation to which the obligation to file an annual report on Form 40-F arises, or any purchases or sales of such securities; (iii) any tender offer for the securities of a Canadian issuer with respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made.\n\nF. Each person filing this Form in connection with:\n(a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date the issuer of the securities to which such Forms and Schedules relate has ceased reporting under the Exchange Act;\n(b) the use of Form F-8, Form F-80 or Form CB stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed following the effective date of the latest amendment to such Form F-8, Form F-80 or Form CB;\n(c) its status as trustee with respect to securities registered on Form F-7, F-8, F-9, F-10, F-80, or SB-2 stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time during which any of the securities subject to the indenture remain outstanding; and\n(d) the use of Form 1-A or other Commission form for an offering pursuant to Regulation A stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption.\nEach filer further undertakes to advise the Commission promptly of any change to the Agent's name or address during the applicable period by amendment of this Form, referencing the file number of the relevant form in conjunction with which the amendment is being filed.\nG. Each person filing this Form, other than a trustee filing in accordance with General Instruction I. (a) of this Form, undertakes to make available, in person or by telephone, representatives to respond to inquiries made by the Commission staff, and to furnish promptly, when requested to do so by the Commission staff, information relating to: the Forms, Schedules and offering\n\nAsahi Amendment to Form F-X\nNYDOCS01/837731.1\n\n2",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.96,
+          "warnings": [
+            "Scanned page; minor speckling but text generally legible.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        },
+        {
+          "document_id": "295c87b911042976",
+          "page_number": 3,
+          "text": "statements described in General Instructions I. (a), I. (b), I. (c), I. (d) and I. (f) of this Form, as applicable; the securities to which such Forms, Schedules and offering statements relate; and the transactions in such securities.\n\nThe Filer certifies that it has duly caused this power of attorney, consent, stipulation and agreement to be signed on its behalf by the undersigned, thereunto duly authorized, in the City of New York, New York Country of USA this 24th day of January, 2002.\n\nKabushiki Kaisha Asahi Ginko\nFiler\n\nBy: [signature]\nName: Mr. Hideki Fukushima\nTitle: Chief Deputy General Manager\n\nThis statement has been signed by the following persons in the capacities and on the dates indicated.\n\n[signature]\nMr. Eiji Ohashi, as Agent\n\nGeneral Manager of The Asahi Bank, Ltd. New York Branch\n(Title)\n\nJanuary 24, 2002\n(Date)\n\nAsahi Amendment to Form F-X\nNYDOCS01/837731.1\n\n3",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.95,
+          "warnings": [
+            "Scanned page; signatures are not transcribed except as [signature].",
+            "The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        }
+      ],
+      "fields": {
+        "document_type": {
+          "name": "document_type",
+          "value": "Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking",
+          "confidence": 0.98,
+          "evidence_ids": [
+            "295c87b911042976:p1"
+          ],
+          "notes": []
+        },
+        "parties": {
+          "name": "parties",
+          "value": "Filer/issuer: Kabushiki Kaisha Asahi Ginko. U.S. agent for service of process: Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch. Signatory for filer: Mr. Hideki Fukushima, Chief Deputy General Manager.",
+          "confidence": 0.96,
+          "evidence_ids": [
+            "295c87b911042976:p1",
+            "295c87b911042976:p3"
+          ],
+          "notes": [
+            "Page 1 lists the filer and agent; page 3 contains signatures/capacities."
+          ]
+        },
+        "dates": {
+          "name": "dates",
+          "value": "Date filed for related Form CB: January 10, 2002. Document signed: January 24, 2002. SEC received/processed stamps: January 29, 2002.",
+          "confidence": 0.94,
+          "evidence_ids": [
+            "295c87b911042976:p1",
+            "295c87b911042976:p2",
+            "295c87b911042976:p3"
+          ],
+          "notes": [
+            "SEC received/processed stamp includes some unclear small characters, but date is legible."
+          ]
+        },
+        "property_or_legal_description": {
+          "name": "property_or_legal_description",
+          "value": "",
+          "confidence": 0.0,
+          "evidence_ids": [],
+          "notes": [
+            "No real property or legal property description appears in the document."
+          ]
+        },
+        "recording_references": {
+          "name": "recording_references",
+          "value": "Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002.",
+          "confidence": 0.9,
+          "evidence_ids": [
+            "295c87b911042976:p1"
+          ],
+          "notes": [
+            "Barcode/reference value read from page 1; handwritten file number also appears on page 1."
+          ]
+        },
+        "amounts_or_deadlines": {
+          "name": "amounts_or_deadlines",
+          "value": "Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates, depending on the form type; for Form CB, until six years have elapsed following the effective date of the latest amendment to such Form CB.",
+          "confidence": 0.9,
+          "evidence_ids": [
+            "295c87b911042976:p2"
+          ],
+          "notes": [
+            "No monetary amounts identified."
+          ]
+        },
+        "unclear_items": {
+          "name": "unclear_items",
+          "value": "Small text in SEC received stamp on page 1 is partially unclear; signatures are handwritten and not fully transcribed; top stamp on page 1 partly cut off/unclear.",
+          "confidence": 0.85,
+          "evidence_ids": [
+            "295c87b911042976:p1",
+            "295c87b911042976:p3"
+          ],
+          "notes": []
+        }
+      },
+      "warnings": [
+        "Document is a scanned image with no text layer; transcription is based on visual reading.",
+        "Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements.",
+        "p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+        "p.1: Top stamp partially cut off/unclear.",
+        "p.1: No text layer; rendering page as image for OCR.",
+        "p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+        "p.2: Scanned page; minor speckling but text generally legible.",
+        "p.2: No text layer; rendering page as image for OCR.",
+        "p.3: Scanned page; signatures are not transcribed except as [signature].",
+        "p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+        "p.3: No text layer; rendering page as image for OCR."
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/ehz/harnessing/a-rag-pipeline/datasets/public-eval/scanned-pages/sec_vprr_02000259.pdf",
+        "document_id": "f292902ed5f80a01",
+        "filename": "sec_vprr_02000259.pdf",
+        "mime_type": "application/pdf",
+        "sha256": "f292902ed5f80a01b1e2bab40f1a7c629a2cbf79641839e0eb1d2f8f93d3644e"
+      },
+      "pages": [
+        {
+          "document_id": "f292902ed5f80a01",
+          "page_number": 1,
+          "text": "UNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM F-X\n\nAPPOINTMENT OF AGENT FOR SERVICE OF PROCESS A[cut off/unclear]\nUNDERTAKING\n\nA. Name of issuer or person filing (\"Filer\"): UFJ Shintaku Ginko Kabushiki Kaisha (formerly named Toyo Shintaku Ginko Kabushiki Kaisha)\n\nB. This is [check one]\n\n☐ an original filing for the Filer\n\n✓ an amended filing for the Filer\n\nC. Identify the filing in conjunction with which this Form is being filed:\n\nName of registrant UFJ Shintaku Ginko Kabushiki Kaisha (formerly named Toyo Shintaku Ginko Kabushiki Kaisha)\n\nForm type Form CB\n\nFile Number (if known) ________________________________\n\nFiled by UFJ Shintaku Ginko Kabushiki Kaisha (formerly named Toyo Shintaku Ginko Kabushiki Kaisha)\n\nDate Filed (if filed concurrently, so indicate) December 6, 2000\n\nD. The Filer is incorporated or organized under the laws of Japan and has its principal place of business at UFJ Trust Bank Limited, 4-3 Marunouchi, 1-Chome, Chiyoda-ku, Tokyo 100-0005, Japan, 011-81-3-3287-2211.\n\nE. The Filer designates and appoints Hiroyuki Fujiwara, Chief Representative (\"Agent\") located at UFJ Trust Bank Limited, New York Representative Office, 666 Fifth Avenue, 33rd Floor, New York, NY 10103-3395, (212) 307-3400 as the agent of the Filer upon whom may be served any process, pleadings, subpoenas, or other papers in\n\n(a) any investigation or administrative proceeding conducted by the Commission; and\n\n(b) any civil suit or action brought against the Filer or to which the Filer has been joined as defendant or respondent, in any appropriate court in any place subject to the jurisdiction of any state or of the United States or of any of its territories or possessions or of the District of Columbia, where the investigation, proceeding or cause of action arises out of or relates to or concerns (i) any offering made or purported to be made in connection with the securities registered or qualified by the Filer on Form CB on December 6, 2000 or any purchases or sales of any security in connection therewith; (ii) the securities in relation to which the obligation to file an annual report on Form 40-F arises, or any purchases or sales of such securities; (iii) any tender offer for the securities of a Canadian issuer with\n\n[stamp:] RECEIVED JAN 24 2002 WASH, D.C. 310 [unclear]\n[stamp:] PROCESSED JAN 29 2002 THOMSON FINANCIAL\n[barcode number:] 02000259\n\nny-319773\n1",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.91,
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "Title line appears partially cut off or obscured after 'PROCESS A'.",
+            "Stamps include partially unclear text.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        },
+        {
+          "document_id": "f292902ed5f80a01",
+          "page_number": 2,
+          "text": "respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made.\n\nF. Each person filing this Form in connection with:\n\n(a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date the issuer of the securities to which such Forms and Schedules relate has ceased reporting under the Exchange Act;\n\n(b) the use of Form F-8, Form F-80 or Form CB stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed following the effective date of the latest amendment to such Form F-8, Form F-80 or Form CB;\n\n(c) its status as trustee with respect to securities registered on Form F-7, F-8, F-9, F-10, F-80, or SB-2 stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time during which any of the securities subject to the indenture remain outstanding; and\n\n(d) the use of Form 1-A or other Commission form for an offering pursuant to Regulation A stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption.\n\nEach filer further undertakes to advise the Commission promptly of any change to the Agent's name and address during the applicable period by amendment of this Form, referencing the file number of the relevant form in conjunction with which the amendment is being filed.\n\nG. Each person filing this Form, other than a trustee filing in accordance with General Instruction I. (a) of this Form, undertakes to make available, in person or by telephone, representatives to respond to inquiries made by the Commission staff, and to furnish promptly, when requested to do so by the Commission staff, information relating to: the Forms, Schedules and offering statements described in General Instructions I. (a), I. (b), I. (c), I. (d) and I. (f) of this Form, as applicable; the securities to which such Forms, Schedules and offering statements relate; and the transactions in such securities.\n\nny-319773\n2",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.95,
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        },
+        {
+          "document_id": "f292902ed5f80a01",
+          "page_number": 3,
+          "text": "The Filer certifies that it has duly caused this power of attorney, consent, stipulation and agreement to be signed on its behalf by the undersigned, thereunto duly authorized, in the City of Tokyo, Country of Japan this 22nd day of January, 2002.\n\nUFJ Shintaku Ginko Kabushiki Kaisha\nFiler\n\n[signature]\nName: Shouji Watanabe\nTitle: Senior Executive Officer\n\nny-319773\n3",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.94,
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "Signature is handwritten and not transcribed beyond marker.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        },
+        {
+          "document_id": "f292902ed5f80a01",
+          "page_number": 4,
+          "text": "This statement has been signed by the following persons in the capacities and on the dates indicated.\n\n[signature]\nHiroyuki Fujiwara\n\nChief Representative\n(Title)\n\nJanuary 22, 2002\n(Date)\n\nny-319773\n4",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.92,
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        }
+      ],
+      "fields": {
+        "document_type": {
+          "name": "document_type",
+          "value": "SEC Form F-X, Appointment of Agent for Service of Process and Undertaking; amended filing for the Filer",
+          "confidence": 0.95,
+          "evidence_ids": [
+            "f292902ed5f80a01:p1"
+          ],
+          "notes": [
+            "Header states 'FORM F-X' and 'APPOINTMENT OF AGENT FOR SERVICE OF PROCESS ... UNDERTAKING'.",
+            "Checkbox indicates amended filing."
+          ]
+        },
+        "parties": {
+          "name": "parties",
+          "value": "Filer/issuer: UFJ Shintaku Ginko Kabushiki Kaisha, formerly named Toyo Shintaku Ginko Kabushiki Kaisha. Registrant/filed by: UFJ Shintaku Ginko Kabushiki Kaisha, formerly named Toyo Shintaku Ginko Kabushiki Kaisha. Agent for service of process: Hiroyuki Fujiwara, Chief Representative, UFJ Trust Bank Limited, New York Representative Office, 666 Fifth Avenue, 33rd Floor, New York, NY 10103-3395, (212) 307-3400. Signatory for filer: Shouji Watanabe, Senior Executive Officer. Additional signer: Hiroyuki Fujiwara, Chief Representative.",
+          "confidence": 0.94,
+          "evidence_ids": [
+            "f292902ed5f80a01:p1",
+            "f292902ed5f80a01:p3",
+            "f292902ed5f80a01:p4"
+          ],
+          "notes": [
+            "Page 1 provides filer, registrant, filed-by party, and agent details.",
+            "Page 3 provides filer signature block and Shouji Watanabe's title.",
+            "Page 4 provides Hiroyuki Fujiwara signature block and title."
+          ]
+        },
+        "dates": {
+          "name": "dates",
+          "value": "Date filed for related Form CB: December 6, 2000. Document signed in Tokyo, Japan: January 22, 2002 / 22nd day of January, 2002. Hiroyuki Fujiwara signature date: January 22, 2002. Received stamp: January 24, 2002. Processed stamp: January 29, 2002.",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "f292902ed5f80a01:p1",
+            "f292902ed5f80a01:p3",
+            "f292902ed5f80a01:p4"
+          ],
+          "notes": [
+            "Received and processed dates are from stamps on page 1.",
+            "Page 4 date is handwritten but legible."
+          ]
+        },
+        "property_or_legal_description": {
+          "name": "property_or_legal_description",
+          "value": "",
+          "confidence": 0.0,
+          "evidence_ids": [],
+          "notes": [
+            "No real property or legal description appears in the document."
+          ]
+        },
+        "recording_references": {
+          "name": "recording_references",
+          "value": "Barcode/reference number on page 1: 02000259. Footer/reference: ny-319773. SEC receipt stamp includes '310' or similar unclear number. File Number field is blank.",
+          "confidence": 0.82,
+          "evidence_ids": [
+            "f292902ed5f80a01:p1",
+            "f292902ed5f80a01:p2",
+            "f292902ed5f80a01:p3",
+            "f292902ed5f80a01:p4"
+          ],
+          "notes": [
+            "The SEC file number line on page 1 is not filled in.",
+            "The '310' on the received stamp is uncertain.",
+            "Footer 'ny-319773' appears on pages."
+          ]
+        },
+        "amounts_or_deadlines": {
+          "name": "amounts_or_deadlines",
+          "value": "Successor agent undertaking periods include six years after specified events for certain forms/schedules; for trustee status, during which securities subject to the indenture remain outstanding. No monetary amounts stated.",
+          "confidence": 0.89,
+          "evidence_ids": [
+            "f292902ed5f80a01:p2"
+          ],
+          "notes": [
+            "Page 2 states several six-year periods and an outstanding-securities period.",
+            "No payment amount or dollar amount found."
+          ]
+        },
+        "unclear_items": {
+          "name": "unclear_items",
+          "value": "Page 1 title line after 'APPOINTMENT OF AGENT FOR SERVICE OF PROCESS A' is cut off/unclear. Received stamp includes unclear text/number, possibly '310'. Handwritten signatures are not fully legible beyond associated printed names. Page 4 handwritten date appears to be January 22, 2002.",
+          "confidence": 0.78,
+          "evidence_ids": [
+            "f292902ed5f80a01:p1",
+            "f292902ed5f80a01:p3",
+            "f292902ed5f80a01:p4"
+          ],
+          "notes": [
+            "Document is scanned with no text layer.",
+            "Some stamps and handwritten marks are low-confidence."
+          ]
+        }
+      },
+      "warnings": [
+        "All pages have no text layer; transcription is based on scanned images.",
+        "Some stamped and handwritten content is partially unclear.",
+        "Top margins contain scan artifacts/dark lines, but main body text is generally readable.",
+        "p.1: No text layer; OCR/transcription from scan.",
+        "p.1: Title line appears partially cut off or obscured after 'PROCESS A'.",
+        "p.1: Stamps include partially unclear text.",
+        "p.1: No text layer; rendering page as image for OCR.",
+        "p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+        "p.2: No text layer; OCR/transcription from scan.",
+        "p.2: No text layer; rendering page as image for OCR.",
+        "p.3: No text layer; OCR/transcription from scan.",
+        "p.3: Signature is handwritten and not transcribed beyond marker.",
+        "p.3: No text layer; rendering page as image for OCR.",
+        "p.4: No text layer; OCR/transcription from scan.",
+        "p.4: Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+        "p.4: No text layer; rendering page as image for OCR."
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/ehz/harnessing/a-rag-pipeline/datasets/public-eval/scanned-pages/sec_vprr_07040010.pdf",
+        "document_id": "ab8261141dc1f5ba",
+        "filename": "sec_vprr_07040010.pdf",
+        "mime_type": "application/pdf",
+        "sha256": "ab8261141dc1f5ba487a09553bd0b7ea88f600b803a65483d688e22c0c0c1aa9"
+      },
+      "pages": [
+        {
+          "document_id": "ab8261141dc1f5ba",
+          "page_number": 1,
+          "text": "FORM D\n\nUNITED STATES\nSECURITIES AND EXCHANGE COMMISSION\nWashington, D.C. 20549\n\nFORM D\nNOTICE OF SALE OF SECURITIES\nPURSUANT TO REGULATION D,\nSECTION 4(6), AND/OR\nUNIFORM LIMITED OFFERING EXEMPTION\n\nHandwritten/printed number at top: 1386733\nOMB APPROVAL\nOMB Number: 3235-0076\nEstimated average burden hours per response . . . . . . 16.00\nSEC USE ONLY\nBarcode/serial: 07040010\n\nName of Offering: Stella Station Trust\nFiling Under (Check box(es) that apply): Rule 504 [unchecked] Rule 505 [unchecked] Rule 506 [checked] Section 4(6) [unchecked] ULOE [unchecked]\nType of Filing: New Filing [checked] Amendment [unchecked]\n\nA. BASIC IDENTIFICATION DATA\n1. Enter the information requested about the issuer\nName of Issuer: Stella Station Trust\nAddress of Executive Offices: 11690 Grooms Road, Cincinnati, OH 45242\nTelephone Number: 513 554 1110\nAddress of Principal Business Operations: [blank]\nBrief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property\nType of Business Organization: business trust [checked]; corporation [unchecked]; limited partnership, already formed [unchecked]; limited partnership, to be formed [unchecked]; other [unchecked]\nActual or Estimated Date of Incorporation or Organization: Month 11 Year 06; Actual [checked]; Estimated [unchecked]\nJurisdiction of Incorporation or Organization: DE\n\nStamped: PROCESSED JAN 19 2007\nSEC 1972 (6-02)\n1 of 9\n\nGENERAL INSTRUCTIONS\nFederal:\nWho Must File: All issuers making an offering of securities in reliance on an exemption under Regulation D or Section 4(6), 17 CFR 230.501 et seq. or 15 U.S.C. 77d(6).\nWhen To File: A notice must be filed no later than 15 days after the first sale of securities in the offering. A notice is deemed filed with the U.S. Securities and Exchange Commission (SEC) on the earlier of the date it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address.\nWhere To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549.\nCopies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures.\nInformation Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC.\nFiling Fee: There is no federal filing fee.\nState: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for sales of securities in those states that have adopted ULOE and that have adopted this form. Issuers relying on ULOE must file a separate notice with the Securities Administrator in each state where sales are to be, or have been made. If a state requires the payment of a fee as a precondition to the claim for the exemption, a fee in the proper amount shall accompany this form. This notice shall be filed in the appropriate states in accordance with state law. The Appendix to the notice constitutes a part of this notice and must be completed.\nATTENTION\nFailure to file notice in the appropriate states will not result in a loss of the federal exemption. Conversely, failure to file the appropriate federal notice will not result in a loss of an available state exemption unless such exemption is predicated on the filing of a federal notice.",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.94,
+          "warnings": [
+            "Some stamp/handwritten items are partially unclear.",
+            "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        },
+        {
+          "document_id": "ab8261141dc1f5ba",
+          "page_number": 2,
+          "text": "A. BASIC IDENTIFICATION DATA\n2. Enter the information requested for the following:\nEach promoter of the issuer, if the issuer has been organized within the past five years;\nEach beneficial owner having the power to vote or dispose, or direct the vote or disposition of, 10% or more of a class of equity securities of the issuer.\nEach executive officer and director of corporate issuers and of corporate general and managing partners of partnership issuers; and\nEach general and managing partner of partnership issuers.\n\nCheck Box(es) that Apply: Promoter [checked] Beneficial Owner [unchecked] Executive Officer [unchecked] Director [unchecked] General and/or Managing Partner [unchecked]\nFull Name: Phillips, Michael C.\nBusiness or Residence Address: 175 East 400 South, Suite 607, Salt Lake City, UT 84111\n\nCheck Box(es) that Apply: Promoter [checked] Beneficial Owner [unchecked] Executive Officer [unchecked] Director [unchecked] General and/or Managing Partner [unchecked]\nFull Name: Edison, Jeffrey S.\nBusiness or Residence Address: 300 East Lombard Street, Suite 1100, Baltimore, MD 21202\n\nCheck Box(es) that Apply: Promoter [checked] Beneficial Owner [unchecked] Executive Officer [unchecked] Director [unchecked] General and/or Managing Partner [unchecked]\nFull Name: Addy, R. Mark\nBusiness or Residence Address: 11690 Grooms Road, Cincinnati, OH 45242\n\nCheck Box(es) that Apply: Promoter [unchecked] Beneficial Owner [checked] Executive Officer [unchecked] Director [unchecked] General and/or Managing Partner [unchecked]\nFull Name: Phillips Edison Shopping Center Fund III, L.P.\nBusiness or Residence Address: 11690 Grooms Road, Cincinnati, OH 45242\n\nAdditional blank repeated fields follow.\n2 of 9",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.96,
+          "warnings": [
+            "Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+            "No text layer; rendering page as image for OCR."
+          ]
+        },
+        {
+          "document_id": "ab8261141dc1f5ba",
+          "page_number": 3,
+          "text": "B. INFORMATION ABOUT OFFERING\n1. Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked]\nAnswer also in Appendix, Column 2, if filing under ULOE.\n2. What is the minimum investment that will be accepted from any individual? $ 0.00\n3. Does the offering permit joint ownership of a single unit? Yes [unchecked] No [checked]\n4. Enter the information requested for each person who has been or will be paid or given, directly or indirectly, any commission or similar remuneration for solicitation of purchasers in connection with sales of securities in the offering. If a person to be listed is an associated person or agent of a broker or dealer registered with the SEC and/or with a state or states, list the name of the broker or dealer. If more than five (5) persons to be listed are associated persons of such a broker or dealer, you may set forth the information for that broker or dealer only.\nFull Name: None\nBusiness or Residence Address: [blank]\nName of Associated Broker or Dealer: [blank]\nStates in Which Person Listed Has Solicited or Intends to Solicit Purchasers: [state check boxes shown, none checked]\n\nAdditional blank solicitation/person sections follow with state check boxes shown, none checked.\n3 of 9",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.95,
+          "warnings": [
+            "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        },
+        {
+          "document_id": "ab8261141dc1f5ba",
+          "page_number": 4,
+          "text": "C. OFFERING PRICE, NUMBER OF INVESTORS, EXPENSES AND USE OF PROCEEDS\n1. Enter the aggregate offering price of securities included in this offering and the total amount already sold. Enter “0” if the answer is “none” or “zero.” If the transaction is an exchange offering, check this box [unchecked] and indicate in the columns below the amounts of the securities offered for exchange and already exchanged.\n\nType of Security / Aggregate Offering Price / Amount Already Sold\nDebt: $0.00 / $0.00\nEquity: $10,400.00 / $10,400.00; Common [unchecked] Preferred [unchecked]\nConvertible Securities (including warrants): $0.00 / $0.00\nPartnership Interests: $0.00 / $0.00\nOther: $0.00 / $0.00\nTotal: $10,400.00 / $10,400.00\n\n2. Enter the number of accredited and non-accredited investors who have purchased securities in this offering and the aggregate dollar amounts of their purchases.\nAccredited Investors: Number Investors 104; Aggregate Dollar Amount of Purchases $10,400.00\nNon-accredited Investors: Number Investors 0; Aggregate Dollar Amount of Purchases $0.00\nTotal (for filings under Rule 504 only): [blank]\n\n3. If this filing is for an offering under Rule 504 or 505, enter the information requested for all securities sold by the issuer, to date, in offerings of the types indicated, in the twelve (12) months prior to the first sale of securities in this offering.\nRule 505: $0.00\nRegulation A: $0.00\nRule 504: $0.00\nTotal: $0.00\n\n4.a. Furnish a statement of all expenses in connection with the issuance and distribution of the securities in this offering.\nTransfer Agent’s Fees: $0.00\nPrinting and Engraving Costs: $0.00\nLegal Fees: $0.00\nAccounting Fees: $0.00\nEngineering Fees: $0.00\nSales Commissions: $0.00\nOther Expenses: $0.00\nTotal: $0.00\n4 of 9",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.96,
+          "warnings": [
+            "Preprinted instruction text abbreviated in places; financial entries are clear.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        },
+        {
+          "document_id": "ab8261141dc1f5ba",
+          "page_number": 5,
+          "text": "C. OFFERING PRICE, NUMBER OF INVESTORS, EXPENSES AND USE OF PROCEEDS\n4.b. Enter the difference between the aggregate offering price given in response to Part C — Question 1 and total expenses furnished in response to Part C — Question 4.a. This difference is the “adjusted gross proceeds to the issuer.” $10,400.00\n\n5. Indicate below the amount of the adjusted gross proceed to the issuer used or proposed to be used for each of the purposes shown.\nPayments to Officers, Directors, & Affiliates / Payments to Others\nSalaries and fees: $0.00 / $0.00\nPurchase of real estate: $0.00 / $10400\nPurchase, rental or leasing and installation of machinery and equipment: $0.00 / $0.00\nConstruction or leasing of plant buildings and facilities: $0.00 / $0.00\nAcquisition of other businesses: $0.00 / $0.00\nRepayment of indebtedness: $0.00 / $0.00\nWorking capital: $0.00 / $0.00\nOther: $0.00 / $0.00\nColumn Totals: $0.00 / $10,400.00\nTotal Payments Listed (column totals added): $10,400.00\n\nD. FEDERAL SIGNATURE\nThe issuer has duly caused this notice to be signed by the undersigned duly authorized person.\nIssuer (Print or Type): Stella Station Trust\nSignature: [handwritten signature]\nDate: 1-10, 2006 [handwritten; comma/mark unclear]\nName of Signer (Print or Type): R. Mark Addy\nTitle of Signer (Print or Type): Vice President\n\nATTENTION\nIntentional misstatements or omissions of fact constitute federal criminal violations. (See 18 U.S.C. 1001.)\n5 of 9",
+          "extraction_method": "pdf-rendered-png",
+          "confidence": 0.91,
+          "warnings": [
+            "Handwritten signature is not fully legible.",
+            "Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ]
+        }
+      ],
+      "fields": {
+        "document_type": {
+          "name": "document_type",
+          "value": "SEC Form D, Notice of Sale of Securities Pursuant to Regulation D, Section 4(6), and/or Uniform Limited Offering Exemption",
+          "confidence": 0.98,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1"
+          ],
+          "notes": [
+            "Page 1 title states FORM D and notice title."
+          ]
+        },
+        "parties": {
+          "name": "parties",
+          "value": "Issuer/Offering: Stella Station Trust. Promoters: Phillips, Michael C.; Edison, Jeffrey S.; Addy, R. Mark. Beneficial Owner: Phillips Edison Shopping Center Fund III, L.P. Signer: R. Mark Addy, Vice President.",
+          "confidence": 0.96,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1",
+            "ab8261141dc1f5ba:p2",
+            "ab8261141dc1f5ba:p5"
+          ],
+          "notes": [
+            "Issuer and offering name on page 1.",
+            "Promoters and beneficial owner listed on page 2.",
+            "Federal signature block on page 5."
+          ]
+        },
+        "dates": {
+          "name": "dates",
+          "value": "Organization date: 11/2006, marked Actual. Processed stamp: Jan 19 2007. Signature date: handwritten, appears to be 1-10, 2006 or similar.",
+          "confidence": 0.82,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1",
+            "ab8261141dc1f5ba:p5"
+          ],
+          "notes": [
+            "Signature date is handwritten and uncertain.",
+            "Organization date shown as month 11, year 06."
+          ]
+        },
+        "property_or_legal_description": {
+          "name": "property_or_legal_description",
+          "value": "Business description includes purchase, holding, leasing, management, sale, exchange, redevelopment, subdivision and improvement of real property and interests in real property. Use of proceeds lists purchase of real estate with $10,400 to others.",
+          "confidence": 0.89,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1",
+            "ab8261141dc1f5ba:p5"
+          ],
+          "notes": [
+            "No specific parcel, address, or legal property description is provided."
+          ]
+        },
+        "recording_references": {
+          "name": "recording_references",
+          "value": "SEC barcode/serial visible: 07040010; handwritten/printed number at top: 1386733; SEC processed stamp Jan 19 2007.",
+          "confidence": 0.88,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1"
+          ],
+          "notes": [
+            "Not a real estate recording reference; these appear to be SEC processing/reference markings."
+          ]
+        },
+        "amounts_or_deadlines": {
+          "name": "amounts_or_deadlines",
+          "value": "Minimum individual investment: $0.00. Aggregate offering price: Debt $0.00, Equity $10,400.00, Total $10,400.00. Amount already sold: Equity $10,400.00, Total $10,400.00. Accredited investors: 104 purchasing $10,400.00. Non-accredited investors: 0 purchasing $0.00. Expenses total: $0.00. Adjusted gross proceeds to issuer: $10,400.00. Use of proceeds: purchase of real estate, payments to others, $10,400.00; total payments listed $10,400.00.",
+          "confidence": 0.96,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p3",
+            "ab8261141dc1f5ba:p4",
+            "ab8261141dc1f5ba:p5"
+          ],
+          "notes": [
+            "Page 1 instructions mention Form D deadline generally: no later than 15 days after first sale of securities; this is preprinted instruction text, not a transaction-specific deadline."
+          ]
+        },
+        "unclear_items": {
+          "name": "unclear_items",
+          "value": "Handwritten signature on page 5 is not fully legible. Handwritten date on page 5 appears to be '1-10, 2006' or similar but is unclear. Some SEC stamp/handwritten processing marks on page 1 are partially illegible.",
+          "confidence": 0.78,
+          "evidence_ids": [
+            "ab8261141dc1f5ba:p1",
+            "ab8261141dc1f5ba:p5"
+          ],
+          "notes": [
+            "Unclear items are visibly qualified and not inferred beyond what is readable."
+          ]
+        }
+      },
+      "warnings": [
+        "Pages are scanned images with no text layer; transcription is based on visual reading.",
+        "Only pages 1 through 5 of a 9-page Form D are provided; pages 6 through 9 are absent.",
+        "Some handwritten and stamped markings are partially illegible.",
+        "p.1: Some stamp/handwritten items are partially unclear.",
+        "p.1: Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+        "p.1: No text layer; rendering page as image for OCR.",
+        "p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+        "p.2: Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+        "p.2: No text layer; rendering page as image for OCR.",
+        "p.3: State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+        "p.3: No text layer; rendering page as image for OCR.",
+        "p.3: Page contains markers suggesting illegible, redacted, or uncertain text.",
+        "p.4: Preprinted instruction text abbreviated in places; financial entries are clear.",
+        "p.4: No text layer; rendering page as image for OCR.",
+        "p.4: Page contains markers suggesting illegible, redacted, or uncertain text.",
+        "p.5: Handwritten signature is not fully legible.",
+        "p.5: Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+        "p.5: No text layer; rendering page as image for OCR.",
+        "p.5: Page contains markers suggesting illegible, redacted, or uncertain text."
+      ]
+    }
+  ],
+  "draft": {
+    "draft_type": "case_fact_summary",
+    "title": "Case Fact Summary",
+    "generated_at": "2026-05-15T06:08:51+00:00",
+    "sections": [
+      {
+        "heading": "Documents Reviewed",
+        "body": "- Compliance Review Memo: The provided records include an Amendment No. 1 to Form F-X for sec_vprr_02000258.pdf, a Form F-X-related scanned filing for sec_vprr_02000259.pdf, and a Form D for sec_vprr_07040010.pdf. [295c87b911042976:fields] [ab8261141dc1f5ba:p1:c0] [f292902ed5f80a01:p2:c0]\n  - claim_id: `claim_d3df41df3031`",
+        "evidence_ids": [
+          "295c87b911042976:fields",
+          "ab8261141dc1f5ba:p1:c0",
+          "f292902ed5f80a01:p2:c0"
+        ],
+        "citation_quotes": {
+          "295c87b911042976:fields": "document_type: Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking",
+          "ab8261141dc1f5ba:p1:c0": "FORM D NOTICE OF SALE OF SECURITIES PURSUANT TO REGULATION D, SECTION 4(6), AND/OR UNIFORM LIMITED OFFERING EXEMPTION",
+          "f292902ed5f80a01:p2:c0": "Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F"
+        },
+        "unsupported": false
+      },
+      {
+        "heading": "Parties",
+        "body": "- The Amendment No. 1 to Form F-X identifies Kabushiki Kaisha Asahi Ginko as the filer/issuer. [295c87b911042976:fields]\n  - claim_id: `claim_b05dae8a1bcd`\n- The U.S. agent for service of process in the Amendment No. 1 to Form F-X is identified as Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch. [295c87b911042976:fields]\n  - claim_id: `claim_5d1bfe67826e`\n- The signatory for the Form F-X filer is identified as Mr. Hideki Fukushima, Chief Deputy General Manager. [295c87b911042976:fields]\n  - claim_id: `claim_70b537b288e9`\n- The Form D identifies Stella Station Trust as the name of the offering and the issuer. [ab8261141dc1f5ba:p1:c0]\n  - claim_id: `claim_87c5ed834dc1`\n- The Form D lists the issuer’s executive office address as 11690 Grooms Road, Cincinnati, OH 45242, with telephone number 513 554 1110. [ab8261141dc1f5ba:p1:c0]\n  - claim_id: `claim_c398b13d793a`",
+        "evidence_ids": [
+          "295c87b911042976:fields",
+          "ab8261141dc1f5ba:p1:c0"
+        ],
+        "citation_quotes": {
+          "295c87b911042976:fields": "Filer/issuer: Kabushiki Kaisha Asahi Ginko",
+          "ab8261141dc1f5ba:p1:c0": "Name of Offering: Stella Station Trust"
+        },
+        "unsupported": false
+      },
+      {
+        "heading": "Material Facts",
+        "body": "- The Form D describes Stella Station Trust’s business as purchasing, holding, leasing, managing, selling, exchanging, redeveloping, subdividing, and improving real property and interests in real property. [ab8261141dc1f5ba:p1:c0]\n  - claim_id: `claim_d9178093334e`\n- The Form D indicates the filing was made under Rule 506 and marked as a new filing. [ab8261141dc1f5ba:p1:c0]\n  - claim_id: `claim_1daec89f241e`\n- The Form D states the issuer did not intend to sell to non-accredited investors in the offering. [ab8261141dc1f5ba:p3:c0]\n  - claim_id: `claim_6e7026915f69`\n- The Form D lists the minimum investment accepted from any individual as $0.00. [ab8261141dc1f5ba:p3:c0]\n  - claim_id: `claim_2feb1800e564`\n- The Form D indicates joint ownership of a single unit was not permitted. [ab8261141dc1f5ba:p3:c0]\n  - claim_id: `claim_6faea2bf4c45`\n- The Form D lists no person paid or given commission or similar remuneration for solicitation of purchasers in connection with securities sales in the offering. [ab8261141dc1f5ba:p3:c0]\n  - claim_id: `claim_f6d5552bf071`\n- The Form D reports accredited-investor purchases of $10,400.00 and non-accredited-investor purchases of $0.00. [ab8261141dc1f5ba:p4:c1]\n  - claim_id: `claim_dd6c57994c83`\n- The Form D reports $0.00 for listed issuance and distribution expenses, including transfer agent fees, printing and engraving, legal fees, accounting fees, engineering fees, sales commissions, other expenses, and total expenses. [ab8261141dc1f5ba:p4:c1]\n  - claim_id: `claim_f3062d566d09`\n- The Form F-X text states that civil suits, actions, or administrative proceedings may be commenced by service of process upon the agent for service of process, and that administrative subpoenas may be served on that agent. [295c87b911042976:p2:c1]\n  - claim_id: `claim_7534582acb23`\n- The Form F-X text states that service upon the agent is to be treated as valid and binding as if personal service had been made. [295c87b911042976:p2:c1]\n  - claim_id: `claim_489c0b55069a`\n- The Form F-X text includes an undertaking to appoint a successor agent and file an amended Form F-X if the filer discharges the agent or the agent is unwilling or unable to accept service. [295c87b911042976:p2:c1] [f292902ed5f80a01:p2:c2]\n  - claim_id: `claim_e93b479b623e`\n- For certain Form F-X filing contexts, the undertaking to appoint a successor agent and file an amended Form F-X runs until six years have elapsed from specified triggering dates; confirm before treating as a deadline. [295c87b911042976:p2:c1] [f292902ed5f80a01:p2:c2] [295c87b911042976:fields]\n  - claim_id: `claim_98ecaf7e6263`\n- The Form F-X text includes an undertaking to advise the Commission promptly of any change to the agent’s name and address. [f292902ed5f80a01:p2:c2]\n  - claim_id: `claim_08e54c3eb6ba`\n- The Form D instructions state that five copies of the notice must be filed with the SEC, one manually signed, and unsigned copies must be photocopies of the manually signed copy or bear typed or printed signatures. [ab8261141dc1f5ba:p1:c2]\n  - claim_id: `claim_3a12aaf599d2`\n- The Form D instructions state that there is no federal filing fee. [ab8261141dc1f5ba:p1:c2]\n  - claim_id: `claim_792b7878fa52`",
+        "evidence_ids": [
+          "ab8261141dc1f5ba:p1:c0",
+          "ab8261141dc1f5ba:p3:c0",
+          "ab8261141dc1f5ba:p4:c1",
+          "295c87b911042976:p2:c1",
+          "f292902ed5f80a01:p2:c2",
+          "295c87b911042976:fields",
+          "ab8261141dc1f5ba:p1:c2"
+        ],
+        "citation_quotes": {
+          "ab8261141dc1f5ba:p1:c0": "Brief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property",
+          "ab8261141dc1f5ba:p3:c0": "Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked]",
+          "ab8261141dc1f5ba:p4:c1": "Amount of Purchases $10,400.00",
+          "295c87b911042976:p2:c1": "any such civil suit or action or administrative proceeding may be commenced by the service of process upon",
+          "f292902ed5f80a01:p2:c2": "appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service",
+          "295c87b911042976:fields": "Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates",
+          "ab8261141dc1f5ba:p1:c2": "Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed"
+        },
+        "unsupported": false
+      },
+      {
+        "heading": "Procedural Posture",
+        "body": "- The Form F-X-related records include a related Form CB filing, file number 5-51260, barcode/reference 02000258, and SEC received/processed date of January 29, 2002. [295c87b911042976:fields]\n  - claim_id: `claim_d6bc1429e736`\n- The related Form CB filing date is recorded as January 10, 2002, and the Form F-X document is recorded as signed on January 24, 2002. [295c87b911042976:fields]\n  - claim_id: `claim_0e0b50bcbdfa`\n- The Form D page carries barcode/serial number 07040010 and a handwritten/printed number at top of 1386733. [ab8261141dc1f5ba:p1:c0]\n  - claim_id: `claim_877af93ecbef`\n- The Form D instructions list the filing address as the U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549. [ab8261141dc1f5ba:p1:c2]\n  - claim_id: `claim_a9af6c174a20`",
+        "evidence_ids": [
+          "295c87b911042976:fields",
+          "ab8261141dc1f5ba:p1:c0",
+          "ab8261141dc1f5ba:p1:c2"
+        ],
+        "citation_quotes": {
+          "295c87b911042976:fields": "Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002",
+          "ab8261141dc1f5ba:p1:c0": "Handwritten/printed number at top: 1386733",
+          "ab8261141dc1f5ba:p1:c2": "Where To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549"
+        },
+        "unsupported": false
+      },
+      {
+        "heading": "Open Questions",
+        "body": "- Items Requiring Verification: The scanned records have no text layer, and transcription is based on visual reading or OCR from scanned images.\n  - claim_id: `claim_285b45af7fc1`\n- Items Requiring Verification: Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements, including partially unclear stamped and handwritten content.\n  - claim_id: `claim_4c2decfdc4f4`\n- Items Requiring Verification: sec_vprr_02000258.pdf page 1 reportedly contains scanned-page stamps and handwritten notation, with small stamp text partly unclear, a partly cut-off or unclear top stamp, and markers suggesting illegible, redacted, or uncertain text.\n  - claim_id: `claim_6802acb510a9`\n- Items Requiring Verification: sec_vprr_02000258.pdf page 2 reportedly has minor speckling but generally legible text.\n  - claim_id: `claim_88250c28fe29`\n- Items Requiring Verification: sec_vprr_02000258.pdf page 3 reportedly contains signatures not transcribed except as [signature], and the phrase “Country of USA” appears as printed or typed with no correction inferred.\n  - claim_id: `claim_b61cf13c70f9`\n- Items Requiring Verification: sec_vprr_02000259.pdf reportedly has no text layer, scan artifacts or dark lines in the top margins, and partially unclear stamped and handwritten content.\n  - claim_id: `claim_2909022d6fe7`\n- Items Requiring Verification: sec_vprr_02000259.pdf page 1 reportedly has a title line partly cut off or obscured after “PROCESS A,” and stamps include partially unclear text.\n  - claim_id: `claim_783dfd562d4d`\n- Items Requiring Verification: sec_vprr_02000259.pdf page 3 reportedly contains a handwritten signature not transcribed beyond a marker.\n  - claim_id: `claim_700f30b4a4e3`\n- Items Requiring Verification: sec_vprr_02000259.pdf page 4 reportedly has a handwritten signature and date, with the date appearing to read “January 22, 2002.”\n  - claim_id: `claim_9ae96ceeb80f`\n- Items Requiring Verification: sec_vprr_07040010.pdf reportedly provides only pages 1 through 5 of a 9-page Form D; pages 6 through 9 are absent.\n  - claim_id: `claim_8aee366150e4`\n- Items Requiring Verification: sec_vprr_07040010.pdf reportedly includes partially illegible handwritten and stamped markings, repeated blank sections summarized rather than transcribed line-for-line, and state checkbox lists visible but not fully transcribed.\n  - claim_id: `claim_4edf4cde4735`\n- Items Requiring Verification: sec_vprr_07040010.pdf page 5 reportedly has a handwritten signature that is not fully legible and a handwritten date that appears to read “1-10, 2006” or similar, with unclear formatting or mark.\n  - claim_id: `claim_042ef23ffa1f`\n- Document is a scanned image with no text layer; transcription is based on visual reading.\n  - claim_id: `claim_ea8f5cda94e7`\n- Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements.\n  - claim_id: `claim_5f7f324d7318`\n- p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.\n  - claim_id: `claim_60d9066714c3`\n- p.1: Top stamp partially cut off/unclear.\n  - claim_id: `claim_0fc31084c44d`\n- p.1: No text layer; rendering page as image for OCR.\n  - claim_id: `claim_8583f5a89bae`\n- p.1: Page contains markers suggesting illegible, redacted, or uncertain text.\n  - claim_id: `claim_82133751d166`\n- p.2: Scanned page; minor speckling but text generally legible.\n  - claim_id: `claim_f702e59ebdc9`\n- p.2: No text layer; rendering page as image for OCR.\n  - claim_id: `claim_33dacb0641d3`\n- p.3: Scanned page; signatures are not transcribed except as [signature].\n  - claim_id: `claim_5b388f153442`\n- p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.\n  - claim_id: `claim_ead1566f0e2d`\n- p.3: No text layer; rendering page as image for OCR.\n  - claim_id: `claim_a64ad8a584aa`\n- All pages have no text layer; transcription is based on scanned images.\n  - claim_id: `claim_6ca7fcb474e6`\n- Some stamped and handwritten content is partially unclear.\n  - claim_id: `claim_6434920c50c4`\n- Top margins contain scan artifacts/dark lines, but main body text is generally readable.\n  - claim_id: `claim_bf587ab9bb1e`\n- Title line appears partially cut off or obscured after 'PROCESS A'.\n  - claim_id: `claim_37a56ed3aff0`\n- Signature and date are handwritten; date appears to read 'January 22, 2002'.\n  - claim_id: `claim_625f21d8c2b5`\n- Pages are scanned images with no text layer; transcription is based on visual reading.\n  - claim_id: `claim_59b6b1204d7e`\n- Only pages 1 through 5 of a 9-page Form D are provided; pages 6 through 9 are absent.\n  - claim_id: `claim_de3c94e6f039`\n- Some handwritten and stamped markings are partially illegible.\n  - claim_id: `claim_26f955a59272`\n- Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.\n  - claim_id: `claim_53654e3388c8`\n- Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.\n  - claim_id: `claim_61396b07ea23`\n- State checkbox lists are visible but not transcribed individually in full for repeated blank sections.\n  - claim_id: `claim_8d76d6f651ea`\n- Preprinted instruction text abbreviated in places; financial entries are clear.\n  - claim_id: `claim_39a7ed7ff5c0`\n- Handwritten signature is not fully legible.\n  - claim_id: `claim_7a091e824da9`\n- Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.\n  - claim_id: `claim_f05c4c8b9f81`\n- Confirm all handwritten dates and signatures against source images before using them as operative deadlines or execution facts.\n  - claim_id: `claim_8d06cc15b8c4`\n- Confirm whether pages 6 through 9 of the Form D are available before treating the Form D record as complete.\n  - claim_id: `claim_553c8fb7e3fc`",
+        "evidence_ids": [],
+        "citation_quotes": {},
+        "unsupported": true
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "295c87b911042976:fields",
+        "document_id": "295c87b911042976",
+        "filename": "sec_vprr_02000258.pdf",
+        "page_number": 0,
+        "text": "Extracted fields for sec_vprr_02000258.pdf:\namounts_or_deadlines: Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates, depending on the form type; for Form CB, until six years have elapsed following the effective date of the latest amendment to such Form CB.\ndates: Date filed for related Form CB: January 10, 2002. Document signed: January 24, 2002. SEC received/processed stamps: January 29, 2002.\ndocument_type: Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking\nparties: Filer/issuer: Kabushiki Kaisha Asahi Ginko. U.S. agent for service of process: Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch. Signatory for filer: Mr. Hideki Fukushima, Chief Deputy General Manager.\nrecording_references: Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002.\nunclear_items: Small text in SEC received stamp on page 1 is partially unclear; signatures are handwritten and not fully transcribed; top stamp on page 1 partly cut off/unclear.",
+        "score": 0.5672278037046246,
+        "metadata": {
+          "evidence_kind": "derived-fields",
+          "is_field_chunk": true,
+          "confidence": 0.9216666666666667,
+          "extraction_method": "structured-fields",
+          "derived_from": "structured_extraction",
+          "source_evidence_ids": [
+            "295c87b911042976:p1",
+            "295c87b911042976:p2",
+            "295c87b911042976:p3"
+          ],
+          "chunk_hash": "3d1e29807e8a63f0c3b94b02738016cfa022062c5fb31a306a5221c8172a2fbe",
+          "dense_score": 0.4265043133917302,
+          "bm25_score": 1.0,
+          "hybrid_score": 0.6272278037046246,
+          "base_score": 0.6272278037046246,
+          "derived_field_chunk_penalty": 0.06
+        }
+      },
+      {
+        "evidence_id": "ab8261141dc1f5ba:p1:c2",
+        "document_id": "ab8261141dc1f5ba",
+        "filename": "sec_vprr_07040010.pdf",
+        "page_number": 1,
+        "text": "it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549. Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for sales of securities",
+        "score": 0.34846853888436696,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.94,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Some stamp/handwritten items are partially unclear.",
+            "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 280,
+          "word_end": 460,
+          "chunk_hash": "f4b29a06f3ddd877bb738e8524066922f7c9eaafd92cbdb026905e4a2050229f",
+          "dense_score": 0.29217064486205374,
+          "bm25_score": 0.4530217706400915,
+          "hybrid_score": 0.34846853888436696
+        }
+      },
+      {
+        "evidence_id": "ab8261141dc1f5ba:p3:c0",
+        "document_id": "ab8261141dc1f5ba",
+        "filename": "sec_vprr_07040010.pdf",
+        "page_number": 3,
+        "text": "B. INFORMATION ABOUT OFFERING 1. Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked] Answer also in Appendix, Column 2, if filing under ULOE. 2. What is the minimum investment that will be accepted from any individual? $ 0.00 3. Does the offering permit joint ownership of a single unit? Yes [unchecked] No [checked] 4. Enter the information requested for each person who has been or will be paid or given, directly or indirectly, any commission or similar remuneration for solicitation of purchasers in connection with sales of securities in the offering. If a person to be listed is an associated person or agent of a broker or dealer registered with the SEC and/or with a state or states, list the name of the broker or dealer. If more than five (5) persons to be listed are associated persons of such a broker or dealer, you may set forth the information for that broker or dealer only. Full Name: None Business or Residence Address: [blank] Name of Associated",
+        "score": 0.3191685491914289,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "12f8e22c1324460da135813be1bc861c46f8cc6508323ecc994b84924c2b65b6",
+          "dense_score": 0.22691041043726923,
+          "bm25_score": 0.49050509259201114,
+          "hybrid_score": 0.3191685491914289
+        }
+      },
+      {
+        "evidence_id": "f292902ed5f80a01:p2:c0",
+        "document_id": "f292902ed5f80a01",
+        "filename": "sec_vprr_02000259.pdf",
+        "page_number": 2,
+        "text": "respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the",
+        "score": 0.30682158968818163,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "No text layer; rendering page as image for OCR."
+          ],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "46280999a77bd65e0e566d7feb4e6d9217889e52aa2d7615bbbec3b4cf1052ec",
+          "dense_score": 0.31392453541495063,
+          "bm25_score": 0.29363040476703917,
+          "hybrid_score": 0.30682158968818163
+        }
+      },
+      {
+        "evidence_id": "ab8261141dc1f5ba:p1:c0",
+        "document_id": "ab8261141dc1f5ba",
+        "filename": "sec_vprr_07040010.pdf",
+        "page_number": 1,
+        "text": "FORM D UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM D NOTICE OF SALE OF SECURITIES PURSUANT TO REGULATION D, SECTION 4(6), AND/OR UNIFORM LIMITED OFFERING EXEMPTION Handwritten/printed number at top: 1386733 OMB APPROVAL OMB Number: 3235-0076 Estimated average burden hours per response . . . . . . 16.00 SEC USE ONLY Barcode/serial: 07040010 Name of Offering: Stella Station Trust Filing Under (Check box(es) that apply): Rule 504 [unchecked] Rule 505 [unchecked] Rule 506 [checked] Section 4(6) [unchecked] ULOE [unchecked] Type of Filing: New Filing [checked] Amendment [unchecked] A. BASIC IDENTIFICATION DATA 1. Enter the information requested about the issuer Name of Issuer: Stella Station Trust Address of Executive Offices: 11690 Grooms Road, Cincinnati, OH 45242 Telephone Number: 513 554 1110 Address of Principal Business Operations: [blank] Brief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property Type of Business Organization: business trust [checked]; corporation [unchecked]; limited partnership, already formed [unchecked]; limited partnership, to be formed [unchecked]; other [unchecked] Actual or Estimated Date of Incorporation or",
+        "score": 0.3009421572116026,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.94,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Some stamp/handwritten items are partially unclear.",
+            "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "487e6940f8280ad605c53fc484a917fdc833ec70125452e4fd859b188d81ebb5",
+          "dense_score": 0.28140767751964846,
+          "bm25_score": 0.33722047663951743,
+          "hybrid_score": 0.3009421572116026
+        }
+      },
+      {
+        "evidence_id": "ab8261141dc1f5ba:p4:c1",
+        "document_id": "ab8261141dc1f5ba",
+        "filename": "sec_vprr_07040010.pdf",
+        "page_number": 4,
+        "text": "Amount of Purchases $10,400.00 Non-accredited Investors: Number Investors 0; Aggregate Dollar Amount of Purchases $0.00 Total (for filings under Rule 504 only): [blank] 3. If this filing is for an offering under Rule 504 or 505, enter the information requested for all securities sold by the issuer, to date, in offerings of the types indicated, in the twelve (12) months prior to the first sale of securities in this offering. Rule 505: $0.00 Regulation A: $0.00 Rule 504: $0.00 Total: $0.00 4.a. Furnish a statement of all expenses in connection with the issuance and distribution of the securities in this offering. Transfer Agent’s Fees: $0.00 Printing and Engraving Costs: $0.00 Legal Fees: $0.00 Accounting Fees: $0.00 Engineering Fees: $0.00 Sales Commissions: $0.00 Other Expenses: $0.00 Total: $0.00 4 of 9",
+        "score": 0.2986387183708472,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.96,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Preprinted instruction text abbreviated in places; financial entries are clear.",
+            "No text layer; rendering page as image for OCR.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 140,
+          "word_end": 270,
+          "chunk_hash": "0d9ffb7ef8eb6a994fab90f3a7e25079fac671c9f378dbe2962305eeec4238c5",
+          "dense_score": 0.28588981204967834,
+          "bm25_score": 0.3223152586815895,
+          "hybrid_score": 0.2986387183708472
+        }
+      },
+      {
+        "evidence_id": "295c87b911042976:p2:c1",
+        "document_id": "295c87b911042976",
+        "filename": "sec_vprr_02000258.pdf",
+        "page_number": 2,
+        "text": "on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date",
+        "score": 0.27294954493423823,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.96,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Scanned page; minor speckling but text generally legible.",
+            "No text layer; rendering page as image for OCR."
+          ],
+          "word_start": 140,
+          "word_end": 320,
+          "chunk_hash": "6c94e2633ff63ba09f5bb49adfcf16e8bc57fb79e16cac831f839a9a47ab2852",
+          "dense_score": 0.30466642264238136,
+          "bm25_score": 0.2140467720476867,
+          "hybrid_score": 0.27294954493423823
+        }
+      },
+      {
+        "evidence_id": "f292902ed5f80a01:p2:c2",
+        "document_id": "f292902ed5f80a01",
+        "filename": "sec_vprr_02000259.pdf",
+        "page_number": 2,
+        "text": "F-8, Form F-80 or Form CB; (c) its status as trustee with respect to securities registered on Form F-7, F-8, F-9, F-10, F-80, or SB-2 stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time during which any of the securities subject to the indenture remain outstanding; and (d) the use of Form 1-A or other Commission form for an offering pursuant to Regulation A stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption. Each filer further undertakes to advise the Commission promptly of any change to the Agent's name and address during the",
+        "score": 0.27190791318237295,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "No text layer; OCR/transcription from scan.",
+            "No text layer; rendering page as image for OCR."
+          ],
+          "word_start": 280,
+          "word_end": 460,
+          "chunk_hash": "1055da548e1d88087125928ff01e7438667cb6b09b542ec261920b06542283f0",
+          "dense_score": 0.296915289863194,
+          "bm25_score": 0.2254656422037053,
+          "hybrid_score": 0.27190791318237295
+        }
+      }
+    ],
+    "warnings": [
+      "Input processing produced warnings that should appear as open questions.",
+      "Every factual claim must carry an inline citation; open-question entries preserve unsupported scan-quality flags without treating them as established record facts.",
+      "Decimal-punctuated aggregate or net-income figures in a millions context should be treated as transcription errors pending source reconciliation; no such millions-context figure was established from the cited evidence.",
+      "Marked section 'Procedural Posture' for review because it contains uncited factual sentence(s): The Form D instructions list the filing address as the U.S. Securities and Exchange Commission, 450 Fifth Street, N.W...",
+      "Advisory claim-support check flagged section 'Parties' for weak lexical overlap between cited sentence(s) and verbatim quote(s): The U.S. agent for service of process in the Amendment No. 1 to Form F-X is identified as Eiji Ohashi, General Manage...; The signatory for the Form F-X filer is identified as Mr. Hideki Fukushima, Chief Deputy General Manager [295c87b9110...; The Form D lists the issuer’s executive office address as 11690 Grooms Road, Cincinnati, OH 45242, with telephone num...",
+      "Advisory claim-support check flagged section 'Material Facts' for weak lexical overlap between cited sentence(s) and verbatim quote(s): The Form D indicates the filing was made under Rule 506 and marked as a new filing [ab8261141dc1f5ba:p1:c0]; The Form D lists the minimum investment accepted from any individual as $0.00 [ab8261141dc1f5ba:p3:c0]; The Form D indicates joint ownership of a single unit was not permitted [ab8261141dc1f5ba:p3:c0]"
+    ],
+    "case_summary": {
+      "case_id": "e2e-ui-smoke",
+      "generated_at": "2026-05-15T06:08:51+00:00",
+      "title": "Case Fact Summary",
+      "section_order": [
+        "documents_reviewed",
+        "parties",
+        "material_facts",
+        "procedural_posture",
+        "open_questions"
+      ],
+      "claims": [
+        {
+          "claim_id": "claim_d3df41df3031",
+          "section_id": "documents_reviewed",
+          "section": "Documents Reviewed",
+          "text": "Compliance Review Memo: The provided records include an Amendment No. 1 to Form F-X for sec_vprr_02000258.pdf, a Form F-X-related scanned filing for sec_vprr_02000259.pdf, and a Form D for sec_vprr_07040010.pdf.",
+          "claim_type": "summary",
+          "confidence": "medium",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "document_type: Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking",
+              "substring_grounded": true,
+              "entailed": null
+            },
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "FORM D NOTICE OF SALE OF SECURITIES PURSUANT TO REGULATION D, SECTION 4(6), AND/OR UNIFORM LIMITED OFFERING EXEMPTION",
+              "substring_grounded": true,
+              "entailed": null
+            },
+            {
+              "evidence_id": "f292902ed5f80a01:p2:c0",
+              "quote": "Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields",
+              "ab8261141dc1f5ba:p1:c0",
+              "f292902ed5f80a01:p2:c0"
+            ],
+            "substring_grounded_count": 3,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_b05dae8a1bcd",
+          "section_id": "parties",
+          "section": "Parties",
+          "text": "The Amendment No. 1 to Form F-X identifies Kabushiki Kaisha Asahi Ginko as the filer/issuer.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "Filer/issuer: Kabushiki Kaisha Asahi Ginko",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_5d1bfe67826e",
+          "section_id": "parties",
+          "section": "Parties",
+          "text": "The U.S. agent for service of process in the Amendment No. 1 to Form F-X is identified as Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "U.S. agent for service of process: Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_70b537b288e9",
+          "section_id": "parties",
+          "section": "Parties",
+          "text": "The signatory for the Form F-X filer is identified as Mr. Hideki Fukushima, Chief Deputy General Manager.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "Signatory for filer: Mr. Hideki Fukushima, Chief Deputy General Manager",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_87c5ed834dc1",
+          "section_id": "parties",
+          "section": "Parties",
+          "text": "The Form D identifies Stella Station Trust as the name of the offering and the issuer.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "Name of Offering: Stella Station Trust",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_c398b13d793a",
+          "section_id": "parties",
+          "section": "Parties",
+          "text": "The Form D lists the issuer’s executive office address as 11690 Grooms Road, Cincinnati, OH 45242, with telephone number 513 554 1110.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "Address of Executive Offices: 11690 Grooms Road, Cincinnati, OH 45242 Telephone Number: 513 554 1110",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_d9178093334e",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D describes Stella Station Trust’s business as purchasing, holding, leasing, managing, selling, exchanging, redeveloping, subdividing, and improving real property and interests in real property.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "Brief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_1daec89f241e",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D indicates the filing was made under Rule 506 and marked as a new filing.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "Rule 506 [checked]",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_6e7026915f69",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D states the issuer did not intend to sell to non-accredited investors in the offering.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p3:c0",
+              "quote": "Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked]",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p3:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_2feb1800e564",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D lists the minimum investment accepted from any individual as $0.00.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p3:c0",
+              "quote": "What is the minimum investment that will be accepted from any individual? $ 0.00",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p3:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_6faea2bf4c45",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D indicates joint ownership of a single unit was not permitted.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p3:c0",
+              "quote": "Does the offering permit joint ownership of a single unit? Yes [unchecked] No [checked]",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p3:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_f6d5552bf071",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D lists no person paid or given commission or similar remuneration for solicitation of purchasers in connection with securities sales in the offering.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p3:c0",
+              "quote": "Full Name: None",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p3:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_dd6c57994c83",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D reports accredited-investor purchases of $10,400.00 and non-accredited-investor purchases of $0.00.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p4:c1",
+              "quote": "Amount of Purchases $10,400.00",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p4:c1"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_f3062d566d09",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D reports $0.00 for listed issuance and distribution expenses, including transfer agent fees, printing and engraving, legal fees, accounting fees, engineering fees, sales commissions, other expenses, and total expenses.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p4:c1",
+              "quote": "Transfer Agent’s Fees: $0.00 Printing and Engraving Costs: $0.00 Legal Fees: $0.00 Accounting Fees: $0.00 Engineering Fees: $0.00 Sales Commissions: $0.00 Other Expenses: $0.00 Total: $0.00",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p4:c1"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_d6bc1429e736",
+          "section_id": "procedural_posture",
+          "section": "Procedural Posture",
+          "text": "The Form F-X-related records include a related Form CB filing, file number 5-51260, barcode/reference 02000258, and SEC received/processed date of January 29, 2002.",
+          "claim_type": "fact",
+          "confidence": "medium",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_0e0b50bcbdfa",
+          "section_id": "procedural_posture",
+          "section": "Procedural Posture",
+          "text": "The related Form CB filing date is recorded as January 10, 2002, and the Form F-X document is recorded as signed on January 24, 2002.",
+          "claim_type": "fact",
+          "confidence": "medium",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "Date filed for related Form CB: January 10, 2002. Document signed: January 24, 2002",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_877af93ecbef",
+          "section_id": "procedural_posture",
+          "section": "Procedural Posture",
+          "text": "The Form D page carries barcode/serial number 07040010 and a handwritten/printed number at top of 1386733.",
+          "claim_type": "fact",
+          "confidence": "medium",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c0",
+              "quote": "Handwritten/printed number at top: 1386733",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c0"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_7534582acb23",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form F-X text states that civil suits, actions, or administrative proceedings may be commenced by service of process upon the agent for service of process, and that administrative subpoenas may be served on that agent.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:p2:c1",
+              "quote": "any such civil suit or action or administrative proceeding may be commenced by the service of process upon",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:p2:c1"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_489c0b55069a",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form F-X text states that service upon the agent is to be treated as valid and binding as if personal service had been made.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:p2:c1",
+              "quote": "service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:p2:c1"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_e93b479b623e",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form F-X text includes an undertaking to appoint a successor agent and file an amended Form F-X if the filer discharges the agent or the agent is unwilling or unable to accept service.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:p2:c1",
+              "quote": "appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service",
+              "substring_grounded": true,
+              "entailed": null
+            },
+            {
+              "evidence_id": "f292902ed5f80a01:p2:c2",
+              "quote": "appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:p2:c1",
+              "f292902ed5f80a01:p2:c2"
+            ],
+            "substring_grounded_count": 2,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_98ecaf7e6263",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "For certain Form F-X filing contexts, the undertaking to appoint a successor agent and file an amended Form F-X runs until six years have elapsed from specified triggering dates; confirm before treating as a deadline.",
+          "claim_type": "fact",
+          "confidence": "medium",
+          "citations": [
+            {
+              "evidence_id": "295c87b911042976:p2:c1",
+              "quote": "at any time until six years have elapsed from the date",
+              "substring_grounded": true,
+              "entailed": null
+            },
+            {
+              "evidence_id": "f292902ed5f80a01:p2:c2",
+              "quote": "at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption",
+              "substring_grounded": true,
+              "entailed": null
+            },
+            {
+              "evidence_id": "295c87b911042976:fields",
+              "quote": "Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "295c87b911042976:p2:c1",
+              "f292902ed5f80a01:p2:c2",
+              "295c87b911042976:fields"
+            ],
+            "substring_grounded_count": 3,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_08e54c3eb6ba",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form F-X text includes an undertaking to advise the Commission promptly of any change to the agent’s name and address.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "f292902ed5f80a01:p2:c2",
+              "quote": "Each filer further undertakes to advise the Commission promptly of any change to the Agent's name and address",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "f292902ed5f80a01:p2:c2"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_3a12aaf599d2",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D instructions state that five copies of the notice must be filed with the SEC, one manually signed, and unsigned copies must be photocopies of the manually signed copy or bear typed or printed signatures.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c2",
+              "quote": "Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c2"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_792b7878fa52",
+          "section_id": "material_facts",
+          "section": "Material Facts",
+          "text": "The Form D instructions state that there is no federal filing fee.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c2",
+              "quote": "Filing Fee: There is no federal filing fee",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c2"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_a9af6c174a20",
+          "section_id": "procedural_posture",
+          "section": "Procedural Posture",
+          "text": "The Form D instructions list the filing address as the U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549.",
+          "claim_type": "fact",
+          "confidence": "high",
+          "citations": [
+            {
+              "evidence_id": "ab8261141dc1f5ba:p1:c2",
+              "quote": "Where To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549",
+              "substring_grounded": true,
+              "entailed": null
+            }
+          ],
+          "grounding": {
+            "status": "entailed",
+            "reason": "All citation quotes are grounded in cited evidence.",
+            "cited_evidence_ids": [
+              "ab8261141dc1f5ba:p1:c2"
+            ],
+            "substring_grounded_count": 1,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_285b45af7fc1",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: The scanned records have no text layer, and transcription is based on visual reading or OCR from scanned images.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_4c2decfdc4f4",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements, including partially unclear stamped and handwritten content.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_6802acb510a9",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 1 reportedly contains scanned-page stamps and handwritten notation, with small stamp text partly unclear, a partly cut-off or unclear top stamp, and markers suggesting illegible, redacted, or uncertain text.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_88250c28fe29",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 2 reportedly has minor speckling but generally legible text.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_b61cf13c70f9",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000258.pdf page 3 reportedly contains signatures not transcribed except as [signature], and the phrase “Country of USA” appears as printed or typed with no correction inferred.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_2909022d6fe7",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000259.pdf reportedly has no text layer, scan artifacts or dark lines in the top margins, and partially unclear stamped and handwritten content.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_783dfd562d4d",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 1 reportedly has a title line partly cut off or obscured after “PROCESS A,” and stamps include partially unclear text.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_700f30b4a4e3",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 3 reportedly contains a handwritten signature not transcribed beyond a marker.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_9ae96ceeb80f",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_02000259.pdf page 4 reportedly has a handwritten signature and date, with the date appearing to read “January 22, 2002.”",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_8aee366150e4",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_07040010.pdf reportedly provides only pages 1 through 5 of a 9-page Form D; pages 6 through 9 are absent.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_4edf4cde4735",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_07040010.pdf reportedly includes partially illegible handwritten and stamped markings, repeated blank sections summarized rather than transcribed line-for-line, and state checkbox lists visible but not fully transcribed.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_042ef23ffa1f",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Items Requiring Verification: sec_vprr_07040010.pdf page 5 reportedly has a handwritten signature that is not fully legible and a handwritten date that appears to read “1-10, 2006” or similar, with unclear formatting or mark.",
+          "claim_type": "fact",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "uncited",
+            "reason": "Non-scaffolding claim has no citation.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "move_to_open_questions"
+          }
+        },
+        {
+          "claim_id": "claim_ea8f5cda94e7",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Document is a scanned image with no text layer; transcription is based on visual reading.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_5f7f324d7318",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Stamps, handwritten notation, and signatures contain low-confidence or non-verbatim elements.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_60d9066714c3",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.1: Scanned page with stamps and handwritten notation; small stamp text partly unclear.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_0fc31084c44d",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.1: Top stamp partially cut off/unclear.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_8583f5a89bae",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.1: No text layer; rendering page as image for OCR.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_82133751d166",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.1: Page contains markers suggesting illegible, redacted, or uncertain text.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_f702e59ebdc9",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.2: Scanned page; minor speckling but text generally legible.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_33dacb0641d3",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.2: No text layer; rendering page as image for OCR.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_5b388f153442",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.3: Scanned page; signatures are not transcribed except as [signature].",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_ead1566f0e2d",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.3: The phrase 'Country of USA' appears as printed/typed; no correction inferred.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_a64ad8a584aa",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "p.3: No text layer; rendering page as image for OCR.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_6ca7fcb474e6",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "All pages have no text layer; transcription is based on scanned images.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_6434920c50c4",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Some stamped and handwritten content is partially unclear.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_bf587ab9bb1e",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Top margins contain scan artifacts/dark lines, but main body text is generally readable.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_37a56ed3aff0",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Title line appears partially cut off or obscured after 'PROCESS A'.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_625f21d8c2b5",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Signature and date are handwritten; date appears to read 'January 22, 2002'.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_59b6b1204d7e",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Pages are scanned images with no text layer; transcription is based on visual reading.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_de3c94e6f039",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Only pages 1 through 5 of a 9-page Form D are provided; pages 6 through 9 are absent.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_26f955a59272",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Some handwritten and stamped markings are partially illegible.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_53654e3388c8",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_61396b07ea23",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Primarily form text; blank repeated sections summarized rather than transcribed line-for-line.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_8d76d6f651ea",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_39a7ed7ff5c0",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Preprinted instruction text abbreviated in places; financial entries are clear.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_7a091e824da9",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Handwritten signature is not fully legible.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_f05c4c8b9f81",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Handwritten date appears to read '1-10, 2006' or similar; formatting/mark is unclear.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_8d06cc15b8c4",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Confirm all handwritten dates and signatures against source images before using them as operative deadlines or execution facts.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        },
+        {
+          "claim_id": "claim_553c8fb7e3fc",
+          "section_id": "open_questions",
+          "section": "Open Questions",
+          "text": "Confirm whether pages 6 through 9 of the Form D are available before treating the Form D record as complete.",
+          "claim_type": "scaffolding",
+          "confidence": "low",
+          "citations": [],
+          "grounding": {
+            "status": "scaffolding",
+            "reason": "Scaffolding claim is outside factual grounding denominator.",
+            "cited_evidence_ids": [],
+            "substring_grounded_count": 0,
+            "entailed_count": null,
+            "action": "keep"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "295c87b911042976:fields",
+          "document_id": "295c87b911042976",
+          "filename": "sec_vprr_02000258.pdf",
+          "page_number": 0,
+          "text": "Extracted fields for sec_vprr_02000258.pdf:\namounts_or_deadlines: Undertakings include appointment of successor agent and amended Form F-X obligations for periods including until six years have elapsed from specified triggering dates, depending on the form type; for Form CB, until six years have elapsed following the effective date of the latest amendment to such Form CB.\ndates: Date filed for related Form CB: January 10, 2002. Document signed: January 24, 2002. SEC received/processed stamps: January 29, 2002.\ndocument_type: Amendment No. 1 to Form F-X, Appointment of Agent for Service of Process and Undertaking\nparties: Filer/issuer: Kabushiki Kaisha Asahi Ginko. U.S. agent for service of process: Eiji Ohashi, General Manager of The Asahi Bank, Ltd. New York Branch. Signatory for filer: Mr. Hideki Fukushima, Chief Deputy General Manager.\nrecording_references: Related filing: Form CB; file number 5-51260; barcode/reference 02000258; SEC received/processed January 29, 2002.\nunclear_items: Small text in SEC received stamp on page 1 is partially unclear; signatures are handwritten and not fully transcribed; top stamp on page 1 partly cut off/unclear.",
+          "score": 0.5672278037046246,
+          "metadata": {
+            "evidence_kind": "derived-fields",
+            "is_field_chunk": true,
+            "confidence": 0.9216666666666667,
+            "extraction_method": "structured-fields",
+            "derived_from": "structured_extraction",
+            "source_evidence_ids": [
+              "295c87b911042976:p1",
+              "295c87b911042976:p2",
+              "295c87b911042976:p3"
+            ],
+            "chunk_hash": "3d1e29807e8a63f0c3b94b02738016cfa022062c5fb31a306a5221c8172a2fbe",
+            "dense_score": 0.4265043133917302,
+            "bm25_score": 1.0,
+            "hybrid_score": 0.6272278037046246,
+            "base_score": 0.6272278037046246,
+            "derived_field_chunk_penalty": 0.06
+          }
+        },
+        {
+          "evidence_id": "ab8261141dc1f5ba:p1:c2",
+          "document_id": "ab8261141dc1f5ba",
+          "filename": "sec_vprr_07040010.pdf",
+          "page_number": 1,
+          "text": "it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where To File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549. Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for sales of securities",
+          "score": 0.34846853888436696,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.94,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "Some stamp/handwritten items are partially unclear.",
+              "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+              "No text layer; rendering page as image for OCR.",
+              "Page contains markers suggesting illegible, redacted, or uncertain text."
+            ],
+            "word_start": 280,
+            "word_end": 460,
+            "chunk_hash": "f4b29a06f3ddd877bb738e8524066922f7c9eaafd92cbdb026905e4a2050229f",
+            "dense_score": 0.29217064486205374,
+            "bm25_score": 0.4530217706400915,
+            "hybrid_score": 0.34846853888436696
+          }
+        },
+        {
+          "evidence_id": "ab8261141dc1f5ba:p3:c0",
+          "document_id": "ab8261141dc1f5ba",
+          "filename": "sec_vprr_07040010.pdf",
+          "page_number": 3,
+          "text": "B. INFORMATION ABOUT OFFERING 1. Has the issuer sold, or does the issuer intend to sell, to non-accredited investors in this offering? Yes [unchecked] No [checked] Answer also in Appendix, Column 2, if filing under ULOE. 2. What is the minimum investment that will be accepted from any individual? $ 0.00 3. Does the offering permit joint ownership of a single unit? Yes [unchecked] No [checked] 4. Enter the information requested for each person who has been or will be paid or given, directly or indirectly, any commission or similar remuneration for solicitation of purchasers in connection with sales of securities in the offering. If a person to be listed is an associated person or agent of a broker or dealer registered with the SEC and/or with a state or states, list the name of the broker or dealer. If more than five (5) persons to be listed are associated persons of such a broker or dealer, you may set forth the information for that broker or dealer only. Full Name: None Business or Residence Address: [blank] Name of Associated",
+          "score": 0.3191685491914289,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.95,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "State checkbox lists are visible but not transcribed individually in full for repeated blank sections.",
+              "No text layer; rendering page as image for OCR.",
+              "Page contains markers suggesting illegible, redacted, or uncertain text."
+            ],
+            "word_start": 0,
+            "word_end": 180,
+            "chunk_hash": "12f8e22c1324460da135813be1bc861c46f8cc6508323ecc994b84924c2b65b6",
+            "dense_score": 0.22691041043726923,
+            "bm25_score": 0.49050509259201114,
+            "hybrid_score": 0.3191685491914289
+          }
+        },
+        {
+          "evidence_id": "f292902ed5f80a01:p2:c0",
+          "document_id": "f292902ed5f80a01",
+          "filename": "sec_vprr_02000259.pdf",
+          "page_number": 2,
+          "text": "respect to which filings are made by the Filer with the Commission on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the",
+          "score": 0.30682158968818163,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.95,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "No text layer; OCR/transcription from scan.",
+              "No text layer; rendering page as image for OCR."
+            ],
+            "word_start": 0,
+            "word_end": 180,
+            "chunk_hash": "46280999a77bd65e0e566d7feb4e6d9217889e52aa2d7615bbbec3b4cf1052ec",
+            "dense_score": 0.31392453541495063,
+            "bm25_score": 0.29363040476703917,
+            "hybrid_score": 0.30682158968818163
+          }
+        },
+        {
+          "evidence_id": "ab8261141dc1f5ba:p1:c0",
+          "document_id": "ab8261141dc1f5ba",
+          "filename": "sec_vprr_07040010.pdf",
+          "page_number": 1,
+          "text": "FORM D UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM D NOTICE OF SALE OF SECURITIES PURSUANT TO REGULATION D, SECTION 4(6), AND/OR UNIFORM LIMITED OFFERING EXEMPTION Handwritten/printed number at top: 1386733 OMB APPROVAL OMB Number: 3235-0076 Estimated average burden hours per response . . . . . . 16.00 SEC USE ONLY Barcode/serial: 07040010 Name of Offering: Stella Station Trust Filing Under (Check box(es) that apply): Rule 504 [unchecked] Rule 505 [unchecked] Rule 506 [checked] Section 4(6) [unchecked] ULOE [unchecked] Type of Filing: New Filing [checked] Amendment [unchecked] A. BASIC IDENTIFICATION DATA 1. Enter the information requested about the issuer Name of Issuer: Stella Station Trust Address of Executive Offices: 11690 Grooms Road, Cincinnati, OH 45242 Telephone Number: 513 554 1110 Address of Principal Business Operations: [blank] Brief Description of Business: Purchase, hold, lease, manage, sell, exchange, redevelop, subdivide and improve real property and interests in real property Type of Business Organization: business trust [checked]; corporation [unchecked]; limited partnership, already formed [unchecked]; limited partnership, to be formed [unchecked]; other [unchecked] Actual or Estimated Date of Incorporation or",
+          "score": 0.3009421572116026,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.94,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "Some stamp/handwritten items are partially unclear.",
+              "Long preprinted instruction text transcribed where readable; minor OCR uncertainty possible.",
+              "No text layer; rendering page as image for OCR.",
+              "Page contains markers suggesting illegible, redacted, or uncertain text."
+            ],
+            "word_start": 0,
+            "word_end": 180,
+            "chunk_hash": "487e6940f8280ad605c53fc484a917fdc833ec70125452e4fd859b188d81ebb5",
+            "dense_score": 0.28140767751964846,
+            "bm25_score": 0.33722047663951743,
+            "hybrid_score": 0.3009421572116026
+          }
+        },
+        {
+          "evidence_id": "ab8261141dc1f5ba:p4:c1",
+          "document_id": "ab8261141dc1f5ba",
+          "filename": "sec_vprr_07040010.pdf",
+          "page_number": 4,
+          "text": "Amount of Purchases $10,400.00 Non-accredited Investors: Number Investors 0; Aggregate Dollar Amount of Purchases $0.00 Total (for filings under Rule 504 only): [blank] 3. If this filing is for an offering under Rule 504 or 505, enter the information requested for all securities sold by the issuer, to date, in offerings of the types indicated, in the twelve (12) months prior to the first sale of securities in this offering. Rule 505: $0.00 Regulation A: $0.00 Rule 504: $0.00 Total: $0.00 4.a. Furnish a statement of all expenses in connection with the issuance and distribution of the securities in this offering. Transfer Agent’s Fees: $0.00 Printing and Engraving Costs: $0.00 Legal Fees: $0.00 Accounting Fees: $0.00 Engineering Fees: $0.00 Sales Commissions: $0.00 Other Expenses: $0.00 Total: $0.00 4 of 9",
+          "score": 0.2986387183708472,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.96,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "Preprinted instruction text abbreviated in places; financial entries are clear.",
+              "No text layer; rendering page as image for OCR.",
+              "Page contains markers suggesting illegible, redacted, or uncertain text."
+            ],
+            "word_start": 140,
+            "word_end": 270,
+            "chunk_hash": "0d9ffb7ef8eb6a994fab90f3a7e25079fac671c9f378dbe2962305eeec4238c5",
+            "dense_score": 0.28588981204967834,
+            "bm25_score": 0.3223152586815895,
+            "hybrid_score": 0.2986387183708472
+          }
+        },
+        {
+          "evidence_id": "295c87b911042976:p2:c1",
+          "document_id": "295c87b911042976",
+          "filename": "sec_vprr_02000258.pdf",
+          "page_number": 2,
+          "text": "on Schedule 13E-4F, 14D-1F or 14D-9F; or (iv) the securities in relation to which the Filer acts as trustee pursuant to an exemption under Rule 10a-5 under the Trust Indenture Act of 1939. The Filer stipulates and agrees that any such civil suit or action or administrative proceeding may be commenced by the service of process upon, and that service of an administrative subpoena shall be effected by service upon such agent for service of process, and that service as aforesaid shall be taken and held in all courts and administrative tribunals to be valid and binding as if personal service thereof had been made. F. Each person filing this Form in connection with: (a) the use of Form F-9, F-10, 40-F, or SB-2 or Schedule 13E-4F, 14D-1F or 14D-9F stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date",
+          "score": 0.27294954493423823,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.96,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "Scanned page; minor speckling but text generally legible.",
+              "No text layer; rendering page as image for OCR."
+            ],
+            "word_start": 140,
+            "word_end": 320,
+            "chunk_hash": "6c94e2633ff63ba09f5bb49adfcf16e8bc57fb79e16cac831f839a9a47ab2852",
+            "dense_score": 0.30466642264238136,
+            "bm25_score": 0.2140467720476867,
+            "hybrid_score": 0.27294954493423823
+          }
+        },
+        {
+          "evidence_id": "f292902ed5f80a01:p2:c2",
+          "document_id": "f292902ed5f80a01",
+          "filename": "sec_vprr_02000259.pdf",
+          "page_number": 2,
+          "text": "F-8, Form F-80 or Form CB; (c) its status as trustee with respect to securities registered on Form F-7, F-8, F-9, F-10, F-80, or SB-2 stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time during which any of the securities subject to the indenture remain outstanding; and (d) the use of Form 1-A or other Commission form for an offering pursuant to Regulation A stipulates and agrees to appoint a successor agent for service of process and file an amended Form F-X if the Filer discharges the Agent or the Agent is unwilling or unable to accept service on behalf of the Filer at any time until six years have elapsed from the date of the last sale of securities in reliance upon the Regulation A exemption. Each filer further undertakes to advise the Commission promptly of any change to the Agent's name and address during the",
+          "score": 0.27190791318237295,
+          "metadata": {
+            "evidence_kind": "source-page",
+            "confidence": 0.95,
+            "extraction_method": "pdf-rendered-png",
+            "warnings": [
+              "No text layer; OCR/transcription from scan.",
+              "No text layer; rendering page as image for OCR."
+            ],
+            "word_start": 280,
+            "word_end": 460,
+            "chunk_hash": "1055da548e1d88087125928ff01e7438667cb6b09b542ec261920b06542283f0",
+            "dense_score": 0.296915289863194,
+            "bm25_score": 0.2254656422037053,
+            "hybrid_score": 0.27190791318237295
+          }
+        }
+      ],
+      "warnings": []
+    }
+  },
+  "task": "Produce a first-pass internal memo about parties, obligations, deadlines, signatures, and data-quality flags from these scanned filings.",
+  "operator_profile_path": "/Users/ehz/harnessing/a-rag-pipeline/state/operator_profile.json",
+  "learned_guidance": "Use these section labels when relevant: Items Requiring Verification, Operator Directive, Compliance Review Memo, Deposition Renotice & Subpoena — provisional. Avoid these section labels unless specifically requested: Data-Quality Flags for Operator Verification, Deadlines and Dates, Obligations and Amounts, Parties and Documents Identified. Prefer concise phrasing such as: confirm before treating as a deadline; Every factual claim must carry an inline citation; Handwritten and faintly-scanned pages dominate this run; Maintain full-prose, page-and-line citation precision; The fifteen-day cure period is recorded as expired. Use cautious, evidence-bound language; qualify uncertainty with likely, provided records, verify. When consolidating or shortening sections, preserve or increase inline citation density: never drop a citation that supports a kept factual claim, and prefer adding citations to any new factual sentence introduced during consolidation.\n\nOperator-defined knowledge rules (treat as hard constraints):\n- Always treat any net-income or aggregate-revenue value with decimal punctuation in a millions context as a transcription error pending source reconciliation.\n\nPast operator-edited memos for similar documents (for tone and structure reference):\nExample 1 (category: scanned-pages):\n  Operator added sections: Compliance Review Memo, Executive Summary, Findings by Filing, Items Requiring Verification\n  Operator removed sections: Data-Quality Flags for Operator Verification, Deadlines and Dates, Evidence Index, First-Pass Internal Memo\n  Opening of operator-edited memo: # Compliance Review Memo\n\n## Executive Summary\n\nThe retrieved corpus combines six distinct document types: a real-property lien notice, a website services agreement, two tobacco-litigation deposition instruments, an SEC annual audited report (Form X-17A-5 Part III), and an SEC Form F-X appointment o\nAdapt structure and tone to match these prior operator edits where appropriate, but never relax the citation and grounding requirements.",
+  "run_fingerprint": "24324f231e7b165d531795d637d57b61319756d47e8e17599711506a1de445cf",
+  "run_fingerprint_detail": {
+    "digest": "24324f231e7b165d531795d637d57b61319756d47e8e17599711506a1de445cf",
+    "inputs": {
+      "sec_vprr_02000258.pdf": "295c87b911042976beaac23d76490d72b9e532c1ba1c77e9b58da82db4fab37c",
+      "sec_vprr_02000259.pdf": "f292902ed5f80a01b1e2bab40f1a7c629a2cbf79641839e0eb1d2f8f93d3644e",
+      "sec_vprr_07040010.pdf": "ab8261141dc1f5ba487a09553bd0b7ea88f600b803a65483d688e22c0c0c1aa9"
+    },
+    "task": "Produce a first-pass internal memo about parties, obligations, deadlines, signatures, and data-quality flags from these scanned filings.",
+    "profile_digest": "57d351313e6ab768fae6163448db79fd1572bb17ef361b0bbffbce1201ee55bf",
+    "playbook_digest": "c2b0cc201dc4eaee179b21a136c72b36d69a7c7f1905fb07fb605dd5d7ab66ba",
+    "providers": {
+      "extraction_provider": "openai",
+      "retrieval_provider": "openai",
+      "generation_provider": "openai",
+      "openai_model": "gpt-5.5",
+      "openai_embedding_model": "text-embedding-3-large",
+      "openai_reasoning_effort": "low",
+      "retrieval_mode": "hybrid",
+      "index_backend": "memory",
+      "hybrid_dense_weight": 0.65,
+      "hybrid_bm25_weight": 0.35,
+      "retrieval_top_k": 10,
+      "reranker_provider": "",
+      "pdf_max_pages": 30,
+      "pdf_render_dpi": 180,
+      "embedding_cache": "disabled"
+    },
+    "features": {
+      "process_documents": true,
+      "retrieve_evidence": true,
+      "generate_draft": true,
+      "learning_guidance": true,
+      "operator_profile_guidance": true,
+      "knowledge_layer_guidance": true,
+      "exemplar_guidance": true,
+      "retrieval_feedback": true,
+      "field_chunks": true,
+      "evidence_pack": true,
+      "claim_first_drafting": true,
+      "claim_support_check": true,
+      "claim_entailment_judge": false,
+      "playbook_risk": true,
+      "max_field_chunks": 1,
+      "field_chunk_score_penalty": 0.06
+    }
+  },
+  "learning_guidance_sources": {
+    "operator_profile": "/Users/ehz/harnessing/a-rag-pipeline/state/operator_profile.json",
+    "knowledge_layer": "/Users/ehz/harnessing/a-rag-pipeline/state/knowledge_layer.json",
+    "exemplars_category": "scanned-pages"
+  },
+  "evidence_pack_path": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/evidence_pack.json",
+  "case_fact_summary_path": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/case_fact_summary.json",
+  "grounding_report_path": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/grounding_report.json",
+  "risk_report_path": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/risk_report.json",
+  "risk_summary": {
+    "position_count": 5,
+    "passed_position_count": 1,
+    "finding_count": 5,
+    "critical": 0,
+    "high": 0,
+    "medium": 3,
+    "low": 2,
+    "info": 0
+  },
+  "audit_log_path": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/audit.jsonl"
+}

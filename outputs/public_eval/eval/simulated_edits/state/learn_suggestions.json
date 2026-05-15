@@ -1,0 +1,14 @@
+{
+  "draft_path": "outputs/public_eval/eval/simulated_edits/fixtures/edit_04_draft.md",
+  "edited_path": "outputs/public_eval/eval/simulated_edits/fixtures/edit_04_edited.md",
+  "generated_at": "2026-05-15T04:15:03+00:00",
+  "suggested_gold_retrieval": [
+    {
+      "evidence_ids_from_original_draft": [
+        "bad:p1:c0"
+      ],
+      "query": "Wrong citation and unsupported claim: do not infer breach or nonpayment from balance records.",
+      "reason": "evidence dispute should become retrieval gold or a case-level grounding annotation"
+    }
+  ]
+}

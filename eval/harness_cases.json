@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "name": "messy-legal-document-harness",
+  "cases": [
+    {
+      "case_id": "inconsistent-format-smoke",
+      "input_dir": "datasets/inconsistently-formatted-files",
+      "task": "Review the supplied inconsistently formatted legal documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and data-quality flags an operator should verify.",
+      "deterministic_checks": {
+        "min_citation_id_validity": 1.0,
+        "min_sentence_grounding_score": 1.0,
+        "max_unsupported_sections": 8
+      },
+      "metadata": {
+        "category": "inconsistently-formatted-files",
+        "purpose": "hybrid retrieval and grounded drafting smoke test"
+      }
+    },
+    {
+      "case_id": "scanned-pages-smoke",
+      "input_dir": "datasets/scanned-pages",
+      "task": "Review the supplied scanned legal-style filings and produce a first-pass internal memo covering parties, filing type, dates, signatures, and data-quality flags an operator should verify.",
+      "deterministic_checks": {
+        "min_citation_id_validity": 1.0,
+        "min_sentence_grounding_score": 0.9,
+        "max_unsupported_sections": 10
+      },
+      "metadata": {
+        "category": "scanned-pages",
+        "purpose": "image-extraction-heavy harness smoke test"
+      }
+    }
+  ]
+}

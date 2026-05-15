@@ -1,0 +1,29 @@
+{
+  "disputes": [
+    {
+      "actor_id": "eval-operator",
+      "added_at": "2026-05-15T04:15:03+00:00",
+      "dispute_signature": "4976643ab6d45c93",
+      "disputed_evidence_ids": [
+        "doc:p1:c0"
+      ],
+      "query": "Prefer Evidence Reviewed, Facts That Appear Supported, and Items Requiring Verification sections; use cautious wording from provided records."
+    },
+    {
+      "actor_id": "eval-operator",
+      "added_at": "2026-05-15T04:15:03+00:00",
+      "dispute_signature": "a28c66fd69a53082",
+      "disputed_evidence_ids": [
+        "bad:p1:c0"
+      ],
+      "query": "Wrong citation and unsupported claim: do not infer breach or nonpayment from balance records."
+    }
+  ],
+  "evidence_boosts": {
+    "doc:p1:c0": 1
+  },
+  "evidence_demotes": {
+    "bad:p1:c0": 1
+  },
+  "version": 1
+}

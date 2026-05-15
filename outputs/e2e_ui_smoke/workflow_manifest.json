@@ -1,0 +1,183 @@
+{
+  "created_at": "2026-05-15T06:07:17+00:00",
+  "metadata": {
+    "case_id": "e2e-ui-smoke",
+    "input_dir": "/Users/ehz/harnessing/a-rag-pipeline/datasets/public-eval/scanned-pages",
+    "task": "Produce a first-pass internal memo about parties, obligations, deadlines, signatures, and data-quality flags from these scanned filings.",
+    "providers": {
+      "extraction": "openai",
+      "retrieval": "openai",
+      "generation": "openai"
+    },
+    "extraction_concurrency": 4,
+    "models": {
+      "openai": "gpt-5.5",
+      "openai_embedding": "text-embedding-3-large",
+      "openai_reasoning_effort": "low"
+    },
+    "embedding_cache_dir": "",
+    "corpus_dir": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/corpus",
+    "retrieval_index": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/index/retrieval_index.json",
+    "evidence_pack": "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/evidence_pack.json",
+    "features": {
+      "process_documents": true,
+      "retrieve_evidence": true,
+      "generate_draft": true,
+      "learning_guidance": true,
+      "operator_profile_guidance": true,
+      "knowledge_layer_guidance": true,
+      "exemplar_guidance": true,
+      "retrieval_feedback": true,
+      "field_chunks": true,
+      "evidence_pack": true,
+      "claim_first_drafting": true,
+      "claim_support_check": true,
+      "claim_entailment_judge": false,
+      "playbook_risk": true,
+      "max_field_chunks": 1,
+      "field_chunk_score_penalty": 0.06
+    },
+    "playbook_path": "/Users/ehz/harnessing/a-rag-pipeline/playbooks/default_legal_playbook.json",
+    "run_fingerprint": {
+      "digest": "24324f231e7b165d531795d637d57b61319756d47e8e17599711506a1de445cf",
+      "inputs": {
+        "sec_vprr_02000258.pdf": "295c87b911042976beaac23d76490d72b9e532c1ba1c77e9b58da82db4fab37c",
+        "sec_vprr_02000259.pdf": "f292902ed5f80a01b1e2bab40f1a7c629a2cbf79641839e0eb1d2f8f93d3644e",
+        "sec_vprr_07040010.pdf": "ab8261141dc1f5ba487a09553bd0b7ea88f600b803a65483d688e22c0c0c1aa9"
+      },
+      "task": "Produce a first-pass internal memo about parties, obligations, deadlines, signatures, and data-quality flags from these scanned filings.",
+      "profile_digest": "57d351313e6ab768fae6163448db79fd1572bb17ef361b0bbffbce1201ee55bf",
+      "playbook_digest": "c2b0cc201dc4eaee179b21a136c72b36d69a7c7f1905fb07fb605dd5d7ab66ba",
+      "providers": {
+        "extraction_provider": "openai",
+        "retrieval_provider": "openai",
+        "generation_provider": "openai",
+        "openai_model": "gpt-5.5",
+        "openai_embedding_model": "text-embedding-3-large",
+        "openai_reasoning_effort": "low",
+        "retrieval_mode": "hybrid",
+        "index_backend": "memory",
+        "hybrid_dense_weight": 0.65,
+        "hybrid_bm25_weight": 0.35,
+        "retrieval_top_k": 10,
+        "reranker_provider": "",
+        "pdf_max_pages": 30,
+        "pdf_render_dpi": 180,
+        "embedding_cache": "disabled"
+      },
+      "features": {
+        "process_documents": true,
+        "retrieve_evidence": true,
+        "generate_draft": true,
+        "learning_guidance": true,
+        "operator_profile_guidance": true,
+        "knowledge_layer_guidance": true,
+        "exemplar_guidance": true,
+        "retrieval_feedback": true,
+        "field_chunks": true,
+        "evidence_pack": true,
+        "claim_first_drafting": true,
+        "claim_support_check": true,
+        "claim_entailment_judge": false,
+        "playbook_risk": true,
+        "max_field_chunks": 1,
+        "field_chunk_score_penalty": 0.06
+      }
+    }
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "wait_seconds": 1.0,
+    "backoff": 2.0,
+    "max_wait_seconds": 8.0
+  },
+  "stages": [
+    {
+      "name": "process_documents",
+      "status": "succeeded",
+      "started_at": "2026-05-15T06:07:17+00:00",
+      "finished_at": "2026-05-15T06:08:08+00:00",
+      "duration_seconds": 50.457,
+      "attempts": 1,
+      "artifacts": [
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/processed_documents.json",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/corpus/manifest.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "retrieve_evidence",
+      "status": "succeeded",
+      "started_at": "2026-05-15T06:08:08+00:00",
+      "finished_at": "2026-05-15T06:08:12+00:00",
+      "duration_seconds": 3.775,
+      "attempts": 1,
+      "artifacts": [
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/retrieved_evidence.json",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/index/retrieval_index.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "build_evidence_pack",
+      "status": "succeeded",
+      "started_at": "2026-05-15T06:08:12+00:00",
+      "finished_at": "2026-05-15T06:08:12+00:00",
+      "duration_seconds": 0.001,
+      "attempts": 1,
+      "artifacts": [
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/evidence_pack.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "generate_draft",
+      "status": "succeeded",
+      "started_at": "2026-05-15T06:08:12+00:00",
+      "finished_at": "2026-05-15T06:08:51+00:00",
+      "duration_seconds": 38.852,
+      "attempts": 1,
+      "artifacts": [
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/draft.json",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/draft.md",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/case_fact_summary.json",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/grounding_report.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "score_playbook_risk",
+      "status": "succeeded",
+      "started_at": "2026-05-15T06:08:51+00:00",
+      "finished_at": "2026-05-15T06:08:51+00:00",
+      "duration_seconds": 0.029,
+      "attempts": 1,
+      "artifacts": [
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/risk_report.json",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/risk_report.md",
+        "/Users/ehz/harnessing/a-rag-pipeline/outputs/e2e_ui_smoke/audit.jsonl"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    }
+  ]
+}

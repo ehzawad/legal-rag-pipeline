@@ -1,0 +1,539 @@
+{
+  "draft_quality": {
+    "advisory_claim_support_warnings": 2,
+    "claim_citation_rate": 1.0,
+    "claim_sentence_count": 27,
+    "claim_sentence_with_inline_citation_count": 27,
+    "section_count": 4,
+    "supported_section_count": 1,
+    "supported_section_ratio": 0.25,
+    "uncited_factual_sentence_section_warnings": 0,
+    "unsupported_section_count": 3,
+    "warning_count": 5
+  },
+  "edit_improvement": {
+    "criterion": "edit_improvement",
+    "edit_memory_path": "outputs/public_eval/eval/simulated_edits/state/edit_memory.json",
+    "knowledge_layer_path": "outputs/public_eval/eval/simulated_edits/state/knowledge_layer.json",
+    "notes": [
+      "Simulated edits are deterministic and routed through learn_from_files.",
+      "Improvement is structural: memory recall, guidance adoption, retrieval rank movement, and grounding non-regression."
+    ],
+    "pass_rate": 1.0,
+    "passed": true,
+    "passed_count": 6,
+    "point_count": 6,
+    "points": [
+      {
+        "criterion": "edit_improvement",
+        "expected": 0,
+        "id": "edit-memory-before-empty",
+        "kind": "memory_empty_before",
+        "observed": 0,
+        "passed": true,
+        "required": true
+      },
+      {
+        "criterion": "edit_improvement",
+        "expected": "Facts That Appear Supported",
+        "id": "edit-memory-retrieves-learned-section",
+        "kind": "memory_recall",
+        "observed": [
+          "Avoid a 'Deadlines and Dates' section unless the task specifically asks for it.",
+          "Avoid a 'Issue' section unless the task specifically asks for it.",
+          "Consider adding a 'Evidence Reviewed' section when this task needs the same review shape.",
+          "Consider adding a 'Facts That Appear Supported' section when this task needs the same review shape.",
+          "Consider adding a 'Items Requiring Verification' section when this task needs the same review shape."
+        ],
+        "passed": true,
+        "required": true
+      },
+      {
+        "criterion": "edit_improvement",
+        "expected": "Facts That Appear Supported",
+        "id": "profile-guidance-adopts-operator-section",
+        "kind": "guidance_adoption",
+        "observed": "Use these section labels when relevant: Evidence Reviewed, Facts That Appear Supported, Items Requiring Verification. Avoid these section labels unless specifically requested: Deadlines and Dates. Prefer concise phrasing such as: Provided records include a notice and payment record. Use cautious, evidence-bound language; qualify uncertainty with appears, based on, provided records, verify. When consolidating or shortening sections, preserve or increase inline citation density: never drop a citation that supports a kept factual claim, and prefer adding citations to any new factual sentence introduced during consolidation.",
+        "passed": true,
+        "required": true
+      },
+      {
+        "criterion": "edit_improvement",
+        "expected": "decimal-punctuated financial values",
+        "id": "knowledge-rule-rendered",
+        "kind": "knowledge_guidance",
+        "observed": "Operator-defined knowledge rules (treat as hard constraints):\n- Always flag decimal-punctuated financial values as transcription-risk pending source reconciliation.\n- Default for Jurisdiction: New York",
+        "passed": true,
+        "required": true
+      },
+      {
+        "criterion": "edit_improvement",
+        "expected": "good:p1:c0 top-1 after feedback",
+        "id": "retrieval-feedback-moves-good-evidence-to-top",
+        "kind": "retrieval_rank_movement",
+        "observed": {
+          "after_rank": [
+            "good:p1:c0",
+            "bad:p1:c0"
+          ],
+          "before_rank": [
+            "bad:p1:c0",
+            "good:p1:c0"
+          ],
+          "metadata": {
+            "bad:p1:c0": {
+              "base_score": 1.0,
+              "bm25_score": 1.0,
+              "dense_score": 0.0,
+              "hybrid_score": 1.0,
+              "retrieval_feedback_delta": -0.15,
+              "retrieval_feedback_demotes": 1
+            },
+            "good:p1:c0": {
+              "base_score": 0.42857142857142866,
+              "bm25_score": 0.42857142857142866,
+              "dense_score": 0.0,
+              "hybrid_score": 0.42857142857142866,
+              "retrieval_feedback_boosts": 5,
+              "retrieval_feedback_delta": 0.6
+            }
+          }
+        },
+        "passed": true,
+        "required": true
+      },
+      {
+        "criterion": "edit_improvement",
+        "expected": "citation and quote grounding stay perfect",
+        "id": "grounding-non-regression",
+        "kind": "grounding_non_regression",
+        "observed": {
+          "citation_id_validity": 1.0,
+          "claim_citation_coverage": null,
+          "claim_count": null,
+          "claim_grounding_pass_rate": null,
+          "evidence_count": 1,
+          "notes": [
+            "Sentence grounding score is quote-substring validity, not semantic entailment."
+          ],
+          "sentence_grounding_score": 1.0,
+          "unsupported_claim_count": null,
+          "unsupported_section_count": 0,
+          "warning_count": 0
+        },
+        "passed": true,
+        "required": true
+      }
+    ],
+    "profile_path": "outputs/public_eval/eval/simulated_edits/state/operator_profile.json",
+    "retrieval_feedback_path": "outputs/public_eval/eval/simulated_edits/state/retrieval_feedback.json",
+    "state_dir": "outputs/public_eval/eval/simulated_edits/state"
+  },
+  "eval_points": {
+    "category_summary": {
+      "handwritten-notes": {
+        "failed": [],
+        "pass_rate": 1.0,
+        "passed_count": 1,
+        "point_count": 1
+      },
+      "inconsistently-formatted-files": {
+        "failed": [],
+        "pass_rate": 1.0,
+        "passed_count": 2,
+        "point_count": 2
+      },
+      "low-resolution-pdfs": {
+        "failed": [],
+        "pass_rate": 1.0,
+        "passed_count": 2,
+        "point_count": 2
+      },
+      "partially-illegible-records": {
+        "failed": [],
+        "pass_rate": 1.0,
+        "passed_count": 2,
+        "point_count": 2
+      },
+      "scanned-pages": {
+        "failed": [],
+        "pass_rate": 1.0,
+        "passed_count": 1,
+        "point_count": 1
+      }
+    },
+    "criteria": {
+      "document_understanding": {
+        "failed_required": [],
+        "pass_rate": 1.0,
+        "passed_count": 10,
+        "point_count": 10,
+        "required_count": 8,
+        "required_pass_rate": 1.0,
+        "required_passed_count": 8
+      },
+      "edit_improvement": {
+        "failed_required": [],
+        "pass_rate": 1.0,
+        "passed_count": 2,
+        "point_count": 2,
+        "required_count": 2,
+        "required_pass_rate": 1.0,
+        "required_passed_count": 2
+      },
+      "grounded_drafting": {
+        "failed_required": [],
+        "pass_rate": 1.0,
+        "passed_count": 5,
+        "point_count": 5,
+        "required_count": 4,
+        "required_pass_rate": 1.0,
+        "required_passed_count": 4
+      }
+    },
+    "name": "public-legal-messy-15-eval-points",
+    "pass_rate": 1.0,
+    "passed_count": 17,
+    "path": "datasets/eval/eval_points.json",
+    "point_count": 17,
+    "required_count": 14,
+    "required_pass_rate": 1.0,
+    "required_passed_count": 14,
+    "results": [
+      {
+        "category": "",
+        "criterion": "document_understanding",
+        "expected": 15,
+        "id": "document-count-15",
+        "kind": "document_count_min",
+        "message": "",
+        "observed": 15,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "document_understanding",
+        "expected": 5,
+        "id": "page-count-max-5",
+        "kind": "page_count_max",
+        "message": "",
+        "observed": 5,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "scanned-pages",
+        "criterion": "document_understanding",
+        "expected": 3,
+        "id": "category-scanned-pages-3",
+        "kind": "category_count_min",
+        "message": "",
+        "observed": 3,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "low-resolution-pdfs",
+        "criterion": "document_understanding",
+        "expected": 3,
+        "id": "category-low-resolution-pdfs-3",
+        "kind": "category_count_min",
+        "message": "",
+        "observed": 3,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "handwritten-notes",
+        "criterion": "document_understanding",
+        "expected": 3,
+        "id": "category-handwritten-notes-3",
+        "kind": "category_count_min",
+        "message": "",
+        "observed": 3,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "partially-illegible-records",
+        "criterion": "document_understanding",
+        "expected": 3,
+        "id": "category-partially-illegible-records-3",
+        "kind": "category_count_min",
+        "message": "",
+        "observed": 3,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "inconsistently-formatted-files",
+        "criterion": "document_understanding",
+        "expected": 3,
+        "id": "category-inconsistent-format-3",
+        "kind": "category_count_min",
+        "message": "",
+        "observed": 3,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "low-resolution-pdfs",
+        "criterion": "document_understanding",
+        "expected": "BON MARCHE",
+        "id": "loc-low-res-term-bon-marche",
+        "kind": "extraction_contains_term",
+        "message": "",
+        "observed": true,
+        "passed": true,
+        "required": false
+      },
+      {
+        "category": "inconsistently-formatted-files",
+        "criterion": "document_understanding",
+        "expected": "fair use",
+        "id": "govinfo-fair-use-term",
+        "kind": "extraction_contains_term",
+        "message": "",
+        "observed": true,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "partially-illegible-records",
+        "criterion": "document_understanding",
+        "expected": "Commission File No",
+        "id": "sec-illegible-commission-file-term",
+        "kind": "extraction_contains_term",
+        "message": "",
+        "observed": true,
+        "passed": true,
+        "required": false
+      },
+      {
+        "category": "",
+        "criterion": "grounded_drafting",
+        "expected": 0.9,
+        "id": "citation-id-validity",
+        "kind": "metric_min",
+        "message": "",
+        "observed": 1.0,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "grounded_drafting",
+        "expected": 0.85,
+        "id": "claim-citation-coverage",
+        "kind": "metric_min",
+        "message": "",
+        "observed": 1.0,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "grounded_drafting",
+        "expected": 0.75,
+        "id": "claim-grounding-pass-rate",
+        "kind": "metric_min",
+        "message": "",
+        "observed": 0.8888888888888888,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "grounded_drafting",
+        "expected": 0.25,
+        "id": "raw-page-citation-share",
+        "kind": "metric_min",
+        "message": "",
+        "observed": 1.0,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "grounded_drafting",
+        "expected": "absent: liable",
+        "id": "avoid-uncited-liability-conclusion",
+        "kind": "term_absent",
+        "message": "",
+        "observed": false,
+        "passed": true,
+        "required": false
+      },
+      {
+        "category": "",
+        "criterion": "edit_improvement",
+        "expected": 1.0,
+        "id": "simulated-edit-pass-rate",
+        "kind": "edit_improvement_metric_min",
+        "message": "",
+        "observed": 1.0,
+        "passed": true,
+        "required": true
+      },
+      {
+        "category": "",
+        "criterion": "edit_improvement",
+        "expected": 6.0,
+        "id": "simulated-edit-points-count",
+        "kind": "edit_improvement_metric_min",
+        "message": "",
+        "observed": 6,
+        "passed": true,
+        "required": true
+      }
+    ]
+  },
+  "gold": {},
+  "notes": [
+    "Unsupported sections are intentional review hooks, not generation failures.",
+    "Sentence grounding score is quote-substring validity, not semantic entailment.",
+    "Claim grounding pass rate is claim-graph level; section quote metrics remain separate.",
+    "No gold_dir supplied; suite reports artifact integrity and coverage only."
+  ],
+  "processing": {
+    "average_page_confidence": 0.9214999999999998,
+    "categories": {
+      "handwritten-notes": {
+        "average_page_confidence": 0.6433333333333334,
+        "document_count": 3,
+        "page_count": 3,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 0
+      },
+      "inconsistently-formatted-files": {
+        "average_page_confidence": 0.9499999999999998,
+        "document_count": 3,
+        "page_count": 12,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 12
+      },
+      "low-resolution-pdfs": {
+        "average_page_confidence": 0.9499999999999998,
+        "document_count": 3,
+        "page_count": 3,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 3
+      },
+      "partially-illegible-records": {
+        "average_page_confidence": 0.95,
+        "document_count": 3,
+        "page_count": 10,
+        "rendered_page_count": 0,
+        "text_layer_page_count": 10
+      },
+      "scanned-pages": {
+        "average_page_confidence": 0.9316666666666668,
+        "document_count": 3,
+        "page_count": 12,
+        "rendered_page_count": 12,
+        "text_layer_page_count": 0
+      }
+    },
+    "document_count": 15,
+    "document_warning_count": 138,
+    "extraction_methods": {
+      "openai": 3,
+      "pdf-rendered-png": 12,
+      "pdf-text-layer": 25
+    },
+    "low_confidence_page_count": 1,
+    "nonempty_page_count": 40,
+    "nonempty_page_rate": 1.0,
+    "page_count": 40,
+    "page_warning_count": 97
+  },
+  "public_manifest": {
+    "golden_checks": {
+      "max_cited_field_chunk_share": 0.6,
+      "max_pages_per_document": 5,
+      "min_citation_id_validity": 0.9,
+      "min_documents": 15,
+      "min_sentence_grounding_score": 0.75,
+      "required_categories": [
+        "scanned-pages",
+        "low-resolution-pdfs",
+        "handwritten-notes",
+        "partially-illegible-records",
+        "inconsistently-formatted-files"
+      ]
+    },
+    "item_count": 15,
+    "manifest_path": "datasets/public_eval_manifest.json",
+    "matched_categories": [
+      "handwritten-notes",
+      "inconsistently-formatted-files",
+      "low-resolution-pdfs",
+      "partially-illegible-records",
+      "scanned-pages"
+    ],
+    "matched_processed_file_count": 15,
+    "matched_processed_files": [
+      "govinfo_cfr_17_240_10b_5.pdf",
+      "govinfo_usc_17_105.pdf",
+      "govinfo_usc_17_107.pdf",
+      "loc_evening_star_1900_01_01_0393.pdf",
+      "loc_evening_star_1900_01_01_0394.pdf",
+      "loc_evening_star_1900_01_01_0395.pdf",
+      "nara_constitution_page_1.jpg",
+      "nara_constitution_page_2.jpg",
+      "nara_constitution_page_3.jpg",
+      "sec_vprr_02000258.pdf",
+      "sec_vprr_02000259.pdf",
+      "sec_vprr_07040010.pdf",
+      "sec_vprr_09040008.pdf",
+      "sec_vprr_09040009.pdf",
+      "sec_vprr_09045744.pdf"
+    ],
+    "missing_processed_file_count": 0,
+    "missing_processed_files": [],
+    "name": "public-legal-messy-15",
+    "required_categories": [
+      "handwritten-notes",
+      "inconsistently-formatted-files",
+      "low-resolution-pdfs",
+      "partially-illegible-records",
+      "scanned-pages"
+    ],
+    "required_categories_present": true
+  },
+  "retrieval": {
+    "cited_evidence_id_count": 8,
+    "cited_field_chunk_count": 0,
+    "cited_field_chunk_share": 0.0,
+    "cited_raw_page_chunk_count": 8,
+    "cited_raw_page_chunk_share": 1.0,
+    "distinct_cited_file_count": 3,
+    "distinct_cited_files": [
+      "govinfo_usc_17_105.pdf",
+      "govinfo_usc_17_107.pdf",
+      "loc_evening_star_1900_01_01_0394.pdf"
+    ],
+    "draft_evidence_count": 8,
+    "retrieved_chunk_count": 10,
+    "retrieved_field_chunk_count": 0,
+    "retrieved_raw_page_chunk_count": 10
+  },
+  "run_dir": "outputs/public_eval",
+  "static": {
+    "citation_id_validity": 1.0,
+    "claim_citation_coverage": 1.0,
+    "claim_count": 35,
+    "claim_grounding_pass_rate": 0.8888888888888888,
+    "evidence_count": 8,
+    "notes": [
+      "Unsupported sections are intentional review hooks, not generation failures.",
+      "Sentence grounding score is quote-substring validity, not semantic entailment.",
+      "Claim grounding pass rate is claim-graph level; section quote metrics remain separate."
+    ],
+    "sentence_grounding_score": 1.0,
+    "unsupported_claim_count": 3,
+    "unsupported_section_count": 3,
+    "warning_count": 5
+  }
+}

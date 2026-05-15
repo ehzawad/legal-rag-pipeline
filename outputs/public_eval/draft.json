@@ -1,0 +1,1304 @@
+{
+  "draft_type": "case_fact_summary",
+  "title": "Case Fact Summary",
+  "generated_at": "2026-05-15T04:14:56+00:00",
+  "sections": [
+    {
+      "heading": "Documents Reviewed",
+      "body": "- The supplied materials include excerpts from govinfo_usc_17_107.pdf concerning Title 17 copyright fair-use materials and historical/revision notes. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_dc6eb3cb7d6e`\n- The supplied materials include excerpts from govinfo_usc_17_105.pdf concerning Title 17 section 105 and related historical discussion. [1a021fbaf033b873:p3:c2]\n  - claim_id: `claim_d44b9c19d33a`\n- The supplied materials include a newspaper-style excerpt from loc_evening_star_1900_01_01_0394.pdf discussing Potomac River improvement and estimated costs. [bfd73ac0ebb0f6bb:p1:c32]\n  - claim_id: `claim_083a88eb0469`",
+      "evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4",
+        "1a021fbaf033b873:p3:c2",
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "citation_quotes": {
+        "7c0cd464fba18bbc:p1:c4": "TITLE 17—COPYRIGHTS",
+        "1a021fbaf033b873:p3:c2": "section 105",
+        "bfd73ac0ebb0f6bb:p1:c32": "POTOMAC RIVER IMPROVEMENl'"
+      },
+      "unsupported": true
+    },
+    {
+      "heading": "Material Facts",
+      "body": "- The Title 17 section 107 excerpt states that an unpublished work is not barred from a fair-use finding solely because it is unpublished, if the finding is made after consideration of the listed factors. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_d371a850d7ff`\n- The section 107 historical notes describe fair use as a judicial doctrine and as a limitation on the exclusive rights of copyright owners. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_ed14c963fd7c`\n- The section 107 historical notes state that section 107 would give express statutory recognition to the fair-use doctrine for the first time. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_856d9f2ce366`\n- The section 107 historical notes state that fair-use defenses had been raised in many copyright actions and that case law recognized and applied the doctrine. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_7e57cda34356`\n- The section 107 excerpt gives examples of activities courts might regard as fair use, including quotation in reviews or criticism, scholarly quotation, parody, news-report summaries, library reproduction to replace damaged copies, classroom illustration, legislative or judicial use, and incidental reproduction in a newsreel or broadcast. [7c0cd464fba18bbc:p1:c5]\n  - claim_id: `claim_244ed0318fa1`\n- The section 107 materials state that Judiciary Subcommittee members urged parties to meet independently regarding permissible educational uses of copyrighted material, and that the response was positive. [7c0cd464fba18bbc:p2:c4]\n  - claim_id: `claim_d15903231bd8`\n- The section 107 materials state that meetings were held beginning in September 1975 among three groups addressing classroom reproduction of printed material, music, and audio-visual material. [7c0cd464fba18bbc:p2:c4]\n  - claim_id: `claim_9764b71e955a`\n- The section 107 materials state that archival duplicate copies made to preserve deteriorating film materials fall within fair use. [7c0cd464fba18bbc:p4:c8]\n  - claim_id: `claim_2b1e442d03e4`\n- The section 107 materials state that where copyrighted material contains unfair, inaccurate, or derogatory information about an individual or institution, that individual or institution may copy and reproduce necessary parts for understandable comment on the statements. [7c0cd464fba18bbc:p4:c8]\n  - claim_id: `claim_cbbcb72e4f0b`\n- The section 107 materials state that publication of copyrighted material in Congressional hearings and documents would constitute fair use when the excerpt length, authorized copy count, and relevance to legitimate legislative concern are reasonable under the circumstances. [7c0cd464fba18bbc:p4:c8]\n  - claim_id: `claim_d2fbe6951d92`\n- The section 107 materials state that whether copying portions of a newsletter is infringement or fair use depends on the facts of the individual case. [7c0cd464fba18bbc:p5:c0]\n  - claim_id: `claim_53aa1956929b`\n- The section 107 materials state as a general principle that the fair-use scope should be narrower for newsletters than for mass-circulation periodicals or scientific journals. [7c0cd464fba18bbc:p5:c0]\n  - claim_id: `claim_4039fd99e063`\n- The section 107 materials identify the commercial nature of the user as a significant factor for newsletter copying and state that copying by a profit-making user of even a small portion may significantly affect the commercial market. [7c0cd464fba18bbc:p5:c0]\n  - claim_id: `claim_a002c86bb3a1`\n- The section 107 materials state that a single-copy reproduction by a calligrapher of an excerpt from a copyrighted work for a single client does not represent copyright infringement. [7c0cd464fba18bbc:p5:c0]\n  - claim_id: `claim_8f7e3ca4a7a2`\n- The section 105 excerpt states that section 105 does not relieve the Government of its obligation to secure permission to publish a copyrighted work. [1a021fbaf033b873:p3:c2]\n  - claim_id: `claim_924841bae9c4`\n- The section 105 excerpt states that Government publication or other use of a private work would not affect the work's copyright protection. [1a021fbaf033b873:p3:c2]\n  - claim_id: `claim_b2e7807a52cb`\n- The section 105 excerpt states that section 105 is intended to restrict the prohibition against Government copyright to works written by U.S. Government employees within the scope of their official duties. [1a021fbaf033b873:p3:c2]\n  - claim_id: `claim_6b8342fb0cb4`\n- The section 105 excerpt describes a bill approach under which the Government agency concerned could decide whether an independent contractor or grantee may secure copyright in works prepared with Government funds. [1a021fbaf033b873:p2:c4]\n  - claim_id: `claim_d829f3f94601`\n- The section 105 excerpt says the bill deliberately avoids an outright, unqualified prohibition against copyright in works prepared with Government funds. [1a021fbaf033b873:p2:c4]\n  - claim_id: `claim_1005de7153e7`\n- The newspaper excerpt states that the estimated cost for bridges, drainage, driveway, and embankment was placed at $135,000. [bfd73ac0ebb0f6bb:p1:c32]\n  - claim_id: `claim_89a9645d7186`",
+      "evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4",
+        "7c0cd464fba18bbc:p1:c5",
+        "7c0cd464fba18bbc:p2:c4",
+        "7c0cd464fba18bbc:p4:c8",
+        "7c0cd464fba18bbc:p5:c0",
+        "1a021fbaf033b873:p3:c2",
+        "1a021fbaf033b873:p2:c4",
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "citation_quotes": {
+        "7c0cd464fba18bbc:p1:c4": "The fact that a work is unpublished shall not itself bar a finding of fair use if such finding is made upon consideration of all the above fac- tors.",
+        "7c0cd464fba18bbc:p1:c5": "quotation of excerpts in a review or criti- cism",
+        "7c0cd464fba18bbc:p2:c4": "Chairman Kastenmeier and other members urged the parties to meet together independently in an effort to achieve a meeting of the minds as to permissible educational uses of copyrighted material",
+        "7c0cd464fba18bbc:p4:c8": "the making of duplicate copies for purposes of archival preservation certainly falls within the scope of ‘‘fair use.’’",
+        "7c0cd464fba18bbc:p5:c0": "Whether the copying of portions of a newsletter is an act of in- fringement or a fair use will necessarily turn on the facts of the individual case.",
+        "1a021fbaf033b873:p3:c2": "there is noth- ing in section 105 that would relieve the Government of its obligation to secure permission in order to publish a copyrighted work",
+        "1a021fbaf033b873:p2:c4": "the Government agency concerned could determine in each case whether to allow an independent contractor or grantee, to se- cure copyright in works prepared in whole or in part with the use of Government funds",
+        "bfd73ac0ebb0f6bb:p1:c32": "The estimated cost of the bridges, drainage, etc., and of the drIveway and embankment, is placed at $135,000."
+      },
+      "unsupported": false
+    },
+    {
+      "heading": "Relief Sought / Requested Action",
+      "body": "- No party-requested relief or litigation demand is apparent from the supplied evidence excerpts; the sources reviewed appear to be statutory/historical reference text and a newspaper excerpt rather than pleadings or motions. [7c0cd464fba18bbc:p1:c4] [1a021fbaf033b873:p3:c2] [bfd73ac0ebb0f6bb:p1:c32]\n  - claim_id: `claim_d8c5b27338e4`",
+      "evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4",
+        "1a021fbaf033b873:p3:c2",
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "citation_quotes": {
+        "7c0cd464fba18bbc:p1:c4": "TITLE 17—COPYRIGHTS",
+        "1a021fbaf033b873:p3:c2": "section 105",
+        "bfd73ac0ebb0f6bb:p1:c32": "POTOMAC RIVER IMPROVEMENl'"
+      },
+      "unsupported": true
+    },
+    {
+      "heading": "Open Questions",
+      "body": "- Operator should verify whether govinfo_usc_17_107.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts show Title 17 copyright material and historical/revision notes but no private parties or operative case caption. [7c0cd464fba18bbc:p1:c4]\n  - claim_id: `claim_f24a9112a065`\n- Operator should verify whether govinfo_usc_17_105.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts discuss section 105 and Government copyright rules. [1a021fbaf033b873:p3:c2]\n  - claim_id: `claim_6edfb5d5b64b`\n- Operator should verify whether loc_evening_star_1900_01_01_0394.pdf is a newspaper page rather than a legal-style source document, because the excerpt discusses public works and appears under a Potomac River improvement heading. [bfd73ac0ebb0f6bb:p1:c32]\n  - claim_id: `claim_0e3342620f87`\n- No case caption, court, docket number, plaintiffs, defendants, or procedural filing date is supported by the supplied evidence excerpts.\n  - claim_id: `claim_2212247ef668`\n- No party-requested relief is supported by the supplied evidence excerpts.\n  - claim_id: `claim_165b5240c43c`\n- Operator should verify whether the supplied documents are public evaluation/reference documents rather than case-specific pleadings or transactional legal instruments.\n  - claim_id: `claim_1d675e772156`\n- Source pages are extracted from a text layer and appear to be statutory/legal reference material rather than a transactional legal document. No signatures, recording stamp, real property description, or private parties are present.\n  - claim_id: `claim_b97c95dc7c0a`\n- The source is an excerpt of federal copyright statutory text and legislative notes, not a typical legal instrument involving parties, property, recording data, or monetary consideration.\n  - claim_id: `claim_111c87875f7e`\n- Source appears to be a newspaper page rather than a legal-style source document.\n  - claim_id: `claim_ce03a835bb6b`\n- No legal instrument type, parties, property description, or recording information found.\n  - claim_id: `claim_925ee756274c`\n- Extracted text contains substantial OCR corruption, especially in advertisements and lists of names.\n  - claim_id: `claim_67f4f64056bd`",
+      "evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4",
+        "1a021fbaf033b873:p3:c2",
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "citation_quotes": {
+        "7c0cd464fba18bbc:p1:c4": "TITLE 17—COPYRIGHTS",
+        "1a021fbaf033b873:p3:c2": "section 105",
+        "bfd73ac0ebb0f6bb:p1:c32": "POTOMAC RIVER IMPROVEMENl'"
+      },
+      "unsupported": true
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "7c0cd464fba18bbc:p1:c5",
+      "document_id": "7c0cd464fba18bbc",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 1,
+      "text": "as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by no means exhaustive, give some idea of the sort of activities the courts might regard as fair use under the cir- cumstances: ‘‘quotation of excerpts in a review or criti- cism for purposes of illustration or comment; quotation of short passages in a scholarly or technical work, for illustration or clarification of the author’s observa- tions; use in a parody of some of the content of the work parodied; summary of an address or article, with brief quotations, in a news report; reproduction by a li- brary of a portion of a work to replace part of a dam- aged copy; reproduction by a teacher or student of a small part of a work to illustrate a lesson; reproduction of a work in legislative or judicial proceedings or re- ports; incidental and fortuitous reproduction, in a newsreel or broadcast, of",
+      "score": 0.486589079981123,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+        ],
+        "word_start": 700,
+        "word_end": 880,
+        "chunk_hash": "b305e5facf20f9c2327526c28e382c7fd78097db831c44df87bac829eb74e2aa",
+        "dense_score": 0.21013704612480458,
+        "bm25_score": 1.0,
+        "hybrid_score": 0.486589079981123
+      }
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p4:c8",
+      "document_id": "7c0cd464fba18bbc",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 4,
+      "text": "base that will inevitably de- compose in time. The efforts of the Library of Con- gress, the American Film Institute, and other organiza- tions to rescue and preserve this irreplaceable con- tribution to our cultural life are to be applauded, and the making of duplicate copies for purposes of archival preservation certainly falls within the scope of ‘‘fair use.’’ When a copyrighted work contains unfair, inaccurate, or derogatory information concerning an individual or institution, the individual or institution may copy and reproduce such parts of the work as are necessary to permit understandable comment on the statements made in the work. The Committee has considered the question of publi- cation, in Congressional hearings and documents, of copyrighted material. Where the length of the work or excerpt published and the number of copies authorized are reasonable under the circumstances, and the work itself is directly relevant to a matter of legitimate leg- islative concern, the Committee believes that the pub- lication would constitute fair use. During the consideration of the revision bill in the 94th Congress it was proposed that independent",
+      "score": 0.40372459879999456,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+        ],
+        "word_start": 1120,
+        "word_end": 1300,
+        "chunk_hash": "0e72e83ad345c27a5967d232945467a5ded8291415ab0b85f73f37f90bdf6808",
+        "dense_score": 0.22221660194363135,
+        "bm25_score": 0.7408108786760977,
+        "hybrid_score": 0.40372459879999456
+      }
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p2:c4",
+      "document_id": "7c0cd464fba18bbc",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 2,
+      "text": "discussion of ‘‘the considerations lying behind the four criteria listed in the amended section 107, in the con- text of typical classroom situations arising today.’’ This discussion appeared on pp. 32–35 of the 1967 report, and with some changes has been retained in the Senate report on S. 22 (S. Rep. No. 94–473, pp. 63–65). The Com- mittee has reviewed this discussion, and considers that it still has value as an analysis of various aspects of the problem. At the Judiciary Subcommittee hearings in June 1975, Chairman Kastenmeier and other members urged the parties to meet together independently in an effort to achieve a meeting of the minds as to permissible educational uses of copyrighted material. The response to these suggestions was positive, and a number of meetings of three groups, dealing respectively with classroom reproduction of printed material, music, and audio-visual material, were held beginning in Sep- tember 1975. In a joint letter to Chairman Kastenmeier, dated March 19, 1976, the representatives of the Ad Hoc Com- mittee of Educational Institutions and Organizations on Copyright Law Revision, and of",
+      "score": 0.38121534086078723,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+        ],
+        "word_start": 560,
+        "word_end": 740,
+        "chunk_hash": "0916963c1d1e88b0723d484448671df40cefe0cade27bd34a677eb0ca55064cd",
+        "dense_score": 0.21688339128257425,
+        "bm25_score": 0.6864032472203256,
+        "hybrid_score": 0.38121534086078723
+      }
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p5:c0",
+      "document_id": "7c0cd464fba18bbc",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 5,
+      "text": "Page 30 TITLE 17—COPYRIGHTS § 108 newsletters have fairly modest circulations. Whether the copying of portions of a newsletter is an act of in- fringement or a fair use will necessarily turn on the facts of the individual case. However, as a general prin- ciple, it seems clear that the scope of the fair use doc- trine should be considerably narrower in the case of newsletters than in that of either mass-circulation periodicals or scientific journals. The commercial na- ture of the user is a significant factor in such cases: Copying by a profit-making user of even a small por- tion of a newsletter may have a significant impact on the commercial market for the work. The Committee has examined the use of excerpts from copyrighted works in the art work of calligra- phers. The committee believes that a single copy repro- duction of an excerpt from a copyrighted work by a cal- ligrapher for a single client does not represent an in- fringement of copyright. Likewise, a single reproduc- tion of excerpts from a copyrighted work by a student",
+      "score": 0.3536772714308214,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "1edc481e8e9a33e354e41b58ed731bc07071408fa5aa822f3c68e170d04ed736",
+        "dense_score": 0.15453156926130204,
+        "bm25_score": 0.7235192897456432,
+        "hybrid_score": 0.3536772714308214
+      }
+    },
+    {
+      "evidence_id": "7c0cd464fba18bbc:p1:c4",
+      "document_id": "7c0cd464fba18bbc",
+      "filename": "govinfo_usc_17_107.pdf",
+      "page_number": 1,
+      "text": "market for or value of the copyrighted work. The fact that a work is unpublished shall not itself bar a finding of fair use if such finding is made upon consideration of all the above fac- tors. (Pub. L. 94–553, title I, § 101, Oct. 19, 1976, 90 Stat. 2546; Pub. L. 101–650, title VI, § 607, Dec. 1, 1990, 104 Stat. 5132; Pub. L. 102–492, Oct. 24, 1992, 106 Stat. 3145.) HISTORICAL AND REVISION NOTES HOUSE REPORT NO. 94–1476 General Background of the Problem. The judicial doc- trine of fair use, one of the most important and well- established limitations on the exclusive right of copy- right owners, would be given express statutory recogni- tion for the first time in section 107. The claim that a defendant’s acts constituted a fair use rather than an infringement has been raised as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by",
+      "score": 0.35160625713558397,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+        ],
+        "word_start": 560,
+        "word_end": 740,
+        "chunk_hash": "eb194d4cb451c5c4d752d84be20847579b67d9917d7e4ac6b06bd228434b5d64",
+        "dense_score": 0.16954676788064024,
+        "bm25_score": 0.6897167371804795,
+        "hybrid_score": 0.35160625713558397
+      }
+    },
+    {
+      "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+      "document_id": "bfd73ac0ebb0f6bb",
+      "filename": "loc_evening_star_1900_01_01_0394.pdf",
+      "page_number": 1,
+      "text": "at a suitable distance above the present cause- way bridge. This driveway, with its branch along the southeast margin, are to be built at about the future grade of average filling proposed for the park, which Is several feet above the freshet line of 1889), requIring an embankment which can be made partly of material now in the park and partly of material to be dredged under operations for the improvement of the Potomac river at Washington. While a permanent roadway will be eventually required, it Is not con- sidered desirable to lay one at the outset on the new embankment, which should have tIme for settling. It Is therefore pro- posed by Col. Allen to place a temporary gravel covering, whIch material may serve as a subgrade for a future pavement or for other purposes. .Ample provision can easily he made for~drainage along and through the driveway. The estimated cost of the bridges, drainage, etc., and of the drIveway and embankment, is placed at $135,000. POTOMAC RIVER IMPROVEMENl'. The operations for the Improvement of the Potomac river during the",
+      "score": 0.34805193960141523,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [
+          "Page was provided as extracted text layer; verbatim page text omitted per instruction because supplied text layer is authoritative.",
+          "Source appears to be a newspaper page with advertisements and news articles, not a legal-style instrument.",
+          "Text layer contains numerous OCR artifacts, broken words, and unclear characters.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 4480,
+        "word_end": 4660,
+        "chunk_hash": "303b2a63ae6692b258de4697808a0eb056c4949236847bc45b95c7b141354890",
+        "dense_score": 0.14265908463229035,
+        "bm25_score": 0.7294958131155044,
+        "hybrid_score": 0.34805193960141523
+      }
+    },
+    {
+      "evidence_id": "1a021fbaf033b873:p3:c2",
+      "document_id": "1a021fbaf033b873",
+      "filename": "govinfo_usc_17_105.pdf",
+      "page_number": 3,
+      "text": "privately written works are clearly excluded from the prohibition; accordingly, a saving clause becomes su- perfluous. Retention of a saving clause has been urged on the ground that the present statutory provision is fre- quently cited, and that having the provision expressly stated in the law would avoid questions and expla- nations. The committee here observes: (1) there is noth- ing in section 105 that would relieve the Government of its obligation to secure permission in order to publish a copyrighted work; and (2) publication or other use by the Government of a private work would not affect its copyright protection in any way. The question of use of copyrighted material in documents published by the Congress and its Committees is discussed below in con- nection with section 107. Works of the United States Postal Service. The intent of section 105 [this section] is to restrict the prohibi- tion against Government copyright to works written by employees of the United States Government within the scope of their official duties. In accordance with the objectives of the Postal Reorganization Act of",
+      "score": 0.33063302339870093,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 280,
+        "word_end": 460,
+        "chunk_hash": "bf302c3c818d1bc077d61bbf6dbef831b0591727ae8b104ffe171206ed0106ff",
+        "dense_score": 0.13340318570000947,
+        "bm25_score": 0.6969170076962709,
+        "hybrid_score": 0.33063302339870093
+      }
+    },
+    {
+      "evidence_id": "1a021fbaf033b873:p2:c4",
+      "document_id": "1a021fbaf033b873",
+      "filename": "govinfo_usc_17_105.pdf",
+      "page_number": 2,
+      "text": "prepared under U.S. Government con- tract or grant. As the bill is written, the Government agency concerned could determine in each case whether to allow an independent contractor or grantee, to se- cure copyright in works prepared in whole or in part with the use of Government funds. The argument that has been made against allowing copyright in this situa- tion is that the public should not be required to pay a ‘‘double subsidy,’’ and that it is inconsistent to pro- hibit copyright in works by Government employees while permitting private copyrights in a growing body of works created by persons who are paid with Govern- ment funds. Those arguing in favor of potential copy- right protection have stressed the importance of copy- right as an incentive to creation and dissemination in this situation, and the basically different policy consid- erations, applicable to works written by Government employees and those applicable to works prepared by private organizations with the use of Federal funds. The bill deliberately avoids making any sort of out- right, unqualified prohibition against copyright in works prepared",
+      "score": 0.3169846448265334,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 560,
+        "word_end": 740,
+        "chunk_hash": "eb32199a117fef010bf019db4bfd28b935544c1c0e99aa76a9011dd8ae6f2c79",
+        "dense_score": 0.17918925401983815,
+        "bm25_score": 0.5728903706103959,
+        "hybrid_score": 0.3169846448265334
+      }
+    }
+  ],
+  "warnings": [
+    "Input processing produced warnings that should appear as open questions.",
+    "Operator-defined knowledge rule noted: any net-income or aggregate-revenue value with decimal punctuation in a millions context should be treated as a transcription error pending source reconciliation; no such value was identified in the cited excerpts.",
+    "Some evidence-pack data-quality flags refer to documents not represented in the supplied Evidence JSON; those flags were preserved only as open questions or warnings where relevant and were not treated as cited factual claims.",
+    "Advisory claim-support check flagged section 'Material Facts' for weak lexical overlap between cited sentence(s) and verbatim quote(s): The section 107 historical notes state that section 107 would give express statutory recognition to the fair-use doct...; The section 107 historical notes state that fair-use defenses had been raised in many copyright actions and that case...; The section 107 materials state that meetings were held beginning in September 1975 among three groups addressing cla...",
+    "Advisory claim-support check flagged section 'Relief Sought / Requested Action' for weak lexical overlap between cited sentence(s) and verbatim quote(s): No party-requested relief or litigation demand is apparent from the supplied evidence excerpts; the sources reviewed..."
+  ],
+  "case_summary": {
+    "case_id": "public-eval",
+    "generated_at": "2026-05-15T04:14:56+00:00",
+    "title": "Case Fact Summary",
+    "section_order": [
+      "documents_reviewed",
+      "material_facts",
+      "relief_sought",
+      "open_questions"
+    ],
+    "claims": [
+      {
+        "claim_id": "claim_dc6eb3cb7d6e",
+        "section_id": "documents_reviewed",
+        "section": "Documents Reviewed",
+        "text": "The supplied materials include excerpts from govinfo_usc_17_107.pdf concerning Title 17 copyright fair-use materials and historical/revision notes.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "TITLE 17—COPYRIGHTS",
+            "substring_grounded": false,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "ungrounded",
+          "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "revise"
+        }
+      },
+      {
+        "claim_id": "claim_d44b9c19d33a",
+        "section_id": "documents_reviewed",
+        "section": "Documents Reviewed",
+        "text": "The supplied materials include excerpts from govinfo_usc_17_105.pdf concerning Title 17 section 105 and related historical discussion.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "section 105",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_083a88eb0469",
+        "section_id": "documents_reviewed",
+        "section": "Documents Reviewed",
+        "text": "The supplied materials include a newspaper-style excerpt from loc_evening_star_1900_01_01_0394.pdf discussing Potomac River improvement and estimated costs.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+            "quote": "POTOMAC RIVER IMPROVEMENl'",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "bfd73ac0ebb0f6bb:p1:c32"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_d371a850d7ff",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The Title 17 section 107 excerpt states that an unpublished work is not barred from a fair-use finding solely because it is unpublished, if the finding is made after consideration of the listed factors.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "The fact that a work is unpublished shall not itself bar a finding of fair use if such finding is made upon consideration of all the above fac- tors.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_ed14c963fd7c",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 historical notes describe fair use as a judicial doctrine and as a limitation on the exclusive rights of copyright owners.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "The judicial doc- trine of fair use, one of the most important and well- established limitations on the exclusive right of copy- right owners",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_856d9f2ce366",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 historical notes state that section 107 would give express statutory recognition to the fair-use doctrine for the first time.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "would be given express statutory recogni- tion for the first time in section 107",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_7e57cda34356",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 historical notes state that fair-use defenses had been raised in many copyright actions and that case law recognized and applied the doctrine.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "has been raised as a defense in innumer- able copyright actions over the years",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_244ed0318fa1",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 excerpt gives examples of activities courts might regard as fair use, including quotation in reviews or criticism, scholarly quotation, parody, news-report summaries, library reproduction to replace damaged copies, classroom illustration, legislative or judicial use, and incidental reproduction in a newsreel or broadcast.",
+        "claim_type": "summary",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c5",
+            "quote": "quotation of excerpts in a review or criti- cism",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c5"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_d15903231bd8",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that Judiciary Subcommittee members urged parties to meet independently regarding permissible educational uses of copyrighted material, and that the response was positive.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p2:c4",
+            "quote": "Chairman Kastenmeier and other members urged the parties to meet together independently in an effort to achieve a meeting of the minds as to permissible educational uses of copyrighted material",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p2:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_9764b71e955a",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that meetings were held beginning in September 1975 among three groups addressing classroom reproduction of printed material, music, and audio-visual material.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p2:c4",
+            "quote": "a number of meetings of three groups, dealing respectively with classroom reproduction of printed material, music, and audio-visual material, were held beginning in Sep- tember 1975",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p2:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2b1e442d03e4",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that archival duplicate copies made to preserve deteriorating film materials fall within fair use.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p4:c8",
+            "quote": "the making of duplicate copies for purposes of archival preservation certainly falls within the scope of ‘‘fair use.’’",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p4:c8"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_cbbcb72e4f0b",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that where copyrighted material contains unfair, inaccurate, or derogatory information about an individual or institution, that individual or institution may copy and reproduce necessary parts for understandable comment on the statements.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p4:c8",
+            "quote": "When a copyrighted work contains unfair, inaccurate, or derogatory information concerning an individual or institution",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p4:c8"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_d2fbe6951d92",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that publication of copyrighted material in Congressional hearings and documents would constitute fair use when the excerpt length, authorized copy count, and relevance to legitimate legislative concern are reasonable under the circumstances.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p4:c8",
+            "quote": "Where the length of the work or excerpt published and the number of copies authorized are reasonable under the circumstances",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p4:c8"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_53aa1956929b",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that whether copying portions of a newsletter is infringement or fair use depends on the facts of the individual case.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p5:c0",
+            "quote": "Whether the copying of portions of a newsletter is an act of in- fringement or a fair use will necessarily turn on the facts of the individual case.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p5:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_4039fd99e063",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state as a general principle that the fair-use scope should be narrower for newsletters than for mass-circulation periodicals or scientific journals.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p5:c0",
+            "quote": "the scope of the fair use doc- trine should be considerably narrower in the case of newsletters than in that of either mass-circulation periodicals or scientific journals",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p5:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_a002c86bb3a1",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials identify the commercial nature of the user as a significant factor for newsletter copying and state that copying by a profit-making user of even a small portion may significantly affect the commercial market.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p5:c0",
+            "quote": "The commercial na- ture of the user is a significant factor in such cases",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p5:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_8f7e3ca4a7a2",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 107 materials state that a single-copy reproduction by a calligrapher of an excerpt from a copyrighted work for a single client does not represent copyright infringement.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p5:c0",
+            "quote": "a single copy repro- duction of an excerpt from a copyrighted work by a cal- ligrapher for a single client does not represent an in- fringement of copyright",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p5:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_924841bae9c4",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 105 excerpt states that section 105 does not relieve the Government of its obligation to secure permission to publish a copyrighted work.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "there is noth- ing in section 105 that would relieve the Government of its obligation to secure permission in order to publish a copyrighted work",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_b2e7807a52cb",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 105 excerpt states that Government publication or other use of a private work would not affect the work's copyright protection.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "publication or other use by the Government of a private work would not affect its copyright protection in any way",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_6b8342fb0cb4",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 105 excerpt states that section 105 is intended to restrict the prohibition against Government copyright to works written by U.S. Government employees within the scope of their official duties.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "The intent of section 105 [this section] is to restrict the prohibi- tion against Government copyright to works written by employees of the United States Government within the scope of their official duties",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_d829f3f94601",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 105 excerpt describes a bill approach under which the Government agency concerned could decide whether an independent contractor or grantee may secure copyright in works prepared with Government funds.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p2:c4",
+            "quote": "the Government agency concerned could determine in each case whether to allow an independent contractor or grantee, to se- cure copyright in works prepared in whole or in part with the use of Government funds",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p2:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_1005de7153e7",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The section 105 excerpt says the bill deliberately avoids an outright, unqualified prohibition against copyright in works prepared with Government funds.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p2:c4",
+            "quote": "The bill deliberately avoids making any sort of out- right, unqualified prohibition against copyright in works prepared",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p2:c4"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_89a9645d7186",
+        "section_id": "material_facts",
+        "section": "Material Facts",
+        "text": "The newspaper excerpt states that the estimated cost for bridges, drainage, driveway, and embankment was placed at $135,000.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+            "quote": "The estimated cost of the bridges, drainage, etc., and of the drIveway and embankment, is placed at $135,000.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "bfd73ac0ebb0f6bb:p1:c32"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_d8c5b27338e4",
+        "section_id": "relief_sought",
+        "section": "Relief Sought / Requested Action",
+        "text": "No party-requested relief or litigation demand is apparent from the supplied evidence excerpts; the sources reviewed appear to be statutory/historical reference text and a newspaper excerpt rather than pleadings or motions.",
+        "claim_type": "summary",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "TITLE 17—COPYRIGHTS",
+            "substring_grounded": false,
+            "entailed": null
+          },
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "section 105",
+            "substring_grounded": true,
+            "entailed": null
+          },
+          {
+            "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+            "quote": "POTOMAC RIVER IMPROVEMENl'",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "ungrounded",
+          "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4",
+            "1a021fbaf033b873:p3:c2",
+            "bfd73ac0ebb0f6bb:p1:c32"
+          ],
+          "substring_grounded_count": 2,
+          "entailed_count": null,
+          "action": "revise"
+        }
+      },
+      {
+        "claim_id": "claim_f24a9112a065",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Operator should verify whether govinfo_usc_17_107.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts show Title 17 copyright material and historical/revision notes but no private parties or operative case caption.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "7c0cd464fba18bbc:p1:c4",
+            "quote": "TITLE 17—COPYRIGHTS",
+            "substring_grounded": false,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "ungrounded",
+          "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+          "cited_evidence_ids": [
+            "7c0cd464fba18bbc:p1:c4"
+          ],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "revise"
+        }
+      },
+      {
+        "claim_id": "claim_6edfb5d5b64b",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Operator should verify whether govinfo_usc_17_105.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts discuss section 105 and Government copyright rules.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "1a021fbaf033b873:p3:c2",
+            "quote": "section 105",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "1a021fbaf033b873:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_0e3342620f87",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Operator should verify whether loc_evening_star_1900_01_01_0394.pdf is a newspaper page rather than a legal-style source document, because the excerpt discusses public works and appears under a Potomac River improvement heading.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+            "quote": "POTOMAC RIVER IMPROVEMENl'",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "bfd73ac0ebb0f6bb:p1:c32"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2212247ef668",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "No case caption, court, docket number, plaintiffs, defendants, or procedural filing date is supported by the supplied evidence excerpts.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_165b5240c43c",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "No party-requested relief is supported by the supplied evidence excerpts.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_1d675e772156",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Operator should verify whether the supplied documents are public evaluation/reference documents rather than case-specific pleadings or transactional legal instruments.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_b97c95dc7c0a",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source pages are extracted from a text layer and appear to be statutory/legal reference material rather than a transactional legal document. No signatures, recording stamp, real property description, or private parties are present.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_111c87875f7e",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "The source is an excerpt of federal copyright statutory text and legislative notes, not a typical legal instrument involving parties, property, recording data, or monetary consideration.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_ce03a835bb6b",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source appears to be a newspaper page rather than a legal-style source document.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_925ee756274c",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "No legal instrument type, parties, property description, or recording information found.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_67f4f64056bd",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Extracted text contains substantial OCR corruption, especially in advertisements and lists of names.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "7c0cd464fba18bbc:p1:c5",
+        "document_id": "7c0cd464fba18bbc",
+        "filename": "govinfo_usc_17_107.pdf",
+        "page_number": 1,
+        "text": "as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by no means exhaustive, give some idea of the sort of activities the courts might regard as fair use under the cir- cumstances: ‘‘quotation of excerpts in a review or criti- cism for purposes of illustration or comment; quotation of short passages in a scholarly or technical work, for illustration or clarification of the author’s observa- tions; use in a parody of some of the content of the work parodied; summary of an address or article, with brief quotations, in a news report; reproduction by a li- brary of a portion of a work to replace part of a dam- aged copy; reproduction by a teacher or student of a small part of a work to illustrate a lesson; reproduction of a work in legislative or judicial proceedings or re- ports; incidental and fortuitous reproduction, in a newsreel or broadcast, of",
+        "score": 0.486589079981123,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+          ],
+          "word_start": 700,
+          "word_end": 880,
+          "chunk_hash": "b305e5facf20f9c2327526c28e382c7fd78097db831c44df87bac829eb74e2aa",
+          "dense_score": 0.21013704612480458,
+          "bm25_score": 1.0,
+          "hybrid_score": 0.486589079981123
+        }
+      },
+      {
+        "evidence_id": "7c0cd464fba18bbc:p4:c8",
+        "document_id": "7c0cd464fba18bbc",
+        "filename": "govinfo_usc_17_107.pdf",
+        "page_number": 4,
+        "text": "base that will inevitably de- compose in time. The efforts of the Library of Con- gress, the American Film Institute, and other organiza- tions to rescue and preserve this irreplaceable con- tribution to our cultural life are to be applauded, and the making of duplicate copies for purposes of archival preservation certainly falls within the scope of ‘‘fair use.’’ When a copyrighted work contains unfair, inaccurate, or derogatory information concerning an individual or institution, the individual or institution may copy and reproduce such parts of the work as are necessary to permit understandable comment on the statements made in the work. The Committee has considered the question of publi- cation, in Congressional hearings and documents, of copyrighted material. Where the length of the work or excerpt published and the number of copies authorized are reasonable under the circumstances, and the work itself is directly relevant to a matter of legitimate leg- islative concern, the Committee believes that the pub- lication would constitute fair use. During the consideration of the revision bill in the 94th Congress it was proposed that independent",
+        "score": 0.40372459879999456,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+          ],
+          "word_start": 1120,
+          "word_end": 1300,
+          "chunk_hash": "0e72e83ad345c27a5967d232945467a5ded8291415ab0b85f73f37f90bdf6808",
+          "dense_score": 0.22221660194363135,
+          "bm25_score": 0.7408108786760977,
+          "hybrid_score": 0.40372459879999456
+        }
+      },
+      {
+        "evidence_id": "7c0cd464fba18bbc:p2:c4",
+        "document_id": "7c0cd464fba18bbc",
+        "filename": "govinfo_usc_17_107.pdf",
+        "page_number": 2,
+        "text": "discussion of ‘‘the considerations lying behind the four criteria listed in the amended section 107, in the con- text of typical classroom situations arising today.’’ This discussion appeared on pp. 32–35 of the 1967 report, and with some changes has been retained in the Senate report on S. 22 (S. Rep. No. 94–473, pp. 63–65). The Com- mittee has reviewed this discussion, and considers that it still has value as an analysis of various aspects of the problem. At the Judiciary Subcommittee hearings in June 1975, Chairman Kastenmeier and other members urged the parties to meet together independently in an effort to achieve a meeting of the minds as to permissible educational uses of copyrighted material. The response to these suggestions was positive, and a number of meetings of three groups, dealing respectively with classroom reproduction of printed material, music, and audio-visual material, were held beginning in Sep- tember 1975. In a joint letter to Chairman Kastenmeier, dated March 19, 1976, the representatives of the Ad Hoc Com- mittee of Educational Institutions and Organizations on Copyright Law Revision, and of",
+        "score": 0.38121534086078723,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+          ],
+          "word_start": 560,
+          "word_end": 740,
+          "chunk_hash": "0916963c1d1e88b0723d484448671df40cefe0cade27bd34a677eb0ca55064cd",
+          "dense_score": 0.21688339128257425,
+          "bm25_score": 0.6864032472203256,
+          "hybrid_score": 0.38121534086078723
+        }
+      },
+      {
+        "evidence_id": "7c0cd464fba18bbc:p5:c0",
+        "document_id": "7c0cd464fba18bbc",
+        "filename": "govinfo_usc_17_107.pdf",
+        "page_number": 5,
+        "text": "Page 30 TITLE 17—COPYRIGHTS § 108 newsletters have fairly modest circulations. Whether the copying of portions of a newsletter is an act of in- fringement or a fair use will necessarily turn on the facts of the individual case. However, as a general prin- ciple, it seems clear that the scope of the fair use doc- trine should be considerably narrower in the case of newsletters than in that of either mass-circulation periodicals or scientific journals. The commercial na- ture of the user is a significant factor in such cases: Copying by a profit-making user of even a small por- tion of a newsletter may have a significant impact on the commercial market for the work. The Committee has examined the use of excerpts from copyrighted works in the art work of calligra- phers. The committee believes that a single copy repro- duction of an excerpt from a copyrighted work by a cal- ligrapher for a single client does not represent an in- fringement of copyright. Likewise, a single reproduc- tion of excerpts from a copyrighted work by a student",
+        "score": 0.3536772714308214,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+          ],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "1edc481e8e9a33e354e41b58ed731bc07071408fa5aa822f3c68e170d04ed736",
+          "dense_score": 0.15453156926130204,
+          "bm25_score": 0.7235192897456432,
+          "hybrid_score": 0.3536772714308214
+        }
+      },
+      {
+        "evidence_id": "7c0cd464fba18bbc:p1:c4",
+        "document_id": "7c0cd464fba18bbc",
+        "filename": "govinfo_usc_17_107.pdf",
+        "page_number": 1,
+        "text": "market for or value of the copyrighted work. The fact that a work is unpublished shall not itself bar a finding of fair use if such finding is made upon consideration of all the above fac- tors. (Pub. L. 94–553, title I, § 101, Oct. 19, 1976, 90 Stat. 2546; Pub. L. 101–650, title VI, § 607, Dec. 1, 1990, 104 Stat. 5132; Pub. L. 102–492, Oct. 24, 1992, 106 Stat. 3145.) HISTORICAL AND REVISION NOTES HOUSE REPORT NO. 94–1476 General Background of the Problem. The judicial doc- trine of fair use, one of the most important and well- established limitations on the exclusive right of copy- right owners, would be given express statutory recogni- tion for the first time in section 107. The claim that a defendant’s acts constituted a fair use rather than an infringement has been raised as a defense in innumer- able copyright actions over the years, and there is ample case law recognizing the existence of the doc- trine and applying it. The examples enumerated at page 24 of the Register’s 1961 Report, while by",
+        "score": 0.35160625713558397,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page is labeled extracted from text layer; text treated as authoritative and omitted here per instruction."
+          ],
+          "word_start": 560,
+          "word_end": 740,
+          "chunk_hash": "eb194d4cb451c5c4d752d84be20847579b67d9917d7e4ac6b06bd228434b5d64",
+          "dense_score": 0.16954676788064024,
+          "bm25_score": 0.6897167371804795,
+          "hybrid_score": 0.35160625713558397
+        }
+      },
+      {
+        "evidence_id": "bfd73ac0ebb0f6bb:p1:c32",
+        "document_id": "bfd73ac0ebb0f6bb",
+        "filename": "loc_evening_star_1900_01_01_0394.pdf",
+        "page_number": 1,
+        "text": "at a suitable distance above the present cause- way bridge. This driveway, with its branch along the southeast margin, are to be built at about the future grade of average filling proposed for the park, which Is several feet above the freshet line of 1889), requIring an embankment which can be made partly of material now in the park and partly of material to be dredged under operations for the improvement of the Potomac river at Washington. While a permanent roadway will be eventually required, it Is not con- sidered desirable to lay one at the outset on the new embankment, which should have tIme for settling. It Is therefore pro- posed by Col. Allen to place a temporary gravel covering, whIch material may serve as a subgrade for a future pavement or for other purposes. .Ample provision can easily he made for~drainage along and through the driveway. The estimated cost of the bridges, drainage, etc., and of the drIveway and embankment, is placed at $135,000. POTOMAC RIVER IMPROVEMENl'. The operations for the Improvement of the Potomac river during the",
+        "score": 0.34805193960141523,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [
+            "Page was provided as extracted text layer; verbatim page text omitted per instruction because supplied text layer is authoritative.",
+            "Source appears to be a newspaper page with advertisements and news articles, not a legal-style instrument.",
+            "Text layer contains numerous OCR artifacts, broken words, and unclear characters.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 4480,
+          "word_end": 4660,
+          "chunk_hash": "303b2a63ae6692b258de4697808a0eb056c4949236847bc45b95c7b141354890",
+          "dense_score": 0.14265908463229035,
+          "bm25_score": 0.7294958131155044,
+          "hybrid_score": 0.34805193960141523
+        }
+      },
+      {
+        "evidence_id": "1a021fbaf033b873:p3:c2",
+        "document_id": "1a021fbaf033b873",
+        "filename": "govinfo_usc_17_105.pdf",
+        "page_number": 3,
+        "text": "privately written works are clearly excluded from the prohibition; accordingly, a saving clause becomes su- perfluous. Retention of a saving clause has been urged on the ground that the present statutory provision is fre- quently cited, and that having the provision expressly stated in the law would avoid questions and expla- nations. The committee here observes: (1) there is noth- ing in section 105 that would relieve the Government of its obligation to secure permission in order to publish a copyrighted work; and (2) publication or other use by the Government of a private work would not affect its copyright protection in any way. The question of use of copyrighted material in documents published by the Congress and its Committees is discussed below in con- nection with section 107. Works of the United States Postal Service. The intent of section 105 [this section] is to restrict the prohibi- tion against Government copyright to works written by employees of the United States Government within the scope of their official duties. In accordance with the objectives of the Postal Reorganization Act of",
+        "score": 0.33063302339870093,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 280,
+          "word_end": 460,
+          "chunk_hash": "bf302c3c818d1bc077d61bbf6dbef831b0591727ae8b104ffe171206ed0106ff",
+          "dense_score": 0.13340318570000947,
+          "bm25_score": 0.6969170076962709,
+          "hybrid_score": 0.33063302339870093
+        }
+      },
+      {
+        "evidence_id": "1a021fbaf033b873:p2:c4",
+        "document_id": "1a021fbaf033b873",
+        "filename": "govinfo_usc_17_105.pdf",
+        "page_number": 2,
+        "text": "prepared under U.S. Government con- tract or grant. As the bill is written, the Government agency concerned could determine in each case whether to allow an independent contractor or grantee, to se- cure copyright in works prepared in whole or in part with the use of Government funds. The argument that has been made against allowing copyright in this situa- tion is that the public should not be required to pay a ‘‘double subsidy,’’ and that it is inconsistent to pro- hibit copyright in works by Government employees while permitting private copyrights in a growing body of works created by persons who are paid with Govern- ment funds. Those arguing in favor of potential copy- right protection have stressed the importance of copy- right as an incentive to creation and dissemination in this situation, and the basically different policy consid- erations, applicable to works written by Government employees and those applicable to works prepared by private organizations with the use of Federal funds. The bill deliberately avoids making any sort of out- right, unqualified prohibition against copyright in works prepared",
+        "score": 0.3169846448265334,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 560,
+          "word_end": 740,
+          "chunk_hash": "eb32199a117fef010bf019db4bfd28b935544c1c0e99aa76a9011dd8ae6f2c79",
+          "dense_score": 0.17918925401983815,
+          "bm25_score": 0.5728903706103959,
+          "hybrid_score": 0.3169846448265334
+        }
+      }
+    ],
+    "warnings": []
+  }
+}

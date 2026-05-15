@@ -1,0 +1,1043 @@
+{
+  "case_id": "all-categories",
+  "draft_type": "case_fact_summary",
+  "total_claims": 74,
+  "non_scaffolding_claims": 30,
+  "entailed": 30,
+  "uncited": 0,
+  "ungrounded": 0,
+  "not_supported": 0,
+  "contradicted": 0,
+  "unclear": 0,
+  "scaffolding": 44,
+  "citation_coverage": 1.0,
+  "grounding_pass_rate": 1.0,
+  "unsupported_claim_count": 0,
+  "claims": [
+    {
+      "claim_id": "claim_285ff8d67646",
+      "section_id": "evidence_reviewed",
+      "section": "Evidence Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied evidence includes an uncompleted AO 88B subpoena form for producing documents, information, objects, or permitting inspection of premises in a civil action.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "5aaabcf14b21fd40:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b58e23829da4",
+      "section_id": "evidence_reviewed",
+      "section": "Evidence Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied evidence includes an AO 85 consent/reference form addressing consent to a United States magistrate judge’s authority.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "a72d9aa7f0bed8eb:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_48dc362f6a11",
+      "section_id": "evidence_reviewed",
+      "section": "Evidence Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied evidence includes a Form D/ULOE-related SEC notice excerpt with filing instructions.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "18aae1ac9b6c1191:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_9fa15cc2e440",
+      "section_id": "evidence_reviewed",
+      "section": "Evidence Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied evidence includes a Notice of Claim of Lien captioned under a State Mechanics' and Materialmen's Lien Act.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_695cbec095a0",
+      "section_id": "evidence_reviewed",
+      "section": "Evidence Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied evidence includes derived fields for a Renotice to Take Video Deposition.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ae3f9fb5b540",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice identifies Cause No. 2024-CV-00318 and recording references Book 4922, Page 071.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_cdd1904d6871",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that Harbor View Holdings, LLC filed the notice against Northstar Market LLC.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0e5222091a20",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The property listed in the lien notice is Lot 14, Block C, Willow Industrial Park, Plat Cabinet 7, Slide 22.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0abd6ffb03e0",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that Harbor View Holdings, LLC claims a lien on the described property.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_46f4551ab192",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that the lien is asserted for unpaid access road maintenance charges for November 2023 and December 2023, plus incidental charges.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2982677d0f9e",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states an aggregate principal amount of $2,850.00, but the same page includes a handwritten note to confirm that amount.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 2,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_920e08e6e1cb",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that demand for payment was served by certified mail on January 9, 2024, but the certified mail tracking number is partially unclear.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 2,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8b2f50972537",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that the fifteen-day cure period prescribed by the demand had expired.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0894b877e9dc",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice states that the claimant reserves the right to commence a judicial action to foreclose the lien and recover sums due, costs, interest, and reasonable attorneys' fees.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_57c29f19569d",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice signature block names Harbor View Holdings, LLC and M. Alvarez, Authorized Member.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c466331fe8df",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The lien notice is dated with blanks for the day of February 2024 rather than a completed date.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_47492bb1854c",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The AO 88B subpoena form contains blank fields for the district, civil action number, plaintiff, defendant, addressee, production place, and production date/time.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "5aaabcf14b21fd40:p1:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_7d0c394d54da",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The AO 88B proof-of-service page contains blank service, fee, date, server signature, printed-name, title, and address fields.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "5aaabcf14b21fd40:p2:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1ef13fcb8e73",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The AO 88B excerpt states that objections to a subpoena must be served before the earlier of the compliance time or 14 days after service.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "5aaabcf14b21fd40:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4300fc86ad32",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The magistrate-judge consent form states that consenting parties consent to a United States magistrate judge conducting all proceedings, including trial, entry of final judgment, and post-trial proceedings.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "a72d9aa7f0bed8eb:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1e5839d7e7de",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The magistrate-judge consent form contains blank lines for printed names of parties and attorneys, signatures, and dates.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "a72d9aa7f0bed8eb:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_a53ea88cbaa8",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The magistrate-judge consent form states that it should be returned to the clerk of court only if consenting to magistrate-judge jurisdiction and should not be returned to a judge.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "a72d9aa7f0bed8eb:p1:c1"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_102528cd117a",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The SEC Form D/ULOE excerpt states that five copies of the notice must be filed with the SEC and one must be manually signed.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "18aae1ac9b6c1191:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_227d467b1834",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The SEC Form D/ULOE excerpt states that there is no federal filing fee.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "18aae1ac9b6c1191:p1:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1ce5f6ed6ce0",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The derived deposition fields state that the deposition was scheduled for January 23, 1998 at 10:00 a.m. and that the document was dated December 15, 1997 at New York, New York.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c20de28cdca7",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "fact",
+      "text": "The derived deposition fields state that specified documents were required to be produced at least five days before the examination.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_60e03958976e",
+      "section_id": "facts_that_appear_supported",
+      "section": "Facts That Appear Supported",
+      "claim_type": "summary",
+      "text": "The derived deposition fields identify multiple New York Supreme Court, New York County matters involving tobacco-company defendants and the Council for Tobacco Research-USA, Inc. and Tobacco Institute, Inc.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2c7bee50e047",
+      "section_id": "items_requiring_verification",
+      "section": "Items Requiring Verification",
+      "claim_type": "fact",
+      "text": "The lien notice includes handwritten review annotations, including “CHECK w/ R. Singh,” “confirm,” “verify cert mail #!,” “file by 03/15?,” and “see 2019 esmt,” which should be verified before treating them as part of the formal notice.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1"
+      ],
+      "substring_grounded_count": 2,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f7973bd367e0",
+      "section_id": "items_requiring_verification",
+      "section": "Items Requiring Verification",
+      "claim_type": "fact",
+      "text": "The derived deposition fields flag that fax/header artifacts appear to show 12/16/97, which may differ from the stated document date of December 15, 1997.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_9a62d8abf154",
+      "section_id": "items_requiring_verification",
+      "section": "Items Requiring Verification",
+      "claim_type": "fact",
+      "text": "The derived deposition fields identify Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96, while noting that 110952/96 may appear in garbled form as 110952(96.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "d61bba9a2aabfec3:fields"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_fa7fe2c8320c",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Is the lien notice a final filed/recorded notice, a draft, or a review copy with annotations?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_cacd32cbf036",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "What is the complete certified-mail tracking number for the January 9, 2024 demand?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8c48bd037594",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "What is the completed execution date for the lien notice and notary acknowledgment?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5c8e098c6c03",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Does the handwritten note “file by 03/15?” reflect a real filing deadline, an internal reminder, or a reviewer question?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_e57231e6d693",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Should the handwritten annotations on the lien notice be excluded from the formal instrument text?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_14be7de9bc5f",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Are the AO 85 consent form and AO 88B subpoena form blank/uncompleted templates with no case-specific facts filled in?",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_cfe82964d78a",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "For the deposition renotice, the derived fields should be verified against source pages because party names, index numbers, and dates are OCR-sensitive.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_575f9dae60bb",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "All pages are image-only with handwritten text; extraction confidence varies significantly.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4ad5da22e5c1",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Several legal names, surnames, and metes-and-bounds calls are uncertain and should be verified against the original images or related records.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_61e0600ec857",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Page 2 is especially difficult to read and may not be a complete or reliable transcription.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2623a887bf7d",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "One or more pages have low extraction confidence.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_775563d4571c",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document consists of handwritten survey notes/sketches rather than a clear formal legal instrument.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_a370fa36aeb1",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "No text layer was available for any page; extraction is based on image transcription.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5e6bfb9aa118",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Do not treat extracted bearings/distances as a complete legal description without review of the original document.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0b9abd9dbf0f",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document-level reliability is very low because all pages contain severely garbled text-layer/source text.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4bada6d23d13",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Only broad, low-confidence characterization is possible; precise parties, dates, property descriptions, recording references, and amounts should be re-extracted from page images or a higher-quality source.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_056ead86e817",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source consists of selected nonconsecutive text-layer excerpts from a Supreme Court opinion rather than a complete continuous document.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8e019e86a7ad",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "One provided page excerpt ends mid-word, indicating cutoff text.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_5fdb3aaa79e9",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "The document appears to be an index or finding aid for estate files, not a single legal instrument.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ed9882611c1d",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Several entries contain garbled, incomplete, or inconsistent source text; no corrections were inferred.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2484c7c7a710",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source document appears to be a newspaper page, not a legal-style document.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f91c6a50a856",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Text layer is substantially garbled/OCR-corrupted; extracted facts have limited reliability.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ccd4c2c67bd8",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "No deed, contract, court filing, or recordable legal instrument identified on the supplied page.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b87bafb4945a",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "All pages are image-only with no text layer; extraction is based on rendered images.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c5a83755fde1",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document scan has visible artifacts, stamps, bleed-through/overprint, and some obscured text, especially on page 1.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_fe960d6def4c",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Do not treat illegible overprinted text as fully extracted.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f98242d2e038",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Single page provided as image-only source; OCR/transcription confidence affected by scan quality, speckling, and shadow/obstruction near lower-left.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_57017ac04001",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document appears to contain review annotations/handwritten notes that may not be part of the formal lien text.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_7d06c72ff621",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Several pages are from text layer with OCR/source-text quality issues, especially page 1.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_3a6f569b8ece",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Only pages 1-5 were provided; table of contents references additional pages not included here.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2ca8a2c86e81",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "All pages were provided as extracted text-layer text; no image-based extraction was performed.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_3e47df7fdb07",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "The text layer has widespread OCR/source-text degradation, especially punctuation, spacing, date day numbers, accented characters, and some names.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_81125baa2713",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document is extracted from a low-quality text layer/OCR with many garbled words, misspellings, and fax transmission artifacts.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_91453b6ec726",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "All pages were provided as image inputs with no text layer.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_3ca3d1fef43f",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Scanned pages contain top-edge artifacts and some stamps/handwriting with limited legibility.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_e1211a71e9af",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document appears incomplete relative to internal form pagination: supplied images show form pages 1 of 8 through 5 of 8 only, with an additional continuation page marked 2 of 8.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_12ad4c0d88e4",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "The 'Total' for offering price appears as $0 despite equity/convertible amounts shown; transcribed as displayed.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_fbc5965e0858",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document was provided as extracted text-layer pages; several pages show text-layer/source-text quality issues with OCR-like garbling.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c8f5700a37e7",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Some dates, form fields, addresses, signatures, and footer text are incomplete or unclear.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_9b544d508b35",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source is a text-layer extraction of a blank/uncompleted form; no case-specific facts are provided.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_bd2b7ddc01c8",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Document appears to be a blank federal subpoena form with no case-specific information completed.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6c60bd5c3586",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Some checkbox symbols are rendered as the character ’ in the supplied text layer.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b1cb67556786",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source is a text-layer page containing an uncompleted legal form with many blank placeholders; no case-specific facts should be inferred.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_c42b6d630157",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source is a text-layer extraction of an uncompleted standard court form; no case-specific facts are filled in.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    }
+  ]
+}

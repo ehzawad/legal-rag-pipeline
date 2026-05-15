@@ -1,0 +1,7 @@
+{
+  "profile_path": "outputs/public_eval/operator_profile.json",
+  "guidance": "Operator-defined knowledge rules (treat as hard constraints):\n- Always treat any net-income or aggregate-revenue value with decimal punctuation in a millions context as a transcription error pending source reconciliation.",
+  "sources": {
+    "knowledge_layer": "state/knowledge_layer.json"
+  }
+}

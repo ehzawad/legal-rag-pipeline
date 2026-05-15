@@ -1,0 +1,46 @@
+{
+  "examples": [
+    {
+      "actor": {
+        "id": "eval-operator",
+        "type": "human"
+      },
+      "edit_signature": "8479f6f511241fde409da46e1cb88f3d03373d5851bc4cbb5a77e7c9dedca77b",
+      "edited_draft": "# Evidence Reviewed\nProvided records include a notice and payment record. [doc:p1:c0]\n\n# Facts That Appear Supported\nBased on provided records, the notice appears to have been sent on March 12, 2025. [doc:p1:c0]\n\n# Items Requiring Verification\nVerify the $2,400 balance before relying on it as nonpayment. [doc:p1:c0]\n",
+      "evidence_ids": [
+        "doc:p1:c0"
+      ],
+      "intent": "preference",
+      "operator_note": "Prefer Evidence Reviewed, Facts That Appear Supported, and Items Requiring Verification sections; use cautious wording from provided records.",
+      "original_draft": "# Issue\nThe notice was sent on March 12, 2025. [doc:p1:c0]\n\n# Deadlines and Dates\nThe amount due is $2,400. [doc:p1:c0]\n",
+      "timestamp": "2026-05-15T04:15:03+00:00"
+    }
+  ],
+  "signals": {
+    "caution_uncertainty_tone": {
+      "edits_with_added_caution": 1,
+      "markers": {
+        "appears": 1,
+        "based on": 1,
+        "provided records": 1,
+        "verify": 1
+      }
+    },
+    "field_corrections": [],
+    "preferred_phrases": {
+      "Provided records include a notice and payment record.": 1
+    },
+    "section_labels": {
+      "added": {
+        "Evidence Reviewed": 1,
+        "Facts That Appear Supported": 1,
+        "Items Requiring Verification": 1
+      },
+      "removed": {
+        "Deadlines and Dates": 1,
+        "Issue": 1
+      }
+    }
+  },
+  "version": 1
+}

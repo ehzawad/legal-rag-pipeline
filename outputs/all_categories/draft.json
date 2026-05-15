@@ -1,0 +1,2020 @@
+{
+  "draft_type": "case_fact_summary",
+  "title": "Case Fact Summary",
+  "generated_at": "2026-05-15T14:20:02+00:00",
+  "sections": [
+    {
+      "heading": "Evidence Reviewed",
+      "body": "- The supplied evidence includes an uncompleted AO 88B subpoena form for producing documents, information, objects, or permitting inspection of premises in a civil action. [5aaabcf14b21fd40:p1:c0]\n- The supplied evidence includes an AO 85 consent/reference form addressing consent to a United States magistrate judge’s authority. [a72d9aa7f0bed8eb:p1:c1]\n- The supplied evidence includes a Form D/ULOE-related SEC notice excerpt with filing instructions. [18aae1ac9b6c1191:p1:c2]\n- The supplied evidence includes a Notice of Claim of Lien captioned under a State Mechanics' and Materialmen's Lien Act. [e7a7d9482447de83:p1:c0]\n- The supplied evidence includes extracted fields for a Renotice to Take Video Deposition. [d61bba9a2aabfec3:fields]",
+      "evidence_ids": [
+        "5aaabcf14b21fd40:p1:c0",
+        "a72d9aa7f0bed8eb:p1:c1",
+        "18aae1ac9b6c1191:p1:c2",
+        "e7a7d9482447de83:p1:c0",
+        "d61bba9a2aabfec3:fields"
+      ],
+      "citation_quotes": {
+        "5aaabcf14b21fd40:p1:c0": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action",
+        "a72d9aa7f0bed8eb:p1:c1": "Consent to a magistrate judge’s authority.",
+        "18aae1ac9b6c1191:p1:c2": "Where to File: U.S. Securities and Exchange Commission",
+        "e7a7d9482447de83:p1:c0": "NOTICE OF CLAIM OF LIEN Pursuant to State Mechanics' and Materialmen's Lien Act",
+        "d61bba9a2aabfec3:fields": "document_type: Renotice to Take Video Deposition"
+      },
+      "unsupported": false
+    },
+    {
+      "heading": "Facts That Appear Supported",
+      "body": "- The lien notice identifies Cause No. 2024-CV-00318 and recording references Book 4922, Page 071. [e7a7d9482447de83:p1:c0]\n- The lien notice states that Harbor View Holdings, LLC filed the notice against Northstar Market LLC. [e7a7d9482447de83:p1:c0]\n- The property listed in the lien notice is Lot 14, Block C, Willow Industrial Park, Plat Cabinet 7, Slide 22. [e7a7d9482447de83:p1:c0]\n- The lien notice states that Harbor View Holdings, LLC claims a lien on the described property. [e7a7d9482447de83:p1:c0]\n- The lien notice states that the lien is asserted for unpaid access road maintenance charges for November 2023 and December 2023, plus incidental charges. [e7a7d9482447de83:p1:c0]\n- The lien notice states an aggregate principal amount of $2,850.00, but the same page includes a handwritten note to confirm that amount. [e7a7d9482447de83:p1:c0] [e7a7d9482447de83:p1:c1]\n- The lien notice states that demand for payment was served by certified mail on January 9, 2024, but the certified mail tracking number is partially unclear. [e7a7d9482447de83:p1:c0] [e7a7d9482447de83:p1:c1]\n- The lien notice states that the fifteen-day cure period prescribed by the demand had expired. [e7a7d9482447de83:p1:c0]\n- The lien notice states that the claimant reserves the right to commence a judicial action to foreclose the lien and recover sums due, costs, interest, and reasonable attorneys' fees. [e7a7d9482447de83:p1:c1]\n- The lien notice signature block names Harbor View Holdings, LLC and M. Alvarez, Authorized Member. [e7a7d9482447de83:p1:c1]\n- The lien notice is dated with blanks for the day of February 2024 rather than a completed date. [e7a7d9482447de83:p1:c1]\n- The AO 88B subpoena form contains blank fields for the district, civil action number, plaintiff, defendant, addressee, production place, and production date/time. [5aaabcf14b21fd40:p1:c0]\n- The AO 88B proof-of-service page contains blank service, fee, date, server signature, printed-name, title, and address fields. [5aaabcf14b21fd40:p2:c0]\n- The AO 88B excerpt states that objections to a subpoena must be served before the earlier of the compliance time or 14 days after service. [5aaabcf14b21fd40:p3:c2]\n- The magistrate-judge consent form states that consenting parties consent to a United States magistrate judge conducting all proceedings, including trial, entry of final judgment, and post-trial proceedings. [a72d9aa7f0bed8eb:p1:c1]\n- The magistrate-judge consent form contains blank lines for printed names of parties and attorneys, signatures, and dates. [a72d9aa7f0bed8eb:p1:c1]\n- The magistrate-judge consent form states that it should be returned to the clerk of court only if consenting to magistrate-judge jurisdiction and should not be returned to a judge. [a72d9aa7f0bed8eb:p1:c1]\n- The SEC Form D/ULOE excerpt states that five copies of the notice must be filed with the SEC and one must be manually signed. [18aae1ac9b6c1191:p1:c2]\n- The SEC Form D/ULOE excerpt states that there is no federal filing fee. [18aae1ac9b6c1191:p1:c2]\n- The derived deposition fields state that the deposition was scheduled for January 23, 1998 at 10:00 a.m. and that the document was dated December 15, 1997 at New York, New York. [d61bba9a2aabfec3:fields]\n- The derived deposition fields state that specified documents were required to be produced at least five days before the examination. [d61bba9a2aabfec3:fields]\n- The derived deposition fields identify multiple New York Supreme Court, New York County matters involving tobacco-company defendants and the Council for Tobacco Research-USA, Inc. and Tobacco Institute, Inc. [d61bba9a2aabfec3:fields]",
+      "evidence_ids": [
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1",
+        "5aaabcf14b21fd40:p1:c0",
+        "5aaabcf14b21fd40:p2:c0",
+        "5aaabcf14b21fd40:p3:c2",
+        "a72d9aa7f0bed8eb:p1:c1",
+        "18aae1ac9b6c1191:p1:c2",
+        "d61bba9a2aabfec3:fields"
+      ],
+      "citation_quotes": {
+        "e7a7d9482447de83:p1:c0": "Cause No. 2024-CV-00318 Recorded: Book 4922 Page 071",
+        "e7a7d9482447de83:p1:c1": "[handwritten: $2,850 -- confirm]",
+        "5aaabcf14b21fd40:p1:c0": "UNITED STATES DISTRICT COURT for the __________ District of __________",
+        "5aaabcf14b21fd40:p2:c0": "I received this subpoena for (name of individual and title, if any) on (date)",
+        "5aaabcf14b21fd40:p3:c2": "The objection must be served before the earlier of the time specified for compliance or 14 days after the subpoena is served.",
+        "a72d9aa7f0bed8eb:p1:c1": "consent to have a United States magistrate judge conduct all proceedings in this case including trial, the entry of final judgment, and all post-trial proceedings",
+        "18aae1ac9b6c1191:p1:c2": "Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed.",
+        "d61bba9a2aabfec3:fields": "Deposition scheduled for January 23, 1998 at 10:00 a.m.; document dated December 15, 1997 at New York, New York."
+      },
+      "unsupported": false
+    },
+    {
+      "heading": "Items Requiring Verification",
+      "body": "- The lien notice includes handwritten review annotations, including “CHECK w/ R. Singh,” “confirm,” “verify cert mail #!,” “file by 03/15?,” and “see 2019 esmt,” which should be verified before treating them as part of the formal notice. [e7a7d9482447de83:p1:c0] [e7a7d9482447de83:p1:c1]\n- The derived deposition fields flag that fax/header artifacts appear to show 12/16/97, which may differ from the stated document date of December 15, 1997. [d61bba9a2aabfec3:fields]\n- The derived deposition fields identify Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96, while noting that 110952/96 may appear in garbled form as 110952(96. [d61bba9a2aabfec3:fields]",
+      "evidence_ids": [
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1",
+        "d61bba9a2aabfec3:fields"
+      ],
+      "citation_quotes": {
+        "e7a7d9482447de83:p1:c0": "[handwritten: CHECK w/ R. Singh]",
+        "e7a7d9482447de83:p1:c1": "[handwritten: verify cert mail #!]",
+        "d61bba9a2aabfec3:fields": "document dated December 15, 1997 at New York, New York. Fax/header artifacts appear to show 12/16/97."
+      },
+      "unsupported": false
+    },
+    {
+      "heading": "Open Questions",
+      "body": "- Is the lien notice a final filed/recorded notice, a draft, or a review copy with annotations?\n- What is the complete certified-mail tracking number for the January 9, 2024 demand?\n- What is the completed execution date for the lien notice and notary acknowledgment?\n- Does the handwritten note “file by 03/15?” reflect a real filing deadline, an internal reminder, or a reviewer question?\n- Should the handwritten annotations on the lien notice be excluded from the formal instrument text?\n- Are the AO 85 consent form and AO 88B subpoena form blank/uncompleted templates with no case-specific facts filled in?\n- For the deposition renotice, the extracted fields should be verified against source pages because party names, index numbers, and dates are extracted text-sensitive.\n- All pages are image-only with handwritten text; extraction confidence varies significantly.\n- Several legal names, surnames, and metes-and-bounds calls are uncertain and should be verified against the original images or related records.\n- Page 2 is especially difficult to read and may not be a complete or reliable transcription.\n- One or more pages have low extraction confidence.\n- Document consists of handwritten survey notes/sketches rather than a clear formal legal instrument.\n- No extracted text was available for any page; extraction is based on image transcription.\n- Do not treat extracted bearings/distances as a complete legal description without review of the original document.\n- Document-level reliability is very low because all pages contain severely garbled extracted text.\n- Only broad, low-confidence characterization is possible; precise parties, dates, property descriptions, recording references, and amounts should be re-extracted from page images or a higher-quality source.\n- Source consists of selected nonconsecutive extracted text excerpts from a Supreme Court opinion rather than a complete continuous document.\n- One provided page excerpt ends mid-word, indicating cutoff text.\n- The document appears to be an index or finding aid for estate files, not a single legal instrument.\n- Several entries contain garbled, incomplete, or inconsistent source text; no corrections were inferred.\n- Source document appears to be a newspaper page, not a legal-style document.\n- extracted text is substantially garbled/extracted text-corrupted; extracted facts have limited reliability.\n- No deed, contract, court filing, or recordable legal instrument identified on the supplied page.\n- All pages are image-only with no extracted text; extraction is based on rendered images.\n- Document scan has visible artifacts, stamps, bleed-through/overprint, and some obscured text, especially on page 1.\n- Do not treat illegible overprinted text as fully extracted.\n- Single page provided as image-only source; extracted text/transcription confidence affected by scan quality, speckling, and shadow/obstruction near lower-left.\n- Document appears to contain review annotations/handwritten notes that may not be part of the formal lien text.\n- Several pages are from extracted text with extracted text/source-text quality issues, especially page 1.\n- Only pages 1-5 were provided; table of contents references additional pages not included here.\n- All pages were provided as extracted extracted text text; no image-based extraction was performed.\n- The text has widespread extracted text/source-text degradation, especially punctuation, spacing, date day numbers, accented characters, and some names.\n- Document is extracted from a low-quality extracted text/extracted text with many garbled words, misspellings, and fax transmission artifacts.\n- All pages were provided as image inputs with no extracted text.\n- Scanned pages contain top-edge artifacts and some stamps/handwriting with limited legibility.\n- Document appears incomplete relative to internal form pagination: supplied images show form pages 1 of 8 through 5 of 8 only, with an additional continuation page marked 2 of 8.\n- The 'Total' for offering price appears as $0 despite equity/convertible amounts shown; transcribed as displayed.\n- Document was provided as extracted extracted text pages; several pages show extracted text/source-text quality issues with extracted text-like garbling.\n- Some dates, form fields, addresses, signatures, and footer text are incomplete or unclear.\n- Source is a PDF text extraction of a blank/uncompleted form; no case-specific facts are provided.\n- Document appears to be a blank federal subpoena form with no case-specific information completed.\n- Some checkbox symbols are rendered as the character ’ in the supplied extracted text.\n- Source is a Extracted text page containing an uncompleted legal form with many blank placeholders; no case-specific facts should be inferred.\n- Source is a PDF text extraction of an uncompleted standard court form; no case-specific facts are filled in.",
+      "evidence_ids": [],
+      "citation_quotes": {},
+      "unsupported": true
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "5aaabcf14b21fd40:p1:c0",
+      "document_id": "5aaabcf14b21fd40",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 1,
+      "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action UNITED STATES DISTRICT COURT for the __________ District of __________ ) ) ) ) ) ) Plaintiff v. Civil Action No. Defendant SUBPOENA TO PRODUCE DOCUMENTS, INFORMATION, OR OBJECTS OR TO PERMIT INSPECTION OF PREMISES IN A CIVIL ACTION To: (Name of person to whom this subpoena is directed) ’ Production: YOU ARE COMMANDED to produce at the time, date, and place set forth below the following documents, electronically stored information, or objects, and to permit inspection, copying, testing, or sampling of the material: Place: Date and Time: ’ Inspection of Premises: YOU ARE COMMANDED to permit entry onto the designated premises, land, or other property possessed or controlled by you at the time, date, and location set forth below, so that the requesting party may inspect, measure, survey, photograph, test, or sample the property or any designated object or operation on it. Place: Date and Time: The following provisions of Fed. R. Civ. P. 45 are attached –",
+      "score": 0.5514215114104664,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "2b179289ef60a7c4249d28bf55307ae57c7accd236e97b269dc08b77a751bbdb",
+        "dense_score": 0.3201664311010891,
+        "bm25_score": 0.9808952319850243,
+        "hybrid_score": 0.5514215114104664
+      }
+    },
+    {
+      "evidence_id": "5aaabcf14b21fd40:p2:c0",
+      "document_id": "5aaabcf14b21fd40",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 2,
+      "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action (Page 2) Civil Action No. PROOF OF SERVICE (This section should not be filed with the court unless required by Fed. R. Civ. P. 45.) I received this subpoena for (name of individual and title, if any) on (date) . ’ I served the subpoena by delivering a copy to the named person as follows: on (date) ; or ’ I returned the subpoena unexecuted because: . Unless the subpoena was issued on behalf of the United States, or one of its officers or agents, I have also tendered to the witness the fees for one day’s attendance, and the mileage allowed by law, in the amount of $ . My fees are $ for travel and $ for services, for a total of $ . I declare under penalty of perjury that this information is true. Date: Server’s signature Printed name and title Server’s address Additional information regarding attempted service, etc.:",
+      "score": 0.5305639864041592,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 0,
+        "word_end": 173,
+        "chunk_hash": "49854da3e155f39a7911eedef8a7d8e83548a9485e7013a5f052e5b3fcbca5da",
+        "dense_score": 0.2777907483140911,
+        "bm25_score": 1.0,
+        "hybrid_score": 0.5305639864041592
+      }
+    },
+    {
+      "evidence_id": "5aaabcf14b21fd40:p3:c2",
+      "document_id": "5aaabcf14b21fd40",
+      "filename": "ao088b_subpoena_produce.pdf",
+      "page_number": 3,
+      "text": "not appear in person at the place of production or inspection unless also commanded to appear for a deposition, hearing, or trial. (B) Objections. A person commanded to produce documents or tangible things or to permit inspection may serve on the party or attorney designated in the subpoena a written objection to inspecting, copying, testing, or sampling any or all of the materials or to inspecting the premises—or to producing electronically stored information in the form or forms requested. The objection must be served before the earlier of the time specified for compliance or 14 days after the subpoena is served. If an objection is made, the following rules apply: (i) At any time, on notice to the commanded person, the serving party may move the court for the district where compliance is required for an order compelling production or inspection. (ii) These acts may be required only as directed in the order, and the order must protect a person who is neither a party nor a party’s officer from significant expense resulting from compliance. (3) Quashing or Modifying a",
+      "score": 0.5160503914018809,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 280,
+        "word_end": 460,
+        "chunk_hash": "1bc5f9a2bc9d28e3b9e2fd61f7d766a841ff2336cce7a86350a3626173321264",
+        "dense_score": 0.2935883787800171,
+        "bm25_score": 0.9291941291281994,
+        "hybrid_score": 0.5160503914018809
+      }
+    },
+    {
+      "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+      "document_id": "a72d9aa7f0bed8eb",
+      "filename": "ao085_notice_consent_magistrate.pdf",
+      "page_number": 1,
+      "text": "without adverse substantive consequences. The name of any party withholding consent will not be revealed to any judge who may otherwise be involved with your case. Consent to a magistrate judge’s authority. The following parties consent to have a United States magistrate judge conduct all proceedings in this case including trial, the entry of final judgment, and all post-trial proceedings. Printed names of parties and attorneys Signatures of parties or attorneys Dates Reference Order IT IS ORDERED: This case is referred to a United States magistrate judge to conduct all proceedings and order the entry of a final judgment in accordance with 28 U.S.C. § 636(c) and Fed. R. Civ. P. 73. Date: District Judge’s signature Printed name and title Note: Return this form to the clerk of court only if you are consenting to the exercise of jurisdiction by a United States magistrate judge. Do not return this form to a judge.",
+      "score": 0.5099765559793703,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.95,
+        "extraction_method": "pdf-text-layer",
+        "warnings": [],
+        "word_start": 140,
+        "word_end": 293,
+        "chunk_hash": "5b0d907a63b95d9e2efda8262848199e7be8d0ead0c7cf182c909c5f68217b6a",
+        "dense_score": 0.2748193346605228,
+        "bm25_score": 0.9466971098572299,
+        "hybrid_score": 0.5099765559793703
+      }
+    },
+    {
+      "evidence_id": "18aae1ac9b6c1191:p1:c2",
+      "document_id": "18aae1ac9b6c1191",
+      "filename": "sec_vprr_03000005_form_d.pdf",
+      "page_number": 1,
+      "text": "of the date it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where to File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549 Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for",
+      "score": 0.49453059132809635,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.92,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Image-only page; OCR/transcription based on rendered image.",
+          "Some stamps and handwriting are partially illegible.",
+          "Barcode obscures part of telephone/address area.",
+          "No text layer; routing page through image-based extraction.",
+          "Page contains markers suggesting illegible, redacted, or uncertain text."
+        ],
+        "word_start": 280,
+        "word_end": 460,
+        "chunk_hash": "15430dc4ee20c1e027f63f2ddfef89ebe6aedec8fb8a2772c76e5e9fddfae5b7",
+        "dense_score": 0.22717893348905666,
+        "bm25_score": 0.9910408130291701,
+        "hybrid_score": 0.49453059132809635
+      }
+    },
+    {
+      "evidence_id": "e7a7d9482447de83:p1:c0",
+      "document_id": "e7a7d9482447de83",
+      "filename": "synthetic_noisy_lien_notice.pdf",
+      "page_number": 1,
+      "text": "NOTICE OF CLAIM OF LIEN Pursuant to State Mechanics' and Materialmen's Lien Act Cause No. 2024-CV-00318 Recorded: Book 4922 Page 071 Filed By: HARBOR VIEW HOLDINGS, LLC Against: NORTHSTAR MARKET LLC Property: Lot 14, Block C, Willow Industrial Park Plat Cabinet 7, Slide 22 [handwritten: CHECK w/ R. Singh] TO ALL PERSONS having or claiming any interest in the above-described real property, NOTICE IS HEREBY GIVEN that the undersigned, HARBOR VIEW HOLDINGS, LLC, a limited liability company organized under the laws of this State, claims a lien upon the property described above. The lien is asserted for unpaid access road maintenance charges covering the months of NOVEMBER 2023 and DECEMBER 2023, together with incidental charges, in the aggregate principal amount of $2,850.00 (Two Thousand Eight Hundred Fifty and 00/100 Dollars). Demand for payment was served by certified mail on January 9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify",
+      "score": 0.4841572423710754,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.89,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Image-only page; transcription based on rendered image.",
+          "Some certified mail tracking digits are unclear or blank.",
+          "Handwritten notes present and transcribed with uncertainty where applicable.",
+          "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+          "No text layer; routing page through image-based extraction."
+        ],
+        "word_start": 0,
+        "word_end": 180,
+        "chunk_hash": "3a12e9e110f20f0c97cb017ef08578f33323fc51eba027b1b9cbd3efb8b7d4b3",
+        "dense_score": 0.2527968715724913,
+        "bm25_score": 0.9138265024255886,
+        "hybrid_score": 0.4841572423710754
+      }
+    },
+    {
+      "evidence_id": "e7a7d9482447de83:p1:c1",
+      "document_id": "e7a7d9482447de83",
+      "filename": "synthetic_noisy_lien_notice.pdf",
+      "page_number": 1,
+      "text": "9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify cert mail #!] Claimant reserves the right to commence a judicial action to foreclose this lien and to recover all sums due, together with costs, interest, and reasonable attorneys' fees, in accordance with applicable law. [handwritten: file by 03/15?] DATED this ____ day of February, 2024. [handwritten: see 2019 esmt] HARBOR VIEW HOLDINGS, LLC By: ______________________________ M. ALVAREZ, Authorized Member STATE OF __________ ) ) ss. COUNTY OF _________ ) Subscribed and sworn before me this ____ day of February, 2024. ____________________________",
+      "score": 0.44584292854413127,
+      "metadata": {
+        "evidence_kind": "source-page",
+        "confidence": 0.89,
+        "extraction_method": "pdf-rendered-png",
+        "warnings": [
+          "Image-only page; transcription based on rendered image.",
+          "Some certified mail tracking digits are unclear or blank.",
+          "Handwritten notes present and transcribed with uncertainty where applicable.",
+          "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+          "No text layer; routing page through image-based extraction."
+        ],
+        "word_start": 140,
+        "word_end": 262,
+        "chunk_hash": "d8bf623d9dc2d2a70fefe4cc99bb0ce3369b935283ac86fab7355a64579a6b79",
+        "dense_score": 0.3054125698172757,
+        "bm25_score": 0.7066421661797202,
+        "hybrid_score": 0.44584292854413127
+      }
+    },
+    {
+      "evidence_id": "d61bba9a2aabfec3:fields",
+      "document_id": "d61bba9a2aabfec3",
+      "filename": "ucsf_idl_rhwy0076.pdf",
+      "page_number": 0,
+      "text": "Extracted fields for ucsf_idl_rhwy0076.pdf:\namounts_or_deadlines: The person to be examined is required to produce specified documents at least five (5) days before the examination. Deposition to begin January 23, 1998 at 10:00 a.m. and continue thereafter until complete.\ndates: Deposition scheduled for January 23, 1998 at 10:00 a.m.; document dated December 15, 1997 at New York, New York. Fax/header artifacts appear to show 12/16/97.\ndocument_type: Renotice to Take Video Deposition\nparties: Multiple New York Supreme Court, New York County matters: Phyllis Small and Denise Fusini v. Lorillard Tobacco Company, Inc., Lorillard, Inc., [IASWB?] Corporation, Council for Tobacco Research-USA, Inc. (successor to Tobacco Industry Research Committee), and Tobacco Institute, Inc.; Mary Ann Hoskins, Executrix of the Estate of Edwin Paul Hoskins, Waltina Brown and Dante Aibain v. R.J. Reynolds Tobacco Company, RSR Nabisco, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Sharlene [SiOeerman?] and Audrey Hulse/Bulse, as executrix of Estate of Lewis [Itulee?], v. Brown & Williamson Tobacco Corporation, B.A.T. Industries P.L.C., BATUS, Inc., BATUS Holdings, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Rose Frosina, Elizabeth Colavito and Anilda Ross v. Philip Morris, Inc., Philip Morris Companies, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Catherine Zito, Peter Roberman, and George Elisseou v. The American Tobacco Company, Inc., American Brands, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.\nrecording_references: Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96 or garbled '110952(96'; Judge Charles E. Ramos. Source URL: https://www.industrydocuments.ucsf.edu/docs/rhwy0076\nunclear_items: OCR is garbled throughout. Unclear items include some party names, some defendant names, 'Howard Speilberg' spelling, videographer/company/address details, multiple attorney names, service list categories, fax numbers, and fax header text.",
+      "score": 0.4241664428544713,
+      "metadata": {
+        "evidence_kind": "derived-fields",
+        "is_field_chunk": true,
+        "confidence": 0.8083333333333332,
+        "extraction_method": "structured-fields",
+        "derived_from": "structured_extraction",
+        "source_evidence_ids": [
+          "d61bba9a2aabfec3:p1",
+          "d61bba9a2aabfec3:p2",
+          "d61bba9a2aabfec3:p3",
+          "d61bba9a2aabfec3:p4",
+          "d61bba9a2aabfec3:p5"
+        ],
+        "chunk_hash": "52df252a44ad129c4e950a08040c5d1d3df6060ce37556e07b9d3c0f368880ba",
+        "dense_score": 0.3889934630823571,
+        "bm25_score": 0.6609162624312549,
+        "hybrid_score": 0.4841664428544713,
+        "base_score": 0.4841664428544713,
+        "derived_field_chunk_penalty": 0.06
+      }
+    }
+  ],
+  "warnings": [
+    "Mixed-corpus evidence includes legal forms, SEC excerpts, a lien notice, and derived deposition fields; verify document boundaries before relying on consolidated facts.",
+    "Several supplied records are blank templates or degraded OCR/image extractions, limiting case-specific extraction.",
+    "The lien amount, certified-mail number, and handwritten deadline note require operator verification.",
+    "Marked section 'Facts That Appear Supported' for review because it contains uncited factual sentence(s): The lien notice signature block names Harbor View Holdings, LLC and M.",
+    "Marked section 'Items Requiring Verification' for review because it contains uncited factual sentence(s): The lien notice includes handwritten review annotations, including “CHECK w/ R.",
+    "Advisory claim-support check flagged section 'Evidence Reviewed' for weak lexical overlap between cited sentence(s) and verbatim quote(s): The supplied evidence includes a Form D/ULOE-related SEC notice excerpt with filing instructions [18aae1ac9b6c1191:p1..."
+  ],
+  "case_summary": {
+    "case_id": "all-categories",
+    "generated_at": "2026-05-15T14:20:01+00:00",
+    "title": "Case Fact Summary",
+    "section_order": [
+      "evidence_reviewed",
+      "facts_that_appear_supported",
+      "items_requiring_verification",
+      "open_questions"
+    ],
+    "claims": [
+      {
+        "claim_id": "claim_285ff8d67646",
+        "section_id": "evidence_reviewed",
+        "section": "Evidence Reviewed",
+        "text": "The supplied evidence includes an uncompleted AO 88B subpoena form for producing documents, information, objects, or permitting inspection of premises in a civil action.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "5aaabcf14b21fd40:p1:c0",
+            "quote": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "5aaabcf14b21fd40:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_b58e23829da4",
+        "section_id": "evidence_reviewed",
+        "section": "Evidence Reviewed",
+        "text": "The supplied evidence includes an AO 85 consent/reference form addressing consent to a United States magistrate judge’s authority.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+            "quote": "Consent to a magistrate judge’s authority.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "a72d9aa7f0bed8eb:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_48dc362f6a11",
+        "section_id": "evidence_reviewed",
+        "section": "Evidence Reviewed",
+        "text": "The supplied evidence includes a Form D/ULOE-related SEC notice excerpt with filing instructions.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "18aae1ac9b6c1191:p1:c2",
+            "quote": "Where to File: U.S. Securities and Exchange Commission",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "18aae1ac9b6c1191:p1:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_9fa15cc2e440",
+        "section_id": "evidence_reviewed",
+        "section": "Evidence Reviewed",
+        "text": "The supplied evidence includes a Notice of Claim of Lien captioned under a State Mechanics' and Materialmen's Lien Act.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "NOTICE OF CLAIM OF LIEN Pursuant to State Mechanics' and Materialmen's Lien Act",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_695cbec095a0",
+        "section_id": "evidence_reviewed",
+        "section": "Evidence Reviewed",
+        "text": "The supplied evidence includes derived fields for a Renotice to Take Video Deposition.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "document_type: Renotice to Take Video Deposition",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_ae3f9fb5b540",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice identifies Cause No. 2024-CV-00318 and recording references Book 4922, Page 071.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "Cause No. 2024-CV-00318 Recorded: Book 4922 Page 071",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_cdd1904d6871",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that Harbor View Holdings, LLC filed the notice against Northstar Market LLC.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "Filed By: HARBOR VIEW HOLDINGS, LLC Against: NORTHSTAR MARKET LLC",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_0e5222091a20",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The property listed in the lien notice is Lot 14, Block C, Willow Industrial Park, Plat Cabinet 7, Slide 22.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "Property: Lot 14, Block C, Willow Industrial Park Plat Cabinet 7, Slide 22",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_0abd6ffb03e0",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that Harbor View Holdings, LLC claims a lien on the described property.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "claims a lien upon the property described above",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_46f4551ab192",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that the lien is asserted for unpaid access road maintenance charges for November 2023 and December 2023, plus incidental charges.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "unpaid access road maintenance charges covering the months of NOVEMBER 2023 and DECEMBER 2023, together with incidental charges",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2982677d0f9e",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states an aggregate principal amount of $2,850.00, but the same page includes a handwritten note to confirm that amount.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "aggregate principal amount of $2,850.00",
+            "substring_grounded": true,
+            "entailed": null
+          },
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "[handwritten: $2,850 -- confirm]",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0",
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 2,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_920e08e6e1cb",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that demand for payment was served by certified mail on January 9, 2024, but the certified mail tracking number is partially unclear.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "Demand for payment was served by certified mail on January 9, 2024",
+            "substring_grounded": true,
+            "entailed": null
+          },
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "certified mail tracking number 9489 0090 0027 6148 11__?",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0",
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 2,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_8b2f50972537",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that the fifteen-day cure period prescribed by the demand had expired.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "The fifteen (15) day cure period prescribed by the foregoing demand has expired.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_0894b877e9dc",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice states that the claimant reserves the right to commence a judicial action to foreclose the lien and recover sums due, costs, interest, and reasonable attorneys' fees.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "Claimant reserves the right to commence a judicial action to foreclose this lien and to recover all sums due, together with costs, interest, and reasonable attorneys' fees",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_57c29f19569d",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice signature block names Harbor View Holdings, LLC and M. Alvarez, Authorized Member.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "HARBOR VIEW HOLDINGS, LLC By: ______________________________ M. ALVAREZ, Authorized Member",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_c466331fe8df",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The lien notice is dated with blanks for the day of February 2024 rather than a completed date.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "DATED this ____ day of February, 2024.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_47492bb1854c",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The AO 88B subpoena form contains blank fields for the district, civil action number, plaintiff, defendant, addressee, production place, and production date/time.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "5aaabcf14b21fd40:p1:c0",
+            "quote": "UNITED STATES DISTRICT COURT for the __________ District of __________",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "5aaabcf14b21fd40:p1:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_7d0c394d54da",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The AO 88B proof-of-service page contains blank service, fee, date, server signature, printed-name, title, and address fields.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "5aaabcf14b21fd40:p2:c0",
+            "quote": "I received this subpoena for (name of individual and title, if any) on (date)",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "5aaabcf14b21fd40:p2:c0"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_1ef13fcb8e73",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The AO 88B excerpt states that objections to a subpoena must be served before the earlier of the compliance time or 14 days after service.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "5aaabcf14b21fd40:p3:c2",
+            "quote": "The objection must be served before the earlier of the time specified for compliance or 14 days after the subpoena is served.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "5aaabcf14b21fd40:p3:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_4300fc86ad32",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The magistrate-judge consent form states that consenting parties consent to a United States magistrate judge conducting all proceedings, including trial, entry of final judgment, and post-trial proceedings.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+            "quote": "consent to have a United States magistrate judge conduct all proceedings in this case including trial, the entry of final judgment, and all post-trial proceedings",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "a72d9aa7f0bed8eb:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_1e5839d7e7de",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The magistrate-judge consent form contains blank lines for printed names of parties and attorneys, signatures, and dates.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+            "quote": "Printed names of parties and attorneys Signatures of parties or attorneys Dates",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "a72d9aa7f0bed8eb:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_a53ea88cbaa8",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The magistrate-judge consent form states that it should be returned to the clerk of court only if consenting to magistrate-judge jurisdiction and should not be returned to a judge.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+            "quote": "Return this form to the clerk of court only if you are consenting to the exercise of jurisdiction by a United States magistrate judge. Do not return this form to a judge.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "a72d9aa7f0bed8eb:p1:c1"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_102528cd117a",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The SEC Form D/ULOE excerpt states that five copies of the notice must be filed with the SEC and one must be manually signed.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "18aae1ac9b6c1191:p1:c2",
+            "quote": "Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "18aae1ac9b6c1191:p1:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_227d467b1834",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The SEC Form D/ULOE excerpt states that there is no federal filing fee.",
+        "claim_type": "fact",
+        "confidence": "high",
+        "citations": [
+          {
+            "evidence_id": "18aae1ac9b6c1191:p1:c2",
+            "quote": "Filing Fee: There is no federal filing fee.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "18aae1ac9b6c1191:p1:c2"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_1ce5f6ed6ce0",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The derived deposition fields state that the deposition was scheduled for January 23, 1998 at 10:00 a.m. and that the document was dated December 15, 1997 at New York, New York.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "Deposition scheduled for January 23, 1998 at 10:00 a.m.; document dated December 15, 1997 at New York, New York.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_c20de28cdca7",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The derived deposition fields state that specified documents were required to be produced at least five days before the examination.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "required to produce specified documents at least five (5) days before the examination",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_60e03958976e",
+        "section_id": "facts_that_appear_supported",
+        "section": "Facts That Appear Supported",
+        "text": "The derived deposition fields identify multiple New York Supreme Court, New York County matters involving tobacco-company defendants and the Council for Tobacco Research-USA, Inc. and Tobacco Institute, Inc.",
+        "claim_type": "summary",
+        "confidence": "low",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "Multiple New York Supreme Court, New York County matters",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2c7bee50e047",
+        "section_id": "items_requiring_verification",
+        "section": "Items Requiring Verification",
+        "text": "The lien notice includes handwritten review annotations, including “CHECK w/ R. Singh,” “confirm,” “verify cert mail #!,” “file by 03/15?,” and “see 2019 esmt,” which should be verified before treating them as part of the formal notice.",
+        "claim_type": "fact",
+        "confidence": "medium",
+        "citations": [
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c0",
+            "quote": "[handwritten: CHECK w/ R. Singh]",
+            "substring_grounded": true,
+            "entailed": null
+          },
+          {
+            "evidence_id": "e7a7d9482447de83:p1:c1",
+            "quote": "[handwritten: verify cert mail #!]",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "e7a7d9482447de83:p1:c0",
+            "e7a7d9482447de83:p1:c1"
+          ],
+          "substring_grounded_count": 2,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_f7973bd367e0",
+        "section_id": "items_requiring_verification",
+        "section": "Items Requiring Verification",
+        "text": "The derived deposition fields flag that fax/header artifacts appear to show 12/16/97, which may differ from the stated document date of December 15, 1997.",
+        "claim_type": "fact",
+        "confidence": "low",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "document dated December 15, 1997 at New York, New York. Fax/header artifacts appear to show 12/16/97.",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_9a62d8abf154",
+        "section_id": "items_requiring_verification",
+        "section": "Items Requiring Verification",
+        "text": "The derived deposition fields identify Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96, while noting that 110952/96 may appear in garbled form as 110952(96.",
+        "claim_type": "fact",
+        "confidence": "low",
+        "citations": [
+          {
+            "evidence_id": "d61bba9a2aabfec3:fields",
+            "quote": "Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96 or garbled '110952(96'",
+            "substring_grounded": true,
+            "entailed": null
+          }
+        ],
+        "grounding": {
+          "status": "entailed",
+          "reason": "All citation quotes are grounded in cited evidence.",
+          "cited_evidence_ids": [
+            "d61bba9a2aabfec3:fields"
+          ],
+          "substring_grounded_count": 1,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_fa7fe2c8320c",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Is the lien notice a final filed/recorded notice, a draft, or a review copy with annotations?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_cacd32cbf036",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "What is the complete certified-mail tracking number for the January 9, 2024 demand?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_8c48bd037594",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "What is the completed execution date for the lien notice and notary acknowledgment?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_5c8e098c6c03",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Does the handwritten note “file by 03/15?” reflect a real filing deadline, an internal reminder, or a reviewer question?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_e57231e6d693",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Should the handwritten annotations on the lien notice be excluded from the formal instrument text?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_14be7de9bc5f",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Are the AO 85 consent form and AO 88B subpoena form blank/uncompleted templates with no case-specific facts filled in?",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_cfe82964d78a",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "For the deposition renotice, the derived fields should be verified against source pages because party names, index numbers, and dates are OCR-sensitive.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_575f9dae60bb",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "All pages are image-only with handwritten text; extraction confidence varies significantly.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_4ad5da22e5c1",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Several legal names, surnames, and metes-and-bounds calls are uncertain and should be verified against the original images or related records.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_61e0600ec857",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Page 2 is especially difficult to read and may not be a complete or reliable transcription.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2623a887bf7d",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "One or more pages have low extraction confidence.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_775563d4571c",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document consists of handwritten survey notes/sketches rather than a clear formal legal instrument.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_a370fa36aeb1",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "No text layer was available for any page; extraction is based on image transcription.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_5e6bfb9aa118",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Do not treat extracted bearings/distances as a complete legal description without review of the original document.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_0b9abd9dbf0f",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document-level reliability is very low because all pages contain severely garbled text-layer/source text.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_4bada6d23d13",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Only broad, low-confidence characterization is possible; precise parties, dates, property descriptions, recording references, and amounts should be re-extracted from page images or a higher-quality source.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_056ead86e817",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source consists of selected nonconsecutive text-layer excerpts from a Supreme Court opinion rather than a complete continuous document.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_8e019e86a7ad",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "One provided page excerpt ends mid-word, indicating cutoff text.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_5fdb3aaa79e9",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "The document appears to be an index or finding aid for estate files, not a single legal instrument.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_ed9882611c1d",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Several entries contain garbled, incomplete, or inconsistent source text; no corrections were inferred.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2484c7c7a710",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source document appears to be a newspaper page, not a legal-style document.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_f91c6a50a856",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Text layer is substantially garbled/OCR-corrupted; extracted facts have limited reliability.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_ccd4c2c67bd8",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "No deed, contract, court filing, or recordable legal instrument identified on the supplied page.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_b87bafb4945a",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "All pages are image-only with no text layer; extraction is based on rendered images.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_c5a83755fde1",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document scan has visible artifacts, stamps, bleed-through/overprint, and some obscured text, especially on page 1.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_fe960d6def4c",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Do not treat illegible overprinted text as fully extracted.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_f98242d2e038",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Single page provided as image-only source; OCR/transcription confidence affected by scan quality, speckling, and shadow/obstruction near lower-left.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_57017ac04001",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document appears to contain review annotations/handwritten notes that may not be part of the formal lien text.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_7d06c72ff621",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Several pages are from text layer with OCR/source-text quality issues, especially page 1.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_3a6f569b8ece",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Only pages 1-5 were provided; table of contents references additional pages not included here.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_2ca8a2c86e81",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "All pages were provided as extracted text-layer text; no image-based extraction was performed.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_3e47df7fdb07",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "The text layer has widespread OCR/source-text degradation, especially punctuation, spacing, date day numbers, accented characters, and some names.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_81125baa2713",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document is extracted from a low-quality text layer/OCR with many garbled words, misspellings, and fax transmission artifacts.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_91453b6ec726",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "All pages were provided as image inputs with no text layer.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_3ca3d1fef43f",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Scanned pages contain top-edge artifacts and some stamps/handwriting with limited legibility.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_e1211a71e9af",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document appears incomplete relative to internal form pagination: supplied images show form pages 1 of 8 through 5 of 8 only, with an additional continuation page marked 2 of 8.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_12ad4c0d88e4",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "The 'Total' for offering price appears as $0 despite equity/convertible amounts shown; transcribed as displayed.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_fbc5965e0858",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document was provided as extracted text-layer pages; several pages show text-layer/source-text quality issues with OCR-like garbling.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_c8f5700a37e7",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Some dates, form fields, addresses, signatures, and footer text are incomplete or unclear.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_9b544d508b35",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source is a text-layer extraction of a blank/uncompleted form; no case-specific facts are provided.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_bd2b7ddc01c8",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Document appears to be a blank federal subpoena form with no case-specific information completed.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_6c60bd5c3586",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Some checkbox symbols are rendered as the character ’ in the supplied text layer.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_b1cb67556786",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source is a text-layer page containing an uncompleted legal form with many blank placeholders; no case-specific facts should be inferred.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      },
+      {
+        "claim_id": "claim_c42b6d630157",
+        "section_id": "open_questions",
+        "section": "Open Questions",
+        "text": "Source is a text-layer extraction of an uncompleted standard court form; no case-specific facts are filled in.",
+        "claim_type": "scaffolding",
+        "confidence": "low",
+        "citations": [],
+        "grounding": {
+          "status": "scaffolding",
+          "reason": "Scaffolding claim is outside factual grounding denominator.",
+          "cited_evidence_ids": [],
+          "substring_grounded_count": 0,
+          "entailed_count": null,
+          "action": "keep"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_id": "5aaabcf14b21fd40:p1:c0",
+        "document_id": "5aaabcf14b21fd40",
+        "filename": "ao088b_subpoena_produce.pdf",
+        "page_number": 1,
+        "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action UNITED STATES DISTRICT COURT for the __________ District of __________ ) ) ) ) ) ) Plaintiff v. Civil Action No. Defendant SUBPOENA TO PRODUCE DOCUMENTS, INFORMATION, OR OBJECTS OR TO PERMIT INSPECTION OF PREMISES IN A CIVIL ACTION To: (Name of person to whom this subpoena is directed) ’ Production: YOU ARE COMMANDED to produce at the time, date, and place set forth below the following documents, electronically stored information, or objects, and to permit inspection, copying, testing, or sampling of the material: Place: Date and Time: ’ Inspection of Premises: YOU ARE COMMANDED to permit entry onto the designated premises, land, or other property possessed or controlled by you at the time, date, and location set forth below, so that the requesting party may inspect, measure, survey, photograph, test, or sample the property or any designated object or operation on it. Place: Date and Time: The following provisions of Fed. R. Civ. P. 45 are attached –",
+        "score": 0.5514215114104664,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "2b179289ef60a7c4249d28bf55307ae57c7accd236e97b269dc08b77a751bbdb",
+          "dense_score": 0.3201664311010891,
+          "bm25_score": 0.9808952319850243,
+          "hybrid_score": 0.5514215114104664
+        }
+      },
+      {
+        "evidence_id": "5aaabcf14b21fd40:p2:c0",
+        "document_id": "5aaabcf14b21fd40",
+        "filename": "ao088b_subpoena_produce.pdf",
+        "page_number": 2,
+        "text": "AO 88B (Rev. 02/14) Subpoena to Produce Documents, Information, or Objects or to Permit Inspection of Premises in a Civil Action (Page 2) Civil Action No. PROOF OF SERVICE (This section should not be filed with the court unless required by Fed. R. Civ. P. 45.) I received this subpoena for (name of individual and title, if any) on (date) . ’ I served the subpoena by delivering a copy to the named person as follows: on (date) ; or ’ I returned the subpoena unexecuted because: . Unless the subpoena was issued on behalf of the United States, or one of its officers or agents, I have also tendered to the witness the fees for one day’s attendance, and the mileage allowed by law, in the amount of $ . My fees are $ for travel and $ for services, for a total of $ . I declare under penalty of perjury that this information is true. Date: Server’s signature Printed name and title Server’s address Additional information regarding attempted service, etc.:",
+        "score": 0.5305639864041592,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 0,
+          "word_end": 173,
+          "chunk_hash": "49854da3e155f39a7911eedef8a7d8e83548a9485e7013a5f052e5b3fcbca5da",
+          "dense_score": 0.2777907483140911,
+          "bm25_score": 1.0,
+          "hybrid_score": 0.5305639864041592
+        }
+      },
+      {
+        "evidence_id": "5aaabcf14b21fd40:p3:c2",
+        "document_id": "5aaabcf14b21fd40",
+        "filename": "ao088b_subpoena_produce.pdf",
+        "page_number": 3,
+        "text": "not appear in person at the place of production or inspection unless also commanded to appear for a deposition, hearing, or trial. (B) Objections. A person commanded to produce documents or tangible things or to permit inspection may serve on the party or attorney designated in the subpoena a written objection to inspecting, copying, testing, or sampling any or all of the materials or to inspecting the premises—or to producing electronically stored information in the form or forms requested. The objection must be served before the earlier of the time specified for compliance or 14 days after the subpoena is served. If an objection is made, the following rules apply: (i) At any time, on notice to the commanded person, the serving party may move the court for the district where compliance is required for an order compelling production or inspection. (ii) These acts may be required only as directed in the order, and the order must protect a person who is neither a party nor a party’s officer from significant expense resulting from compliance. (3) Quashing or Modifying a",
+        "score": 0.5160503914018809,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 280,
+          "word_end": 460,
+          "chunk_hash": "1bc5f9a2bc9d28e3b9e2fd61f7d766a841ff2336cce7a86350a3626173321264",
+          "dense_score": 0.2935883787800171,
+          "bm25_score": 0.9291941291281994,
+          "hybrid_score": 0.5160503914018809
+        }
+      },
+      {
+        "evidence_id": "a72d9aa7f0bed8eb:p1:c1",
+        "document_id": "a72d9aa7f0bed8eb",
+        "filename": "ao085_notice_consent_magistrate.pdf",
+        "page_number": 1,
+        "text": "without adverse substantive consequences. The name of any party withholding consent will not be revealed to any judge who may otherwise be involved with your case. Consent to a magistrate judge’s authority. The following parties consent to have a United States magistrate judge conduct all proceedings in this case including trial, the entry of final judgment, and all post-trial proceedings. Printed names of parties and attorneys Signatures of parties or attorneys Dates Reference Order IT IS ORDERED: This case is referred to a United States magistrate judge to conduct all proceedings and order the entry of a final judgment in accordance with 28 U.S.C. § 636(c) and Fed. R. Civ. P. 73. Date: District Judge’s signature Printed name and title Note: Return this form to the clerk of court only if you are consenting to the exercise of jurisdiction by a United States magistrate judge. Do not return this form to a judge.",
+        "score": 0.5099765559793703,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.95,
+          "extraction_method": "pdf-text-layer",
+          "warnings": [],
+          "word_start": 140,
+          "word_end": 293,
+          "chunk_hash": "5b0d907a63b95d9e2efda8262848199e7be8d0ead0c7cf182c909c5f68217b6a",
+          "dense_score": 0.2748193346605228,
+          "bm25_score": 0.9466971098572299,
+          "hybrid_score": 0.5099765559793703
+        }
+      },
+      {
+        "evidence_id": "18aae1ac9b6c1191:p1:c2",
+        "document_id": "18aae1ac9b6c1191",
+        "filename": "sec_vprr_03000005_form_d.pdf",
+        "page_number": 1,
+        "text": "of the date it is received by the SEC at the address given below or, if received at that address after the date on which it is due, on the date it was mailed by United States registered or certified mail to that address. Where to File: U.S. Securities and Exchange Commission, 450 Fifth Street, N.W., Washington, D.C. 20549 Copies Required: Five (5) copies of this notice must be filed with the SEC, one of which must be manually signed. Any copies not manually signed must be photocopies of the manually signed copy or bear typed or printed signatures. Information Required: A new filing must contain all information requested. Amendments need only report the name of the issuer and offering, any changes thereto, the information requested in Part C, and any material changes from the information previously supplied in Parts A and B. Part E and the Appendix need not be filed with the SEC. Filing Fee: There is no federal filing fee. State: This notice shall be used to indicate reliance on the Uniform Limited Offering Exemption (ULOE) for",
+        "score": 0.49453059132809635,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.92,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Image-only page; OCR/transcription based on rendered image.",
+            "Some stamps and handwriting are partially illegible.",
+            "Barcode obscures part of telephone/address area.",
+            "No text layer; routing page through image-based extraction.",
+            "Page contains markers suggesting illegible, redacted, or uncertain text."
+          ],
+          "word_start": 280,
+          "word_end": 460,
+          "chunk_hash": "15430dc4ee20c1e027f63f2ddfef89ebe6aedec8fb8a2772c76e5e9fddfae5b7",
+          "dense_score": 0.22717893348905666,
+          "bm25_score": 0.9910408130291701,
+          "hybrid_score": 0.49453059132809635
+        }
+      },
+      {
+        "evidence_id": "e7a7d9482447de83:p1:c0",
+        "document_id": "e7a7d9482447de83",
+        "filename": "synthetic_noisy_lien_notice.pdf",
+        "page_number": 1,
+        "text": "NOTICE OF CLAIM OF LIEN Pursuant to State Mechanics' and Materialmen's Lien Act Cause No. 2024-CV-00318 Recorded: Book 4922 Page 071 Filed By: HARBOR VIEW HOLDINGS, LLC Against: NORTHSTAR MARKET LLC Property: Lot 14, Block C, Willow Industrial Park Plat Cabinet 7, Slide 22 [handwritten: CHECK w/ R. Singh] TO ALL PERSONS having or claiming any interest in the above-described real property, NOTICE IS HEREBY GIVEN that the undersigned, HARBOR VIEW HOLDINGS, LLC, a limited liability company organized under the laws of this State, claims a lien upon the property described above. The lien is asserted for unpaid access road maintenance charges covering the months of NOVEMBER 2023 and DECEMBER 2023, together with incidental charges, in the aggregate principal amount of $2,850.00 (Two Thousand Eight Hundred Fifty and 00/100 Dollars). Demand for payment was served by certified mail on January 9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify",
+        "score": 0.4841572423710754,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.89,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Image-only page; transcription based on rendered image.",
+            "Some certified mail tracking digits are unclear or blank.",
+            "Handwritten notes present and transcribed with uncertainty where applicable.",
+            "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+            "No text layer; routing page through image-based extraction."
+          ],
+          "word_start": 0,
+          "word_end": 180,
+          "chunk_hash": "3a12e9e110f20f0c97cb017ef08578f33323fc51eba027b1b9cbd3efb8b7d4b3",
+          "dense_score": 0.2527968715724913,
+          "bm25_score": 0.9138265024255886,
+          "hybrid_score": 0.4841572423710754
+        }
+      },
+      {
+        "evidence_id": "e7a7d9482447de83:p1:c1",
+        "document_id": "e7a7d9482447de83",
+        "filename": "synthetic_noisy_lien_notice.pdf",
+        "page_number": 1,
+        "text": "9, 2024, certified mail tracking number 9489 0090 0027 6148 11__?, and remains unsatisfied as of the date of this notice. The fifteen (15) day cure period prescribed by the foregoing demand has expired. [handwritten: $2,850 -- confirm] [handwritten: verify cert mail #!] Claimant reserves the right to commence a judicial action to foreclose this lien and to recover all sums due, together with costs, interest, and reasonable attorneys' fees, in accordance with applicable law. [handwritten: file by 03/15?] DATED this ____ day of February, 2024. [handwritten: see 2019 esmt] HARBOR VIEW HOLDINGS, LLC By: ______________________________ M. ALVAREZ, Authorized Member STATE OF __________ ) ) ss. COUNTY OF _________ ) Subscribed and sworn before me this ____ day of February, 2024. ____________________________",
+        "score": 0.44584292854413127,
+        "metadata": {
+          "evidence_kind": "source-page",
+          "confidence": 0.89,
+          "extraction_method": "pdf-rendered-png",
+          "warnings": [
+            "Image-only page; transcription based on rendered image.",
+            "Some certified mail tracking digits are unclear or blank.",
+            "Handwritten notes present and transcribed with uncertainty where applicable.",
+            "Lower-left portion has shadow/obstruction but main typed text remains mostly readable.",
+            "No text layer; routing page through image-based extraction."
+          ],
+          "word_start": 140,
+          "word_end": 262,
+          "chunk_hash": "d8bf623d9dc2d2a70fefe4cc99bb0ce3369b935283ac86fab7355a64579a6b79",
+          "dense_score": 0.3054125698172757,
+          "bm25_score": 0.7066421661797202,
+          "hybrid_score": 0.44584292854413127
+        }
+      },
+      {
+        "evidence_id": "d61bba9a2aabfec3:fields",
+        "document_id": "d61bba9a2aabfec3",
+        "filename": "ucsf_idl_rhwy0076.pdf",
+        "page_number": 0,
+        "text": "Extracted fields for ucsf_idl_rhwy0076.pdf:\namounts_or_deadlines: The person to be examined is required to produce specified documents at least five (5) days before the examination. Deposition to begin January 23, 1998 at 10:00 a.m. and continue thereafter until complete.\ndates: Deposition scheduled for January 23, 1998 at 10:00 a.m.; document dated December 15, 1997 at New York, New York. Fax/header artifacts appear to show 12/16/97.\ndocument_type: Renotice to Take Video Deposition\nparties: Multiple New York Supreme Court, New York County matters: Phyllis Small and Denise Fusini v. Lorillard Tobacco Company, Inc., Lorillard, Inc., [IASWB?] Corporation, Council for Tobacco Research-USA, Inc. (successor to Tobacco Industry Research Committee), and Tobacco Institute, Inc.; Mary Ann Hoskins, Executrix of the Estate of Edwin Paul Hoskins, Waltina Brown and Dante Aibain v. R.J. Reynolds Tobacco Company, RSR Nabisco, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Sharlene [SiOeerman?] and Audrey Hulse/Bulse, as executrix of Estate of Lewis [Itulee?], v. Brown & Williamson Tobacco Corporation, B.A.T. Industries P.L.C., BATUS, Inc., BATUS Holdings, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Rose Frosina, Elizabeth Colavito and Anilda Ross v. Philip Morris, Inc., Philip Morris Companies, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.; Catherine Zito, Peter Roberman, and George Elisseou v. The American Tobacco Company, Inc., American Brands, Inc., Council for Tobacco Research-USA, Inc., and Tobacco Institute, Inc.\nrecording_references: Index Nos. 110949/96, 110951/96, 110953/96, 110950/96, and 110952/96 or garbled '110952(96'; Judge Charles E. Ramos. Source URL: https://www.industrydocuments.ucsf.edu/docs/rhwy0076\nunclear_items: OCR is garbled throughout. Unclear items include some party names, some defendant names, 'Howard Speilberg' spelling, videographer/company/address details, multiple attorney names, service list categories, fax numbers, and fax header text.",
+        "score": 0.4241664428544713,
+        "metadata": {
+          "evidence_kind": "derived-fields",
+          "is_field_chunk": true,
+          "confidence": 0.8083333333333332,
+          "extraction_method": "structured-fields",
+          "derived_from": "structured_extraction",
+          "source_evidence_ids": [
+            "d61bba9a2aabfec3:p1",
+            "d61bba9a2aabfec3:p2",
+            "d61bba9a2aabfec3:p3",
+            "d61bba9a2aabfec3:p4",
+            "d61bba9a2aabfec3:p5"
+          ],
+          "chunk_hash": "52df252a44ad129c4e950a08040c5d1d3df6060ce37556e07b9d3c0f368880ba",
+          "dense_score": 0.3889934630823571,
+          "bm25_score": 0.6609162624312549,
+          "hybrid_score": 0.4841664428544713,
+          "base_score": 0.4841664428544713,
+          "derived_field_chunk_penalty": 0.06
+        }
+      }
+    ],
+    "warnings": []
+  }
+}

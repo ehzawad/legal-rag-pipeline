@@ -1,0 +1,59 @@
+# Python -------------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# Local secrets + environment ---------------------------------------------
+.env
+.env.local
+.env.*.local
+secrets/
+
+# OS / editor -------------------------------------------------------------
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Pipeline runtime caches -------------------------------------------------
+**/embedding_cache/
+
+# Local runtime ops -------------------------------------------------------
+# Process PID files, local API logs, and Playwright CLI traces never belong
+# in the submission; they're per-developer ops artifacts.
+.run/
+logs/
+.playwright-cli/
+
+# Per-developer / ad-hoc run outputs ---------------------------------------
+# Whitelist approach: ignore every top-level run dir under outputs/ and then
+# explicitly un-ignore the three canonical sample runs the README references.
+# Anything inside a tracked run that is purely runtime cache (corpus/,
+# index/, embedding_cache/, _inputs/, ab_drafts intermediates) is still
+# excluded by the more specific rules below.
+outputs/*/
+!outputs/all_categories/
+!outputs/public_eval/
+!outputs/e2e_ui_smoke/
+
+outputs/**/corpus/
+outputs/**/index/
+outputs/**/_inputs/
+build/
+
+# Node / Vite -------------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/tsconfig.tsbuildinfo
+
+# Keep the committed UI build (src/pipeline/ui/static/dist/) so reviewers
+# running `uv run pipeline-api` see the React shell without installing
+# Node, but never commit per-developer Vite caches.
+src/pipeline/ui/static/dist/.vite/

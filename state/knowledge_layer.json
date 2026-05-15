@@ -1,0 +1,16 @@
+{
+  "field_defaults": {},
+  "rules": [
+    {
+      "actor_id": "senior-associate",
+      "added_at": "2026-05-14T17:25:03+00:00",
+      "evidence_ids": [
+        "d61bba9a2aabfec3:p4:c0",
+        "fd38ffa95c4f3d59:p1:c1"
+      ],
+      "rule": "Always treat any net-income or aggregate-revenue value with decimal punctuation in a millions context as a transcription error pending source reconciliation.",
+      "rule_signature": "6affcda3f89c83ae"
+    }
+  ],
+  "version": 1
+}

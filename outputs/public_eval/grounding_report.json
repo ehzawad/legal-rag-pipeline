@@ -1,0 +1,529 @@
+{
+  "case_id": "public-eval",
+  "draft_type": "case_fact_summary",
+  "total_claims": 35,
+  "non_scaffolding_claims": 27,
+  "entailed": 24,
+  "uncited": 0,
+  "ungrounded": 3,
+  "not_supported": 0,
+  "contradicted": 0,
+  "unclear": 0,
+  "scaffolding": 8,
+  "citation_coverage": 1.0,
+  "grounding_pass_rate": 0.8888888888888888,
+  "unsupported_claim_count": 3,
+  "claims": [
+    {
+      "claim_id": "claim_dc6eb3cb7d6e",
+      "section_id": "documents_reviewed",
+      "section": "Documents Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied materials include excerpts from govinfo_usc_17_107.pdf concerning Title 17 copyright fair-use materials and historical/revision notes.",
+      "status": "ungrounded",
+      "action": "revise",
+      "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d44b9c19d33a",
+      "section_id": "documents_reviewed",
+      "section": "Documents Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied materials include excerpts from govinfo_usc_17_105.pdf concerning Title 17 section 105 and related historical discussion.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_083a88eb0469",
+      "section_id": "documents_reviewed",
+      "section": "Documents Reviewed",
+      "claim_type": "fact",
+      "text": "The supplied materials include a newspaper-style excerpt from loc_evening_star_1900_01_01_0394.pdf discussing Potomac River improvement and estimated costs.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d371a850d7ff",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The Title 17 section 107 excerpt states that an unpublished work is not barred from a fair-use finding solely because it is unpublished, if the finding is made after consideration of the listed factors.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ed14c963fd7c",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 historical notes describe fair use as a judicial doctrine and as a limitation on the exclusive rights of copyright owners.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_856d9f2ce366",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 historical notes state that section 107 would give express statutory recognition to the fair-use doctrine for the first time.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_7e57cda34356",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 historical notes state that fair-use defenses had been raised in many copyright actions and that case law recognized and applied the doctrine.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_244ed0318fa1",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "summary",
+      "text": "The section 107 excerpt gives examples of activities courts might regard as fair use, including quotation in reviews or criticism, scholarly quotation, parody, news-report summaries, library reproduction to replace damaged copies, classroom illustration, legislative or judicial use, and incidental reproduction in a newsreel or broadcast.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c5"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d15903231bd8",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that Judiciary Subcommittee members urged parties to meet independently regarding permissible educational uses of copyrighted material, and that the response was positive.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p2:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_9764b71e955a",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that meetings were held beginning in September 1975 among three groups addressing classroom reproduction of printed material, music, and audio-visual material.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p2:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2b1e442d03e4",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that archival duplicate copies made to preserve deteriorating film materials fall within fair use.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p4:c8"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_cbbcb72e4f0b",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that where copyrighted material contains unfair, inaccurate, or derogatory information about an individual or institution, that individual or institution may copy and reproduce necessary parts for understandable comment on the statements.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p4:c8"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d2fbe6951d92",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that publication of copyrighted material in Congressional hearings and documents would constitute fair use when the excerpt length, authorized copy count, and relevance to legitimate legislative concern are reasonable under the circumstances.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p4:c8"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_53aa1956929b",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that whether copying portions of a newsletter is infringement or fair use depends on the facts of the individual case.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p5:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_4039fd99e063",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state as a general principle that the fair-use scope should be narrower for newsletters than for mass-circulation periodicals or scientific journals.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p5:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_a002c86bb3a1",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials identify the commercial nature of the user as a significant factor for newsletter copying and state that copying by a profit-making user of even a small portion may significantly affect the commercial market.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p5:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_8f7e3ca4a7a2",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 107 materials state that a single-copy reproduction by a calligrapher of an excerpt from a copyrighted work for a single client does not represent copyright infringement.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p5:c0"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_924841bae9c4",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 105 excerpt states that section 105 does not relieve the Government of its obligation to secure permission to publish a copyrighted work.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b2e7807a52cb",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 105 excerpt states that Government publication or other use of a private work would not affect the work's copyright protection.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6b8342fb0cb4",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 105 excerpt states that section 105 is intended to restrict the prohibition against Government copyright to works written by U.S. Government employees within the scope of their official duties.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d829f3f94601",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 105 excerpt describes a bill approach under which the Government agency concerned could decide whether an independent contractor or grantee may secure copyright in works prepared with Government funds.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p2:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1005de7153e7",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The section 105 excerpt says the bill deliberately avoids an outright, unqualified prohibition against copyright in works prepared with Government funds.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p2:c4"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_89a9645d7186",
+      "section_id": "material_facts",
+      "section": "Material Facts",
+      "claim_type": "fact",
+      "text": "The newspaper excerpt states that the estimated cost for bridges, drainage, driveway, and embankment was placed at $135,000.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_d8c5b27338e4",
+      "section_id": "relief_sought",
+      "section": "Relief Sought / Requested Action",
+      "claim_type": "summary",
+      "text": "No party-requested relief or litigation demand is apparent from the supplied evidence excerpts; the sources reviewed appear to be statutory/historical reference text and a newspaper excerpt rather than pleadings or motions.",
+      "status": "ungrounded",
+      "action": "revise",
+      "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4",
+        "1a021fbaf033b873:p3:c2",
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "substring_grounded_count": 2,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_f24a9112a065",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Operator should verify whether govinfo_usc_17_107.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts show Title 17 copyright material and historical/revision notes but no private parties or operative case caption.",
+      "status": "ungrounded",
+      "action": "revise",
+      "reason": "One or more citation quotes are not verbatim substrings of cited evidence.",
+      "cited_evidence_ids": [
+        "7c0cd464fba18bbc:p1:c4"
+      ],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_6edfb5d5b64b",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Operator should verify whether govinfo_usc_17_105.pdf is only a statutory/legal reference excerpt rather than a transactional legal document, because the supplied excerpts discuss section 105 and Government copyright rules.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "1a021fbaf033b873:p3:c2"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_0e3342620f87",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "fact",
+      "text": "Operator should verify whether loc_evening_star_1900_01_01_0394.pdf is a newspaper page rather than a legal-style source document, because the excerpt discusses public works and appears under a Potomac River improvement heading.",
+      "status": "entailed",
+      "action": "keep",
+      "reason": "All citation quotes are grounded in cited evidence.",
+      "cited_evidence_ids": [
+        "bfd73ac0ebb0f6bb:p1:c32"
+      ],
+      "substring_grounded_count": 1,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_2212247ef668",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "No case caption, court, docket number, plaintiffs, defendants, or procedural filing date is supported by the supplied evidence excerpts.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_165b5240c43c",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "No party-requested relief is supported by the supplied evidence excerpts.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_1d675e772156",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Operator should verify whether the supplied documents are public evaluation/reference documents rather than case-specific pleadings or transactional legal instruments.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_b97c95dc7c0a",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source pages are extracted from a text layer and appear to be statutory/legal reference material rather than a transactional legal document. No signatures, recording stamp, real property description, or private parties are present.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_111c87875f7e",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "The source is an excerpt of federal copyright statutory text and legislative notes, not a typical legal instrument involving parties, property, recording data, or monetary consideration.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_ce03a835bb6b",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Source appears to be a newspaper page rather than a legal-style source document.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_925ee756274c",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "No legal instrument type, parties, property description, or recording information found.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    },
+    {
+      "claim_id": "claim_67f4f64056bd",
+      "section_id": "open_questions",
+      "section": "Open Questions",
+      "claim_type": "scaffolding",
+      "text": "Extracted text contains substantial OCR corruption, especially in advertisements and lists of names.",
+      "status": "scaffolding",
+      "action": "keep",
+      "reason": "Scaffolding claim is outside factual grounding denominator.",
+      "cited_evidence_ids": [],
+      "substring_grounded_count": 0,
+      "entailed_count": null
+    }
+  ]
+}

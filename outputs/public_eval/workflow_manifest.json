@@ -1,0 +1,196 @@
+{
+  "created_at": "2026-05-15T04:12:17+00:00",
+  "metadata": {
+    "case_id": "public-eval",
+    "input_dir": "datasets/public-eval",
+    "task": "Review the supplied public evaluation documents and produce a grounded case fact summary covering documents reviewed, material facts that appear supported, requested actions, and data-quality flags an operator should verify.",
+    "providers": {
+      "extraction": "openai",
+      "retrieval": "openai-cached",
+      "generation": "openai"
+    },
+    "extraction_concurrency": 4,
+    "models": {
+      "openai": "gpt-5.5",
+      "openai_embedding": "text-embedding-3-large",
+      "openai_rerank": "gpt-5.5",
+      "openai_reasoning_effort": "low"
+    },
+    "embedding_cache_dir": "outputs/public_eval/embedding_cache",
+    "corpus_dir": "outputs/public_eval/corpus",
+    "retrieval_index": "outputs/public_eval/index/retrieval_index.json",
+    "evidence_pack": "outputs/public_eval/evidence_pack.json",
+    "features": {
+      "process_documents": true,
+      "retrieve_evidence": true,
+      "generate_draft": true,
+      "learning_guidance": true,
+      "operator_profile_guidance": true,
+      "knowledge_layer_guidance": true,
+      "exemplar_guidance": true,
+      "retrieval_feedback": true,
+      "field_chunks": true,
+      "evidence_pack": true,
+      "claim_first_drafting": true,
+      "claim_support_check": true,
+      "claim_entailment_judge": false,
+      "playbook_risk": true,
+      "max_field_chunks": 1,
+      "field_chunk_score_penalty": 0.06
+    },
+    "playbook_path": "/Users/ehz/harnessing/a-rag-pipeline/playbooks/default_legal_playbook.json",
+    "run_fingerprint": {
+      "digest": "fab456e26a3c34174b534f03077f56ac0b61aaee5c320249f6a2d3228d46ea16",
+      "inputs": {
+        "handwritten-notes/nara_constitution_page_1.jpg": "d8eb7df75dcb0b3512523c99f1164a3f59c34cc022bd58d353fdbf0c7f9fd148",
+        "handwritten-notes/nara_constitution_page_2.jpg": "28f3fbdbfc141ec0f1a5df71e412ce8bb7f9a27daa5bb86d860c49d9a394943e",
+        "handwritten-notes/nara_constitution_page_3.jpg": "1b32120b0a226521e7b6cca19c9533be03949e055ea522988e98139501c7942d",
+        "inconsistently-formatted-files/govinfo_cfr_17_240_10b_5.pdf": "aa3ddc6268e610f9051c55051868d452f86b25ec78f5182270954788b184667b",
+        "inconsistently-formatted-files/govinfo_usc_17_105.pdf": "1a021fbaf033b873131ac574528952f654565bfa8d781a898c9bd8459d51df6c",
+        "inconsistently-formatted-files/govinfo_usc_17_107.pdf": "7c0cd464fba18bbce74ad09ef48dff00644c5aa0304684fafd546394b3a23445",
+        "low-resolution-pdfs/loc_evening_star_1900_01_01_0393.pdf": "dd25485ef6e59780d421f0dc3cd34270e2048dce2fd2c87a61dff6b534e5cd1b",
+        "low-resolution-pdfs/loc_evening_star_1900_01_01_0394.pdf": "bfd73ac0ebb0f6bbf7ee9ca6e01d0c73f5ed6a96110d424003017bb3dbef5aeb",
+        "low-resolution-pdfs/loc_evening_star_1900_01_01_0395.pdf": "9b17d42e4ab07c8add1f84b814d2d9cf5d5aaa0e2c1e03f0e591481a831672e4",
+        "partially-illegible-records/sec_vprr_09040008.pdf": "fe251fccb854a46a965cbce0d2b4e1cfe3d86d738e637d42a3723307ef04e8c1",
+        "partially-illegible-records/sec_vprr_09040009.pdf": "6cabc6482f0ff8335afb0302403b891ed9ddfe0e5a4281c8e8c730a06206b344",
+        "partially-illegible-records/sec_vprr_09045744.pdf": "faf02f393e3a7fede3bf063cc4e9a85f847e0378e9f1c4993f079a06e6f60a64",
+        "scanned-pages/sec_vprr_02000258.pdf": "295c87b911042976beaac23d76490d72b9e532c1ba1c77e9b58da82db4fab37c",
+        "scanned-pages/sec_vprr_02000259.pdf": "f292902ed5f80a01b1e2bab40f1a7c629a2cbf79641839e0eb1d2f8f93d3644e",
+        "scanned-pages/sec_vprr_07040010.pdf": "ab8261141dc1f5ba487a09553bd0b7ea88f600b803a65483d688e22c0c0c1aa9"
+      },
+      "task": "Review the supplied public evaluation documents and produce a grounded case fact summary covering documents reviewed, material facts that appear supported, requested actions, and data-quality flags an operator should verify.",
+      "profile_digest": "18674909be3a68fa6ccff44d7584b6d4fba253fb581471eef25780b4d9884a7d",
+      "playbook_digest": "c2b0cc201dc4eaee179b21a136c72b36d69a7c7f1905fb07fb605dd5d7ab66ba",
+      "providers": {
+        "extraction_provider": "openai",
+        "retrieval_provider": "openai-cached",
+        "generation_provider": "openai",
+        "openai_model": "gpt-5.5",
+        "openai_embedding_model": "text-embedding-3-large",
+        "openai_reasoning_effort": "low",
+        "retrieval_mode": "hybrid",
+        "index_backend": "faiss",
+        "hybrid_dense_weight": 0.65,
+        "hybrid_bm25_weight": 0.35,
+        "retrieval_top_k": 10,
+        "reranker_provider": "",
+        "pdf_max_pages": 5,
+        "pdf_render_dpi": 180,
+        "embedding_cache": "enabled"
+      },
+      "features": {
+        "process_documents": true,
+        "retrieve_evidence": true,
+        "generate_draft": true,
+        "learning_guidance": true,
+        "operator_profile_guidance": true,
+        "knowledge_layer_guidance": true,
+        "exemplar_guidance": true,
+        "retrieval_feedback": true,
+        "field_chunks": true,
+        "evidence_pack": true,
+        "claim_first_drafting": true,
+        "claim_support_check": true,
+        "claim_entailment_judge": false,
+        "playbook_risk": true,
+        "max_field_chunks": 1,
+        "field_chunk_score_penalty": 0.06
+      }
+    }
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "wait_seconds": 1.0,
+    "backoff": 2.0,
+    "max_wait_seconds": 8.0
+  },
+  "stages": [
+    {
+      "name": "process_documents",
+      "status": "succeeded",
+      "started_at": "2026-05-15T04:12:17+00:00",
+      "finished_at": "2026-05-15T04:14:10+00:00",
+      "duration_seconds": 113.03,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/public_eval/processed_documents.json",
+        "outputs/public_eval/corpus/manifest.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "retrieve_evidence",
+      "status": "succeeded",
+      "started_at": "2026-05-15T04:14:10+00:00",
+      "finished_at": "2026-05-15T04:14:14+00:00",
+      "duration_seconds": 3.794,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/public_eval/retrieved_evidence.json",
+        "outputs/public_eval/index/retrieval_index.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "build_evidence_pack",
+      "status": "succeeded",
+      "started_at": "2026-05-15T04:14:14+00:00",
+      "finished_at": "2026-05-15T04:14:14+00:00",
+      "duration_seconds": 0.001,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/public_eval/evidence_pack.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "generate_draft",
+      "status": "succeeded",
+      "started_at": "2026-05-15T04:14:14+00:00",
+      "finished_at": "2026-05-15T04:14:56+00:00",
+      "duration_seconds": 41.648,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/public_eval/draft.json",
+        "outputs/public_eval/draft.md",
+        "outputs/public_eval/case_fact_summary.json",
+        "outputs/public_eval/grounding_report.json"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    },
+    {
+      "name": "score_playbook_risk",
+      "status": "succeeded",
+      "started_at": "2026-05-15T04:14:56+00:00",
+      "finished_at": "2026-05-15T04:14:56+00:00",
+      "duration_seconds": 0.144,
+      "attempts": 1,
+      "artifacts": [
+        "outputs/public_eval/risk_report.json",
+        "outputs/public_eval/risk_report.md",
+        "outputs/public_eval/audit.jsonl"
+      ],
+      "error": "",
+      "retryable": false,
+      "warnings": [
+        "force=True: ignoring any cached checkpoints"
+      ]
+    }
+  ]
+}
