@@ -30,7 +30,7 @@ def test_unsupported_sections_excluded_from_denominator():
     # The unsupported one is a review hook (e.g., "Unsupported or Unclear Facts"),
     # so the denominator should be 1, not 2. citation_id_validity stays 100%.
     draft = {
-        "title": "First-Pass Internal Memo",
+        "title": "First-Pass Case Fact Summary",
         "sections": [
             _section("Issue", evidence_ids=["E1"], unsupported=False, body="Issue body [E1]"),
             _section("Unsupported or Unclear Facts", evidence_ids=[], unsupported=True),
@@ -48,7 +48,7 @@ def test_eligible_section_without_evidence_ids_drags_metric_down():
     # it claims to be a factual section but has no citations. Denominator
     # includes it; numerator excludes it. citation_id_validity = 0.
     draft = {
-        "title": "First-Pass Internal Memo",
+        "title": "First-Pass Case Fact Summary",
         "sections": [
             _section("Issue", evidence_ids=[], unsupported=False, body="Issue body without citations"),
         ],
@@ -64,7 +64,7 @@ def test_supported_section_with_evidence_id_not_in_retrieved_fails():
     # The drafter declared E2 but E2 is not in the retrieved evidence set.
     # This must deflate citation_id_validity to 0%.
     draft = {
-        "title": "First-Pass Internal Memo",
+        "title": "First-Pass Case Fact Summary",
         "sections": [
             _section("Issue", evidence_ids=["E2"], unsupported=False, body="Issue body [E2]"),
         ],
@@ -80,7 +80,7 @@ def test_no_eligible_sections_returns_zero_without_dividing_by_zero():
     # by construction (no denominator); the implementation reports 0.0 and
     # surfaces a note rather than raising.
     draft = {
-        "title": "First-Pass Internal Memo",
+        "title": "First-Pass Case Fact Summary",
         "sections": [
             _section("Review Flags", evidence_ids=[], unsupported=True),
         ],

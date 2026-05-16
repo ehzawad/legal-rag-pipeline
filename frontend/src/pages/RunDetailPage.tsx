@@ -21,11 +21,13 @@ const TABS: Array<[Tab, string]> = [
 
 function groundingStatusLabel(status?: string | null): string {
   switch (status) {
+    case "grounded":
     case "entailed":
     case "supported":
       return "Supported";
     case "scaffolding":
       return "Review note";
+    case "not_supported":
     case "unsupported":
     case "ungrounded":
       return "Needs review";
@@ -36,9 +38,11 @@ function groundingStatusLabel(status?: string | null): string {
 
 function groundingStatusClass(status?: string | null): string {
   switch (status) {
+    case "grounded":
     case "entailed":
     case "supported":
       return "is-ok";
+    case "not_supported":
     case "unsupported":
     case "ungrounded":
       return "is-danger";
@@ -261,6 +265,7 @@ export default function RunDetailPage() {
                     {draft.data.case_summary.claims.filter(
                       (c) =>
                         c.grounding?.status === "unsupported" ||
+                        c.grounding?.status === "not_supported" ||
                         c.grounding?.status === "ungrounded",
                     ).length}
                   </div>

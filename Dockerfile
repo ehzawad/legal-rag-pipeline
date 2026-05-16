@@ -33,6 +33,7 @@ RUN uv sync --frozen --no-dev
 
 COPY datasets ./datasets
 COPY eval ./eval
+COPY quick-eval ./quick-eval
 COPY docs ./docs
 COPY playbooks ./playbooks
 COPY --from=frontend /src/pipeline/ui/static/dist /app/src/pipeline/ui/static/dist

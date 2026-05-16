@@ -1,7 +1,7 @@
 # Architecture Overview
 
 OpenAI-core pipeline, with optional Cohere reranking, that turns messy
-legal-style files into grounded draft memos designed for human operator
+legal-style files into grounded case fact summaries designed for human operator
 review and editing. The workflow
 is linear at the orchestration level, but the implementation is grouped
 by pipeline stage under `src/pipeline/<stage>/`. Every stage writes
@@ -419,12 +419,17 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    capped-out results are refilled from Cohere's next-best candidates
    instead of falling back to the pre-rerank order.
 
-5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The model
-   receives the task, retrieved evidence, and the operator-profile
-   guidance string, and must return strict JSON with sections each
-   carrying `evidence_ids` and per-id `citation_quotes`. Reasoning
-   effort is configurable (`OPENAI_REASONING_EFFORT`, default `low`).
-   The grounding contract is enforced in two passes (see below).
+5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The run
+   resolves `draft_type` through `drafting/specs.py`, loads the spec's
+   response adapter, builds the prompt, calls the LLM, parses strict JSON,
+   and converts the adapter response into a canonical `Draft`. The default
+   registered spec is `case_fact_summary`; adapters describe model response
+   JSON shape, while specs carry prompt content. Every adapter must return a
+   populated `CaseFactSummary` with factual claims, citations, and verbatim
+   quote text. Specs are untrusted configuration: they cannot relax citation,
+   quote-grounding, validation, or entailment behavior. Reasoning effort is
+   configurable (`OPENAI_REASONING_EFFORT`, default `low`). The grounding
+   contract is enforced before draft artifacts are written.
 
 6. **Human operator-edit learning** (`learning/state.py` and
    `learning/edit_memory.py`). Markdown diff of
@@ -598,37 +603,36 @@ known limit.
 
 ## Grounding Contract
 
-The drafter must (a) cite only `evidence_id`s that exist in the
-retrieved set and (b) supply a verbatim `citation_quotes[evidence_id]`
-value for each citation. Enforcement happens at parse time:
+The drafter must cite only `evidence_id`s that exist in the retrieved
+set and supply a verbatim quote for every factual claim citation.
+Enforcement is non-relaxable and happens before draft artifacts are
+written:
 
-- `_sanitize_evidence_ids` drops list-form ids not in the retrieved set.
-- `_sanitize_body_citations` strips inline `[Eid]` tokens whose id is
-  not both in the retrieved set AND in the section's `evidence_ids`.
-- `_sanitize_citation_quotes` accepts only quotes whose key is in the
-  retrieved set.
-- `_validate_quote_grounding` checks each `citation_quotes[evidence_id]`
-  against the cited chunk's text using `normalize_quote_text`:
-  whitespace collapsed, case folded, curly quotes → straight, em/en
-  dashes → hyphen, NBSP → space, ligatures (`ﬁ`/`ﬂ` etc.) expanded.
-  Failed entries are dropped from both the section's `evidence_ids` and
-  the inline `[Eid]` body token; a draft warning records each strip.
-- A section that started with citations but lost all of them after the
-  quote check is marked `unsupported=True` so it is routed into the
-  operator-review hooks instead of being presented as supported.
-- Auto-injected scaffolding sections (`Issue`, `Risk Notes`,
-  `Recommended Next Steps`, `Unsupported or Unclear Facts`) start with
-  `evidence_ids=[]` to avoid bypassing the validator.
+- `_claim_citations_from_payload` drops citation ids not in the retrieved
+  set and refuses empty quotes.
+- `apply_claim_grounding` checks each citation quote against the cited
+  chunk's text using `normalize_quote_text`: whitespace collapsed, case
+  folded, curly quotes -> straight, em/en dashes -> hyphen, NBSP -> space,
+  ligatures (`fi`/`fl` etc.) expanded.
+- `validate_draft_contract` fails the run if any adapter omits
+  `CaseFactSummary`, factual claims, citations, grounded quotes, or a
+  passing grounding report. Optional entailment can only add stricter
+  failure modes; draft specs cannot relax this layer.
+- Drafting gets one validation-repair retry: the failed draft is discarded,
+  the retry prompt names the contract failure, and artifacts are still
+  written only after the final draft passes validation.
+- Rendered `DraftSection` rows are derived from the grounded
+  `CaseFactSummary`, so section-level `evidence_ids` are presentation
+  metadata, not a way to relax claim validation.
 
 The `DraftSection` schema carries `evidence_ids: list[str]` and
 `citation_quotes: dict[str, str]`. The rendered markdown shows the kept
 quotes under each section's evidence line.
 
-What this does **not** check: whether the quote *entails* the sentence
-it backs (no NLI), or whether the quote was the relevant span versus an
-incidental match. The substring check is a necessary, not sufficient,
-grounding signal. `evaluation/report.py:_is_substring` uses the same
-normalization helper, so eval scores agree with the validator.
+What this does **not** check by default: whether the quote semantically
+entails the claim, or whether the quote was the most relevant span versus
+an incidental match. The substring check is a necessary, not sufficient,
+grounding signal. Optional entailment judging can add stricter checks.
 
 ## Improvement Loop and A/B Eval
 
@@ -739,6 +743,10 @@ fixed and the two paths share a single splitter
 - **Features**: every `PipelineFeatures` value, so changing a component
   switch invalidates stale checkpoints unless the stage is explicitly
   checkpointed.
+- **Draft spec**: registered spec id, spec version, and spec content digest;
+  prompt/spec edits produce a fingerprint mismatch. The current linear
+  invalidation policy reruns processing, retrieval, and drafting rather
+  than trying to reuse earlier-stage checkpoints across spec drift.
 
 The composite SHA-256 digest is written into `workflow_manifest.json`
 under `metadata.run_fingerprint.digest` and on `case_run.json` as
@@ -811,7 +819,11 @@ env/config/argument.
   includes an index digest; query-time validation checks point count and
   per-chunk identity before reuse. Persisted index queries honor
   `PIPELINE_RETRIEVAL_MODE`; lexical indexes store placeholder vectors
-  and must stay on the lexical query path.
+  and must stay on the lexical query path. `QDRANT_PATH` uses embedded
+  qdrant-client local storage, which is appropriate for tests and
+  single-user development but serializes concurrent access with file
+  locks. Docker Compose and Qdrant Cloud use server mode through
+  `QDRANT_URL`, which is the intended path for concurrent API traffic.
 - **Substring grounding is necessary, not sufficient.** The verbatim
   check guarantees the quote is text from the cited chunk; it does not
   guarantee the quote *entails* the sentence.
@@ -850,13 +862,14 @@ env/config/argument.
 - `ingestion/component.py` — ingestion stage adapter used by orchestration.
 - `retrieval/engine.py` — chunking, fields-chunk emission, BM25 + dense
   hybrid retrieval, cached OpenAI embeddings, metadata/retrieval-feedback
-  score deltas, index persistence, Qdrant vector storage, and optional Cohere
+  score deltas, index persistence, optional Qdrant vector storage, and optional Cohere
   reranker.
 - `retrieval/component.py` — retrieval stage adapter.
 - `evidence_pack/` — section-aware evidence pack construction between retrieval
   and drafting.
-- `drafting/memo.py` — claim-first case fact summary generation, citation
-  sanitation, verbatim quote validation, and review-section hooks.
+- `drafting/specs.py` — registered draft specs and adapter metadata.
+- `drafting/memo.py` — spec-driven case fact summary generation, citation
+  sanitation, and review-section hooks.
 - `drafting/rendering.py` — markdown rendering for `Draft`.
 - `drafting/component.py` — drafting stage adapter.
 - `drafting/grounding.py` / `drafting/entailment.py` — claim-level grounding
@@ -904,8 +917,9 @@ env/config/argument.
   tokens out of section body text and renders them as clickable chips
   bound to the evidence panel. The chip uses
   `section.citation_quotes` and `section.evidence_ids` as the
-  authoritative grounding signal — the backend's verbatim-quote
-  validator is the source of truth, the UI never reclassifies it.
+  display signal for clickable evidence chips; the backend's
+  `CaseFactSummary` grounding contract is the source of truth, and the
+  UI never reclassifies it.
 - `components/EvidencePanel.tsx` — shows the source filename, page,
   source type, the quote actually cited in the draft, and the source text.
 - `lib/citations.ts` — citation token tokenizer + `evidenceKind`

@@ -161,6 +161,25 @@ def test_cohere_api_key_falls_back_when_primary_key_is_blank(monkeypatch: pytest
     assert engine._cohere_api_key() == "alias-key"
 
 
+def test_cohere_api_key_reads_secret_file(monkeypatch: pytest.MonkeyPatch, tmp_path):
+    key_file = tmp_path / "cohere_api_key"
+    key_file.write_text("file-key\n", encoding="utf-8")
+    monkeypatch.delenv("COHERE_API_KEY", raising=False)
+    monkeypatch.delenv("CO_API_KEY", raising=False)
+    monkeypatch.setenv("COHERE_API_KEY_FILE", str(key_file))
+
+    assert engine._cohere_api_key() == "file-key"
+
+
+def test_cohere_api_key_file_error_is_clear(monkeypatch: pytest.MonkeyPatch, tmp_path):
+    monkeypatch.delenv("COHERE_API_KEY", raising=False)
+    monkeypatch.delenv("CO_API_KEY", raising=False)
+    monkeypatch.setenv("COHERE_API_KEY_FILE", str(tmp_path / "missing"))
+
+    with pytest.raises(ProviderUnavailable, match="COHERE_API_KEY_FILE"):
+        engine._cohere_api_key()
+
+
 def test_cohere_api_key_missing_raises(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.delenv("COHERE_API_KEY", raising=False)
     monkeypatch.delenv("CO_API_KEY", raising=False)

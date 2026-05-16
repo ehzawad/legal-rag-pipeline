@@ -8,11 +8,15 @@ that entry point, so each surface gets one focused test.
 
 from __future__ import annotations
 
+import os
+
 import pytest
+from pydantic import ValidationError
 
 from pipeline.api import IndexSettingsRequest, _index_settings_payload, PipelineFeaturesRequest
 from pipeline.cli import _index_settings, build_parser
 from pipeline.config import ConfigError, PipelineFeatures, ProviderConfig
+from pipeline.providers import require_env
 
 
 def test_pipeline_features_from_mapping_accepts_int_value():
@@ -44,6 +48,47 @@ def test_cli_parser_registers_max_chunks_per_document_argument():
         ]
     )
     assert namespace.max_chunks_per_document == 7
+
+
+def test_cli_parser_registers_draft_type_argument():
+    parser = build_parser()
+    namespace = parser.parse_args(
+        [
+            "run",
+            "--input",
+            "/tmp/in",
+            "--output",
+            "/tmp/out",
+            "--draft-type",
+            "case_fact_summary",
+        ]
+    )
+    assert namespace.draft_type == "case_fact_summary"
+
+
+def test_pipeline_features_request_rejects_removed_claim_first_flag():
+    with pytest.raises(ValidationError) as excinfo:
+        PipelineFeaturesRequest(**{"claim_first_drafting": False})
+    assert excinfo.value.errors()[0]["type"] == "extra_forbidden"
+
+
+def test_pipeline_features_from_mapping_rejects_removed_claim_first_flag():
+    with pytest.raises(ConfigError, match="claim_first_drafting is removed"):
+        PipelineFeatures.from_mapping({"claim_first_drafting": False})
+
+
+def test_provider_config_rejects_removed_claim_first_env(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("PIPELINE_CLAIM_FIRST_DRAFTING", "false")
+
+    with pytest.raises(ConfigError, match="PIPELINE_CLAIM_FIRST_DRAFTING is removed"):
+        ProviderConfig.from_env()
+
+
+def test_provider_config_rejects_unknown_draft_type(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("PIPELINE_DRAFT_TYPE", "unknown")
+
+    with pytest.raises(ConfigError, match="Unknown draft_type"):
+        ProviderConfig.from_env()
 
 
 def test_api_index_settings_exposes_cohere_reranker(monkeypatch: pytest.MonkeyPatch, tmp_path):
@@ -123,3 +168,13 @@ def test_provider_config_reads_qdrant_api_key_file(monkeypatch: pytest.MonkeyPat
     config = ProviderConfig.from_env()
 
     assert config.qdrant_api_key == "test-qdrant-key"
+
+
+def test_require_env_reads_secret_file(monkeypatch: pytest.MonkeyPatch, tmp_path):
+    key_file = tmp_path / "openai_api_key"
+    key_file.write_text("sk-test-from-file\n", encoding="utf-8")
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.setenv("OPENAI_API_KEY_FILE", str(key_file))
+
+    assert require_env("OPENAI_API_KEY") == "sk-test-from-file"
+    assert os.environ["OPENAI_API_KEY"] == "sk-test-from-file"

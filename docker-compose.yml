@@ -10,6 +10,7 @@ services:
       OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.5}
       OPENAI_REASONING_EFFORT: ${OPENAI_REASONING_EFFORT:-low}
       OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-large}
+      PIPELINE_DRAFT_TYPE: ${PIPELINE_DRAFT_TYPE:-case_fact_summary}
       PIPELINE_RERANK_PROVIDER: ${PIPELINE_RERANK_PROVIDER:-}
       COHERE_API_KEY: ${COHERE_API_KEY:-}
       CO_API_KEY: ${CO_API_KEY:-}
@@ -35,11 +36,13 @@ services:
     volumes:
       - ./datasets:/app/datasets:ro
       - ./eval:/app/eval:ro
+      - ./quick-eval:/app/quick-eval:ro
       - ./outputs:/app/outputs
       - ./state:/app/state
     restart: unless-stopped
     depends_on:
-      - qdrant
+      qdrant:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz').read()"]
       interval: 10s
@@ -49,13 +52,19 @@ services:
     command: ["/app/.venv/bin/uvicorn", "pipeline.api:app", "--host", "0.0.0.0", "--port", "8000"]
 
   qdrant:
-    image: qdrant/qdrant:latest
+    image: qdrant/qdrant:v1.18.0
     ports:
       - "6333:6333"
       - "6334:6334"
     volumes:
       - qdrant_storage:/qdrant/storage
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "sh", "-c", "test -f /qdrant/.qdrant-initialized"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+      start_period: 5s
 
 volumes:
   qdrant_storage:

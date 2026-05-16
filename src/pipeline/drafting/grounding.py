@@ -8,7 +8,7 @@ from pipeline.drafting.memo import normalize_quote_text
 from pipeline.schemas import CaseFactSummary, ClaimCitation, EvidenceChunk, FactClaim, GroundingVerdict
 
 
-SUPPORTED = "entailed"
+SUPPORTED = "grounded"
 UNCITED = "uncited"
 UNGROUNDED = "ungrounded"
 SCAFFOLDING = "scaffolding"
@@ -20,6 +20,7 @@ UNCLEAR = "unclear"
 def apply_claim_grounding(
     summary: CaseFactSummary,
     *,
+    draft_type: str = "case_fact_summary",
     entailment_results: Mapping[str, Mapping[str, Any]] | None = None,
 ) -> tuple[CaseFactSummary, dict[str, Any]]:
     """Attach claim-level grounding verdicts and return a serializable report."""
@@ -57,14 +58,22 @@ def apply_claim_grounding(
             }
         )
     non_scaffolding = sum(1 for claim in grounded_claims if claim.claim_type != SCAFFOLDING)
-    entailed = counts.get(SUPPORTED, 0)
+    grounded = counts.get(SUPPORTED, 0)
     failed = counts.get(UNCITED, 0) + counts.get(UNGROUNDED, 0) + counts.get(UNSUPPORTED, 0) + counts.get(CONTRADICTED, 0)
     report = {
         "case_id": summary.case_id,
-        "draft_type": "case_fact_summary",
+        "draft_type": draft_type,
         "total_claims": len(grounded_claims),
         "non_scaffolding_claims": non_scaffolding,
-        "entailed": entailed,
+        "grounded": grounded,
+        "entailed": sum(
+            1
+            for claim in grounded_claims
+            if claim.claim_type != SCAFFOLDING
+            and claim.grounding is not None
+            and claim.grounding.entailed_count is not None
+            and claim.grounding.entailed_count > 0
+        ),
         "uncited": counts.get(UNCITED, 0),
         "ungrounded": counts.get(UNGROUNDED, 0),
         "not_supported": counts.get(UNSUPPORTED, 0),
@@ -72,7 +81,7 @@ def apply_claim_grounding(
         "unclear": counts.get(UNCLEAR, 0),
         "scaffolding": counts.get(SCAFFOLDING, 0),
         "citation_coverage": _citation_coverage(grounded_claims),
-        "grounding_pass_rate": entailed / non_scaffolding if non_scaffolding else None,
+        "grounding_pass_rate": grounded / non_scaffolding if non_scaffolding else None,
         "unsupported_claim_count": failed,
         "claims": report_claims,
     }

@@ -5,9 +5,9 @@ optional Node) or **with Docker** (single image, no host toolchain).
 Pick one.
 
 Prereq for both: an `OPENAI_API_KEY` with access to `gpt-5.5` and
-`text-embedding-3-large`. Optional reranking additionally needs either
-`COHERE_API_KEY` or `CO_API_KEY` when `PIPELINE_RERANK_PROVIDER=cohere`
-is enabled.
+`text-embedding-3-large`. Optional reranking additionally needs
+`COHERE_API_KEY`, `CO_API_KEY`, or `COHERE_API_KEY_FILE` when
+`PIPELINE_RERANK_PROVIDER=cohere` is enabled.
 
 ## Without Docker
 
@@ -26,6 +26,11 @@ export PIPELINE_INDEX_BACKEND=qdrant
 export QDRANT_PATH=state/qdrant
 export QDRANT_COLLECTION=legal_rag
 ```
+
+`QDRANT_PATH` uses embedded qdrant-client local storage and is intended
+for single-user local development. Docker Compose starts a real Qdrant
+server and uses `QDRANT_URL=http://qdrant:6333`, which is the better
+default for concurrent API traffic.
 
 ### Just open the UI and drag a PDF in
 
@@ -51,7 +56,7 @@ uv run pipeline run \
   --input  quick-eval \
   --output outputs/quick_eval \
   --case-id quick-eval \
-  --task   "Review the supplied documents and produce a first-pass memo." \
+  --task   "Review the supplied documents and produce a first-pass case fact summary." \
   --force
 open outputs/quick_eval/draft.md
 
@@ -60,7 +65,7 @@ uv run pipeline run \
   --input  datasets \
   --output outputs/all_categories \
   --case-id all-categories \
-  --task   "Review the supplied documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
+  --task   "Review the supplied documents and produce a first-pass case fact summary covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
   --force
 open outputs/all_categories/draft.md
 
@@ -123,17 +128,20 @@ docker compose exec api pipeline run \
   --input  /app/datasets \
   --output /app/outputs/docker_run \
   --case-id docker-run \
-  --task   "Review the supplied documents and produce a first-pass internal memo." \
+  --draft-type case_fact_summary \
+  --task   "Review the supplied documents and produce a first-pass case fact summary." \
   --force
 
 docker compose down
 ```
 
-The secret-file override keeps the API key out of the image and out of
-the container environment. For quick local-only Docker testing you may
-put `OPENAI_API_KEY=...` in `.env` and run `docker compose up --build`,
-but that places the key in the container runtime environment — prefer
-the secret flow for sharing, review, or demos.
+The secret-file override keeps the API key out of the image and Compose
+environment block. The entrypoint reads the file and exports the key only
+inside the runtime process environment before starting Python. For quick
+local-only Docker testing you may put `OPENAI_API_KEY=...` in `.env` and
+run `docker compose up --build`, but that exposes the key through normal
+Compose environment handling; prefer the secret flow for sharing, review,
+or demos.
 
 ## Quick poke from the UI
 
@@ -172,8 +180,8 @@ explicitly enabled:
 - Embeddings: `text-embedding-3-large`
 - Reranker (optional, off by default): Cohere `rerank-v4.0-pro`
 
-Enable reranking with `PIPELINE_RERANK_PROVIDER=cohere` and either
-`COHERE_API_KEY` or `CO_API_KEY`. The model defaults to
+Enable reranking with `PIPELINE_RERANK_PROVIDER=cohere` and
+`COHERE_API_KEY`, `CO_API_KEY`, or `COHERE_API_KEY_FILE`. The model defaults to
 `rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
 `PIPELINE_RERANK_MODEL`. The reranker uses direct HTTPS, so no Cohere SDK
 dependency is required. When enabled, Cohere orders the whole rerank

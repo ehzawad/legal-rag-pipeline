@@ -25,7 +25,7 @@ from fastapi import FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from pipeline.config import ConfigError, PipelineFeatures, ProviderConfig, is_cached_retrieval_provider
 from pipeline.drafting.memo import _operator_claim_key, _operator_language_text, visible_review_warnings
@@ -88,6 +88,8 @@ def favicon() -> Response:
 
 
 class PipelineFeaturesRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     process_documents: bool | None = None
     retrieve_evidence: bool | None = None
     generate_draft: bool | None = None
@@ -98,7 +100,6 @@ class PipelineFeaturesRequest(BaseModel):
     retrieval_feedback: bool | None = None
     field_chunks: bool | None = None
     evidence_pack: bool | None = None
-    claim_first_drafting: bool | None = None
     claim_support_check: bool | None = None
     claim_entailment_judge: bool | None = None
     playbook_risk: bool | None = None
@@ -108,10 +109,13 @@ class PipelineFeaturesRequest(BaseModel):
 
 
 class RunRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     input_dir: str = Field(..., description="Directory of source documents.")
     output_dir: str = Field(..., description="Directory for processed artifacts.")
     case_id: str = Field(default="sample-case")
-    task: str = Field(default="first-pass internal memo")
+    task: str = Field(default="first-pass case fact summary")
+    draft_type: str | None = Field(default=None)
     profile_path: str | None = Field(default=None)
     state_dir: str | None = Field(default=None)
     resume: bool = Field(default=False)
@@ -415,6 +419,7 @@ def _corpus_settings_payload(body: CorpusSettingsRequest) -> dict[str, Any]:
         "settings": {
             "process_documents": features.process_documents,
             "extraction_provider": config.extraction_provider,
+            "draft_type": config.draft_type,
             "pdf_max_pages": config.pdf_max_pages,
             "pdf_render_dpi": config.pdf_render_dpi,
             "extraction_concurrency": config.extraction_concurrency,
@@ -489,6 +494,7 @@ def _index_settings_payload(body: IndexSettingsRequest) -> dict[str, Any]:
             "retrieval_top_k": config.retrieval_top_k,
             "reranker_provider": config.reranker_provider,
             "reranker_model": config.cohere_rerank_model,
+            "draft_type": config.draft_type,
             "field_chunks": features.field_chunks,
             "max_field_chunks": features.max_field_chunks,
             "max_chunks_per_document": features.max_chunks_per_document,
@@ -799,6 +805,7 @@ def post_runs(body: RunRequest) -> RunResponse:
         output_dir,
         case_id=body.case_id,
         task=body.task,
+        draft_type=body.draft_type,
         profile_path=profile_path,
         state_dir=state_dir,
         resume=body.resume,

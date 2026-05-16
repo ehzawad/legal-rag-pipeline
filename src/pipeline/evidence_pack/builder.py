@@ -23,7 +23,7 @@ def build_evidence_pack(
     task: str,
     evidence: Sequence[EvidenceChunk],
     processed_documents: Sequence[ProcessedDocument],
-    draft_type: str = "case_fact_summary",
+    draft_type: str,
 ) -> EvidencePack:
     """Group retrieved chunks into section-aware hints for the claim drafter."""
 

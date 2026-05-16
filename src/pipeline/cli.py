@@ -23,7 +23,12 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--input", required=True, type=Path, help="Directory of source documents.")
     run_parser.add_argument("--output", required=True, type=Path, help="Directory for processed artifacts.")
     run_parser.add_argument("--case-id", default="sample-case")
-    run_parser.add_argument("--task", default="first-pass internal memo")
+    run_parser.add_argument("--task", default="first-pass case fact summary")
+    run_parser.add_argument(
+        "--draft-type",
+        default=None,
+        help="Registered draft spec id. Defaults to PIPELINE_DRAFT_TYPE or case_fact_summary.",
+    )
     run_parser.add_argument("--profile", type=Path, help="Optional operator profile JSON to apply.")
     run_parser.add_argument(
         "--state-dir",
@@ -390,6 +395,7 @@ def main(argv: list[str] | None = None) -> int:
             args.output,
             case_id=args.case_id,
             task=args.task,
+            draft_type=args.draft_type,
             profile_path=args.profile,
             state_dir=args.state_dir,
             resume=args.resume,
@@ -762,6 +768,7 @@ def _corpus_settings(input_dir: Path, output_dir: Path) -> dict[str, object]:
         "settings": {
             "process_documents": features.process_documents,
             "extraction_provider": config.extraction_provider,
+            "draft_type": config.draft_type,
             "pdf_max_pages": config.pdf_max_pages,
             "pdf_render_dpi": config.pdf_render_dpi,
             "extraction_concurrency": config.extraction_concurrency,
@@ -810,6 +817,7 @@ def _index_settings(output_dir: Path, state_dir: Path) -> dict[str, object]:
             "retrieval_top_k": config.retrieval_top_k,
             "reranker_provider": config.reranker_provider,
             "reranker_model": config.cohere_rerank_model,
+            "draft_type": config.draft_type,
             "field_chunks": features.field_chunks,
             "max_field_chunks": features.max_field_chunks,
             "max_chunks_per_document": features.max_chunks_per_document,

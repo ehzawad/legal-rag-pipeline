@@ -117,7 +117,7 @@ def load_public_eval_manifest(path: Path) -> PublicEvalManifest:
         name=_required_str(payload, "name"),
         description=str(payload.get("description") or ""),
         license_notes=str(payload.get("license_notes") or ""),
-        task=str(payload.get("task") or "first-pass internal memo"),
+        task=str(payload.get("task") or "first-pass case fact summary"),
         items=items,
         golden_checks=dict(payload.get("golden_checks") or {}),
     )

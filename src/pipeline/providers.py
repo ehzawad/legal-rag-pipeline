@@ -13,6 +13,15 @@ class ProviderUnavailable(RuntimeError):
 def require_env(name: str) -> str:
     value = os.getenv(name)
     if not value:
+        secret_file = (os.getenv(f"{name}_FILE") or "").strip()
+        if secret_file:
+            try:
+                value = open(secret_file, encoding="utf-8").read().strip()
+            except OSError as exc:
+                raise ProviderUnavailable(f"{name}_FILE is set but could not be read: {secret_file}") from exc
+            if value:
+                os.environ[name] = value
+    if not value:
         raise ProviderUnavailable(f"Missing required environment variable: {name}")
     return value
 

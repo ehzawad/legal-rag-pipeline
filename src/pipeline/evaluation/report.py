@@ -3,12 +3,15 @@ from __future__ import annotations
 import json
 import re
 from collections.abc import Callable, Mapping, Sequence
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 from typing import Any
 
+from pipeline.config import ProviderConfig
+from pipeline.drafting.grounding import apply_claim_grounding
 from pipeline.drafting import sentence_units
-from pipeline.drafting.memo import visible_review_warnings
+from pipeline.drafting.memo import sections_from_case_summary, visible_review_warnings
+from pipeline.drafting.validation import validate_draft_contract
 from pipeline.evaluation.eval_points import score_eval_points, simulate_operator_edit_improvement
 from pipeline.io import read_json, write_json
 from pipeline.learning import (
@@ -454,7 +457,7 @@ def evaluate_ab(
     *,
     generator_without: Callable[[str], str] | None = None,
     generator_with: Callable[[str], str] | None = None,
-    task: str = "first-pass internal memo",
+    task: str = "first-pass case fact summary",
     preferred_phrase_limit: int = 5,
     edited_reference_path: Path | None = None,
     draft_output_dir: Path | None = None,
@@ -519,26 +522,31 @@ def evaluate_ab(
                 guidance_parts.append(exemplars_text)
 
     guidance = "\n\n".join(guidance_parts)
+    config = ProviderConfig.from_env()
 
     without_kwargs: dict[str, Any] = {
         "task": task,
         "evidence": evidence,
         "processed_documents": processed_documents,
         "learned_guidance": "",
+        "config": config,
+        "draft_type": config.draft_type,
     }
     with_kwargs: dict[str, Any] = {
         "task": task,
         "evidence": evidence,
         "processed_documents": processed_documents,
         "learned_guidance": guidance,
+        "config": config,
+        "draft_type": config.draft_type,
     }
     if generator_without is not None:
         without_kwargs["generator"] = generator_without
     if generator_with is not None:
         with_kwargs["generator"] = generator_with
 
-    draft_without = generate_internal_memo(**without_kwargs)
-    draft_with = generate_internal_memo(**with_kwargs)
+    draft_without = _generate_grounded_eval_draft(without_kwargs)
+    draft_with = _generate_grounded_eval_draft(with_kwargs)
     if draft_output_dir is not None:
         draft_output_dir.mkdir(parents=True, exist_ok=True)
         write_json(draft_output_dir / "without_profile_draft.json", _draft_to_payload(draft_without))
@@ -564,6 +572,37 @@ def evaluate_ab(
     )
 
 
+def _generate_grounded_eval_draft(kwargs: dict[str, Any]):
+    from pipeline.drafting import generate_internal_memo
+
+    attempt_kwargs = dict(kwargs)
+    base_guidance = str(attempt_kwargs.get("learned_guidance") or "")
+    last_error: ValueError | None = None
+    for attempt in range(2):
+        try:
+            return _ground_and_validate_eval_draft(generate_internal_memo(**attempt_kwargs))
+        except ValueError as exc:
+            last_error = exc
+            if attempt:
+                raise
+            repair = (
+                "Mandatory validation repair: the previous draft was discarded because "
+                f"{exc}. Regenerate every factual claim with citation quotes copied exactly from the supplied "
+                "evidence JSON. If an exact quote is not available, move that item to open_questions."
+            )
+            attempt_kwargs["learned_guidance"] = f"{base_guidance.rstrip()}\n\n{repair}" if base_guidance.strip() else repair
+    raise last_error or ValueError("A/B draft validation failed")
+
+
+def _ground_and_validate_eval_draft(draft):
+    if draft.case_summary is None:
+        raise ValueError("A/B evaluation draft is missing the required CaseFactSummary")
+    summary, grounding_report = apply_claim_grounding(draft.case_summary, draft_type=draft.draft_type)
+    grounded = replace(draft, case_summary=summary, sections=sections_from_case_summary(summary))
+    validate_draft_contract(grounded, grounding_report)
+    return grounded
+
+
 def resolve_ab_task(case_dir: Path) -> str:
     case_run = case_dir / "case_run.json"
     if case_run.exists():
@@ -584,7 +623,7 @@ def resolve_ab_task(case_dir: Path) -> str:
             task_hint = str(metadata.get("task") or "").strip()
             if task_hint:
                 return task_hint
-    return "first-pass internal memo"
+    return "first-pass case fact summary"
 
 
 def _read_optional_json(path: Path, *, default: Any) -> Any:
@@ -889,7 +928,7 @@ def _claim_grounding_summary(
         claim
         for claim in factual
         if isinstance(claim.get("grounding"), Mapping)
-        and str(claim["grounding"].get("status") or "") == "entailed"
+        and str(claim["grounding"].get("status") or "") in {"grounded", "entailed", "supported"}
     ]
     unsupported = len(factual) - len(supported)
     return {
@@ -1389,34 +1428,9 @@ def _is_substring(quote: str, source: str) -> bool:
 
 
 def _draft_to_payload(draft: Any) -> dict[str, Any]:
-    sections = []
-    for section in getattr(draft, "sections", []) or []:
-        sections.append(
-            {
-                "heading": getattr(section, "heading", ""),
-                "body": getattr(section, "body", ""),
-                "evidence_ids": list(getattr(section, "evidence_ids", []) or []),
-                "unsupported": bool(getattr(section, "unsupported", False)),
-                "citation_quotes": dict(getattr(section, "citation_quotes", {}) or {}),
-            }
-        )
-    evidence = []
-    for chunk in getattr(draft, "evidence", []) or []:
-        evidence.append(
-            {
-                "evidence_id": getattr(chunk, "evidence_id", ""),
-                "document_id": getattr(chunk, "document_id", ""),
-                "filename": getattr(chunk, "filename", ""),
-                "page_number": getattr(chunk, "page_number", 0),
-                "text": getattr(chunk, "text", ""),
-                "score": getattr(chunk, "score", 0.0),
-            }
-        )
-    return {
-        "sections": sections,
-        "evidence": evidence,
-        "warnings": list(getattr(draft, "warnings", []) or []),
-    }
+    from pipeline.schemas import to_jsonable
+
+    return to_jsonable(draft)
 
 
 def _draft_summary(draft: Any) -> dict[str, Any]:

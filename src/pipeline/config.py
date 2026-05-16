@@ -12,6 +12,10 @@ _COHERE_RERANK_PROVIDER_NAMES = {"cohere"}
 _VALID_REASONING_EFFORTS = {"low", "medium", "high"}
 _VALID_RETRIEVAL_MODES = {"dense", "hybrid", "lexical"}
 _VALID_INDEX_BACKENDS = {"memory", "qdrant"}
+_REMOVED_CLAIM_FIRST_MESSAGE = (
+    "PIPELINE_CLAIM_FIRST_DRAFTING is removed. Set PIPELINE_DRAFT_TYPE=case_fact_summary "
+    "or pass draft_type='case_fact_summary' instead."
+)
 
 
 class ConfigError(ValueError):
@@ -45,6 +49,11 @@ def _env(name: str, default: str) -> str:
     if value is None or not value.strip():
         return default
     return value.strip()
+
+
+def _reject_removed_drafting_env() -> None:
+    if os.getenv("PIPELINE_CLAIM_FIRST_DRAFTING") is not None:
+        raise ConfigError(_REMOVED_CLAIM_FIRST_MESSAGE)
 
 
 def _env_secret(name: str, file_name: str, default: str = "") -> str:
@@ -117,6 +126,7 @@ class ProviderConfig:
     openai_reasoning_effort: str = "low"
     reranker_provider: str = ""
     cohere_rerank_model: str = "rerank-v4.0-pro"
+    draft_type: str = "case_fact_summary"
     retrieval_mode: str = "hybrid"
     index_backend: str = "memory"
     hybrid_dense_weight: float = 0.65
@@ -135,6 +145,7 @@ class ProviderConfig:
 
     @classmethod
     def from_env(cls) -> "ProviderConfig":
+        _reject_removed_drafting_env()
         config = cls(
             extraction_provider=_env("PIPELINE_EXTRACTION_PROVIDER", "openai"),
             retrieval_provider=_env("PIPELINE_RETRIEVAL_PROVIDER", "openai"),
@@ -144,6 +155,7 @@ class ProviderConfig:
             openai_reasoning_effort=_validate_reasoning_effort(_env("OPENAI_REASONING_EFFORT", "low")),
             reranker_provider=_env("PIPELINE_RERANK_PROVIDER", ""),
             cohere_rerank_model=_env("PIPELINE_RERANK_MODEL", _env("COHERE_RERANK_MODEL", "rerank-v4.0-pro")),
+            draft_type=_env("PIPELINE_DRAFT_TYPE", "case_fact_summary"),
             retrieval_mode=_env("PIPELINE_RETRIEVAL_MODE", "hybrid").lower(),
             index_backend=_env("PIPELINE_INDEX_BACKEND", "memory").lower(),
             hybrid_dense_weight=_env_float("PIPELINE_HYBRID_DENSE_WEIGHT", 0.65),
@@ -171,6 +183,7 @@ class ProviderConfig:
         _reject_retrieval_provider("PIPELINE_RETRIEVAL_PROVIDER", self.retrieval_provider)
         _reject_non_openai("PIPELINE_GENERATION_PROVIDER", self.generation_provider)
         _reject_reranker_provider("PIPELINE_RERANK_PROVIDER", self.reranker_provider)
+        _validate_draft_type(self.draft_type)
         if self.reranker_provider.strip().lower() in _COHERE_RERANK_PROVIDER_NAMES and not self.cohere_rerank_model.strip():
             raise ConfigError("COHERE_RERANK_MODEL / PIPELINE_RERANK_MODEL must not be empty when Cohere rerank is enabled")
         _validate_choice("PIPELINE_RETRIEVAL_MODE", self.retrieval_mode, _VALID_RETRIEVAL_MODES)
@@ -205,7 +218,6 @@ class PipelineFeatures:
     retrieval_feedback: bool = True
     field_chunks: bool = True
     evidence_pack: bool = True
-    claim_first_drafting: bool = True
     claim_support_check: bool = True
     claim_entailment_judge: bool = False
     playbook_risk: bool = True
@@ -215,6 +227,7 @@ class PipelineFeatures:
 
     @classmethod
     def from_env(cls) -> "PipelineFeatures":
+        _reject_removed_drafting_env()
         config = cls(
             process_documents=_env_bool("PIPELINE_PROCESSING", True),
             retrieve_evidence=_env_bool("PIPELINE_RETRIEVAL", True),
@@ -226,7 +239,6 @@ class PipelineFeatures:
             retrieval_feedback=_env_bool("PIPELINE_RETRIEVAL_FEEDBACK", True),
             field_chunks=_env_bool("PIPELINE_FIELD_CHUNKS", True),
             evidence_pack=_env_bool("PIPELINE_EVIDENCE_PACK", True),
-            claim_first_drafting=_env_bool("PIPELINE_CLAIM_FIRST_DRAFTING", True),
             claim_support_check=_env_bool("PIPELINE_CLAIM_SUPPORT_CHECK", True),
             claim_entailment_judge=_env_bool("PIPELINE_CLAIM_ENTAILMENT_JUDGE", False),
             playbook_risk=_env_bool("PIPELINE_PLAYBOOK_RISK", True),
@@ -247,6 +259,10 @@ class PipelineFeatures:
         config = base or cls.from_env()
         if not values:
             return config
+        if "claim_first_drafting" in values:
+            raise ConfigError(
+                "claim_first_drafting is removed. Pass draft_type='case_fact_summary' on the run request instead."
+            )
         allowed = {field.name for field in fields(cls)}
         unknown = sorted(set(values) - allowed)
         if unknown:
@@ -284,7 +300,6 @@ def _coerce_feature_value(name: str, value: Any) -> bool | int | float:
         "retrieval_feedback",
         "field_chunks",
         "evidence_pack",
-        "claim_first_drafting",
         "claim_support_check",
         "claim_entailment_judge",
         "playbook_risk",
@@ -338,6 +353,15 @@ def _reject_reranker_provider(name: str, value: str) -> None:
         raise ConfigError(
             f"{name}={value!r} is no longer supported; this build only ships the Cohere reranker"
         )
+
+
+def _validate_draft_type(value: str) -> None:
+    try:
+        from pipeline.drafting.specs import resolve_draft_spec
+
+        resolve_draft_spec(value)
+    except ValueError as exc:
+        raise ConfigError(str(exc)) from exc
 
 
 def _validate_choice(name: str, value: str, choices: set[str]) -> None:

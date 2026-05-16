@@ -71,9 +71,9 @@ export default function DraftRenderer({ caseId, draft }: DraftRendererProps) {
     [draft],
   );
 
-  // The Python drafter strips any citation whose verbatim quote fails
-  // substring validation, so surviving `evidence_ids` (and the matching
-  // entry in `citation_quotes`) are the authoritative grounding signal.
+  // The backend hard-fails ungrounded factual claims before writing draft
+  // artifacts, so surviving `evidence_ids` (and the matching entry in
+  // `citation_quotes`) are the authoritative display signal for chips.
   // We don't try to second-guess that here; instead, we surface "absent
   // from this run's persisted evidence" as a soft hint only — the chip's
   // accessible label and tooltip explain the difference. We never show a
@@ -128,8 +128,8 @@ export default function DraftRenderer({ caseId, draft }: DraftRendererProps) {
                 const id = token.evidenceId ?? "";
                 const isActive = selected?.evidenceId === id && selected.caseId === caseId;
                 const quote = section.citation_quotes[id];
-                // "Grounded" here means the drafter persisted both a verbatim
-                // quote (in citation_quotes) and the id in evidence_ids.
+                // "Grounded" here means the persisted section carries both a
+                // verbatim quote (in citation_quotes) and the id in evidence_ids.
                 // Anything else is shown neutrally — we never claim a citation
                 // is ungrounded purely because the persisted top-k slice
                 // omitted the chunk.

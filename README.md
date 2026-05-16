@@ -9,9 +9,9 @@ the grounding contract.
 Stack:
 
 - **Backend** — Python 3.14 / FastAPI / OpenAI Responses + PyMuPDF.
-  Hybrid (BM25 + dense) retrieval with Qdrant vector storage, verbatim
-  citation grounding, typed-intent edit learning, deterministic
-  evaluation suite.
+  Hybrid (BM25 + dense) retrieval with in-process vectors by default or
+  Qdrant persistent vector storage when configured, verbatim citation
+  grounding, typed-intent edit learning, deterministic evaluation suite.
 - **Frontend** — React 18 + TypeScript + Vite + TanStack Query v5 +
   react-router. A multi-page operator console (`frontend/`) talks to
   the FastAPI surface over JSON. The single piece of cross-page UI
@@ -34,7 +34,7 @@ Every artifact a reviewer needs is in the repo at a stable path:
 | Source code | `src/pipeline/` (backend) · `frontend/src/` (UI) |
 | Quickstart (tiered: local / clean machine / Docker) | [`instructions.md`](instructions.md) |
 | Setup and run instructions | [`instructions.md`](instructions.md) · This README §Setup, §Run, §Operator UI walkthrough |
-| Two external smoke PDFs (drag-and-drop the operator UI) | [`quick-eval/`](quick-eval/) — clean SCOTUS opinion + image-only NARA scan, both verified distinct from `datasets/` and `eval/` |
+| Reviewer smoke PDFs (drag-and-drop the operator UI) | [`quick-eval/`](quick-eval/) — six hash-pinned PDFs, including the Apple/Unreal, OpenAI/Elon, and Apple/Spotify test files |
 | Architecture overview | `docs/architecture.md` |
 | Assumptions and tradeoffs | README §Assumptions and tradeoffs · architecture §Honest Limitations |
 | Sample inputs | `datasets/` (see `datasets/COVERAGE.md`) |
@@ -100,16 +100,21 @@ Override draft/extraction and retrieval knobs via `OPENAI_MODEL`,
 `PIPELINE_HYBRID_DENSE_WEIGHT`, `PIPELINE_HYBRID_BM25_WEIGHT`,
 `PIPELINE_PDF_MAX_PAGES`, `PIPELINE_PDF_RENDER_DPI`, and
 `PIPELINE_EXTRACTION_CONFIDENCE_THRESHOLD`. The optional reranker is off
-by default. Enable it with `PIPELINE_RERANK_PROVIDER=cohere` plus either
-`COHERE_API_KEY` or `CO_API_KEY`. The Cohere model defaults to
+by default. Enable it with `PIPELINE_RERANK_PROVIDER=cohere` plus
+`COHERE_API_KEY`, `CO_API_KEY`, or `COHERE_API_KEY_FILE`. The Cohere model defaults to
 `rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
 `PIPELINE_RERANK_MODEL`; the call is made over direct HTTPS, not through
 a Cohere SDK dependency.
 
-Set `PIPELINE_INDEX_BACKEND=qdrant` for persistent vector storage.
+Plain runtime config defaults to `PIPELINE_INDEX_BACKEND=memory`; the
+setup examples, `.env.example`, and Docker Compose set
+`PIPELINE_INDEX_BACKEND=qdrant` for persistent vector storage.
 Without Docker, `QDRANT_PATH=state/qdrant` uses qdrant-client local
-storage. With Docker Compose, the bundled `qdrant` service is addressed
-through `QDRANT_URL=http://qdrant:6333`. For Qdrant Cloud, set
+storage; this is best for single-user development and tests because the
+embedded local store serializes access with file locks. With Docker
+Compose, the bundled `qdrant` service is addressed through
+`QDRANT_URL=http://qdrant:6333` and is the recommended local server mode
+for concurrent API use. For Qdrant Cloud, set
 `QDRANT_URL` and provide `QDRANT_API_KEY` or `QDRANT_API_KEY_FILE`;
 collection names are prefixed by `QDRANT_COLLECTION` and suffixed with
 an index digest so separate corpora do not overwrite one another.
@@ -130,7 +135,7 @@ uv run pipeline run \
   --input quick-eval \
   --output outputs/quick_eval \
   --case-id quick-eval \
-  --task "Review the supplied documents and produce a first-pass memo." \
+  --task "Review the supplied documents and produce a first-pass case fact summary." \
   --force
 open outputs/quick_eval/draft.md
 ```
@@ -142,7 +147,7 @@ docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build
 # open http://localhost:8000/ui
 ```
 
-The base Compose file also starts `qdrant/qdrant` and defaults
+The base Compose file also starts pinned `qdrant/qdrant:v1.18.0` and defaults
 `PIPELINE_INDEX_BACKEND=qdrant` with `QDRANT_URL=http://qdrant:6333`.
 
 **Full curated 20-doc corpus run** (~3–4 min, ~$3–5):
@@ -152,7 +157,7 @@ uv run pipeline run \
   --input  datasets \
   --output outputs/all_categories \
   --case-id all-categories \
-  --task   "Review the supplied documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
+  --task   "Review the supplied documents and produce a first-pass case fact summary covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
   --force
 ```
 
@@ -260,13 +265,22 @@ list of feature switches. Beyond the catch-all `--disable-learning-guidance`
 shown above, there are granular toggles `--disable-operator-profile-guidance`,
 `--disable-knowledge-layer-guidance`, `--disable-exemplar-guidance`, and a
 core-stage `--disable-drafting` (checkpoint mode like processing/retrieval).
-Optional behaviors with defaults: `claim_first_drafting=True` (claim-graph
-output for case-fact summaries), `claim_support_check=True`,
-`claim_entailment_judge=False` (LLM grounding judge — off by default),
+Drafting is selected by registered spec id. The default is
+`PIPELINE_DRAFT_TYPE=case_fact_summary` (or `--draft-type
+case_fact_summary`, or top-level `/runs` request field
+`draft_type`). Specs live in `src/pipeline/drafting/specs.py`; their
+id, version, and content digest are part of the run fingerprint, so
+`--resume` treats spec edits as a fingerprint mismatch and reruns the
+linear pipeline rather than reusing stale draft artifacts. The removed
+`PIPELINE_CLAIM_FIRST_DRAFTING` flag now fails config loading with a
+migration message instead of silently changing grounding behavior.
+Optional behaviors with defaults: `claim_support_check=True`,
+`claim_entailment_judge=False` (LLM grounding judge off by default),
 `evidence_pack=True`, `field_chunks=True`, `field_chunk_score_penalty=0.06`.
-Every flag has both a CLI form (`--disable-<name>` or `--<knob> <value>`)
-and a `PIPELINE_<NAME>` env var; see `src/pipeline/config.py` lines
-154–200 for the exhaustive list and defaults.
+Most operator-facing feature switches have CLI forms
+(`--disable-<name>` or `--<knob> <value>`); all feature switches are
+available through env vars and the `/runs` `features` object. See
+`src/pipeline/config.py` for the exhaustive list and defaults.
 
 The retrieval layer enforces two diversity caps: `max_field_chunks=1`
 keeps the synthetic structured-field chunk from crowding raw page
@@ -414,16 +428,16 @@ posture).
   draft is ready.
 - **Case detail** (`/runs/:caseId`) — tabs over Draft (with clickable
   citation chips bound to an Evidence panel), Source documents,
-  Citations, and Grounding (`case_summary.claims` with
-  substring/entailment verdicts).
+  Citations, and Grounding (`case_summary.claims` with substring-grounded
+  verdicts and optional entailment counts).
 - **Edit & teach** (`/runs/:caseId/edit`) — side-by-side draft viewer
   plus a markdown textarea. Submitting POSTs to
   `POST /runs/{caseId}/edits`, which writes `edited.md` next to the
   draft and runs `learn_from_files` — typed intent routing decides
   which of `operator_profile.json`, `knowledge_layer.json`,
   `retrieval_feedback.json`, the per-category exemplar store, and the
-  edit memory get updated. The response summarizes the learning result
-  in human language instead of exposing internal JSON.
+  edit memory get updated. The backend returns structured learning JSON;
+  the UI renders the human-language confirmation from that response.
 
 Developer and reviewer diagnostics such as retrieval-index query,
 learning-state inspection, evaluation reports, risk reports, artifact
@@ -505,7 +519,7 @@ uv run pipeline run \
   --input datasets \
   --output outputs/all_categories \
   --case-id all-categories \
-  --task "Review the supplied documents and produce a first-pass internal memo." \
+  --task "Review the supplied documents and produce a first-pass case fact summary." \
   --force
 ```
 
@@ -544,14 +558,14 @@ returned confidence and `"pdf-rendered-png"`.
 
 ## Verbatim grounding contract
 
-For every cited evidence id in a supported section, the drafter must
-emit a verbatim `citation_quotes` entry. A validator
-(`drafting._validate_quote_grounding`) checks each quote is a
-normalized substring of the cited chunk's text (whitespace folded;
-curly quotes/em-dashes/ligatures normalized; case-insensitive). Failed
-quotes are stripped from the section's `evidence_ids` and from the
-inline `[evidence_id]` body token, and sections that lose all citations
-are marked `unsupported`. Each strip is recorded as a draft warning.
+For every factual claim, the drafter must emit at least one citation
+with an existing `evidence_id` and a short verbatim quote. The grounding
+pass checks each quote is a normalized substring of the cited chunk's
+text (whitespace folded; curly quotes/em-dashes/ligatures normalized;
+case-insensitive), then `validate_draft_contract` hard-fails the run if
+any factual claim is uncited, ungrounded, unsupported, contradicted, or
+missing from the `CaseFactSummary`. Draft artifacts are written only
+after that contract passes.
 
 ## Dataset
 
@@ -645,7 +659,7 @@ uv run pipeline run \
   --input  datasets \
   --output outputs/all_categories_profiled \
   --case-id all-categories-profiled \
-  --task   "Review the supplied documents and produce a first-pass internal memo covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
+  --task   "Review the supplied documents and produce a first-pass case fact summary covering parties, obligations, deadlines, signatures, and any data-quality flags a human operator/reviewer should verify before relying on the draft." \
   --state-dir state \
   --force
 ```
@@ -885,7 +899,7 @@ Open these first when reviewing:
   confidence, and warnings for the curated 20-doc run.
 - `outputs/all_categories/retrieved_evidence.json` — chunks available to the
   drafter.
-- `outputs/all_categories/draft.md` — generated first-pass memo.
+- `outputs/all_categories/draft.md` — generated first-pass case fact summary.
 - `outputs/all_categories/edits.jsonl` — append-only operator edit event log.
 - `outputs/all_categories/learn_suggestions.json` — suggested retrieval/gold
   annotation from a captured evidence-dispute edit.
@@ -916,8 +930,9 @@ See [docs/architecture.md](docs/architecture.md).
 - `retrieval/` — chunking, fields-chunk emission, cached OpenAI embeddings,
   BM25 + dense hybrid ranking, metadata/retrieval-feedback boosts, Qdrant
   vector storage, optional Cohere reranking, and the retrieval stage adapter.
-- `drafting/` — memo generation, citation sanitation, verbatim quote
-  validation, markdown rendering, and the drafting stage adapter.
+- `drafting/` — registered draft specs, case fact summary generation,
+  citation sanitation, verbatim quote validation, markdown rendering, and
+  the drafting stage adapter.
 - `learning/` — edit capture, profile/knowledge/retrieval-feedback state,
   edit memory, exemplar guidance, and DPO pair export.
 - `playbooks/` — JSON legal-team playbook loading, deterministic risk
@@ -973,14 +988,14 @@ See [docs/architecture.md](docs/architecture.md).
   document carries the extracted structured fields so the field schema
   is retrievable in addition to surfacing through page text.
 - The optional reranker is off by default (`PIPELINE_RERANK_PROVIDER`).
-  Enable it with `PIPELINE_RERANK_PROVIDER=cohere` and either
-  `COHERE_API_KEY` or `CO_API_KEY`. It defaults to Cohere
+  Enable it with `PIPELINE_RERANK_PROVIDER=cohere` and `COHERE_API_KEY`,
+  `CO_API_KEY`, or `COHERE_API_KEY_FILE`. It defaults to Cohere
   `rerank-v4.0-pro`, can be overridden with `COHERE_RERANK_MODEL` or
   `PIPELINE_RERANK_MODEL`, and uses direct HTTPS rather than a Cohere
   SDK dependency.
 - Grounding is verbatim *substring* match, not semantic entailment. The
   quote being verbatim doesn't prove the surrounding sentence is
-  factually entailed by the chunk.
+  factually grounded by a verbatim quote from the chunk.
 - The improvement loop measures *human preference steering* (section structure,
   caution markers, preferred phrases) plus edited-reference similarity and
   grounding non-regression checks. Moving in the operator's direction is not
@@ -1000,6 +1015,10 @@ See [docs/architecture.md](docs/architecture.md).
   identity when `PIPELINE_INDEX_BACKEND=qdrant`. Qdrant collections are
   validated against point count and per-chunk identity before reuse; if a
   collection is missing or stale, it is rebuilt from the stored vectors.
+  `QDRANT_PATH` uses qdrant-client's embedded local store and is intended
+  for single-user local development; Docker Compose and Qdrant Cloud use
+  server mode via `QDRANT_URL` and are the better fit for concurrent API
+  traffic.
   The optional `openai-cached` backend persists embedding vectors behind
   exact-input/model/backend cache keys to reduce repeat OpenAI embedding
   calls.

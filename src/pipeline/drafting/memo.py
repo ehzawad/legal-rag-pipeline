@@ -1,4 +1,4 @@
-"""API-backed first-pass memo drafting from retrieved evidence."""
+"""API-backed case fact summary drafting from retrieved evidence."""
 
 from __future__ import annotations
 
@@ -15,6 +15,13 @@ from pipeline.providers import (
     ProviderUnavailable,
     parse_json_response,
     responses_create,
+)
+from pipeline.drafting.specs import (
+    CASE_FACT_SUMMARY_ADAPTER,
+    DraftResponseAdapter,
+    DraftSpec,
+    resolve_draft_adapter,
+    resolve_draft_spec,
 )
 from pipeline.schemas import (
     CaseFactSummary,
@@ -132,7 +139,7 @@ def _restore_abbreviations(text: str) -> str:
 
 @dataclass(frozen=True)
 class DraftingTask:
-    """Inputs for a first-pass internal memo draft."""
+    """Inputs for a grounded case fact summary draft."""
 
     request: str
     matter_name: str | None = None
@@ -154,17 +161,20 @@ def generate_internal_memo(
     generator: Callable[[str], str] | None = None,
     max_evidence_items: int = 8,
     claim_support_check: bool = True,
-    claim_first_drafting: bool = True,
+    draft_type: str | None = None,
     evidence_pack: EvidencePack | Mapping[str, Any] | None = None,
     case_id: str = "",
 ) -> Draft:
-    """Generate a structured, citation-preserving internal memo draft.
+    """Generate a structured, citation-preserving case fact summary draft.
 
     Real runs use OpenAI. Tests can inject ``generator`` to avoid
     API calls; local deterministic generation is intentionally not the default.
     """
 
     drafting_task = _coerce_task(task)
+    config = config or ProviderConfig.from_env()
+    spec = resolve_draft_spec(draft_type or config.draft_type)
+    adapter = resolve_draft_adapter(spec)
     selected_evidence = _select_evidence(evidence or (), max_evidence_items=max_evidence_items)
     guidance = _parse_guidance(learned_guidance)
     computed_unsupported = _unsupported_or_unclear_facts(
@@ -177,10 +187,9 @@ def generate_internal_memo(
         evidence=selected_evidence,
         learned_guidance=learned_guidance,
         computed_unsupported=computed_unsupported,
-        claim_first_drafting=claim_first_drafting,
+        spec=spec,
         evidence_pack=evidence_pack,
     )
-    config = config or ProviderConfig.from_env()
     resolved_provider = resolve_provider_name(
         provider,
         fallback=config.generation_provider,
@@ -194,16 +203,19 @@ def generate_internal_memo(
         reasoning_effort=config.openai_reasoning_effort,
     )
     payload = _parse_draft_payload(response_text)
-    return _draft_from_payload(
+    draft = _draft_from_payload(
         payload,
         task=drafting_task,
         evidence=selected_evidence,
         computed_unsupported=computed_unsupported,
         guidance=guidance,
         claim_support_check=claim_support_check,
-        claim_first_drafting=claim_first_drafting,
+        spec=spec,
+        adapter=adapter,
         case_id=case_id,
     )
+    _validate_adapter_output(draft)
+    return draft
 
 
 def _generate_with_provider(
@@ -244,7 +256,7 @@ def _draft_prompt(
     evidence: Sequence[EvidenceChunk],
     learned_guidance: str | None,
     computed_unsupported: Sequence[str],
-    claim_first_drafting: bool = True,
+    spec: DraftSpec,
     evidence_pack: EvidencePack | Mapping[str, Any] | None = None,
 ) -> str:
     evidence_payload = [
@@ -270,79 +282,12 @@ def _draft_prompt(
     }
     guidance = learned_guidance.strip() if learned_guidance else ""
     pack_payload = _evidence_pack_payload(evidence_pack)
-
-    if claim_first_drafting:
-        return (
-            "You are drafting a grounded case fact summary for operator review. "
-            "Use only the supplied evidence. The canonical output is a claim graph, not Markdown. "
-            "Do not invent claim_ids; the system assigns stable claim ids after parsing. "
-            "Every non-scaffolding factual claim must cite at least one evidence_id from the evidence JSON "
-            "and include a short verbatim quote for each citation. Each quote must appear inside the cited "
-            "chunk text after whitespace/case normalization. If evidence is unclear, set confidence to low. "
-            "Write those quote mappings under citation_quotes so downstream validators can inspect them. "
-            "If a useful fact is unsupported, place it in open_questions rather than as a factual claim. "
-            "Do not infer legal conclusions such as breach, fault, default, liability, or legal sufficiency "
-            "unless a cited source says that directly. Learned guidance may affect tone or section preferences, "
-            "but it must not remove citations. Choose sections dynamically from the supplied document type, "
-            "evidence, and task. Do not force litigation-only sections such as procedural posture or relief "
-            "sought when the document is a deed, probate record, notice, contract, filing, form, checklist, "
-            "or other non-litigation record. Warnings should be brief operator review flags about this run's "
-            "extraction, citation, or source-quality issues; do not restate broad learned guidance or "
-            "knowledge-layer rules unless the supplied evidence directly triggers them.\n\n"
-            "Return strict JSON only with this shape:\n"
-            "{"
-            '"title":"Case Fact Summary",'
-            '"claims":[{"section":"short_snake_case_section_id_chosen_for_this_document_type",'
-            '"text":"one factual claim or open question","claim_type":"fact|summary|scaffolding",'
-            '"confidence":"high|medium|low",'
-            '"citations":[{"evidence_id":"E1","quote":"verbatim substring from E1"}]}],'
-            '"open_questions":["..."],'
-            '"warnings":["..."]'
-            "}\n\n"
-            f"Drafting task JSON:\n{json.dumps(task_payload, ensure_ascii=True)}\n\n"
-            f"Learned guidance:\n{guidance}\n\n"
-            f"Unsupported or unclear facts that must be preserved as open questions:\n"
-            f"{json.dumps(list(computed_unsupported), ensure_ascii=True)}\n\n"
-            f"Evidence pack JSON:\n{json.dumps(pack_payload, ensure_ascii=True)}\n\n"
-            f"Evidence JSON:\n{json.dumps(evidence_payload, ensure_ascii=True)}"
-        )
-
-    return (
-        "You are drafting a first-pass internal legal-style memo. "
-        "Use only the evidence supplied below for factual assertions. "
-        "Every factual sentence in supported sections must cite evidence ids in square brackets, "
-        "for example [E1]. Do not invent absent matter names, parties, jurisdictions, dates, "
-        "deadlines, legal standards, or amounts. If a requested or supplied fact is not established "
-        "by the evidence, put it in Unsupported or Unclear Facts instead of treating it as true. "
-        "Learned guidance may affect tone or section preferences, but it must not remove citations. "
-        "Choose sections dynamically from the supplied document type, evidence, and task. Do not force "
-        "litigation-only sections such as procedural posture or relief sought when the document is a deed, "
-        "probate record, notice, contract, filing, form, checklist, or other non-litigation record. Warnings "
-        "should be brief operator review flags about this run's extraction, citation, or source-quality "
-        "issues; do not restate broad learned guidance or knowledge-layer rules unless the supplied evidence "
-        "directly triggers them.\n\n"
-        "For every evidence id you cite in a section, you must also supply a verbatim quote from "
-        "that evidence chunk under citation_quotes. The quote MUST appear character-for-character "
-        "inside that chunk's text (substring match, case-insensitive, whitespace-normalized). "
-        "Do not paraphrase or summarize the quote. Keep quotes short but long enough to identify "
-        "the supporting passage (typically one sentence or clause). If you cannot find a verbatim "
-        "quote that supports the sentence, drop the citation rather than fabricate one. Prefer "
-        "raw source-page evidence over evidence marked is_derived=true when both support the same "
-        "claim; derived structured-field evidence is useful for recall but should not crowd out "
-        "source-page citations.\n\n"
-        "Return strict JSON only, with this shape:\n"
-        "{"
-        '"title":"First-Pass Internal Memo",'
-        '"sections":[{"heading":"Issue","body":"... [E1]","evidence_ids":["E1"],'
-        '"citation_quotes":{"E1":"verbatim substring from E1\'s text"},"unsupported":false}],'
-        '"unsupported_or_unclear_facts":["..."],'
-        '"warnings":["..."]'
-        "}\n\n"
-        f"Drafting task JSON:\n{json.dumps(task_payload, ensure_ascii=True)}\n\n"
-        f"Learned guidance:\n{guidance}\n\n"
-        f"Unsupported or unclear facts that must be preserved:\n"
-        f"{json.dumps(list(computed_unsupported), ensure_ascii=True)}\n\n"
-        f"Evidence JSON:\n{json.dumps(evidence_payload, ensure_ascii=True)}"
+    return spec.build_prompt(
+        task_payload=task_payload,
+        evidence_payload=evidence_payload,
+        learned_guidance=guidance,
+        computed_unsupported=computed_unsupported,
+        evidence_pack_payload=pack_payload,
     )
 
 
@@ -401,13 +346,16 @@ def _draft_from_payload(
     computed_unsupported: Sequence[str],
     guidance: set[str],
     claim_support_check: bool = True,
-    claim_first_drafting: bool = True,
+    spec: DraftSpec,
+    adapter: DraftResponseAdapter,
     case_id: str = "",
 ) -> Draft:
     valid_ids = {item.evidence_id for item in evidence}
-    evidence_by_id = {item.evidence_id: item for item in evidence}
-    case_summary: CaseFactSummary | None = None
-    if _has_claim_payload(payload):
+    if adapter.id == CASE_FACT_SUMMARY_ADAPTER:
+        if not _has_claim_payload(payload):
+            raise ProviderUnavailable(
+                f"Draft adapter {adapter.id!r} requires a case-fact claims response with a claims list"
+            )
         case_summary, claim_warnings = _case_summary_from_claim_payload(
             payload,
             evidence=evidence,
@@ -418,14 +366,7 @@ def _draft_from_payload(
         citation_warnings = claim_warnings
         quote_warnings = []
     else:
-        sections, citation_warnings = _sections_from_payload(payload, valid_ids=valid_ids)
-        sections, quote_warnings = _validate_quote_grounding(sections, evidence_by_id=evidence_by_id)
-        case_summary = _case_summary_from_sections(
-            title=_safe_title(payload.get("title")),
-            sections=sections,
-            evidence=evidence,
-            case_id=case_id,
-        )
+        raise ProviderUnavailable(f"Unsupported draft response adapter: {adapter.id!r}")
     sections, sentence_warnings = _validate_sentence_citations(sections)
     support_warnings = _validate_claim_support(sections) if claim_support_check else []
     unsupported = _combine_unsupported(computed_unsupported, payload.get("unsupported_or_unclear_facts"))
@@ -445,7 +386,7 @@ def _draft_from_payload(
         warnings.append("No evidence was supplied, so supported memo sections should remain empty or preliminary.")
 
     return Draft(
-        draft_type="case_fact_summary" if claim_first_drafting else "internal_memo",
+        draft_type=spec.id,
         title=_safe_title(payload.get("title")),
         generated_at=now_iso(),
         sections=sections,
@@ -453,6 +394,28 @@ def _draft_from_payload(
         warnings=_dedupe_strings(warnings),
         case_summary=case_summary,
     )
+
+
+def _validate_adapter_output(draft: Draft) -> None:
+    summary = draft.case_summary
+    if summary is None:
+        raise ProviderUnavailable("Draft adapter did not return a CaseFactSummary")
+    if not summary.claims:
+        raise ProviderUnavailable("Draft adapter returned an empty CaseFactSummary")
+    evidence_ids = {chunk.evidence_id for chunk in draft.evidence}
+    summary_evidence_ids = {chunk.evidence_id for chunk in summary.evidence}
+    for claim in summary.claims:
+        if claim.claim_type == "scaffolding":
+            continue
+        if not claim.citations:
+            raise ProviderUnavailable(f"Draft adapter returned uncited factual claim {claim.claim_id}")
+        for citation in claim.citations:
+            if not citation.evidence_id or citation.evidence_id not in evidence_ids:
+                raise ProviderUnavailable(f"Draft adapter returned invalid citation id for {claim.claim_id}")
+            if citation.evidence_id not in summary_evidence_ids:
+                raise ProviderUnavailable(f"Draft adapter summary evidence is missing {citation.evidence_id}")
+            if not citation.quote.strip():
+                raise ProviderUnavailable(f"Draft adapter returned an empty quote for {claim.claim_id}")
 
 
 def _has_claim_payload(payload: Mapping[str, Any]) -> bool:
@@ -727,59 +690,6 @@ def _operator_claim_key(text: str) -> str:
     return " ".join(cleaned.split())
 
 
-def _case_summary_from_sections(
-    *,
-    title: str,
-    sections: Sequence[DraftSection],
-    evidence: Sequence[EvidenceChunk],
-    case_id: str,
-) -> CaseFactSummary:
-    claims: list[FactClaim] = []
-    section_order: list[str] = []
-    seen: set[str] = set()
-    for section in sections:
-        section_id = _canonical_section(section.heading)
-        if section_id not in section_order:
-            section_order.append(section_id)
-        for sentence in sentence_units(section.body):
-            text = _clean_str(_CITATION_RE.sub("", sentence))
-            if len(text) < 4:
-                continue
-            citation_ids = [
-                evidence_id for evidence_id in _CITATION_RE.findall(sentence) if evidence_id in section.evidence_ids
-            ] or list(section.evidence_ids)
-            citations = [
-                ClaimCitation(evidence_id=evidence_id, quote=section.citation_quotes[evidence_id])
-                for evidence_id in citation_ids
-                if evidence_id in section.citation_quotes
-            ]
-            claim_type = "scaffolding" if section.unsupported and not citations else "fact"
-            claim_id = _stable_claim_id(section_id, text)
-            if claim_id in seen:
-                continue
-            seen.add(claim_id)
-            claims.append(
-                FactClaim(
-                    claim_id=claim_id,
-                    section_id=section_id,
-                    section=section.heading,
-                    text=text,
-                    claim_type=claim_type,
-                    confidence="medium" if citations else "low",
-                    citations=citations,
-                )
-            )
-    return CaseFactSummary(
-        case_id=case_id,
-        generated_at=now_iso(),
-        title=title,
-        section_order=section_order or _default_section_order(),
-        claims=claims,
-        evidence=list(evidence),
-        warnings=[],
-    )
-
-
 def _stable_claim_id(section_id: str, text: str) -> str:
     normalized = normalize_quote_text(f"{section_id}\n{text}")
     return "claim_" + hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:12]
@@ -838,11 +748,10 @@ def _default_section_order() -> list[str]:
 
 def _claim_type(value: Any, *, section: str, citations: Sequence[ClaimCitation]) -> str:
     raw = _clean_str(value).casefold()
-    allowed = {"fact", "summary", "scaffolding", "issue"}
-    if raw in allowed:
-        return "scaffolding" if raw == "issue" else raw
-    if section in {"open_questions", "evidence_table"} and not citations:
+    if section == "open_questions" and not citations:
         return "scaffolding"
+    if raw in {"fact", "summary"}:
+        return raw
     return "fact"
 
 
@@ -851,70 +760,6 @@ def _claim_confidence(value: Any) -> str:
     if raw in {"high", "medium", "low"}:
         return raw
     return "medium"
-
-
-def _sections_from_payload(
-    payload: Mapping[str, Any],
-    *,
-    valid_ids: set[str],
-) -> tuple[list[DraftSection], list[str]]:
-    raw_sections = payload.get("sections")
-    if not isinstance(raw_sections, list):
-        raise ProviderUnavailable("Draft provider response did not include a sections list")
-
-    sections: list[DraftSection] = []
-    warnings: list[str] = []
-    for raw_section in raw_sections:
-        if not isinstance(raw_section, Mapping):
-            continue
-        heading = _clean_str(raw_section.get("heading")) or "Untitled"
-        body = _clean_str(raw_section.get("body"))
-        unsupported = bool(raw_section.get("unsupported", False))
-        raw_ids = _string_sequence(raw_section.get("evidence_ids"))
-        invalid_list_ids = sorted({evidence_id for evidence_id in raw_ids if evidence_id not in valid_ids})
-        evidence_ids = _sanitize_evidence_ids(raw_section.get("evidence_ids"), valid_ids=valid_ids)
-        citation_quotes = _sanitize_citation_quotes(raw_section.get("citation_quotes"), valid_ids=valid_ids)
-        if body:
-            body, invalid_body_ids = _sanitize_body_citations(
-                body,
-                valid_ids=valid_ids,
-                section_ids=set(evidence_ids),
-            )
-            invalid_ids = sorted(set(invalid_list_ids).union(invalid_body_ids))
-            if invalid_ids:
-                warnings.append(
-                    "Removed unsupported citation ids from section "
-                    + repr(heading)
-                    + ": "
-                    + ", ".join(invalid_ids)
-                )
-        elif invalid_list_ids:
-            warnings.append(
-                "Removed unsupported citation ids from section "
-                + repr(heading)
-                + ": "
-                + ", ".join(invalid_list_ids)
-            )
-        if body and not unsupported and not evidence_ids:
-            unsupported = True
-        if not unsupported and not body and not evidence_ids:
-            # Empty body + empty evidence_ids is not a factual claim — it is
-            # scaffolding the LLM emitted with neither prose nor support.
-            # Mark it as a review hook so the citation-validity metric does
-            # not penalize a draft for sections that carry no claim.
-            unsupported = True
-        sections.append(
-            DraftSection(
-                heading=heading,
-                body=body,
-                evidence_ids=evidence_ids,
-                citation_quotes=citation_quotes,
-                unsupported=unsupported,
-            )
-        )
-    if not sections:
-        raise ProviderUnavailable("Draft provider response did not include usable sections")
-    return sections, warnings
 
 
 def _ensure_required_sections(
@@ -1048,7 +893,7 @@ def _coerce_task(value: DraftingTask | Mapping[str, Any] | str | None) -> Drafti
     if isinstance(value, DraftingTask):
         return value
     if value is None:
-        return DraftingTask(request="First-pass internal memo")
+        return DraftingTask(request="Case fact summary")
     if isinstance(value, str):
         return DraftingTask(request=value.strip())
     if isinstance(value, Mapping):
@@ -1243,25 +1088,6 @@ def _sanitize_evidence_ids(value: Any, *, valid_ids: set[str]) -> list[str]:
     return ids
 
 
-def _sanitize_body_citations(
-    body: str,
-    *,
-    valid_ids: set[str],
-    section_ids: set[str] | None = None,
-) -> tuple[str, list[str]]:
-    removed: list[str] = []
-    allowed = valid_ids if section_ids is None else (valid_ids & section_ids)
-
-    def replace(match: re.Match[str]) -> str:
-        evidence_id = match.group(1)
-        if evidence_id in allowed:
-            return match.group(0)
-        removed.append(evidence_id)
-        return ""
-
-    return _clean_str(_CITATION_RE.sub(replace, body)), sorted(set(removed))
-
-
 def _sanitize_citation_quotes(value: Any, *, valid_ids: set[str]) -> dict[str, str]:
     if not isinstance(value, Mapping):
         return {}
@@ -1274,57 +1100,6 @@ def _sanitize_citation_quotes(value: Any, *, valid_ids: set[str]) -> dict[str, s
         if quote:
             quotes[evidence_id] = quote
     return quotes
-
-
-def _validate_quote_grounding(
-    sections: list[DraftSection],
-    *,
-    evidence_by_id: Mapping[str, EvidenceChunk],
-) -> tuple[list[DraftSection], list[str]]:
-    warnings: list[str] = []
-    validated: list[DraftSection] = []
-    for section in sections:
-        kept_ids: list[str] = []
-        kept_quotes: dict[str, str] = {}
-        rejected_ids: list[str] = []
-        for evidence_id in section.evidence_ids:
-            chunk = evidence_by_id.get(evidence_id)
-            quote = section.citation_quotes.get(evidence_id, "")
-            if chunk is None or not quote:
-                rejected_ids.append(evidence_id)
-                continue
-            if _quote_is_grounded(quote, chunk.text):
-                kept_ids.append(evidence_id)
-                kept_quotes[evidence_id] = quote
-            else:
-                rejected_ids.append(evidence_id)
-
-        body = section.body
-        if rejected_ids:
-            for evidence_id in rejected_ids:
-                body = _strip_citation_token(body, evidence_id)
-            body = _clean_str(body)
-            warnings.append(
-                "Dropped ungrounded citation quotes from section "
-                + repr(section.heading)
-                + ": "
-                + ", ".join(sorted(set(rejected_ids)))
-            )
-
-        unsupported = section.unsupported
-        if section.evidence_ids and not kept_ids:
-            unsupported = True
-
-        validated.append(
-            DraftSection(
-                heading=section.heading,
-                body=body,
-                evidence_ids=kept_ids,
-                citation_quotes=kept_quotes,
-                unsupported=unsupported,
-            )
-        )
-    return validated, warnings
 
 
 def _validate_sentence_citations(sections: list[DraftSection]) -> tuple[list[DraftSection], list[str]]:
@@ -1423,14 +1198,6 @@ def _looks_like_factual_sentence(sentence: str) -> bool:
     return len(tokens) >= 4
 
 
-def _quote_is_grounded(quote: str, chunk_text: str) -> bool:
-    needle = normalize_quote_text(quote)
-    haystack = normalize_quote_text(chunk_text)
-    if not needle:
-        return False
-    return needle in haystack
-
-
 _QUOTE_NORMALIZATION_MAP = str.maketrans(
     {
         "‘": "'",
@@ -1459,13 +1226,6 @@ def normalize_quote_text(text: str) -> str:
     return " ".join(translated.split()).casefold()
 
 
-def _strip_citation_token(body: str, evidence_id: str) -> str:
-    if not body:
-        return body
-    pattern = re.compile(r"\s*\[" + re.escape(evidence_id) + r"\]")
-    return pattern.sub("", body)
-
-
 def render_section_quotes_markdown(section: DraftSection) -> list[str]:
     lines: list[str] = []
     if not section.citation_quotes:
@@ -1479,7 +1239,7 @@ def render_section_quotes_markdown(section: DraftSection) -> list[str]:
 
 def _safe_title(value: Any) -> str:
     title = _clean_str(value)
-    return title or "First-Pass Internal Memo"
+    return title or "Case Fact Summary"
 
 
 def _parse_guidance(learned_guidance: str | None) -> set[str]:

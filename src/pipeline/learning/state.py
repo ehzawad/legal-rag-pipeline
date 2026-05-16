@@ -1477,7 +1477,7 @@ def _section_level_preference_pairs(
     pairs.append(
         {
             "prompt": (
-                "Draft a first-pass internal memo grounded in the supplied "
+                "Draft a first-pass case fact summary grounded in the supplied "
                 "evidence. Match the operator's preferred structure and tone."
             ),
             "chosen": edited_body,

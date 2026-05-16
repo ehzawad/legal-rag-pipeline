@@ -1543,6 +1543,14 @@ def _cohere_api_key() -> str:
         api_key = (os.getenv(name) or "").strip()
         if api_key:
             return api_key
+    api_key_file = (os.getenv("COHERE_API_KEY_FILE") or "").strip()
+    if api_key_file:
+        try:
+            api_key = Path(api_key_file).read_text(encoding="utf-8").strip()
+        except OSError as exc:
+            raise ProviderUnavailable(f"COHERE_API_KEY_FILE is set but could not be read: {api_key_file}") from exc
+        if api_key:
+            return api_key
     raise ProviderUnavailable("Missing required environment variable: COHERE_API_KEY (or CO_API_KEY)")
 
 

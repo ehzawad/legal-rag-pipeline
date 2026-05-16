@@ -125,10 +125,12 @@ export interface PipelineFeaturesPayload {
   retrieve_evidence?: boolean;
   generate_draft?: boolean;
   learning_guidance?: boolean;
+  operator_profile_guidance?: boolean;
+  knowledge_layer_guidance?: boolean;
+  exemplar_guidance?: boolean;
   retrieval_feedback?: boolean;
   field_chunks?: boolean;
   evidence_pack?: boolean;
-  claim_first_drafting?: boolean;
   claim_support_check?: boolean;
   claim_entailment_judge?: boolean;
   playbook_risk?: boolean;
@@ -155,6 +157,7 @@ export interface RunPipelineRequest {
   output_dir: string;
   case_id: string;
   task: string;
+  draft_type?: string | null;
   profile_path?: string | null;
   state_dir?: string | null;
   resume?: boolean;

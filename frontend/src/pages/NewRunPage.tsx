@@ -7,7 +7,7 @@ const ALLOWED_MIME = ".pdf,.png,.jpg,.jpeg,.txt";
 const MAX_BYTES = 30 * 1024 * 1024;
 
 const DEFAULT_TASK =
-  "Review the supplied legal-style documents and produce a first-pass operator summary. " +
+  "Review the supplied legal-style documents and produce a first-pass case fact summary. " +
   "Adapt the sections to the document type, and include parties, dates, amounts, signatures, " +
   "procedural posture, relief, or other legal facts only when the evidence supports them.";
 
@@ -132,6 +132,7 @@ export default function NewRunPage() {
         output_dir: outputDir,
         case_id: caseId,
         task,
+        draft_type: "case_fact_summary",
         state_dir: "state",
         force: true,
         features: {

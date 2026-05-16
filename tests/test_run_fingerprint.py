@@ -11,8 +11,10 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 
+from pipeline.drafting import specs
+from pipeline.io import write_json
 from pipeline.config import PipelineFeatures, ProviderConfig
-from pipeline.orchestration.run import _compute_run_fingerprint
+from pipeline.orchestration.run import _compute_run_fingerprint, _detect_invalidation
 
 
 def _fingerprint(
@@ -23,7 +25,7 @@ def _fingerprint(
 ):
     return _compute_run_fingerprint(
         input_dir=input_dir,
-        task="first-pass internal memo",
+        task="first-pass case fact summary",
         profile_path=input_dir / "missing-profile.json",
         config=config or ProviderConfig(),
         features=features,
@@ -99,3 +101,82 @@ def test_changing_qdrant_index_identity_changes_run_digest(tmp_path: Path):
         "Qdrant backend identity must contribute to the run fingerprint; "
         "otherwise --resume could reuse evidence against a stale vector store."
     )
+
+
+def test_changing_draft_spec_content_changes_run_digest(tmp_path: Path, monkeypatch):
+    features = PipelineFeatures.from_env()
+    base_digest = _fingerprint(tmp_path, features).digest
+    spec = specs.resolve_draft_spec("case_fact_summary")
+    changed_spec = replace(spec, version="2")
+    monkeypatch.setitem(specs._SPECS, "case_fact_summary", changed_spec)
+
+    changed_digest = _fingerprint(tmp_path, features).digest
+
+    assert base_digest != changed_digest, (
+        "the registered draft spec must contribute to the run fingerprint; "
+        "otherwise --resume could reuse stale drafts after spec edits."
+    )
+
+
+def test_changing_draft_adapter_contract_changes_run_digest(tmp_path: Path, monkeypatch):
+    features = PipelineFeatures.from_env()
+    base_digest = _fingerprint(tmp_path, features).digest
+    adapter = specs.resolve_draft_adapter(specs.resolve_draft_spec("case_fact_summary"))
+    changed_adapter = replace(adapter, version="2")
+    monkeypatch.setitem(specs._ADAPTERS, adapter.id, changed_adapter)
+
+    changed_digest = _fingerprint(tmp_path, features).digest
+
+    assert base_digest != changed_digest, (
+        "the draft adapter contract must contribute to the run fingerprint; "
+        "otherwise --resume could reuse stale drafts after adapter/schema edits."
+    )
+
+
+def test_resume_reuses_matching_fingerprint_only_after_completed_manifest(tmp_path: Path):
+    features = PipelineFeatures.from_env()
+    fingerprint = _fingerprint(tmp_path, features)
+    manifest = tmp_path / "workflow_manifest.json"
+    write_json(
+        manifest,
+        {
+            "status": "completed",
+            "metadata": {"run_fingerprint": fingerprint.to_jsonable()},
+            "stages": [],
+        },
+    )
+
+    invalidation = _detect_invalidation(
+        manifest_path=manifest,
+        new_fingerprint=fingerprint,
+        resume=True,
+        force=False,
+    )
+
+    assert invalidation.invalidate_draft is False
+
+
+def test_resume_invalidates_matching_fingerprint_when_manifest_not_completed(tmp_path: Path):
+    features = PipelineFeatures.from_env()
+    fingerprint = _fingerprint(tmp_path, features)
+    manifest = tmp_path / "workflow_manifest.json"
+    write_json(
+        manifest,
+        {
+            "status": "failed",
+            "metadata": {"run_fingerprint": fingerprint.to_jsonable()},
+            "stages": [{"name": "generate_draft", "status": "failed"}],
+        },
+    )
+
+    invalidation = _detect_invalidation(
+        manifest_path=manifest,
+        new_fingerprint=fingerprint,
+        resume=True,
+        force=False,
+    )
+
+    assert invalidation.invalidate_process is True
+    assert invalidation.invalidate_retrieve is True
+    assert invalidation.invalidate_draft is True
+    assert "not marked completed" in invalidation.warnings[0]

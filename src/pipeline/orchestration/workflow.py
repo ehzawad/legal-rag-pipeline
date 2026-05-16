@@ -73,6 +73,8 @@ class WorkflowRecorder:
         self.retry_policy = retry_policy or RetryPolicy()
         self.records: list[StageRecord] = []
         self.created_at = now_iso()
+        self.status = "running"
+        self.finished_at = ""
         self._flush()
 
     def run_stage(
@@ -109,6 +111,9 @@ class WorkflowRecorder:
                     warnings=stage_warnings,
                 )
                 self.records.append(record)
+                if attempt >= policy.max_attempts or not retryable:
+                    self.status = "failed"
+                    self.finished_at = record.finished_at
                 self._flush()
                 if attempt >= policy.max_attempts or not retryable:
                     raise WorkflowStageError(name, exc) from exc
@@ -157,11 +162,18 @@ class WorkflowRecorder:
         )
         self._flush()
 
+    def mark_completed(self) -> None:
+        self.status = "completed"
+        self.finished_at = now_iso()
+        self._flush()
+
     def _flush(self) -> None:
         write_json(
             self.manifest_path,
             {
                 "created_at": self.created_at,
+                "finished_at": self.finished_at,
+                "status": self.status,
                 "metadata": self.metadata,
                 "retry_policy": asdict(self.retry_policy),
                 "stages": [asdict(record) for record in self.records],

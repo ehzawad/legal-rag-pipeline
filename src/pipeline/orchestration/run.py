@@ -5,8 +5,10 @@ import json
 from dataclasses import dataclass, replace
 from pathlib import Path
 
+from pipeline.drafting.specs import draft_spec_fingerprint, resolve_draft_spec
 from pipeline.drafting.component import MemoDraftingComponent
 from pipeline.drafting.rendering import render_draft_markdown as _render_draft_markdown
+from pipeline.drafting.validation import validate_draft_contract
 from pipeline.evidence_pack import build_evidence_pack
 from pipeline.ingestion.component import DocumentProcessingComponent
 from pipeline.learning.guidance import LearningGuidanceComponent, dominant_category
@@ -47,8 +49,9 @@ class RunFingerprint:
     task: str
     profile_digest: str
     playbook_digest: str
-    providers: dict[str, str | int | float]
+    providers: dict[str, str | int | float | bool]
     features: dict[str, bool | int | float]
+    draft_spec: dict[str, str]
 
     def to_jsonable(self) -> dict[str, object]:
         return {
@@ -59,6 +62,7 @@ class RunFingerprint:
             "playbook_digest": self.playbook_digest,
             "providers": dict(self.providers),
             "features": dict(self.features),
+            "draft_spec": dict(self.draft_spec),
         }
 
 
@@ -126,7 +130,7 @@ def run_case(
     output_dir: Path,
     *,
     case_id: str = "sample-case",
-    task: str = "first-pass internal memo",
+    task: str = "first-pass case fact summary",
     profile_path: Path | None = None,
     state_dir: Path | None = None,
     config: ProviderConfig | None = None,
@@ -136,9 +140,13 @@ def run_case(
     features: PipelineFeatures | None = None,
     components: PipelineComponents | None = None,
     playbook_path: Path | None = None,
+    draft_type: str | None = None,
 ) -> CaseRun:
     config = config or ProviderConfig.from_env()
+    if draft_type is not None:
+        config = replace(config, draft_type=draft_type)
     config.validate_runtime()
+    draft_spec = resolve_draft_spec(config.draft_type)
     features = features or PipelineFeatures.from_env()
     features.validate_runtime()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -200,6 +208,7 @@ def run_case(
             "retrieval_index": str(paths.retrieval_index),
             "evidence_pack": str(paths.evidence_pack),
             "features": features.to_jsonable(),
+            "draft_spec": draft_spec.fingerprint_payload(),
             "playbook_path": str(playbook_path or DEFAULT_PLAYBOOK_PATH),
             "run_fingerprint": fingerprint.to_jsonable(),
         },
@@ -293,6 +302,7 @@ def run_case(
                     task=task,
                     evidence=evidence,
                     processed_documents=processed,
+                    draft_type=draft_spec.id,
                 )
                 write_json(paths.evidence_pack, to_jsonable(pack))
                 return pack
@@ -330,46 +340,62 @@ def run_case(
     if not features.generate_draft:
         _require_checkpoint(paths.draft_json, "generate_draft")
         _require_checkpoint(paths.draft_markdown, "generate_draft")
-        draft = components.drafting.load(paths)
+        _require_checkpoint(paths.case_fact_summary, "generate_draft")
+        _require_checkpoint(paths.grounding_report, "generate_draft")
+        draft = _load_valid_draft_checkpoint(
+            components=components,
+            paths=paths,
+            require_entailment=features.claim_entailment_judge,
+        )
         recorder.record_skipped(
             "generate_draft",
             artifacts=[paths.draft_json, paths.draft_markdown],
             reason="component disabled; reused checkpoint",
             warnings=invalidation_warnings if invalidation.invalidate_draft else None,
         )
-    elif (
-        resume
-        and not force
-        and not invalidation.invalidate_draft
-        and paths.draft_json.exists()
-        and paths.draft_markdown.exists()
-    ):
-        draft = components.drafting.load(paths)
-        recorder.record_skipped(
-            "generate_draft",
-            artifacts=[paths.draft_json, paths.draft_markdown],
-            reason="resume reused checkpoint",
-        )
     else:
-        def draft_stage() -> Draft:
-            return components.drafting.run(
-                processed=processed,
-                evidence=evidence,
-                evidence_pack=evidence_pack,
-                task=task,
-                guidance=guidance,
+        cached_draft = None
+        if (
+            resume
+            and not force
+                and not invalidation.invalidate_draft
+                and paths.draft_json.exists()
+                and paths.draft_markdown.exists()
+                and paths.case_fact_summary.exists()
+                and paths.grounding_report.exists()
+        ):
+            cached_draft = _try_load_valid_draft_checkpoint(
+                components=components,
                 paths=paths,
-                config=config,
-                features=features,
-                case_id=case_id,
+                require_entailment=features.claim_entailment_judge,
             )
+        if cached_draft is not None:
+            draft = cached_draft
+            recorder.record_skipped(
+                "generate_draft",
+                artifacts=[paths.draft_json, paths.draft_markdown],
+                reason="resume reused checkpoint",
+            )
+        else:
+            def draft_stage() -> Draft:
+                return components.drafting.run(
+                    processed=processed,
+                    evidence=evidence,
+                    evidence_pack=evidence_pack,
+                    task=task,
+                    guidance=guidance,
+                    paths=paths,
+                    config=config,
+                    features=features,
+                    case_id=case_id,
+                )
 
-        draft = recorder.run_stage(
-            "generate_draft",
-            draft_stage,
-            artifacts=[paths.draft_json, paths.draft_markdown, paths.case_fact_summary, paths.grounding_report],
-            warnings=invalidation_warnings if invalidation.invalidate_draft else None,
-        )
+            draft = recorder.run_stage(
+                "generate_draft",
+                draft_stage,
+                artifacts=[paths.draft_json, paths.draft_markdown, paths.case_fact_summary, paths.grounding_report],
+                warnings=invalidation_warnings if invalidation.invalidate_draft else None,
+            )
 
     if paths.grounding_report.exists():
         try:
@@ -463,6 +489,7 @@ def run_case(
     )
     run_record = to_jsonable(run)
     run_record["run_fingerprint_detail"] = fingerprint.to_jsonable()
+    run_record["draft_spec"] = draft_spec.fingerprint_payload()
     run_record["learning_guidance_sources"] = guidance_sources
     run_record["evidence_pack_path"] = str(paths.evidence_pack)
     run_record["case_fact_summary_path"] = str(paths.case_fact_summary)
@@ -481,12 +508,50 @@ def run_case(
             "run_fingerprint": fingerprint.digest,
         },
     )
+    recorder.mark_completed()
     return run
 
 
 def _require_checkpoint(path: Path, stage_name: str) -> None:
     if not path.exists():
         raise FileNotFoundError(f"{stage_name} is disabled but checkpoint artifact is missing: {path}")
+
+
+def _load_valid_draft_checkpoint(
+    *,
+    components: PipelineComponents,
+    paths: PipelinePaths,
+    require_entailment: bool,
+) -> Draft:
+    draft = components.drafting.load(paths)
+    if not paths.case_fact_summary.exists():
+        raise ValueError("Draft checkpoint is missing case_fact_summary.json; cannot reuse cached draft")
+    if not paths.grounding_report.exists():
+        raise ValueError("Draft checkpoint is missing grounding_report.json; cannot reuse cached draft")
+    grounding_report = read_json(paths.grounding_report)
+    persisted_summary = read_json(paths.case_fact_summary)
+    if draft.case_summary is None:
+        raise ValueError("Draft checkpoint is missing CaseFactSummary; cannot reuse cached draft")
+    if persisted_summary != to_jsonable(draft.case_summary):
+        raise ValueError("Draft checkpoint case_fact_summary.json does not match draft.json; cannot reuse cached draft")
+    validate_draft_contract(draft, grounding_report, require_entailment=require_entailment)
+    return draft
+
+
+def _try_load_valid_draft_checkpoint(
+    *,
+    components: PipelineComponents,
+    paths: PipelinePaths,
+    require_entailment: bool,
+) -> Draft | None:
+    try:
+        return _load_valid_draft_checkpoint(
+            components=components,
+            paths=paths,
+            require_entailment=require_entailment,
+        )
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
 
 
 def render_draft_markdown(draft) -> str:
@@ -513,6 +578,7 @@ def _compute_run_fingerprint(
     inputs = _hash_input_directory(input_dir)
     profile_digest = _hash_state_contents(profile_path, state_dir, features=features)
     playbook_digest = _hash_playbook(playbook_path or DEFAULT_PLAYBOOK_PATH, features=features)
+    draft_spec_payload = draft_spec_fingerprint(config.draft_type)
     index_backend = (config.index_backend or "").strip().lower()
     providers = {
         "extraction_provider": config.extraction_provider,
@@ -544,6 +610,7 @@ def _compute_run_fingerprint(
         "playbook_digest": playbook_digest,
         "providers": providers,
         "features": feature_payload,
+        "draft_spec": draft_spec_payload,
     }
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
     digest = hashlib.sha256(encoded).hexdigest()
@@ -555,6 +622,7 @@ def _compute_run_fingerprint(
         playbook_digest=playbook_digest,
         providers=providers,
         features=feature_payload,
+        draft_spec=draft_spec_payload,
     )
 
 
@@ -709,8 +777,18 @@ def _detect_invalidation(
             ),
         )
 
-    if prior_fp.get("digest") == new_fingerprint.digest:
+    if prior_fp.get("digest") == new_fingerprint.digest and _manifest_completed(prior):
         return _Invalidation(False, False, False, ())
+    if prior_fp.get("digest") == new_fingerprint.digest:
+        return _Invalidation(
+            invalidate_process=True,
+            invalidate_retrieve=True,
+            invalidate_draft=True,
+            warnings=(
+                "prior workflow_manifest.json has the current run_fingerprint but is not marked completed; "
+                "re-running all stages to avoid stale artifact reuse",
+            ),
+        )
 
     changes = _describe_fingerprint_changes(prior_fp, new_fingerprint)
     warnings = (
@@ -726,6 +804,10 @@ def _detect_invalidation(
         invalidate_draft=True,
         warnings=warnings,
     )
+
+
+def _manifest_completed(manifest: dict) -> bool:
+    return manifest.get("status") == "completed"
 
 
 def _describe_fingerprint_changes(prior: dict, new: RunFingerprint) -> list[str]:
@@ -769,6 +851,15 @@ def _describe_fingerprint_changes(prior: dict, new: RunFingerprint) -> list[str]
         )
         if diffs:
             changes.append(f"features changed={diffs}")
+    prior_draft_spec = prior.get("draft_spec") or {}
+    if prior_draft_spec != new.draft_spec:
+        diffs = sorted(
+            key
+            for key in set(prior_draft_spec) | set(new.draft_spec)
+            if prior_draft_spec.get(key) != new.draft_spec.get(key)
+        )
+        if diffs:
+            changes.append(f"draft_spec changed={diffs}")
     if not changes:
         changes.append("fingerprint digest changed but no individual field diffed (treating as drift)")
     return changes

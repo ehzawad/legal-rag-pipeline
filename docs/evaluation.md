@@ -82,16 +82,18 @@ uv run pipeline risk \
 
 ## Metric Surface
 
-- `citation_id_validity`: supported sections whose `evidence_ids` resolve to
-  retrieved chunks.
-- `sentence_grounding_score`: quote-substring validity. It checks that each
-  `citation_quotes[evidence_id]` value appears in the cited chunk. It is not
-  semantic entailment.
+- `citation_id_validity`: rendered supported sections whose `evidence_ids`
+  resolve to retrieved chunks. This is a section-render metric; the hard
+  drafting contract is claim-level.
+- `sentence_grounding_score`: rendered-section quote-substring validity. It
+  checks that each `citation_quotes[evidence_id]` value appears in the cited
+  chunk. It is not semantic entailment.
 - `claim_citation_rate`: stricter body scan over factual-looking sentences with
   inline citation tokens.
 - `claim_grounding_pass_rate` / `claim_citation_coverage`: claim-graph metrics
   for structured case fact summaries. Deterministic grounding is quote
-  substring validation unless the optional entailment judge is enabled.
+  substring validation unless the optional entailment judge is enabled; failed
+  claim grounding now hard-fails generation before artifacts are written.
 - Eval-points criteria:
   - `document_understanding`: file/category coverage, page caps, and extraction
     term checks.
@@ -175,12 +177,11 @@ byte, SHA-256, expected page count, and `max_pages=5` checks in
 `eval/public_eval_manifest.json`. The bundle is strictly distinct from
 `datasets/`: zero filename and zero SHA-256 overlap.
 
-Key results from `outputs/public_eval/evaluation.md`:
+Expected hard gates for a regenerated `outputs/public_eval/evaluation.md`:
 
 | Metric | Result |
 |---|---:|
-| Documents / pages | 15 / 40 |
-| Manifest matched files | 15 / 15 |
+| Manifest files | 13 |
 | Required categories present | true |
 | Max pages per file | 5 |
 | Eval-points required pass rate | 100.00% |
@@ -189,9 +190,14 @@ Key results from `outputs/public_eval/evaluation.md`:
 | Edit-improvement required pass rate | 100.00% |
 | Citation id validity | 100.00% |
 | Claim citation coverage | 100.00% |
-| Claim grounding pass rate | 88.89% |
-| Raw-page citation share | 100.00% |
+| Claim grounding pass rate | 100.00% |
+| Unsupported claims | 0 |
 | Simulated edit-improvement pass rate | 100.00% |
+
+Older `outputs/public_eval` directories may predate the draft-contract
+migration and show historical document counts or sub-100% claim grounding.
+Those snapshots are stale; current draft artifact writes hard-fail before
+persisting if claim citation coverage or claim grounding falls below 100%.
 
 This is not meant to replace the curated corpus. It proves the pipeline can
 materialize, verify, run, and evaluate external public documents without relying
@@ -249,13 +255,12 @@ Interpretation:
   `eval/gold_retrieval.json`.
 - `outputs/all_categories/ab_drafts/with_profile_draft.md` is the concrete
   future-draft artifact produced with learned guidance.
-- The honest signal of the multi-edit run on this snapshot is
-  **section-label adoption (+1)** and **caution-tone shift (+3
-  signed)** while citation id validity, quote-substring validity, and
-  claim citation rate all stay 100% on both sides (the A/B harness
-  reports claim-grounding pass rate as `not available` here because
-  the claim graph for the case-fact-summary draft type is not
-  populated in this run).
+- The honest signal of the multi-edit run on this snapshot is structure
+  and caution-tone movement while citation id validity, quote-substring
+  validity, claim citation rate, and claim grounding pass rate stay 100%
+  on both sides. The A/B harness now requires populated
+  `CaseFactSummary` claim graphs and rejects drafts with unsupported
+  factual claims.
   Verbatim preferred-phrase adoption is 0% on this run; a prior run on
   the same inputs reported 20%. The earlier "80% preferred-phrase
   adoption" number was citation-token pollution in `_preferred_phrases`
