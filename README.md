@@ -83,7 +83,7 @@ dependency is required.
 | | |
 |---|---|
 | Drafting / extraction model | `gpt-5.5` via Responses API |
-| Reranker | off by default; optional Cohere `rerank-v4.0-pro` via direct HTTPS |
+| Reranker | off by default; optional Cohere `rerank-v4.0-pro` via direct HTTPS over the rerank candidate pool |
 | Reasoning effort | `low` (override via `OPENAI_REASONING_EFFORT=low\|medium\|high`) |
 | Embedding model | `text-embedding-3-large` |
 | Retrieval backend | hybrid dense + BM25 + metadata/retrieval feedback; optional FAISS acceleration and `openai-cached` embeddings |
@@ -258,13 +258,22 @@ keeps the synthetic structured-field chunk from crowding raw page
 evidence, and `max_chunks_per_document=3` keeps one long document from
 filling the entire top-k with tightly-similar prose. Both caps fill
 remaining top-k slots from overflow so the drafter always sees the
-configured `RETRIEVAL_TOP_K` chunks.
+configured `RETRIEVAL_TOP_K` chunks. When Cohere reranking is enabled,
+the full rerank candidate pool is ordered first, then the local
+document/field caps are applied; this preserves Cohere's next-best
+choices when a high-ranked document or field chunk gets capped out.
 
 ### Corpus, index, edit memory, and harness
 
 The CLI and API expose separate resource surfaces for the durable pieces
 of the pipeline: a corpus store, a queryable hybrid retrieval index, and
 operator edit memory.
+
+`pipeline index query` and `POST /index/query` honor
+`PIPELINE_RETRIEVAL_MODE`. That matters for persisted lexical indexes:
+they intentionally store placeholder vectors, so querying them in
+`lexical` mode avoids dense embedding calls and vector-dimension
+mismatches.
 
 ```bash
 uv run pipeline corpus build \

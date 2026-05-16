@@ -169,4 +169,6 @@ Enable reranking with `PIPELINE_RERANK_PROVIDER=cohere` and either
 `COHERE_API_KEY` or `CO_API_KEY`. The model defaults to
 `rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
 `PIPELINE_RERANK_MODEL`. The reranker uses direct HTTPS, so no Cohere SDK
-dependency is required.
+dependency is required. When enabled, Cohere orders the whole rerank
+candidate pool before local document and field caps are applied, so cap
+refills stay in Cohere-ranked order.

@@ -655,14 +655,15 @@ def _query_index(index_path: Path, task: str, top_k: int) -> dict[str, object]:
 
     config = ProviderConfig.from_env()
     index = load_index(index_path, build_faiss=config.index_backend.strip().lower() == "faiss")
+    # Let retrieve() resolve PIPELINE_RETRIEVAL_MODE. Persisted lexical indexes
+    # store placeholder embeddings, so forcing hybrid weights here can make the
+    # query path call dense embeddings and then fail on vector dimensions.
     evidence = retrieve(
         index,
         task,
         top_k=top_k,
         provider=config.retrieval_provider,
         config=config,
-        dense_weight=config.hybrid_dense_weight,
-        lexical_weight=config.hybrid_bm25_weight,
     )
     return {
         "surface": "index",

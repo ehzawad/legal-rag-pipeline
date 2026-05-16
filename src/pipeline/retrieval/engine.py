@@ -1355,10 +1355,14 @@ def _rerank_if_configured(
         effective_provider = "injected"
         effective_model = reranker_client.__class__.__name__
     else:
+        # Ask Cohere to order the whole rerank pool. Local document/field caps
+        # run after this, so limiting the API to top_k here could hide the next
+        # best Cohere-ranked chunks needed to refill capped-out results.
+        rerank_top_n = min(len(candidates), _COHERE_RERANK_MAX_DOCUMENTS)
         scored_ids = _api_rerank_with_scores(
             task,
             candidates,
-            top_k=top_k,
+            top_k=rerank_top_n,
             provider=provider_name or "",
             model=rerank_model,
         )

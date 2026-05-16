@@ -412,7 +412,10 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    selection. Dense scoring uses FAISS when the optional dependency is
    installed, otherwise it falls back to exact cosine scan. A pool of up to
    `4 * top_k` candidates is optionally rerankable through Cohere
-   (`PIPELINE_RERANK_PROVIDER=cohere`); off by default.
+   (`PIPELINE_RERANK_PROVIDER=cohere`); off by default. Cohere orders the
+   full rerank pool before local document and field caps are applied, so
+   capped-out results are refilled from Cohere's next-best candidates
+   instead of falling back to the pre-rerank order.
 
 5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The model
    receives the task, retrieved evidence, and the operator-profile
@@ -801,7 +804,9 @@ env/config/argument.
   per language, and language-aware extraction prompts.
 - **Portable index, optional FAISS.** The persisted index is JSON for
   portability and auditability. FAISS acceleration is used when installed,
-  but the saved source of truth remains the portable index file.
+  but the saved source of truth remains the portable index file. Persisted
+  index queries honor `PIPELINE_RETRIEVAL_MODE`; lexical indexes store
+  placeholder vectors and must stay on the lexical query path.
 - **Substring grounding is necessary, not sufficient.** The verbatim
   check guarantees the quote is text from the cited chunk; it does not
   guarantee the quote *entails* the sentence.
