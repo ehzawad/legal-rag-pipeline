@@ -1182,8 +1182,9 @@ def _gold_retrieval_summary(
     saved_retrieved_items = [item for item in retrieved if isinstance(item, Mapping)]
     retrieval_note = (
         "Scored against the persisted production retrieved_evidence.json "
-        "(BM25 + text-embedding-3-large hybrid retrieval; gpt-5.5 is "
-        "only used for extraction and drafting)."
+        "(BM25 + text-embedding-3-large hybrid retrieval, plus Cohere rerank "
+        "when PIPELINE_RERANK_PROVIDER=cohere is enabled; gpt-5.5 is only "
+        "used for extraction and drafting)."
     )
     recalls: list[float] = []
     precisions: list[float] = []

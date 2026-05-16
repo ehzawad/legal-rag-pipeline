@@ -1,5 +1,6 @@
 from pipeline.playbooks.risk import (
     DEFAULT_PLAYBOOK_PATH,
+    RISK_REPORT_SCHEMA_VERSION,
     load_playbook,
     render_risk_report_markdown,
     score_playbook,
@@ -9,6 +10,7 @@ from pipeline.playbooks.risk import (
 
 __all__ = [
     "DEFAULT_PLAYBOOK_PATH",
+    "RISK_REPORT_SCHEMA_VERSION",
     "load_playbook",
     "render_risk_report_markdown",
     "score_playbook",

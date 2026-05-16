@@ -5,7 +5,9 @@ optional Node) or **with Docker** (single image, no host toolchain).
 Pick one.
 
 Prereq for both: an `OPENAI_API_KEY` with access to `gpt-5.5` and
-`text-embedding-3-large`.
+`text-embedding-3-large`. Optional reranking additionally needs either
+`COHERE_API_KEY` or `CO_API_KEY` when `PIPELINE_RERANK_PROVIDER=cohere`
+is enabled.
 
 ## Without Docker
 
@@ -101,6 +103,9 @@ chmod 600 secrets/openai_api_key
 
 docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build -d
 
+# If Cohere reranking is enabled, also create secrets/cohere_api_key and
+# include -f docker-compose.cohere-secrets.yml in the compose command.
+
 # Wait ~10 s for healthy, then:
 curl http://localhost:8000/healthz             # {"status":"ok"}
 open  http://localhost:8000/ui                 # operator console
@@ -153,13 +158,15 @@ reused across runs from a JSON cache).
 
 ## Single deliberate stack
 
-This build ships exactly one model per stage:
+This build ships one OpenAI core stack, with reranking disabled unless
+explicitly enabled:
 
 - Extraction + drafting: `gpt-5.5` (OpenAI Responses API)
 - Embeddings: `text-embedding-3-large`
-- Reranker (optional, off by default): `gpt-5.5`
+- Reranker (optional, off by default): Cohere `rerank-v4.0-pro`
 
-The reranker model is intentionally pinned. To run with a different
-model you would have to edit `src/pipeline/config.py` and remove the
-pin in `src/pipeline/retrieval/engine.py`; this is not exposed as a
-runtime knob because the build is committed to one stack.
+Enable reranking with `PIPELINE_RERANK_PROVIDER=cohere` and either
+`COHERE_API_KEY` or `CO_API_KEY`. The model defaults to
+`rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
+`PIPELINE_RERANK_MODEL`. The reranker uses direct HTTPS, so no Cohere SDK
+dependency is required.

@@ -157,9 +157,11 @@ Interpretation:
   20-doc corpus and the single multi-document gold query in
   `eval/gold_retrieval.json`. The numbers above are honest snapshots of
   one specific run; they drift between runs because GPT-5.5 generation is
-  stochastic. The contract metrics (citation id validity, quote-substring
-  validity, claim citation rate) are pinned at 100% by validators; the
-  share/recall metrics are not.
+  stochastic. The default evaluation run does not enable the optional
+  Cohere reranker unless `PIPELINE_RERANK_PROVIDER=cohere` is set. The
+  contract metrics (citation id validity, quote-substring validity, claim
+  citation rate) are pinned at 100% by validators; the share/recall
+  metrics are not.
 
 ## Public-Data Run
 

@@ -7,14 +7,15 @@
     "providers": {
       "extraction": "openai",
       "retrieval": "openai-cached",
-      "generation": "openai"
+      "generation": "openai",
+      "reranker": ""
     },
     "extraction_concurrency": 4,
     "models": {
       "openai": "gpt-5.5",
       "openai_embedding": "text-embedding-3-large",
-      "openai_rerank": "gpt-5.5",
-      "openai_reasoning_effort": "low"
+      "openai_reasoning_effort": "low",
+      "cohere_rerank": "rerank-v4.0-pro"
     },
     "embedding_cache_dir": "outputs/public_eval/embedding_cache",
     "corpus_dir": "outputs/public_eval/corpus",
@@ -74,6 +75,7 @@
         "hybrid_bm25_weight": 0.35,
         "retrieval_top_k": 10,
         "reranker_provider": "",
+        "cohere_rerank_model": "rerank-v4.0-pro",
         "pdf_max_pages": 5,
         "pdf_render_dpi": 180,
         "embedding_cache": "enabled"

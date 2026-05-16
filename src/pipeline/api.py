@@ -484,6 +484,7 @@ def _index_settings_payload(body: IndexSettingsRequest) -> dict[str, Any]:
             "hybrid_bm25_weight": config.hybrid_bm25_weight,
             "retrieval_top_k": config.retrieval_top_k,
             "reranker_provider": config.reranker_provider,
+            "reranker_model": config.cohere_rerank_model,
             "field_chunks": features.field_chunks,
             "max_field_chunks": features.max_field_chunks,
             "max_chunks_per_document": features.max_chunks_per_document,
@@ -545,6 +546,11 @@ def _index_query_payload(body: IndexQueryRequest) -> dict[str, Any]:
         "mode": "query",
         "index": str(index_path),
         "task": body.task,
+        "settings": {
+            "retrieval_provider": config.retrieval_provider,
+            "reranker_provider": config.reranker_provider,
+            "reranker_model": config.cohere_rerank_model,
+        },
         "results": to_jsonable(evidence),
     }
 

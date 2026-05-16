@@ -8,6 +8,8 @@ import math
 import os
 import re
 import struct
+import urllib.error
+import urllib.request
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
@@ -18,7 +20,6 @@ from pipeline.io import read_json, write_json
 from pipeline.providers import (
     ProviderUnavailable,
     embed_with_openai,
-    responses_create,
 )
 from pipeline.schemas import EvidenceChunk, ProcessedDocument
 from pipeline.schemas import now_iso
@@ -32,6 +33,10 @@ _RETRIEVAL_FEEDBACK_WEIGHT = 0.15
 _RETRIEVAL_FEEDBACK_MAX_DELTA = 0.60
 _DEFAULT_DENSE_WEIGHT = 0.9
 _DEFAULT_LEXICAL_WEIGHT = 0.1
+_COHERE_RERANK_URL = "https://api.cohere.com/v2/rerank"
+_COHERE_RERANK_TIMEOUT_SECONDS = 30
+_COHERE_CLIENT_NAME = "legal-rag-pipeline"
+_COHERE_RERANK_MAX_DOCUMENTS = 1000
 _BM25_K1 = 1.5
 _BM25_B = 0.75
 _SEARCH_TOKEN_RE = re.compile(r"[a-z0-9]+(?:[._'-][a-z0-9]+)*", re.IGNORECASE)
@@ -1191,9 +1196,9 @@ def _resolve_reranker_provider(reranker_provider: str | None, config: ProviderCo
     provider_name = raw.strip().lower()
     if not provider_name or provider_name in {"none", "off", "false", "0"}:
         return None
-    if provider_name != "openai":
+    if provider_name != "cohere":
         raise ProviderUnavailable(
-            f"Unsupported reranker provider '{provider_name}'. This build only ships openai."
+            f"Unsupported reranker provider '{provider_name}'. This build only ships Cohere."
         )
     return provider_name
 
@@ -1205,54 +1210,130 @@ def _api_rerank(
     top_k: int,
     provider: str,
     model: str,
-    reasoning_effort: str = "low",
 ) -> list[str]:
-    prompt = _rerank_prompt(task, candidates, top_k=top_k)
-    if provider != "openai":
+    if provider != "cohere":
         raise ProviderUnavailable(
-            f"Unsupported reranker provider '{provider}'. This build only ships openai."
+            f"Unsupported reranker provider '{provider}'. This build only ships Cohere."
         )
-    if model != "gpt-5.5":
-        raise ProviderUnavailable(f"OpenAI reranking is pinned to gpt-5.5, got {model!r}.")
-    text = responses_create(
-        prompt,
-        model,
-        reasoning_effort=reasoning_effort,
+    return _cohere_rerank(
+        task,
+        candidates,
+        top_k=top_k,
+        model=model,
+    )
+
+
+def _api_rerank_with_scores(
+    task: str,
+    candidates: list[EvidenceChunk],
+    *,
+    top_k: int,
+    provider: str,
+    model: str,
+) -> list[tuple[str, float | None]]:
+    if provider != "cohere":
+        raise ProviderUnavailable(
+            f"Unsupported reranker provider '{provider}'. This build only ships Cohere."
+        )
+    return _cohere_rerank_with_scores(
+        task,
+        candidates,
+        top_k=top_k,
+        model=model,
+    )
+
+
+def _cohere_api_key() -> str:
+    for name in ("COHERE_API_KEY", "CO_API_KEY"):
+        api_key = (os.getenv(name) or "").strip()
+        if api_key:
+            return api_key
+    raise ProviderUnavailable("Missing required environment variable: COHERE_API_KEY (or CO_API_KEY)")
+
+
+def _cohere_rerank(
+    task: str,
+    candidates: list[EvidenceChunk],
+    *,
+    top_k: int,
+    model: str,
+) -> list[str]:
+    return [
+        evidence_id
+        for evidence_id, _score in _cohere_rerank_with_scores(
+            task,
+            candidates,
+            top_k=top_k,
+            model=model,
+        )
+    ]
+
+
+def _cohere_rerank_with_scores(
+    task: str,
+    candidates: list[EvidenceChunk],
+    *,
+    top_k: int,
+    model: str,
+) -> list[tuple[str, float | None]]:
+    if not candidates:
+        return []
+    api_candidates = candidates[:_COHERE_RERANK_MAX_DOCUMENTS]
+    body = json.dumps(
+        {
+            "model": model,
+            "query": task,
+            "documents": [candidate.text for candidate in api_candidates],
+            "top_n": min(max(top_k, 1), len(api_candidates)),
+        }
+    ).encode("utf-8")
+    request = urllib.request.Request(
+        _COHERE_RERANK_URL,
+        data=body,
+        headers={
+            "Authorization": f"Bearer {_cohere_api_key()}",
+            "Content-Type": "application/json",
+            "X-Client-Name": _COHERE_CLIENT_NAME,
+        },
+        method="POST",
     )
     try:
-        payload = json.loads(text)
+        with urllib.request.urlopen(request, timeout=_COHERE_RERANK_TIMEOUT_SECONDS) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise ProviderUnavailable(f"Cohere rerank returned HTTP {exc.code}: {detail}") from exc
+    except (urllib.error.URLError, TimeoutError) as exc:
+        raise ProviderUnavailable(f"Cohere rerank request failed: {exc}") from exc
     except json.JSONDecodeError as exc:
-        raise ProviderUnavailable("Reranker response was not valid JSON") from exc
-    ids = payload.get("evidence_ids")
-    if not isinstance(ids, list):
-        raise ProviderUnavailable("Reranker response did not include evidence_ids")
-    return [str(item) for item in ids if isinstance(item, str)]
+        raise ProviderUnavailable("Cohere rerank response was not valid JSON") from exc
 
-
-def _rerank_prompt(task: str, candidates: list[EvidenceChunk], *, top_k: int) -> str:
-    payload = [
-        {
-            "evidence_id": candidate.evidence_id,
-            "score": candidate.score,
-            "filename": candidate.filename,
-            "page_number": candidate.page_number,
-            "text": _truncate(candidate.text, 900),
-        }
-        for candidate in candidates
-    ]
-    return (
-        "Rerank evidence for an internal legal memo drafting task. "
-        "Use only the candidate evidence ids. Return strict JSON with one key, "
-        '"evidence_ids", ordered from most to least relevant. '
-        f"Return at most {top_k} ids.\n\n"
-        f"Task:\n{task}\n\nCandidates:\n{json.dumps(payload, ensure_ascii=True)}"
-    )
-
-
-def _truncate(text: str, limit: int) -> str:
-    if len(text) <= limit:
-        return text
-    return text[: limit - 3].rstrip() + "..."
+    results = payload.get("results") if isinstance(payload, Mapping) else None
+    if not isinstance(results, list):
+        raise ProviderUnavailable("Cohere rerank response did not include results")
+    ordered_ids: list[tuple[str, float | None]] = []
+    seen_indexes: set[int] = set()
+    for result in results:
+        if not isinstance(result, Mapping):
+            raise ProviderUnavailable("Cohere rerank response included a non-object result")
+        index = result.get("index")
+        if isinstance(index, bool) or not isinstance(index, int):
+            raise ProviderUnavailable("Cohere rerank response included a non-integer result index")
+        if index < 0 or index >= len(api_candidates):
+            raise ProviderUnavailable("Cohere rerank response included an out-of-range result index")
+        if index in seen_indexes:
+            raise ProviderUnavailable("Cohere rerank response included a duplicate result index")
+        seen_indexes.add(index)
+        score = result.get("relevance_score")
+        if isinstance(score, bool) or not isinstance(score, (int, float)):
+            raise ProviderUnavailable("Cohere rerank response included a non-numeric relevance_score")
+        score_float = float(score)
+        if not math.isfinite(score_float) or score_float < 0.0 or score_float > 1.0:
+            raise ProviderUnavailable("Cohere rerank response included an invalid relevance_score")
+        ordered_ids.append((api_candidates[index].evidence_id, score_float))
+    if not ordered_ids:
+        raise ProviderUnavailable("Cohere rerank response did not include valid result indexes")
+    return ordered_ids
 
 
 def _rerank_if_configured(
@@ -1267,24 +1348,53 @@ def _rerank_if_configured(
     provider_name = _resolve_reranker_provider(reranker_provider, config)
     if reranker_client is None and provider_name is None:
         return candidates
+    rerank_model = getattr(config, "cohere_rerank_model", "rerank-v4.0-pro")
     if reranker_client is not None:
         ordered_ids = reranker_client.rerank(task, candidates, top_k=top_k)
+        scored_ids: list[tuple[str, float | None]] = [(evidence_id, None) for evidence_id in ordered_ids]
+        effective_provider = "injected"
+        effective_model = reranker_client.__class__.__name__
     else:
-        ordered_ids = _api_rerank(
+        scored_ids = _api_rerank_with_scores(
             task,
             candidates,
             top_k=top_k,
             provider=provider_name or "",
-            model="gpt-5.5",
-            reasoning_effort=getattr(config, "openai_reasoning_effort", "low"),
+            model=rerank_model,
         )
+        effective_provider = provider_name or ""
+        effective_model = rerank_model
 
     by_id = {candidate.evidence_id: candidate for candidate in candidates}
+    pre_rerank_rank_by_id = {candidate.evidence_id: rank for rank, candidate in enumerate(candidates, start=1)}
     ordered: list[EvidenceChunk] = []
     seen: set[str] = set()
-    for evidence_id in ordered_ids:
+    for rerank_position, (evidence_id, rerank_score) in enumerate(scored_ids, start=1):
         if evidence_id in by_id and evidence_id not in seen:
-            ordered.append(by_id[evidence_id])
+            candidate = by_id[evidence_id]
+            metadata = dict(candidate.metadata)
+            metadata.update(
+                {
+                    "rerank_provider": effective_provider,
+                    "rerank_model": effective_model,
+                    "rerank_rank": rerank_position,
+                    "pre_rerank_rank": pre_rerank_rank_by_id[candidate.evidence_id],
+                    "pre_rerank_score": candidate.score,
+                }
+            )
+            if rerank_score is not None:
+                metadata["rerank_score"] = rerank_score
+            ordered.append(
+                EvidenceChunk(
+                    evidence_id=candidate.evidence_id,
+                    document_id=candidate.document_id,
+                    filename=candidate.filename,
+                    page_number=candidate.page_number,
+                    text=candidate.text,
+                    score=candidate.score,
+                    metadata=metadata,
+                )
+            )
             seen.add(evidence_id)
     ordered.extend(candidate for candidate in candidates if candidate.evidence_id not in seen)
     return ordered

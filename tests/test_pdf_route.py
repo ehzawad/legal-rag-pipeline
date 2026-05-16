@@ -9,6 +9,7 @@ end-to-end by the live pipeline run.
 from __future__ import annotations
 
 from pipeline.ingestion.pdf import (
+    MAX_PAGES_DEFAULT,
     MIN_TEXT_LAYER_CHARS,
     PreprocessedDocument,
     PreprocessedPage,
@@ -50,6 +51,10 @@ def test_min_text_layer_chars_threshold_is_reasonable():
     # a full text layer and skip the image path. Keep this tied to a real-world
     # lower bound; if you intentionally lower it, update the test too.
     assert MIN_TEXT_LAYER_CHARS >= 40
+
+
+def test_pdf_preprocess_default_page_cap_is_100():
+    assert MAX_PAGES_DEFAULT == 100
 
 
 def test_render_image_inputs_only_includes_image_pages():

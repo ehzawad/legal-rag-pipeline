@@ -1,5 +1,6 @@
 {
-  "generated_at": "2026-05-15T14:20:02+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-05-16T18:00:50+00:00",
   "playbook": {
     "name": "default-legal-review-playbook",
     "version": 1,
@@ -23,7 +24,9 @@
       "severity": "medium",
       "message": "Required playbook concept was not found in extracted text.",
       "matched_terms": [],
+      "source_spans": [],
       "evidence_ids": [],
+      "source_ids": [],
       "guidance": "Escalate uncapped or asymmetric liability positions and confirm whether the cap matches the team's standard."
     },
     {
@@ -35,7 +38,21 @@
       "matched_terms": [
         "sole discretion"
       ],
+      "source_spans": [
+        {
+          "term": "sole discretion",
+          "source_kind": "page",
+          "source_id": "4f7f73fad7d3f00c:p1",
+          "document_id": "4f7f73fad7d3f00c",
+          "filename": "cuad_hosting_agreement.pdf",
+          "page_number": 1,
+          "snippet": "…Service except as specified in this Section. Company at its sole discretion may at any time alter or cease providing the Customer Servi…"
+        }
+      ],
       "evidence_ids": [],
+      "source_ids": [
+        "4f7f73fad7d3f00c:p1"
+      ],
       "guidance": "Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims."
     },
     {
@@ -45,7 +62,9 @@
       "severity": "low",
       "message": "Required playbook concept was not found in extracted text.",
       "matched_terms": [],
+      "source_spans": [],
       "evidence_ids": [],
+      "source_ids": [],
       "guidance": "Confirm DPA coverage, deletion/return duties, breach notice timing, and subprocessors when personal data appears."
     },
     {
@@ -55,7 +74,9 @@
       "severity": "medium",
       "message": "1 draft section(s) are marked unsupported.",
       "matched_terms": [],
+      "source_spans": [],
       "evidence_ids": [],
+      "source_ids": [],
       "guidance": "Route unsupported sections to operator review before relying on the draft."
     }
   ],
@@ -66,7 +87,6 @@
       "matched_terms": [
         "30 days",
         "notice",
-        "term",
         "termination"
       ],
       "evidence_ids": [
@@ -74,6 +94,16 @@
         "18aae1ac9b6c1191:p1:c2",
         "e7a7d9482447de83:p1:c0",
         "e7a7d9482447de83:p1:c1"
+      ],
+      "source_ids": [
+        "5aaabcf14b21fd40:p3:c2",
+        "18aae1ac9b6c1191:p1:c2",
+        "e7a7d9482447de83:p1:c0",
+        "e7a7d9482447de83:p1:c1",
+        "faf02f393e3a7fed:p4",
+        "d244746c3cdd1974:p1",
+        "7ffc2b2f40fdc121:p2",
+        "7ffc2b2f40fdc121:p3"
       ]
     },
     {
@@ -88,6 +118,16 @@
       "evidence_ids": [
         "a72d9aa7f0bed8eb:p1:c1",
         "d61bba9a2aabfec3:fields"
+      ],
+      "source_ids": [
+        "a72d9aa7f0bed8eb:p1:c1",
+        "d61bba9a2aabfec3:fields",
+        "f292902ed5f80a01:p1",
+        "18aae1ac9b6c1191:p1",
+        "18aae1ac9b6c1191:fields:dates",
+        "a72d9aa7f0bed8eb:p1",
+        "6df38a70fad6719f:p1",
+        "3f8ca3abf91d595d:p1"
       ]
     }
   ],

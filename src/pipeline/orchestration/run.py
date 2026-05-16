@@ -21,7 +21,13 @@ from pipeline.retrieval.component import EvidenceRetrievalComponent
 from pipeline.config import PipelineFeatures, ProviderConfig, is_cached_retrieval_provider
 from pipeline.io import read_json, write_json
 from pipeline.orchestration.audit import append_audit_event
-from pipeline.playbooks import DEFAULT_PLAYBOOK_PATH, load_playbook, score_playbook, write_risk_report
+from pipeline.playbooks import (
+    DEFAULT_PLAYBOOK_PATH,
+    RISK_REPORT_SCHEMA_VERSION,
+    load_playbook,
+    score_playbook,
+    write_risk_report,
+)
 from pipeline.schemas import (
     CaseRun,
     Draft,
@@ -174,12 +180,14 @@ def run_case(
                 "extraction": config.extraction_provider,
                 "retrieval": config.retrieval_provider,
                 "generation": config.generation_provider,
+                "reranker": config.reranker_provider,
             },
             "extraction_concurrency": config.extraction_concurrency,
             "models": {
                 "openai": config.openai_model,
                 "openai_embedding": config.openai_embedding_model,
                 "openai_reasoning_effort": config.openai_reasoning_effort,
+                "cohere_rerank": config.cohere_rerank_model,
             },
             "embedding_cache_dir": config.embedding_cache_dir,
             "corpus_dir": str(paths.corpus_dir),
@@ -389,7 +397,12 @@ def run_case(
             artifacts=[paths.audit_log],
             reason="component disabled",
         )
-    elif resume and not force and not invalidation.invalidate_draft and paths.risk_report.exists():
+    elif (
+        resume
+        and not force
+        and not invalidation.invalidate_draft
+        and _saved_risk_report_is_current(paths.risk_report)
+    ):
         risk_report = read_json(paths.risk_report)
         recorder.record_skipped(
             "score_playbook_risk",
@@ -507,6 +520,7 @@ def _compute_run_fingerprint(
         "hybrid_bm25_weight": config.hybrid_bm25_weight,
         "retrieval_top_k": config.retrieval_top_k,
         "reranker_provider": config.reranker_provider,
+        "cohere_rerank_model": config.cohere_rerank_model,
         "pdf_max_pages": config.pdf_max_pages,
         "pdf_render_dpi": config.pdf_render_dpi,
         "embedding_cache": "enabled" if is_cached_retrieval_provider(config.retrieval_provider) else "disabled",
@@ -616,6 +630,25 @@ def _hash_playbook(playbook_path: Path, *, features: PipelineFeatures) -> str:
     if not playbook_path.exists():
         return "missing-playbook"
     return hashlib.sha256(playbook_path.read_bytes()).hexdigest()
+
+
+def _saved_risk_report_is_current(path: Path) -> bool:
+    """Resume guard: refuse to reuse risk reports written by a stale scorer.
+
+    The run fingerprint hashes the playbook file but not the scorer's report
+    schema, so a fingerprint match alone can resurrect a report from a
+    previous scorer version (e.g. missing source_spans, audit_warning, or the
+    schema_version field itself). Force a rerun if the on-disk report does
+    not carry the current scorer's schema version.
+    """
+
+    if not path.exists():
+        return False
+    try:
+        payload = read_json(path)
+    except (json.JSONDecodeError, OSError, ValueError):
+        return False
+    return isinstance(payload, dict) and payload.get("schema_version") == RISK_REPORT_SCHEMA_VERSION
 
 
 def _detect_invalidation(

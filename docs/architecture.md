@@ -1,7 +1,8 @@
 # Architecture Overview
 
-OpenAI-only pipeline that turns messy legal-style files into grounded
-draft memos designed for human operator review and editing. The workflow
+OpenAI-core pipeline, with optional Cohere reranking, that turns messy
+legal-style files into grounded draft memos designed for human operator
+review and editing. The workflow
 is linear at the orchestration level, but the implementation is grouped
 by pipeline stage under `src/pipeline/<stage>/`. Every stage writes
 an inspectable JSON artifact, optional behavior is controlled by
@@ -333,7 +334,8 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
                   | OpenAI embeddings     |
                   | BM25 + dense hybrid   |
                   | metadata feedback     |
-                  | opt. FAISS/rerank     |
+                  | opt. FAISS/Cohere     |
+                  | rerank                |
                   +-----------+-----------+
                               |
                               v
@@ -409,8 +411,8 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    auditable score deltas before field-chunk capping and final candidate
    selection. Dense scoring uses FAISS when the optional dependency is
    installed, otherwise it falls back to exact cosine scan. A pool of up to
-   `4 * top_k` candidates is optionally rerankable via an LLM call
-   (`PIPELINE_RERANK_PROVIDER=openai`); off by default.
+   `4 * top_k` candidates is optionally rerankable through Cohere
+   (`PIPELINE_RERANK_PROVIDER=cohere`); off by default.
 
 5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The model
    receives the task, retrieved evidence, and the operator-profile
@@ -574,7 +576,7 @@ Env switches use concise names such as `PIPELINE_LEARNING_GUIDANCE=off`,
 - Otherwise the page is rendered to PNG at `PIPELINE_PDF_RENDER_DPI` (default
   180 DPI) and added to the multimodal call. `extraction_method` is
   `pdf-rendered-png` and the model's reported confidence is kept.
-- The first `PIPELINE_PDF_MAX_PAGES` (default 30) pages are processed; any
+- The first `PIPELINE_PDF_MAX_PAGES` (default 100) pages are processed; any
   remainder is recorded as a document-level warning.
 
 This keeps token usage low for the SCOTUS opinion and CUAD contracts in
@@ -722,10 +724,11 @@ fixed and the two paths share a single splitter
   influence this run.
 - **Providers**: `extraction_provider`, `retrieval_provider`,
   `generation_provider`, `openai_model`, `openai_embedding_model`,
-  `openai_reasoning_effort`, `reranker_provider`, `retrieval_mode`,
-  `index_backend`, `hybrid_dense_weight`, `hybrid_bm25_weight`,
-  `retrieval_top_k`, `pdf_max_pages`, `pdf_render_dpi`,
-  `extraction_confidence_threshold`, and `embedding_cache`
+  `openai_reasoning_effort`, `reranker_provider`,
+  `cohere_rerank_model`, `retrieval_mode`, `index_backend`,
+  `hybrid_dense_weight`, `hybrid_bm25_weight`, `retrieval_top_k`,
+  `pdf_max_pages`, `pdf_render_dpi`, `extraction_confidence_threshold`,
+  and `embedding_cache`
   (`enabled`/`disabled`).
 - **Features**: every `PipelineFeatures` value, so changing a component
   switch invalidates stale checkpoints unless the stage is explicitly
@@ -742,14 +745,18 @@ unconditionally invalidates regardless of digest match.
 
 ## Provider Strategy
 
-This build ships exactly one provider: **OpenAI**. The Responses API
-covers extraction (text + multimodal), drafting, and the optional
-reranker; the embeddings API covers retrieval. Retrieval has two OpenAI
-modes: direct `openai` and cached `openai-cached`.
-The reranker model is pinned to the normal Responses model `gpt-5.5`
-with low reasoning effort by default; there is no special `*-rerank`
-model id in use. Runtime provider validation raises `ConfigError` for
-unsupported provider names rather than silently
+This build uses **OpenAI** for the core pipeline: the Responses API
+covers extraction (text + multimodal) and drafting, and the embeddings
+API covers retrieval. Retrieval has two OpenAI modes: direct `openai`
+and cached `openai-cached`.
+
+Reranking is optional and off by default. Enable it with
+`PIPELINE_RERANK_PROVIDER=cohere` plus either `COHERE_API_KEY` or
+`CO_API_KEY`. The Cohere model defaults to `rerank-v4.0-pro` and can be
+overridden with `COHERE_RERANK_MODEL` or `PIPELINE_RERANK_MODEL`. The
+runtime calls Cohere's rerank endpoint over direct HTTPS, so no Cohere
+SDK dependency is required. Runtime provider validation raises
+`ConfigError` for unsupported provider names rather than silently
 degrading.
 
 `config.resolve_provider_name(value, *, fallback, reject_test_names=False)`
@@ -759,18 +766,24 @@ env/config/argument.
 
 ## Honest Limitations
 
-- **Single-provider lock-in.** No fallback model from a different
-  vendor. If OpenAI quota or availability drops, the pipeline doesn't
-  run. This was a deliberate simplification.
+- **Core OpenAI lock-in.** Extraction, drafting, and embeddings still
+  have no fallback model from a different vendor. If OpenAI quota or
+  availability drops, the pipeline doesn't run. Reranking is a separate
+  optional Cohere-only path; if Cohere quota or availability drops,
+  reranked runs fail unless the reranker is disabled.
 - **Word-count chunking has no semantic boundaries.** Page-text chunks
   cut at fixed word offsets and may split clauses mid-sentence. The
   synthetic field chunk per document partly compensates by giving the
   structured field schema a direct retrieval surface.
 - **Hybrid retrieval is first-pass scoring.** BM25, dense vectors,
   metadata boosts, and retrieval feedback are combined deterministically,
-  but the optional LLM reranker is still off unless explicitly enabled.
-- **Optional reranker.** The LLM rerank pass is off unless
-  `PIPELINE_RERANK_PROVIDER=openai` is set.
+  but the optional Cohere reranker is still off unless explicitly
+  enabled.
+- **Optional reranker.** The Cohere rerank pass is off unless
+  `PIPELINE_RERANK_PROVIDER=cohere` is set with either `COHERE_API_KEY`
+  or `CO_API_KEY`. The default model is `rerank-v4.0-pro`, overridable
+  with `COHERE_RERANK_MODEL` or `PIPELINE_RERANK_MODEL`; it uses direct
+  HTTPS rather than a Cohere SDK dependency.
 - **Partial multilingual coverage.** The data path itself is
   language-agnostic — PyMuPDF text extraction is byte-level, GPT-5.5
   multimodal OCR and `text-embedding-3-large` are multilingual, and the
@@ -827,7 +840,7 @@ env/config/argument.
 - `ingestion/component.py` — ingestion stage adapter used by orchestration.
 - `retrieval/engine.py` — chunking, fields-chunk emission, BM25 + dense
   hybrid retrieval, cached OpenAI embeddings, metadata/retrieval-feedback
-  score deltas, index persistence, optional FAISS, and optional OpenAI
+  score deltas, index persistence, optional FAISS, and optional Cohere
   reranker.
 - `retrieval/component.py` — retrieval stage adapter.
 - `evidence_pack/` — section-aware evidence pack construction between retrieval

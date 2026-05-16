@@ -3369,6 +3369,7 @@
       "hybrid_bm25_weight": 0.35,
       "retrieval_top_k": 10,
       "reranker_provider": "",
+      "cohere_rerank_model": "rerank-v4.0-pro",
       "pdf_max_pages": 5,
       "pdf_render_dpi": 180,
       "embedding_cache": "enabled"

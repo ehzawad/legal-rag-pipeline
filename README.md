@@ -75,17 +75,19 @@ Docker image rebuilds it inside the container.
 The lockfile is resolved for Python 3.14 only. The OpenAI SDK, PyMuPDF,
 Pillow, FastAPI, and uvicorn are declared as required runtime
 dependencies in `pyproject.toml` — no other provider SDKs are pulled.
+The optional Cohere reranker uses direct HTTPS, so no Cohere SDK
+dependency is required.
 
 ## Defaults
 
 | | |
 |---|---|
 | Drafting / extraction model | `gpt-5.5` via Responses API |
-| Rerank model | pinned to `gpt-5.5`; no `*-rerank` model id |
+| Reranker | off by default; optional Cohere `rerank-v4.0-pro` via direct HTTPS |
 | Reasoning effort | `low` (override via `OPENAI_REASONING_EFFORT=low\|medium\|high`) |
 | Embedding model | `text-embedding-3-large` |
 | Retrieval backend | hybrid dense + BM25 + metadata/retrieval feedback; optional FAISS acceleration and `openai-cached` embeddings |
-| PDF preprocessing | local PyMuPDF, cap 30 pages, 180 DPI render fallback |
+| PDF preprocessing | local PyMuPDF, cap 100 pages, 180 DPI render fallback |
 
 Override draft/extraction and retrieval knobs via `OPENAI_MODEL`,
 `OPENAI_MODEL_DRAFT`, `OPENAI_EMBEDDING_MODEL`,
@@ -93,9 +95,12 @@ Override draft/extraction and retrieval knobs via `OPENAI_MODEL`,
 `PIPELINE_RETRIEVAL_MODE`, `PIPELINE_HYBRID_DENSE_WEIGHT`,
 `PIPELINE_HYBRID_BM25_WEIGHT`,
 `PIPELINE_PDF_MAX_PAGES`, `PIPELINE_PDF_RENDER_DPI`, and
-`PIPELINE_EXTRACTION_CONFIDENCE_THRESHOLD`. The optional reranker is pinned
-internally to `gpt-5.5` with low reasoning effort by default; there is no
-separate `*-rerank` OpenAI model knob.
+`PIPELINE_EXTRACTION_CONFIDENCE_THRESHOLD`. The optional reranker is off
+by default. Enable it with `PIPELINE_RERANK_PROVIDER=cohere` plus either
+`COHERE_API_KEY` or `CO_API_KEY`. The Cohere model defaults to
+`rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
+`PIPELINE_RERANK_MODEL`; the call is made over direct HTTPS, not through
+a Cohere SDK dependency.
 
 ## Run
 
@@ -136,10 +141,11 @@ uv run pipeline run \
   --force
 ```
 
-The single deliberate model choice for this build is `gpt-5.5` at `low`
-reasoning effort. Both are the configured defaults (see
-[`.env.example`](.env.example)), so no env override is needed for the
-canonical invocation above.
+The deliberate OpenAI drafting/extraction model choice for this build is
+`gpt-5.5` at `low` reasoning effort. Both are the configured defaults
+(see [`.env.example`](.env.example)), so no env override is needed for
+the canonical invocation above. The reranker remains disabled unless
+`PIPELINE_RERANK_PROVIDER=cohere` and a Cohere API key are set.
 
 Or run against a single category to exercise one code path in
 isolation:
@@ -437,12 +443,17 @@ chmod 600 secrets/openai_api_key
 docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build
 ```
 
+If you enable Cohere reranking and want to load that key from a secret
+file too, also write `secrets/cohere_api_key` and add
+`-f docker-compose.cohere-secrets.yml` to the compose command.
+
 Leave `OPENAI_API_KEY=` blank in `.env` when using the secret-file override.
 `.dockerignore` excludes `.env`, `secrets/`, `outputs/`, and `state/`, so
 the OpenAI key and local run artifacts are not copied into the Docker build
 context or baked into the image. `docker-compose.secrets.yml` mounts the key
 only at runtime as `/run/secrets/openai_api_key`; the entrypoint exports it
-for the Python process and does not print it.
+for the Python process and does not print it. The optional Cohere secret
+overlay follows the same pattern for `/run/secrets/cohere_api_key`.
 The base compose file forwards only an explicit allowlist of runtime
 settings, and the secret override forces `OPENAI_API_KEY` blank so a host
 environment variable is not copied into the container config.
@@ -709,8 +720,9 @@ multi-document gold query in `eval/gold_retrieval.json` against the
 diversity-capped top-k; the gold-doc filename hit-rate (Documents
 checked / Missing gold documents) stays at 5/5 in the run report. The
 single deliberate stack is `gpt-5.5` for generation/extraction and
-`text-embedding-3-large` for retrieval; the gold gate scores that
-stack directly. Numbers above are honest snapshots of this exact run
+`text-embedding-3-large` for retrieval, with the optional Cohere
+reranker disabled; the gold gate scores that stack directly. Numbers
+above are honest snapshots of this exact run
 (`outputs/all_categories/evaluation.md`) and will drift naturally with
 each fresh `pipeline run` — the contract metrics (citation id, quote
 substring, claim citation) are pinned at 100% by validators; the
@@ -876,7 +888,7 @@ See [docs/architecture.md](docs/architecture.md).
 - `corpus/` — durable corpus catalog with originals and parsed document JSON.
 - `retrieval/` — chunking, fields-chunk emission, cached OpenAI embeddings,
   BM25 + dense hybrid ranking, metadata/retrieval-feedback boosts, optional
-  FAISS acceleration, optional reranking, and the retrieval stage adapter.
+  FAISS acceleration, optional Cohere reranking, and the retrieval stage adapter.
 - `drafting/` — memo generation, citation sanitation, verbatim quote
   validation, markdown rendering, and the drafting stage adapter.
 - `learning/` — edit capture, profile/knowledge/retrieval-feedback state,
@@ -919,10 +931,11 @@ See [docs/architecture.md](docs/architecture.md).
 
 ## Assumptions and tradeoffs
 
-- OpenAI-only. Runtime provider settings accept `openai` for extraction
-  and generation, and `openai` or `openai-cached` for
-  retrieval. Test-only fixtures stay isolated from production
-  configuration.
+- OpenAI core providers. Runtime provider settings accept `openai` for
+  extraction and generation, and `openai` or `openai-cached` for
+  retrieval. Optional reranking is Cohere-only when enabled with
+  `PIPELINE_RERANK_PROVIDER=cohere`; test-only fixtures stay isolated
+  from production configuration.
 - Internal first-pass drafting aid, not a legal-advice system.
 - File ingestion allowlist: `.pdf`, `.png`, `.jpg`/`.jpeg`, `.txt`.
   Other files in the input dir are skipped with a warning so docs,
@@ -933,6 +946,11 @@ See [docs/architecture.md](docs/architecture.md).
   document carries the extracted structured fields so the field schema
   is retrievable in addition to surfacing through page text.
 - The optional reranker is off by default (`PIPELINE_RERANK_PROVIDER`).
+  Enable it with `PIPELINE_RERANK_PROVIDER=cohere` and either
+  `COHERE_API_KEY` or `CO_API_KEY`. It defaults to Cohere
+  `rerank-v4.0-pro`, can be overridden with `COHERE_RERANK_MODEL` or
+  `PIPELINE_RERANK_MODEL`, and uses direct HTTPS rather than a Cohere
+  SDK dependency.
 - Grounding is verbatim *substring* match, not semantic entailment. The
   quote being verbatim doesn't prove the surrounding sentence is
   factually entailed by the chunk.

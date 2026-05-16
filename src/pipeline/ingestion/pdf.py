@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-MAX_PAGES_DEFAULT = 30
+MAX_PAGES_DEFAULT = 100
 RENDER_DPI_DEFAULT = 180
 RENDER_DPI_MIN = 96
 MIN_TEXT_LAYER_CHARS = 60
@@ -58,71 +58,77 @@ def preprocess_pdf(
     except ImportError as exc:  # pragma: no cover - dep missing
         raise RuntimeError("PyMuPDF is required for PDF preprocessing") from exc
 
-    doc = fitz.open(path)
-    pages: list[PreprocessedPage] = []
-    warnings: list[str] = []
-    total_pages = doc.page_count
-    used = total_pages if total_pages <= max_pages else max_pages
-    truncated = total_pages > max_pages
-    if truncated:
-        warnings.append(
-            f"PDF has {total_pages} pages; preprocessing capped at {max_pages}."
-        )
+    try:
+        doc = fitz.open(path)
+    except Exception as exc:
+        raise RuntimeError(f"Could not open PDF for preprocessing: {path}") from exc
 
-    dpi = max(RENDER_DPI_MIN, min(render_dpi, 300))
-    scale = dpi / 72.0
+    try:
+        pages: list[PreprocessedPage] = []
+        warnings: list[str] = []
+        total_pages = doc.page_count
+        used = total_pages if total_pages <= max_pages else max_pages
+        truncated = total_pages > max_pages
+        if truncated:
+            warnings.append(
+                f"PDF has {total_pages} pages; preprocessing capped at {max_pages}."
+            )
 
-    for index in range(used):
-        page = doc.load_page(index)
-        page_warnings: list[str] = []
-        raw_text = _clean_text_layer_artifacts(page.get_text() or "").strip()
-        quality_warnings = _text_layer_quality_warnings(raw_text)
-        if len(raw_text) >= MIN_TEXT_LAYER_CHARS and not quality_warnings:
+        dpi = max(RENDER_DPI_MIN, min(render_dpi, 300))
+        scale = dpi / 72.0
+
+        for index in range(used):
+            page = doc.load_page(index)
+            page_warnings: list[str] = []
+            raw_text = _clean_text_layer_artifacts(page.get_text() or "").strip()
+            quality_warnings = _text_layer_quality_warnings(raw_text)
+            if len(raw_text) >= MIN_TEXT_LAYER_CHARS and not quality_warnings:
+                pages.append(
+                    PreprocessedPage(
+                        page_number=index + 1,
+                        text=raw_text,
+                        image_base64="",
+                        image_mime="",
+                        extraction_method="pdf-text-layer",
+                        confidence=TEXT_LAYER_CONFIDENCE,
+                        warnings=page_warnings,
+                    )
+                )
+                continue
+
+            if raw_text:
+                if len(raw_text) < MIN_TEXT_LAYER_CHARS:
+                    page_warnings.append(
+                        f"Text layer present but only {len(raw_text)} chars; rendering page as image."
+                    )
+                else:
+                    page_warnings.append(
+                        "Text layer appears low quality; routing page through image-based extraction: "
+                        + "; ".join(quality_warnings)
+                    )
+            else:
+                page_warnings.append("No text layer; routing page through image-based extraction.")
+
+            matrix = fitz.Matrix(scale, scale)
+            pixmap = page.get_pixmap(matrix=matrix, alpha=False)
+            image_bytes = pixmap.tobytes("png")
+            encoded = base64.b64encode(image_bytes).decode("ascii")
+
             pages.append(
                 PreprocessedPage(
                     page_number=index + 1,
-                    text=raw_text,
-                    image_base64="",
-                    image_mime="",
-                    extraction_method="pdf-text-layer",
-                    confidence=TEXT_LAYER_CONFIDENCE,
+                    text="",
+                    image_base64=encoded,
+                    image_mime="image/png",
+                    extraction_method="pdf-rendered-png",
+                    confidence=0.0,
                     warnings=page_warnings,
                 )
             )
-            continue
 
-        if raw_text:
-            if len(raw_text) < MIN_TEXT_LAYER_CHARS:
-                page_warnings.append(
-                    f"Text layer present but only {len(raw_text)} chars; rendering page as image."
-                )
-            else:
-                page_warnings.append(
-                    "Text layer appears low quality; routing page through image-based extraction: "
-                    + "; ".join(quality_warnings)
-                )
-        else:
-            page_warnings.append("No text layer; routing page through image-based extraction.")
-
-        matrix = fitz.Matrix(scale, scale)
-        pixmap = page.get_pixmap(matrix=matrix, alpha=False)
-        image_bytes = pixmap.tobytes("png")
-        encoded = base64.b64encode(image_bytes).decode("ascii")
-
-        pages.append(
-            PreprocessedPage(
-                page_number=index + 1,
-                text="",
-                image_base64=encoded,
-                image_mime="image/png",
-                extraction_method="pdf-rendered-png",
-                confidence=0.0,
-                warnings=page_warnings,
-            )
-        )
-
-    doc.close()
-    return PreprocessedDocument(pages=pages, warnings=warnings, page_count_truncated=truncated)
+        return PreprocessedDocument(pages=pages, warnings=warnings, page_count_truncated=truncated)
+    finally:
+        doc.close()
 
 
 def render_image_inputs(document: PreprocessedDocument) -> list[dict[str, str]]:

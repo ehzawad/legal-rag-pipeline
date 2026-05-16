@@ -15,12 +15,17 @@ from pipeline.config import PipelineFeatures, ProviderConfig
 from pipeline.orchestration.run import _compute_run_fingerprint
 
 
-def _fingerprint(input_dir: Path, features: PipelineFeatures):
+def _fingerprint(
+    input_dir: Path,
+    features: PipelineFeatures,
+    *,
+    config: ProviderConfig | None = None,
+):
     return _compute_run_fingerprint(
         input_dir=input_dir,
         task="first-pass internal memo",
         profile_path=input_dir / "missing-profile.json",
-        config=ProviderConfig(),
+        config=config or ProviderConfig(),
         features=features,
     )
 
@@ -44,3 +49,31 @@ def test_identical_features_produce_identical_digest(tmp_path: Path):
     digest_a = _fingerprint(tmp_path, features).digest
     digest_b = _fingerprint(tmp_path, features).digest
     assert digest_a == digest_b
+
+
+def test_changing_cohere_rerank_model_changes_run_digest(tmp_path: Path):
+    features = PipelineFeatures.from_env()
+    base = ProviderConfig(reranker_provider="cohere", cohere_rerank_model="rerank-v4.0-pro")
+    changed = ProviderConfig(reranker_provider="cohere", cohere_rerank_model="rerank-v4.0-fast")
+
+    digest_a = _fingerprint(tmp_path, features, config=base).digest
+    digest_b = _fingerprint(tmp_path, features, config=changed).digest
+
+    assert digest_a != digest_b, (
+        "the Cohere rerank model must contribute to the run fingerprint; "
+        "otherwise --resume could reuse stale reranked evidence."
+    )
+
+
+def test_enabling_cohere_reranker_changes_run_digest(tmp_path: Path):
+    features = PipelineFeatures.from_env()
+    off = ProviderConfig(reranker_provider="")
+    on = ProviderConfig(reranker_provider="cohere", cohere_rerank_model="rerank-v4.0-pro")
+
+    digest_a = _fingerprint(tmp_path, features, config=off).digest
+    digest_b = _fingerprint(tmp_path, features, config=on).digest
+
+    assert digest_a != digest_b, (
+        "the reranker provider must contribute to the run fingerprint; "
+        "otherwise --resume could reuse evidence ranked without Cohere."
+    )

@@ -133,6 +133,7 @@ export interface PipelineFeaturesPayload {
   claim_entailment_judge?: boolean;
   playbook_risk?: boolean;
   max_field_chunks?: number;
+  max_chunks_per_document?: number;
   field_chunk_score_penalty?: number;
 }
 

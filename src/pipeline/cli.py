@@ -669,6 +669,11 @@ def _query_index(index_path: Path, task: str, top_k: int) -> dict[str, object]:
         "mode": "query",
         "index": str(index_path),
         "task": task,
+        "settings": {
+            "retrieval_provider": config.retrieval_provider,
+            "reranker_provider": config.reranker_provider,
+            "reranker_model": config.cohere_rerank_model,
+        },
         "results": [
             {
                 "evidence_id": chunk.evidence_id,
@@ -798,6 +803,7 @@ def _index_settings(output_dir: Path, state_dir: Path) -> dict[str, object]:
             "hybrid_bm25_weight": config.hybrid_bm25_weight,
             "retrieval_top_k": config.retrieval_top_k,
             "reranker_provider": config.reranker_provider,
+            "reranker_model": config.cohere_rerank_model,
             "field_chunks": features.field_chunks,
             "max_field_chunks": features.max_field_chunks,
             "max_chunks_per_document": features.max_chunks_per_document,

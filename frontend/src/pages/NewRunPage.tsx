@@ -263,8 +263,8 @@ export default function NewRunPage() {
         ) : null}
         {submitting ? (
           <div className="notice" style={{ marginTop: 14 }}>
-            This uses OpenAI to read and draft from the documents. Expect 30-120 seconds
-            depending on document count.
+            This uses the configured extraction, retrieval, and drafting providers. Expect
+            30-120 seconds depending on document count.
           </div>
         ) : null}
       </form>

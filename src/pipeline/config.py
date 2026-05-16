@@ -8,6 +8,7 @@ from typing import Any, Mapping
 _TEST_PROVIDER_NAMES = {"", "local", "mock", "fixture"}
 _OPENAI_RETRIEVAL_PROVIDER_NAMES = {"openai", "openai-cached"}
 _RERANK_OFF_NAMES = {"", "none", "off", "false", "0"}
+_COHERE_RERANK_PROVIDER_NAMES = {"cohere"}
 _VALID_REASONING_EFFORTS = {"low", "medium", "high"}
 _VALID_RETRIEVAL_MODES = {"dense", "hybrid", "lexical"}
 _VALID_INDEX_BACKENDS = {"memory", "faiss"}
@@ -101,6 +102,7 @@ class ProviderConfig:
     openai_embedding_model: str = "text-embedding-3-large"
     openai_reasoning_effort: str = "low"
     reranker_provider: str = ""
+    cohere_rerank_model: str = "rerank-v4.0-pro"
     retrieval_mode: str = "hybrid"
     index_backend: str = "memory"
     hybrid_dense_weight: float = 0.65
@@ -108,7 +110,7 @@ class ProviderConfig:
     retrieval_top_k: int = 10
     extraction_confidence_threshold: float = 0.55
     extraction_concurrency: int = 4
-    pdf_max_pages: int = 30
+    pdf_max_pages: int = 100
     pdf_render_dpi: int = 180
     embedding_cache_dir: str = ""
 
@@ -122,6 +124,7 @@ class ProviderConfig:
             openai_embedding_model=_env("OPENAI_EMBEDDING_MODEL", "text-embedding-3-large"),
             openai_reasoning_effort=_validate_reasoning_effort(_env("OPENAI_REASONING_EFFORT", "low")),
             reranker_provider=_env("PIPELINE_RERANK_PROVIDER", ""),
+            cohere_rerank_model=_env("PIPELINE_RERANK_MODEL", _env("COHERE_RERANK_MODEL", "rerank-v4.0-pro")),
             retrieval_mode=_env("PIPELINE_RETRIEVAL_MODE", "hybrid").lower(),
             index_backend=_env("PIPELINE_INDEX_BACKEND", "memory").lower(),
             hybrid_dense_weight=_env_float("PIPELINE_HYBRID_DENSE_WEIGHT", 0.65),
@@ -132,7 +135,7 @@ class ProviderConfig:
                 _env("OCR_CONFIDENCE_THRESHOLD", "0.55"),
             ),
             extraction_concurrency=_env_int("EXTRACTION_CONCURRENCY", 4),
-            pdf_max_pages=_env_int("PIPELINE_PDF_MAX_PAGES", 30),
+            pdf_max_pages=_env_int("PIPELINE_PDF_MAX_PAGES", 100),
             pdf_render_dpi=_env_int("PIPELINE_PDF_RENDER_DPI", 180),
             embedding_cache_dir=_env("PIPELINE_EMBEDDING_CACHE_DIR", ""),
         )
@@ -144,10 +147,14 @@ class ProviderConfig:
         _reject_retrieval_provider("PIPELINE_RETRIEVAL_PROVIDER", self.retrieval_provider)
         _reject_non_openai("PIPELINE_GENERATION_PROVIDER", self.generation_provider)
         _reject_reranker_provider("PIPELINE_RERANK_PROVIDER", self.reranker_provider)
+        if self.reranker_provider.strip().lower() in _COHERE_RERANK_PROVIDER_NAMES and not self.cohere_rerank_model.strip():
+            raise ConfigError("COHERE_RERANK_MODEL / PIPELINE_RERANK_MODEL must not be empty when Cohere rerank is enabled")
         _validate_choice("PIPELINE_RETRIEVAL_MODE", self.retrieval_mode, _VALID_RETRIEVAL_MODES)
         _validate_choice("PIPELINE_INDEX_BACKEND", self.index_backend, _VALID_INDEX_BACKENDS)
         _validate_non_negative("PIPELINE_HYBRID_DENSE_WEIGHT", self.hybrid_dense_weight)
         _validate_non_negative("PIPELINE_HYBRID_BM25_WEIGHT", self.hybrid_bm25_weight)
+        if self.pdf_max_pages <= 0:
+            raise ConfigError("PIPELINE_PDF_MAX_PAGES must be a positive integer")
 
 
 @dataclass(frozen=True, slots=True)
@@ -299,9 +306,9 @@ def _reject_reranker_provider(name: str, value: str) -> None:
         return
     if resolved and resolved in _TEST_PROVIDER_NAMES:
         raise ConfigError(f"{name}={value!r} is test-only and cannot be used by runtime configuration")
-    if resolved != "openai":
+    if resolved not in _COHERE_RERANK_PROVIDER_NAMES:
         raise ConfigError(
-            f"{name}={value!r} is no longer supported; this build only ships the openai reranker"
+            f"{name}={value!r} is no longer supported; this build only ships the Cohere reranker"
         )
 
 

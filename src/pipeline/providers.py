@@ -7,7 +7,7 @@ from typing import Any
 
 
 class ProviderUnavailable(RuntimeError):
-    """Raised when the OpenAI provider is unavailable or returns unusable output."""
+    """Raised when a configured provider is unavailable or returns unusable output."""
 
 
 def require_env(name: str) -> str:

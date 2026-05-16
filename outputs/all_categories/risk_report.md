@@ -1,6 +1,6 @@
 # Playbook Risk Report: default-legal-review-playbook
 
-Generated: 2026-05-15T14:20:02+00:00
+Generated: 2026-05-16T18:00:50+00:00
 
 ## Summary
 
@@ -28,6 +28,8 @@ Generated: 2026-05-15T14:20:02+00:00
 - Matched terms: sole discretion
 - Evidence: none
 - Guidance: Flag unilateral or unlimited indemnity and verify whether the obligation is limited to third-party claims.
+- Source spans:
+  - p.1 (cuad_hosting_agreement.pdf) — `sole discretion` → "…Service except as specified in this Section. Company at its sole discretion may at any time alter or cease providing the Customer Servi…"
 
 ### Data Protection
 
