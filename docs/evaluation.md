@@ -159,6 +159,9 @@ Interpretation:
   one specific run; they drift between runs because GPT-5.5 generation is
   stochastic. The default evaluation run does not enable the optional
   Cohere reranker unless `PIPELINE_RERANK_PROVIDER=cohere` is set. The
+  Cohere pass orders the full rerank pool before the document and field
+  diversity caps trim results, so capped slots are refilled from Cohere's
+  ordered tail rather than the original hybrid order. The
   contract metrics (citation id validity, quote-substring validity, claim
   citation rate) are pinned at 100% by validators; the share/recall
   metrics are not.

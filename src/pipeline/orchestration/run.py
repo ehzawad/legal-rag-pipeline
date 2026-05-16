@@ -190,6 +190,12 @@ def run_case(
                 "cohere_rerank": config.cohere_rerank_model,
             },
             "embedding_cache_dir": config.embedding_cache_dir,
+            "qdrant": {
+                "url": config.qdrant_url,
+                "path": config.qdrant_path,
+                "collection": config.qdrant_collection,
+                "prefer_grpc": config.qdrant_prefer_grpc,
+            },
             "corpus_dir": str(paths.corpus_dir),
             "retrieval_index": str(paths.retrieval_index),
             "evidence_pack": str(paths.evidence_pack),
@@ -507,6 +513,7 @@ def _compute_run_fingerprint(
     inputs = _hash_input_directory(input_dir)
     profile_digest = _hash_state_contents(profile_path, state_dir, features=features)
     playbook_digest = _hash_playbook(playbook_path or DEFAULT_PLAYBOOK_PATH, features=features)
+    index_backend = (config.index_backend or "").strip().lower()
     providers = {
         "extraction_provider": config.extraction_provider,
         "retrieval_provider": config.retrieval_provider,
@@ -515,12 +522,16 @@ def _compute_run_fingerprint(
         "openai_embedding_model": config.openai_embedding_model,
         "openai_reasoning_effort": config.openai_reasoning_effort,
         "retrieval_mode": config.retrieval_mode,
-        "index_backend": config.index_backend,
+        "index_backend": index_backend,
         "hybrid_dense_weight": config.hybrid_dense_weight,
         "hybrid_bm25_weight": config.hybrid_bm25_weight,
         "retrieval_top_k": config.retrieval_top_k,
         "reranker_provider": config.reranker_provider,
         "cohere_rerank_model": config.cohere_rerank_model,
+        "qdrant_url": config.qdrant_url if index_backend == "qdrant" else "",
+        "qdrant_path": config.qdrant_path if index_backend == "qdrant" else "",
+        "qdrant_collection": config.qdrant_collection if index_backend == "qdrant" else "",
+        "qdrant_prefer_grpc": config.qdrant_prefer_grpc if index_backend == "qdrant" else False,
         "pdf_max_pages": config.pdf_max_pages,
         "pdf_render_dpi": config.pdf_render_dpi,
         "embedding_cache": "enabled" if is_cached_retrieval_provider(config.retrieval_provider) else "disabled",

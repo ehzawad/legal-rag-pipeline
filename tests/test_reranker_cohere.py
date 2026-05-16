@@ -36,6 +36,12 @@ _PROVIDER_ENV = [
     "PIPELINE_PDF_MAX_PAGES",
     "PIPELINE_PDF_RENDER_DPI",
     "PIPELINE_EMBEDDING_CACHE_DIR",
+    "QDRANT_URL",
+    "QDRANT_PATH",
+    "QDRANT_COLLECTION",
+    "QDRANT_API_KEY",
+    "QDRANT_API_KEY_FILE",
+    "QDRANT_PREFER_GRPC",
 ]
 
 
@@ -280,6 +286,46 @@ def test_cohere_rerank_metadata_preserves_scores(monkeypatch: pytest.MonkeyPatch
     assert results[0].metadata["rerank_score"] == 0.96
     assert "pre_rerank_rank" in results[0].metadata
     assert "pre_rerank_score" in results[0].metadata
+
+
+def test_cohere_rerank_requests_full_pool_before_local_caps(monkeypatch: pytest.MonkeyPatch):
+    captured: dict[str, object] = {}
+    _patch_cohere_payload(
+        monkeypatch,
+        {
+            "results": [
+                {"index": 3, "relevance_score": 0.99},
+                {"index": 2, "relevance_score": 0.82},
+                {"index": 1, "relevance_score": 0.61},
+                {"index": 0, "relevance_score": 0.40},
+            ]
+        },
+        captured=captured,
+    )
+    candidates = [
+        _chunk("alpha:p1:c0", "Alpha notice text."),
+        _chunk("bravo:p1:c0", "Bravo notice text."),
+        _chunk("charlie:p1:c0", "Charlie notice text."),
+        _chunk("delta:p1:c0", "Delta notice text."),
+    ]
+    config = ProviderConfig(reranker_provider="cohere", cohere_rerank_model="rerank-v4.0-pro")
+
+    results = engine._rerank_if_configured(
+        "notice",
+        candidates,
+        top_k=2,
+        reranker_provider=None,
+        reranker_client=None,
+        config=config,
+    )
+
+    assert captured["body"]["top_n"] == len(candidates)
+    assert [chunk.evidence_id for chunk in results] == [
+        "delta:p1:c0",
+        "charlie:p1:c0",
+        "bravo:p1:c0",
+        "alpha:p1:c0",
+    ]
 
 
 @pytest.mark.parametrize(

@@ -85,3 +85,41 @@ def test_provider_config_rejects_non_positive_pdf_page_limit(monkeypatch: pytest
 
     with pytest.raises(ConfigError, match="PIPELINE_PDF_MAX_PAGES"):
         ProviderConfig.from_env()
+
+
+def test_provider_config_rejects_faiss_index_backend(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("PIPELINE_INDEX_BACKEND", "faiss")
+
+    with pytest.raises(ConfigError, match="PIPELINE_INDEX_BACKEND"):
+        ProviderConfig.from_env()
+
+
+def test_provider_config_accepts_qdrant_local_path(monkeypatch: pytest.MonkeyPatch, tmp_path):
+    monkeypatch.setenv("PIPELINE_INDEX_BACKEND", "qdrant")
+    monkeypatch.setenv("QDRANT_PATH", str(tmp_path / "qdrant"))
+    monkeypatch.delenv("QDRANT_URL", raising=False)
+
+    config = ProviderConfig.from_env()
+
+    assert config.index_backend == "qdrant"
+    assert config.qdrant_path == str(tmp_path / "qdrant")
+
+
+def test_provider_config_rejects_qdrant_memory_path(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setenv("PIPELINE_INDEX_BACKEND", "qdrant")
+    monkeypatch.setenv("QDRANT_PATH", ":memory:")
+    monkeypatch.delenv("QDRANT_URL", raising=False)
+
+    with pytest.raises(ConfigError, match="QDRANT_PATH"):
+        ProviderConfig.from_env()
+
+
+def test_provider_config_reads_qdrant_api_key_file(monkeypatch: pytest.MonkeyPatch, tmp_path):
+    key_file = tmp_path / "qdrant_api_key"
+    key_file.write_text("test-qdrant-key\n", encoding="utf-8")
+    monkeypatch.setenv("QDRANT_API_KEY_FILE", str(key_file))
+    monkeypatch.delenv("QDRANT_API_KEY", raising=False)
+
+    config = ProviderConfig.from_env()
+
+    assert config.qdrant_api_key == "test-qdrant-key"

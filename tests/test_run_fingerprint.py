@@ -77,3 +77,25 @@ def test_enabling_cohere_reranker_changes_run_digest(tmp_path: Path):
         "the reranker provider must contribute to the run fingerprint; "
         "otherwise --resume could reuse evidence ranked without Cohere."
     )
+
+
+def test_changing_qdrant_index_identity_changes_run_digest(tmp_path: Path):
+    features = PipelineFeatures.from_env()
+    base = ProviderConfig(
+        index_backend="qdrant",
+        qdrant_path=str(tmp_path / "qdrant-a"),
+        qdrant_collection="legal_rag",
+    )
+    changed = ProviderConfig(
+        index_backend="qdrant",
+        qdrant_path=str(tmp_path / "qdrant-b"),
+        qdrant_collection="legal_rag",
+    )
+
+    digest_a = _fingerprint(tmp_path, features, config=base).digest
+    digest_b = _fingerprint(tmp_path, features, config=changed).digest
+
+    assert digest_a != digest_b, (
+        "Qdrant backend identity must contribute to the run fingerprint; "
+        "otherwise --resume could reuse evidence against a stale vector store."
+    )

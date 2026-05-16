@@ -11,7 +11,7 @@ _RERANK_OFF_NAMES = {"", "none", "off", "false", "0"}
 _COHERE_RERANK_PROVIDER_NAMES = {"cohere"}
 _VALID_REASONING_EFFORTS = {"low", "medium", "high"}
 _VALID_RETRIEVAL_MODES = {"dense", "hybrid", "lexical"}
-_VALID_INDEX_BACKENDS = {"memory", "faiss"}
+_VALID_INDEX_BACKENDS = {"memory", "qdrant"}
 
 
 class ConfigError(ValueError):
@@ -45,6 +45,20 @@ def _env(name: str, default: str) -> str:
     if value is None or not value.strip():
         return default
     return value.strip()
+
+
+def _env_secret(name: str, file_name: str, default: str = "") -> str:
+    value = _env(name, "")
+    if value:
+        return value
+    path = _env(file_name, "")
+    if not path:
+        return default
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return handle.read().strip()
+    except OSError as exc:
+        raise ConfigError(f"{file_name} is set but could not be read: {path}") from exc
 
 
 def _env_int(name: str, default: int) -> int:
@@ -113,6 +127,11 @@ class ProviderConfig:
     pdf_max_pages: int = 100
     pdf_render_dpi: int = 180
     embedding_cache_dir: str = ""
+    qdrant_url: str = ""
+    qdrant_path: str = "state/qdrant"
+    qdrant_collection: str = ""
+    qdrant_api_key: str = ""
+    qdrant_prefer_grpc: bool = False
 
     @classmethod
     def from_env(cls) -> "ProviderConfig":
@@ -138,6 +157,11 @@ class ProviderConfig:
             pdf_max_pages=_env_int("PIPELINE_PDF_MAX_PAGES", 100),
             pdf_render_dpi=_env_int("PIPELINE_PDF_RENDER_DPI", 180),
             embedding_cache_dir=_env("PIPELINE_EMBEDDING_CACHE_DIR", ""),
+            qdrant_url=_env("QDRANT_URL", ""),
+            qdrant_path=_env("QDRANT_PATH", "state/qdrant"),
+            qdrant_collection=_env("QDRANT_COLLECTION", ""),
+            qdrant_api_key=_env_secret("QDRANT_API_KEY", "QDRANT_API_KEY_FILE", ""),
+            qdrant_prefer_grpc=_env_bool("QDRANT_PREFER_GRPC", False),
         )
         config.validate_runtime()
         return config
@@ -155,6 +179,10 @@ class ProviderConfig:
         _validate_non_negative("PIPELINE_HYBRID_BM25_WEIGHT", self.hybrid_bm25_weight)
         if self.pdf_max_pages <= 0:
             raise ConfigError("PIPELINE_PDF_MAX_PAGES must be a positive integer")
+        if self.index_backend.strip().lower() == "qdrant" and not (self.qdrant_url.strip() or self.qdrant_path.strip()):
+            raise ConfigError("QDRANT_URL or QDRANT_PATH must be set when PIPELINE_INDEX_BACKEND=qdrant")
+        if self.index_backend.strip().lower() == "qdrant" and self.qdrant_path.strip() == ":memory:":
+            raise ConfigError("QDRANT_PATH=:memory: is not supported for pipeline retrieval; use a persistent local path")
 
 
 @dataclass(frozen=True, slots=True)

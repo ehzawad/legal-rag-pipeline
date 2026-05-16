@@ -334,7 +334,7 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
                   | OpenAI embeddings     |
                   | BM25 + dense hybrid   |
                   | metadata feedback     |
-                  | opt. FAISS/Cohere     |
+                  | Qdrant + Cohere opt.  |
                   | rerank                |
                   +-----------+-----------+
                               |
@@ -400,7 +400,7 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    reuse. Cache file metadata validates provider/backend/model before
    reuse; vector dimension is verified when each entry is decoded. The
    persisted retrieval index stores chunks, embedding vectors, BM25 state,
-   and enough metadata to rebuild optional FAISS acceleration on load.
+   and the Qdrant collection identity when the Qdrant backend is enabled.
    In `run_case` the cache defaults to `<output>/embedding_cache` unless
    `PIPELINE_EMBEDDING_CACHE_DIR` is set.
 
@@ -409,10 +409,15 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    `PIPELINE_HYBRID_DENSE_WEIGHT` and `PIPELINE_HYBRID_BM25_WEIGHT`.
    Metadata boosts and `retrieval_feedback.json` boosts/demotes apply as
    auditable score deltas before field-chunk capping and final candidate
-   selection. Dense scoring uses FAISS when the optional dependency is
-   installed, otherwise it falls back to exact cosine scan. A pool of up to
+   selection. Dense scoring uses exact in-process cosine scan for
+   `PIPELINE_INDEX_BACKEND=memory` or Qdrant vector search for
+   `PIPELINE_INDEX_BACKEND=qdrant`; Qdrant collections are validated
+   against the current index before reuse. A pool of up to
    `4 * top_k` candidates is optionally rerankable through Cohere
-   (`PIPELINE_RERANK_PROVIDER=cohere`); off by default.
+   (`PIPELINE_RERANK_PROVIDER=cohere`); off by default. Cohere orders the
+   full rerank pool before local document and field caps are applied, so
+   capped-out results are refilled from Cohere's next-best candidates
+   instead of falling back to the pre-rerank order.
 
 5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The model
    receives the task, retrieved evidence, and the operator-profile
@@ -463,7 +468,7 @@ citations, grounding check, and edit teaching.
 | Surface | CLI/API entrypoints | Current backing implementation |
 |---|---|---|
 | Corpus | `pipeline corpus build/settings`, `POST /corpus/build`, `POST /corpus/settings` | `corpus/manifest.json`, copied originals, and parsed document JSON |
-| Index | `pipeline index build/query/settings`, `POST /index/build`, `POST /index/query`, `POST /index/settings` | persisted `retrieval_index.json` with chunks, embeddings, BM25 state, and optional FAISS rebuild |
+| Index | `pipeline index build/query/settings`, `POST /index/build`, `POST /index/query`, `POST /index/settings` | persisted `retrieval_index.json` with chunks, embeddings, BM25 state, and optional Qdrant collection identity |
 | Edit memory | `pipeline edit-memory query/settings`, `POST /edit-memory/query`, `POST /edit-memory/settings`, `POST /runs/{id}/edits` | `state/edit_memory.json` plus profile, knowledge, retrieval-feedback, exemplar, and edit-log state |
 | Playbook risk | `pipeline risk`, `POST /risk` | deterministic `risk_report.json` / `risk_report.md` from a JSON legal-team playbook |
 | Run artifacts | `GET /runs`, `GET /runs/{id}/summary`, `GET /runs/{id}/artifacts`, `GET /runs/{id}/artifacts/{key}` | enum-keyed read surface over the files in a run directory; the operator UI consumes only draft/source/evidence/grounding artifacts |
@@ -726,9 +731,10 @@ fixed and the two paths share a single splitter
   `generation_provider`, `openai_model`, `openai_embedding_model`,
   `openai_reasoning_effort`, `reranker_provider`,
   `cohere_rerank_model`, `retrieval_mode`, `index_backend`,
-  `hybrid_dense_weight`, `hybrid_bm25_weight`, `retrieval_top_k`,
-  `pdf_max_pages`, `pdf_render_dpi`, `extraction_confidence_threshold`,
-  and `embedding_cache`
+  Qdrant URL/path/collection/prefer-grpc when the Qdrant backend is
+  enabled, `hybrid_dense_weight`, `hybrid_bm25_weight`,
+  `retrieval_top_k`, `pdf_max_pages`, `pdf_render_dpi`,
+  `extraction_confidence_threshold`, and `embedding_cache`
   (`enabled`/`disabled`).
 - **Features**: every `PipelineFeatures` value, so changing a component
   switch invalidates stale checkpoints unless the stage is explicitly
@@ -799,9 +805,13 @@ env/config/argument.
   ligatures). True multilingual support would need a script-aware
   tokenizer (e.g. ICU word-segmentation), localized caution-marker lists
   per language, and language-aware extraction prompts.
-- **Portable index, optional FAISS.** The persisted index is JSON for
-  portability and auditability. FAISS acceleration is used when installed,
-  but the saved source of truth remains the portable index file.
+- **Portable index, Qdrant optionality.** The persisted index is JSON for
+  portability and auditability. With `PIPELINE_INDEX_BACKEND=qdrant`,
+  dense vectors are also synced into a Qdrant collection whose name
+  includes an index digest; query-time validation checks point count and
+  per-chunk identity before reuse. Persisted index queries honor
+  `PIPELINE_RETRIEVAL_MODE`; lexical indexes store placeholder vectors
+  and must stay on the lexical query path.
 - **Substring grounding is necessary, not sufficient.** The verbatim
   check guarantees the quote is text from the cited chunk; it does not
   guarantee the quote *entails* the sentence.
@@ -840,7 +850,7 @@ env/config/argument.
 - `ingestion/component.py` — ingestion stage adapter used by orchestration.
 - `retrieval/engine.py` — chunking, fields-chunk emission, BM25 + dense
   hybrid retrieval, cached OpenAI embeddings, metadata/retrieval-feedback
-  score deltas, index persistence, optional FAISS, and optional Cohere
+  score deltas, index persistence, Qdrant vector storage, and optional Cohere
   reranker.
 - `retrieval/component.py` — retrieval stage adapter.
 - `evidence_pack/` — section-aware evidence pack construction between retrieval

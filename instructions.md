@@ -22,6 +22,9 @@ cd legal-rag-pipeline
 
 uv sync --extra dev
 export OPENAI_API_KEY=sk-...
+export PIPELINE_INDEX_BACKEND=qdrant
+export QDRANT_PATH=state/qdrant
+export QDRANT_COLLECTION=legal_rag
 ```
 
 ### Just open the UI and drag a PDF in
@@ -105,6 +108,10 @@ docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build -d
 
 # If Cohere reranking is enabled, also create secrets/cohere_api_key and
 # include -f docker-compose.cohere-secrets.yml in the compose command.
+#
+# Docker Compose starts a local qdrant/qdrant service by default. For
+# Qdrant Cloud, set QDRANT_URL, create secrets/qdrant_api_key, and include
+# -f docker-compose.qdrant-secrets.yml in the compose command.
 
 # Wait ~10 s for healthy, then:
 curl http://localhost:8000/healthz             # {"status":"ok"}
@@ -169,4 +176,6 @@ Enable reranking with `PIPELINE_RERANK_PROVIDER=cohere` and either
 `COHERE_API_KEY` or `CO_API_KEY`. The model defaults to
 `rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
 `PIPELINE_RERANK_MODEL`. The reranker uses direct HTTPS, so no Cohere SDK
-dependency is required.
+dependency is required. When enabled, Cohere orders the whole rerank
+candidate pool before local document and field caps are applied, so cap
+refills stay in Cohere-ranked order.

@@ -479,6 +479,10 @@ def _index_settings_payload(body: IndexSettingsRequest) -> dict[str, Any]:
             "retrieval_provider": config.retrieval_provider,
             "retrieval_mode": config.retrieval_mode,
             "index_backend": config.index_backend,
+            "qdrant_url": config.qdrant_url,
+            "qdrant_path": config.qdrant_path,
+            "qdrant_collection": config.qdrant_collection,
+            "qdrant_prefer_grpc": config.qdrant_prefer_grpc,
             "embedding_model": config.openai_embedding_model,
             "hybrid_dense_weight": config.hybrid_dense_weight,
             "hybrid_bm25_weight": config.hybrid_bm25_weight,
@@ -500,6 +504,7 @@ def _index_settings_payload(body: IndexSettingsRequest) -> dict[str, Any]:
         },
         "notes": [
             "Use /index/build to persist a queryable BM25+dense index.",
+            "Set PIPELINE_INDEX_BACKEND=qdrant to store dense vectors in Qdrant while keeping retrieval_index.json portable.",
             "A normal /runs call also writes output/index/retrieval_index.json automatically.",
         ],
     }
@@ -523,6 +528,8 @@ def _index_build_payload(body: IndexBuildRequest) -> dict[str, Any]:
         "index": str(index_path),
         "chunk_count": len(index.chunks),
         "embedding_model": index.embedding_model,
+        "vector_backend": getattr(index, "index_backend", "memory"),
+        "qdrant_collection": getattr(index, "qdrant_collection", ""),
     }
 
 
@@ -531,15 +538,16 @@ def _index_query_payload(body: IndexQueryRequest) -> dict[str, Any]:
 
     config = ProviderConfig.from_env()
     index_path = _checked_path(body.index_path, "index_path", must_exist=True)
-    index = load_index(index_path, build_faiss=config.index_backend.strip().lower() == "faiss")
+    index = load_index(index_path)
+    # Let retrieve() resolve PIPELINE_RETRIEVAL_MODE. Persisted lexical indexes
+    # store placeholder embeddings, so forcing hybrid weights here can make the
+    # query path call dense embeddings and then fail on vector dimensions.
     evidence = retrieve(
         index,
         body.task,
         top_k=body.top_k,
         provider=config.retrieval_provider,
         config=config,
-        dense_weight=config.hybrid_dense_weight,
-        lexical_weight=config.hybrid_bm25_weight,
     )
     return {
         "surface": "index",

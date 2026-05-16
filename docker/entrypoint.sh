@@ -19,4 +19,13 @@ if [ -z "${COHERE_API_KEY:-}" ] && [ -n "${COHERE_API_KEY_FILE:-}" ]; then
   export COHERE_API_KEY
 fi
 
+if [ -z "${QDRANT_API_KEY:-}" ] && [ -n "${QDRANT_API_KEY_FILE:-}" ]; then
+  if [ ! -f "$QDRANT_API_KEY_FILE" ]; then
+    echo "QDRANT_API_KEY_FILE is set but the file was not found: $QDRANT_API_KEY_FILE" >&2
+    exit 1
+  fi
+  QDRANT_API_KEY="$(tr -d '\r\n' < "$QDRANT_API_KEY_FILE")"
+  export QDRANT_API_KEY
+fi
+
 exec "$@"

@@ -23,6 +23,8 @@ secrets/
 
 # Pipeline runtime caches -------------------------------------------------
 **/embedding_cache/
+state/qdrant*/
+tmp/
 
 # Local runtime ops -------------------------------------------------------
 # Process PID files, local API logs, and Playwright CLI traces never belong
