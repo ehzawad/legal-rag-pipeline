@@ -839,6 +839,7 @@ def _summarize_run_dir(run_dir: Path) -> dict[str, Any] | None:
     case_run_path = run_dir / "case_run.json"
     workflow_path = run_dir / "workflow_manifest.json"
     draft_md = run_dir / "draft.md"
+    draft_json = run_dir / "draft.json"
     case_run_data: dict[str, Any] = {}
     if case_run_path.exists():
         try:
@@ -864,11 +865,21 @@ def _summarize_run_dir(run_dir: Path) -> dict[str, Any] | None:
         if isinstance(draft, dict) and isinstance(draft.get("warnings"), list)
         else []
     )
+    has_reviewable_draft = draft_md.exists() and draft_json.exists()
+    run_status = str(workflow_data.get("status") or ("completed" if has_reviewable_draft else "unknown"))
+    failure_stage = ""
+    failure_error = ""
+    if run_status == "failed":
+        for stage in workflow_data.get("stages", []):
+            if isinstance(stage, dict) and stage.get("status") == "failed":
+                failure_stage = str(stage.get("name") or "")
+                failure_error = str(stage.get("error") or "")
+                break
     return {
         "case_id": str(case_run_data.get("case_id") or workflow_data.get("metadata", {}).get("case_id") or run_dir.name),
         "name": run_dir.name,
         "output_dir": str(run_dir),
-        "created_at": str(case_run_data.get("created_at") or ""),
+        "created_at": str(case_run_data.get("created_at") or workflow_data.get("created_at") or ""),
         "task": str(case_run_data.get("task") or workflow_data.get("metadata", {}).get("task") or ""),
         "draft_type": str(draft.get("draft_type") if isinstance(draft, dict) else ""),
         "draft_title": str(draft.get("title") if isinstance(draft, dict) else ""),
@@ -880,7 +891,11 @@ def _summarize_run_dir(run_dir: Path) -> dict[str, Any] | None:
         "warning_count": len(draft_warnings),
         "run_fingerprint": str(case_run_data.get("run_fingerprint") or ""),
         "artifacts": artifacts,
-        "has_draft": draft_md.exists(),
+        "has_draft": has_reviewable_draft,
+        "reviewable": has_reviewable_draft,
+        "run_status": run_status,
+        "failure_stage": failure_stage,
+        "error": failure_error,
         "has_evaluation": (run_dir / "evaluation.json").exists(),
         "has_risk_report": (run_dir / "risk_report.json").exists(),
     }
@@ -973,11 +988,18 @@ async def upload_documents(case_id: str, files: list[UploadFile] = File(...)) ->
 
 
 @app.get("/runs", include_in_schema=True)
-def list_runs(root: str | None = Query(default=None)) -> JSONResponse:
+def list_runs(
+    root: str | None = Query(default=None),
+    include_unreviewable: bool = Query(
+        default=False,
+        description="Include failed or incomplete run directories that do not have draft artifacts.",
+    ),
+) -> JSONResponse:
     """Enumerate run output directories beneath ``root`` (default ``./outputs``).
 
-    Each entry is the minimal information the UI needs to render a list (case id,
-    task, draft summary, generated artifact paths). The endpoint is read-only and
+    By default this is the operator review queue, so failed pre-draft runs
+    and upload-only directories are omitted. Pass ``include_unreviewable`` to
+    inspect those diagnostic directories. The endpoint is read-only and
     re-uses :func:`_checked_path` to enforce the same allowlist as every other
     path-handling endpoint.
     """
@@ -991,6 +1013,8 @@ def list_runs(root: str | None = Query(default=None)) -> JSONResponse:
             continue
         summary = _summarize_run_dir(child)
         if summary is None:
+            continue
+        if not include_unreviewable and not summary.get("reviewable"):
             continue
         entries.append(summary)
     return JSONResponse(content={"root": str(runs_root), "runs": entries})

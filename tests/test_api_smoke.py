@@ -8,6 +8,7 @@ import or the smoke call will fail.
 
 from __future__ import annotations
 
+import json
 from types import SimpleNamespace
 
 from fastapi.testclient import TestClient
@@ -99,3 +100,84 @@ def test_runs_route_passes_top_level_draft_type(tmp_path, monkeypatch):
     assert response.status_code == 200
     assert response.json()["run_fingerprint"] == "fp-test"
     assert captured["draft_type"] == "case_fact_summary"
+
+
+def test_runs_list_filters_failed_pre_draft_runs_by_default(tmp_path, monkeypatch):
+    monkeypatch.setenv("PIPELINE_API_ALLOWED_ROOTS", str(tmp_path))
+    upload_only = tmp_path / "case-upload-only" / "_inputs"
+    upload_only.mkdir(parents=True)
+    (upload_only / "source.pdf").write_bytes(b"%PDF-1.4\n")
+
+    failed_run = tmp_path / "case-failed"
+    failed_run.mkdir()
+    (failed_run / "workflow_manifest.json").write_text(
+        json.dumps(
+            {
+                "created_at": "2026-05-17T00:00:00+00:00",
+                "status": "failed",
+                "metadata": {
+                    "case_id": "case-failed",
+                    "task": "Failed before draft.",
+                },
+                "stages": [
+                    {
+                        "name": "process_documents",
+                        "status": "failed",
+                        "error": "ProviderUnavailable: Missing required environment variable: OPENAI_API_KEY",
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    reviewable_run = tmp_path / "case-ready"
+    reviewable_run.mkdir()
+    draft_payload = {
+        "draft_type": "case_fact_summary",
+        "title": "Case Fact Summary",
+        "sections": [],
+        "warnings": [],
+        "evidence": [],
+    }
+    (reviewable_run / "draft.md").write_text("# Case Fact Summary\n", encoding="utf-8")
+    (reviewable_run / "draft.json").write_text(json.dumps(draft_payload), encoding="utf-8")
+    (reviewable_run / "case_run.json").write_text(
+        json.dumps(
+            {
+                "case_id": "case-ready",
+                "created_at": "2026-05-17T00:01:00+00:00",
+                "task": "Ready for review.",
+                "draft": draft_payload,
+                "run_fingerprint": "fp-ready",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    response = client.get("/runs", params={"root": str(tmp_path)})
+    assert response.status_code == 200
+    payload = response.json()
+    assert [run["case_id"] for run in payload["runs"]] == ["case-ready"]
+    assert payload["runs"][0]["reviewable"] is True
+
+    diagnostic_response = client.get(
+        "/runs",
+        params={"root": str(tmp_path), "include_unreviewable": "true"},
+    )
+    assert diagnostic_response.status_code == 200
+    diagnostic_runs = {run["case_id"]: run for run in diagnostic_response.json()["runs"]}
+    assert set(diagnostic_runs) == {"case-failed", "case-ready"}
+    assert diagnostic_runs["case-failed"]["reviewable"] is False
+    assert diagnostic_runs["case-failed"]["has_draft"] is False
+    assert diagnostic_runs["case-failed"]["run_status"] == "failed"
+    assert diagnostic_runs["case-failed"]["failure_stage"] == "process_documents"
+
+    failed_summary_response = client.get(
+        "/runs/case-failed/summary",
+        params={"output_dir": str(failed_run)},
+    )
+    assert failed_summary_response.status_code == 200
+    failed_summary = failed_summary_response.json()
+    assert failed_summary["reviewable"] is False
+    assert failed_summary["error"].startswith("ProviderUnavailable")

@@ -1,1 +1,0 @@
-import{d as e,h as t}from"./index-DK6kP-cf.js";var n=t();function r(){return(0,n.jsxs)(`div`,{className:`card`,children:[(0,n.jsx)(`h3`,{children:`Page not found`}),(0,n.jsxs)(`p`,{className:`muted`,children:[`Try the `,(0,n.jsx)(e,{to:`/`,children:`review queue`}),`, or upload documents to start a new case review.`]})]})}export{r as default};

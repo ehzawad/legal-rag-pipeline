@@ -477,7 +477,7 @@ citations, grounding check, and edit teaching.
 | Index | `pipeline index build/query/settings`, `POST /index/build`, `POST /index/query`, `POST /index/settings` | persisted `retrieval_index.json` with chunks, embeddings, BM25 state, and optional Qdrant collection identity |
 | Edit memory | `pipeline edit-memory query/settings`, `POST /edit-memory/query`, `POST /edit-memory/settings`, `POST /runs/{id}/edits` | `state/edit_memory.json` plus profile, knowledge, retrieval-feedback, exemplar, and edit-log state |
 | Playbook risk | `pipeline risk`, `POST /risk` | deterministic `risk_report.json` / `risk_report.md` from a JSON legal-team playbook |
-| Run artifacts | `GET /runs`, `GET /runs/{id}/summary`, `GET /runs/{id}/artifacts`, `GET /runs/{id}/artifacts/{key}` | enum-keyed read surface over the files in a run directory; the operator UI consumes only draft/source/evidence/grounding artifacts |
+| Run artifacts | `GET /runs`, `GET /runs/{id}/summary`, `GET /runs/{id}/artifacts`, `GET /runs/{id}/artifacts/{key}` | enum-keyed read surface over the files in a run directory; default `GET /runs` is the draft-bearing review queue, while `include_unreviewable=true` exposes failed pre-draft diagnostic directories |
 | Learning state | `GET /state/{name}` | typed-channel read surface for `operator_profile.json`, `knowledge_layer.json`, `retrieval_feedback.json`, `edit_memory.json`, `edits.jsonl`, `edit_classifications.jsonl`, `learn_suggestions.json` |
 
 `settings` commands are read-only. `build` and `query` commands mutate or

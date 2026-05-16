@@ -192,8 +192,8 @@ the full artifact shelf for developer and reviewer checks (see §HTTP API).
 After `uv run pipeline-api`:
 
 1. Open `http://127.0.0.1:8000/ui`. The dashboard is a review queue for
-   real cases; sample and evaluation outputs are hidden from the
-   operator view.
+   draft-bearing real cases; sample/evaluation outputs and failed
+   pre-draft diagnostic directories are hidden from the operator view.
 2. Click **Upload documents** to start a review. The form asks for files,
    a case id, and a drafting task, then submits synchronously; expect a
    wait while OpenAI extracts, retrieves, and drafts.
@@ -422,8 +422,8 @@ posture).
 #### Pages
 
 - **Dashboard** (`/`) — runs the API's `GET /runs` against
-  `./outputs/` and lists real case reviews, hiding sample/evaluation
-  fixtures.
+  `./outputs/` and lists draft-bearing real case reviews, hiding
+  sample/evaluation fixtures and failed pre-draft diagnostic directories.
 - **Upload documents** (`/runs/new`) — uploads PDFs/images/text files,
   posts to `POST /runs`, and redirects to the case detail page when the
   draft is ready.
@@ -1087,9 +1087,10 @@ Pipeline / state surface:
 - `POST /runs` — kick off a pipeline run; accepts nested `features` and
   optional `state_dir`, `profile_path`, `playbook_path`, `resume`,
   `force`.
-- `GET /runs?root=outputs` — list run directories under the given root
-  with a compact summary (case id, task, section/warning counts, which
-  artifacts exist).
+- `GET /runs?root=outputs` — list reviewable run directories under the
+  given root with a compact summary (case id, task, section/warning counts,
+  which artifacts exist). Add `include_unreviewable=true` to inspect failed
+  pre-draft or incomplete diagnostic directories.
 - `GET /runs/{case_id}` — raw `case_run.json` for a run.
 - `GET /runs/{case_id}/summary` — the same compact summary as the list
   endpoint, scoped to a single run.

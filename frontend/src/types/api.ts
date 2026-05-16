@@ -14,6 +14,10 @@ export interface RunSummary {
   run_fingerprint: string;
   artifacts: Record<string, string>;
   has_draft: boolean;
+  reviewable: boolean;
+  run_status: string;
+  failure_stage: string;
+  error: string;
   has_evaluation: boolean;
   has_risk_report: boolean;
 }

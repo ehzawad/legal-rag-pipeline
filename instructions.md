@@ -146,7 +146,8 @@ or demos.
 ## Quick poke from the UI
 
 1. Open `http://localhost:8000/ui`.
-2. **Dashboard** lists every committed run; click `all-categories`.
+2. **Dashboard** lists draft-bearing real case reviews. Click a completed
+   case, or use **Upload documents** to create one from a PDF in `quick-eval/`.
 3. **Draft** tab shows the case fact summary with clickable `[evidence_id]` chips;
    clicking one pops the **Evidence panel** with the verbatim quote,
    page number, source filename, and chunk text.

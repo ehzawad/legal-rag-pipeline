@@ -105,7 +105,10 @@ function RunRow({ run }: { run: RunSummary }) {
 export default function DashboardPage() {
   const { data, isLoading, isError, refetch } = useListRunsQuery({});
   const runs = data?.runs ?? [];
-  const reviewRuns = useMemo(() => runs.filter((run) => !isSampleOrEvalRun(run)), [runs]);
+  const reviewRuns = useMemo(
+    () => runs.filter((run) => run.reviewable !== false && !isSampleOrEvalRun(run)),
+    [runs],
+  );
   return (
     <div>
       <div className="topbar">
@@ -133,7 +136,7 @@ export default function DashboardPage() {
           <div>
             <h3>Cases</h3>
             <p className="muted" style={{ margin: 0, fontSize: 12 }}>
-              Only real case reviews appear in this queue.
+              Only draft-ready case reviews appear in this queue.
             </p>
           </div>
         </div>
