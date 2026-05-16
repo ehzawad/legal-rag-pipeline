@@ -37,6 +37,9 @@ _COHERE_RERANK_URL = "https://api.cohere.com/v2/rerank"
 _COHERE_RERANK_TIMEOUT_SECONDS = 30
 _COHERE_CLIENT_NAME = "legal-rag-pipeline"
 _COHERE_RERANK_MAX_DOCUMENTS = 1000
+_QDRANT_COLLECTION_DIGEST_LENGTH = 24
+_QDRANT_POINT_BATCH_SIZE = 128
+_QDRANT_RETRIEVE_BATCH_SIZE = 256
 _BM25_K1 = 1.5
 _BM25_B = 0.75
 _SEARCH_TOKEN_RE = re.compile(r"[a-z0-9]+(?:[._'-][a-z0-9]+)*", re.IGNORECASE)
@@ -82,9 +85,9 @@ class RetrievalIndex:
     embedding_model: str
     embedding_cache_dir: str = ""
     embedding_backend_id: str = "openai"
+    index_backend: str = "memory"
+    qdrant_collection: str = ""
     bm25: BM25Index | None = None
-    faiss_index: Any | None = None
-    faiss_metric: str = ""
 
 
 def build_index(
@@ -96,12 +99,10 @@ def build_index(
     chunk_overlap: int = 40,
     include_field_chunks: bool = True,
     embedding_client: Any | Callable[[list[str]], list[list[float]]] | None = None,
-    build_faiss: bool | None = None,
 ) -> RetrievalIndex:
     config = config or ProviderConfig.from_env()
     index_backend = (config.index_backend or "").strip().lower()
     retrieval_mode = (config.retrieval_mode or "").strip().lower()
-    should_build_faiss = index_backend == "faiss" if build_faiss is None else build_faiss
     chunks = chunk_processed_documents(
         processed_documents,
         chunk_words=chunk_words,
@@ -119,6 +120,7 @@ def build_index(
             embedding_model=embedding_model,
             embedding_cache_dir=str(getattr(config, "embedding_cache_dir", "") or ""),
             embedding_backend_id=embedding_backend_id,
+            index_backend=index_backend,
             bm25=_build_bm25_index([]),
         )
 
@@ -151,7 +153,15 @@ def build_index(
         raise ProviderUnavailable(f"Unsupported retrieval provider '{provider_name}'. This build only ships openai.")
 
     bm25 = _build_bm25_index(chunks)
-    faiss_index, faiss_metric = _build_faiss_index(embeddings) if should_build_faiss else (None, "")
+    qdrant_collection = ""
+    if index_backend == "qdrant" and retrieval_mode != "lexical":
+        qdrant_collection = _sync_qdrant_collection(
+            chunks,
+            embeddings,
+            config=config,
+            embedding_model=embedding_model,
+            embedding_backend_id=embedding_backend_id,
+        )
     return RetrievalIndex(
         chunks=chunks,
         embeddings=embeddings,
@@ -159,9 +169,9 @@ def build_index(
         embedding_model=embedding_model,
         embedding_cache_dir=str(getattr(config, "embedding_cache_dir", "") or ""),
         embedding_backend_id=embedding_backend_id,
+        index_backend=index_backend,
+        qdrant_collection=qdrant_collection,
         bm25=bm25,
-        faiss_index=faiss_index,
-        faiss_metric=faiss_metric,
     )
 
 
@@ -183,7 +193,6 @@ def retrieve(
     dense_weight: float | None = None,
     lexical_weight: float | None = None,
     metadata_boosts: Mapping[str, Any] | None = None,
-    use_faiss: bool | None = None,
 ) -> list[EvidenceChunk]:
     config = config or ProviderConfig.from_env()
     if top_k <= 0 or not index.chunks:
@@ -196,7 +205,7 @@ def retrieve(
         dense_weight=dense_weight,
         lexical_weight=lexical_weight,
     )
-    effective_use_faiss = (config.index_backend or "").strip().lower() == "faiss" if use_faiss is None else use_faiss
+    index_backend = (config.index_backend or "").strip().lower()
     embedding_backend_id = (
         _embedding_backend_id(embedding_client)
         if embedding_client is not None
@@ -234,7 +243,12 @@ def retrieve(
     dense_scores = (
         [0.0] * len(index.embeddings)
         if effective_dense_weight == 0
-        else _dense_scores(index, query_embedding, use_faiss=effective_use_faiss)
+        else _dense_scores(
+            index,
+            query_embedding,
+            config=config,
+            backend=index_backend,
+        )
     )
     lexical_scores = (
         [0.0] * len(index.chunks)
@@ -297,16 +311,12 @@ def retrieve(
 
 
 def save_index(index: RetrievalIndex, path: str | Path) -> None:
-    """Persist a retrieval index as portable JSON.
-
-    The optional FAISS object is intentionally excluded because it is a runtime
-    acceleration structure. load_index() rebuilds it when faiss is available.
-    """
+    """Persist a retrieval index as portable JSON."""
 
     write_json(Path(path), _index_to_payload(index))
 
 
-def load_index(path: str | Path, *, build_faiss: bool = True) -> RetrievalIndex:
+def load_index(path: str | Path) -> RetrievalIndex:
     payload = read_json(Path(path))
     if not isinstance(payload, Mapping):
         raise ValueError("Retrieval index payload must be a JSON object")
@@ -327,7 +337,6 @@ def load_index(path: str | Path, *, build_faiss: bool = True) -> RetrievalIndex:
     bm25 = _bm25_from_payload(payload.get("bm25"))
     if bm25 is None or len(bm25.tokenized_documents) != len(chunks):
         bm25 = _build_bm25_index(chunks)
-    faiss_index, faiss_metric = _build_faiss_index(embeddings) if build_faiss else (None, "")
 
     return RetrievalIndex(
         chunks=chunks,
@@ -336,9 +345,9 @@ def load_index(path: str | Path, *, build_faiss: bool = True) -> RetrievalIndex:
         embedding_model=str(payload.get("embedding_model") or ""),
         embedding_cache_dir=str(payload.get("embedding_cache_dir") or ""),
         embedding_backend_id=str(payload.get("embedding_backend_id") or "openai"),
+        index_backend=str(payload.get("index_backend") or "memory"),
+        qdrant_collection=str(payload.get("qdrant_collection") or ""),
         bm25=bm25,
-        faiss_index=faiss_index,
-        faiss_metric=faiss_metric,
     )
 
 
@@ -350,6 +359,8 @@ def _index_to_payload(index: RetrievalIndex) -> dict[str, Any]:
         "embedding_model": index.embedding_model,
         "embedding_cache_dir": index.embedding_cache_dir,
         "embedding_backend_id": getattr(index, "embedding_backend_id", "openai"),
+        "index_backend": getattr(index, "index_backend", "memory"),
+        "qdrant_collection": getattr(index, "qdrant_collection", ""),
         "embedding_dim": len(index.embeddings[0]) if index.embeddings else 0,
         "chunks": [_chunk_to_payload(chunk) for chunk in index.chunks],
         "embeddings": [[float(value) for value in embedding] for embedding in index.embeddings],
@@ -518,12 +529,11 @@ def _dense_scores(
     index: RetrievalIndex,
     query_embedding: list[float],
     *,
-    use_faiss: bool,
+    config: ProviderConfig,
+    backend: str,
 ) -> list[float]:
-    if use_faiss:
-        faiss_scores = _faiss_dense_scores(index, query_embedding)
-        if faiss_scores is not None:
-            return faiss_scores
+    if backend == "qdrant":
+        return _qdrant_dense_scores(index, query_embedding, config=config)
     return [_cosine(query_embedding, embedding) for embedding in index.embeddings]
 
 
@@ -574,56 +584,341 @@ def _positive_float(value: Any) -> float:
     return number
 
 
-def _build_faiss_index(embeddings: list[list[float]]) -> tuple[Any | None, str]:
-    if not embeddings:
-        return None, ""
-    try:
-        import faiss  # type: ignore[import-not-found]
-        import numpy as np
-    except ImportError:
-        return None, ""
-    try:
-        matrix = np.asarray(embeddings, dtype="float32")
-        if matrix.ndim != 2 or matrix.shape[0] != len(embeddings) or matrix.shape[1] == 0:
-            return None, ""
-        norms = np.linalg.norm(matrix, axis=1, keepdims=True)
-        norms[norms == 0.0] = 1.0
-        matrix = matrix / norms
-        index = faiss.IndexFlatIP(int(matrix.shape[1]))
-        index.add(matrix)
-    except Exception as exc:  # pragma: no cover - depends on optional faiss/numpy builds
-        warnings.warn(f"FAISS vector index unavailable; falling back to cosine scan: {exc}", stacklevel=2)
-        return None, ""
-    return index, "inner_product_normalized"
+def _qdrant_dense_scores(
+    index: RetrievalIndex,
+    query_embedding: list[float],
+    *,
+    config: ProviderConfig,
+) -> list[float]:
+    if len(query_embedding) != len(index.embeddings[0]):
+        raise ProviderUnavailable("Qdrant query vector dimension does not match the retrieval index")
+    collection_name = _qdrant_collection_for_index(index, config)
+    if not collection_name:
+        raise ProviderUnavailable("Qdrant collection name could not be resolved")
+    index.qdrant_collection = collection_name
 
-
-def _faiss_dense_scores(index: RetrievalIndex, query_embedding: list[float]) -> list[float] | None:
-    faiss_index = getattr(index, "faiss_index", None)
-    if faiss_index is None:
-        faiss_index, faiss_metric = _build_faiss_index(index.embeddings)
-        if faiss_index is None:
-            return None
-        index.faiss_index = faiss_index
-        index.faiss_metric = faiss_metric
+    client, _models = _qdrant_client_and_models(config)
     try:
-        import numpy as np
-
-        query = np.asarray([query_embedding], dtype="float32")
-        if query.ndim != 2 or query.shape[1] == 0:
-            return None
-        norm = np.linalg.norm(query, axis=1, keepdims=True)
-        norm[norm == 0.0] = 1.0
-        query = query / norm
-        distances, indices = faiss_index.search(query, len(index.embeddings))
-    except Exception:
-        return None
+        if not _qdrant_collection_matches_index(
+            client,
+            collection_name,
+            index.chunks,
+            index.embeddings,
+            embedding_model=index.embedding_model,
+            embedding_backend_id=getattr(index, "embedding_backend_id", "openai"),
+        ):
+            _close_qdrant_client(client)
+            _sync_qdrant_collection(
+                index.chunks,
+                index.embeddings,
+                config=config,
+                embedding_model=index.embedding_model,
+                embedding_backend_id=getattr(index, "embedding_backend_id", "openai"),
+                collection_name=collection_name,
+            )
+            client, _models = _qdrant_client_and_models(config)
+        result = client.query_points(
+            collection_name=collection_name,
+            query=[float(value) for value in query_embedding],
+            limit=len(index.embeddings),
+            with_payload=False,
+            with_vectors=False,
+        )
+    except Exception as exc:  # pragma: no cover - exact client exception types vary
+        raise ProviderUnavailable(f"Qdrant query failed for collection {collection_name!r}: {exc}") from exc
+    finally:
+        _close_qdrant_client(client)
 
     scores = [0.0] * len(index.embeddings)
-    for score, raw_index in zip(distances[0], indices[0]):
-        position = int(raw_index)
-        if 0 <= position < len(scores):
-            scores[position] = float(score)
+    points = getattr(result, "points", result)
+    for point in points or []:
+        raw_id = getattr(point, "id", None)
+        raw_score = getattr(point, "score", None)
+        if raw_id is None and isinstance(point, Mapping):
+            raw_id = point.get("id")
+            raw_score = point.get("score")
+        try:
+            position = int(raw_id)
+            score = float(raw_score)
+        except (TypeError, ValueError):
+            continue
+        if 0 <= position < len(scores) and math.isfinite(score):
+            scores[position] = score
     return scores
+
+
+def _sync_qdrant_collection(
+    chunks: list[EvidenceChunk],
+    embeddings: list[list[float]],
+    *,
+    config: ProviderConfig,
+    embedding_model: str,
+    embedding_backend_id: str,
+    collection_name: str | None = None,
+) -> str:
+    if not chunks or not embeddings:
+        return ""
+    if len(chunks) != len(embeddings):
+        raise ProviderUnavailable("Qdrant index sync requires matching chunks and embeddings")
+    dimensions = len(embeddings[0])
+    if dimensions <= 0:
+        raise ProviderUnavailable("Qdrant requires non-empty embedding vectors")
+    collection = collection_name or _qdrant_collection_name(
+        chunks,
+        embedding_model=embedding_model,
+        embedding_backend_id=embedding_backend_id,
+        configured_name=getattr(config, "qdrant_collection", ""),
+    )
+    client, models = _qdrant_client_and_models(config)
+    try:
+        if _qdrant_collection_matches_index(
+            client,
+            collection,
+            chunks,
+            embeddings,
+            embedding_model=embedding_model,
+            embedding_backend_id=embedding_backend_id,
+        ):
+            return collection
+        if _qdrant_collection_exists(client, collection):
+            client.delete_collection(collection_name=collection)
+        client.create_collection(
+            collection_name=collection,
+            vectors_config=models.VectorParams(size=dimensions, distance=models.Distance.COSINE),
+        )
+        index_digest = _qdrant_index_digest(
+            chunks,
+            embedding_model=embedding_model,
+            embedding_backend_id=embedding_backend_id,
+        )
+        points = [
+            models.PointStruct(
+                id=position,
+                vector=[float(value) for value in embedding],
+                payload={
+                    "index_digest": index_digest,
+                    "position": position,
+                    "evidence_id": chunk.evidence_id,
+                    "document_id": chunk.document_id,
+                    "filename": chunk.filename,
+                    "page_number": chunk.page_number,
+                    "chunk_hash": chunk.metadata.get("chunk_hash") or content_hash(chunk.text),
+                    "embedding_model": embedding_model,
+                    "embedding_backend_id": embedding_backend_id,
+                    "vector_size": dimensions,
+                },
+            )
+            for position, (chunk, embedding) in enumerate(zip(chunks, embeddings))
+        ]
+        for start in range(0, len(points), _QDRANT_POINT_BATCH_SIZE):
+            client.upsert(
+                collection_name=collection,
+                points=points[start : start + _QDRANT_POINT_BATCH_SIZE],
+                wait=True,
+            )
+    except Exception as exc:  # pragma: no cover - exact client exception types vary
+        raise ProviderUnavailable(f"Qdrant index sync failed for collection {collection!r}: {exc}") from exc
+    finally:
+        _close_qdrant_client(client)
+    return collection
+
+
+def _qdrant_client_and_models(config: ProviderConfig) -> tuple[Any, Any]:
+    try:
+        from qdrant_client import QdrantClient, models
+    except ImportError as exc:  # pragma: no cover - dependency should be installed
+        raise ProviderUnavailable("qdrant-client is required when PIPELINE_INDEX_BACKEND=qdrant") from exc
+
+    url = str(getattr(config, "qdrant_url", "") or "").strip()
+    api_key = str(getattr(config, "qdrant_api_key", "") or "").strip() or None
+    prefer_grpc = bool(getattr(config, "qdrant_prefer_grpc", False))
+    if url:
+        return QdrantClient(url=url, api_key=api_key, prefer_grpc=prefer_grpc), models
+
+    path = str(getattr(config, "qdrant_path", "") or "").strip()
+    if not path:
+        raise ProviderUnavailable("QDRANT_URL or QDRANT_PATH must be set when PIPELINE_INDEX_BACKEND=qdrant")
+    if path == ":memory:":
+        raise ProviderUnavailable("QDRANT_PATH=:memory: is not supported for pipeline retrieval; use a persistent path")
+    Path(path).expanduser().parent.mkdir(parents=True, exist_ok=True)
+    return QdrantClient(path=str(Path(path).expanduser())), models
+
+
+def _qdrant_collection_exists(client: Any, collection_name: str) -> bool:
+    try:
+        return bool(client.collection_exists(collection_name=collection_name))
+    except AttributeError:
+        try:
+            client.get_collection(collection_name=collection_name)
+            return True
+        except Exception:
+            return False
+
+
+def _close_qdrant_client(client: Any) -> None:
+    close = getattr(client, "close", None)
+    if callable(close):
+        close()
+
+
+def _qdrant_collection_for_index(index: RetrievalIndex, config: ProviderConfig) -> str:
+    digest = _qdrant_index_digest(
+        index.chunks,
+        embedding_model=index.embedding_model,
+        embedding_backend_id=getattr(index, "embedding_backend_id", "openai"),
+    )
+    saved = str(getattr(index, "qdrant_collection", "") or "").strip()
+    if saved and saved.endswith(digest[:_QDRANT_COLLECTION_DIGEST_LENGTH]):
+        return _sanitize_qdrant_collection_name(saved)
+    return _qdrant_collection_name(
+        index.chunks,
+        embedding_model=index.embedding_model,
+        embedding_backend_id=getattr(index, "embedding_backend_id", "openai"),
+        configured_name=getattr(config, "qdrant_collection", ""),
+    )
+
+
+def _qdrant_collection_name(
+    chunks: list[EvidenceChunk],
+    *,
+    embedding_model: str,
+    embedding_backend_id: str,
+    configured_name: str = "",
+) -> str:
+    digest = _qdrant_index_digest(
+        chunks,
+        embedding_model=embedding_model,
+        embedding_backend_id=embedding_backend_id,
+    )
+    suffix = digest[:_QDRANT_COLLECTION_DIGEST_LENGTH]
+    prefix = _sanitize_qdrant_collection_name(configured_name or "legal_rag")
+    max_prefix_length = 255 - len(suffix) - 1
+    prefix = prefix[:max_prefix_length].strip("_-") or "legal_rag"
+    return f"{prefix}_{suffix}"
+
+
+def _qdrant_index_digest(
+    chunks: list[EvidenceChunk],
+    *,
+    embedding_model: str,
+    embedding_backend_id: str,
+) -> str:
+    digest = hashlib.sha256()
+    digest.update(embedding_model.encode("utf-8"))
+    digest.update(embedding_backend_id.encode("utf-8"))
+    digest.update(str(len(chunks)).encode("ascii"))
+    for chunk in chunks:
+        digest.update(chunk.evidence_id.encode("utf-8"))
+        digest.update(str(chunk.metadata.get("chunk_hash") or content_hash(chunk.text)).encode("utf-8"))
+    return digest.hexdigest()
+
+
+def _qdrant_collection_matches_index(
+    client: Any,
+    collection_name: str,
+    chunks: list[EvidenceChunk],
+    embeddings: list[list[float]],
+    *,
+    embedding_model: str,
+    embedding_backend_id: str,
+) -> bool:
+    if not _qdrant_collection_exists(client, collection_name):
+        return False
+    point_count = _qdrant_point_count(client, collection_name)
+    if point_count is not None and point_count != len(chunks):
+        return False
+    if not chunks:
+        return point_count in {0, None}
+    expected_digest = _qdrant_index_digest(
+        chunks,
+        embedding_model=embedding_model,
+        embedding_backend_id=embedding_backend_id,
+    )
+    vector_size = len(embeddings[0]) if embeddings else 0
+    for start in range(0, len(chunks), _QDRANT_RETRIEVE_BATCH_SIZE):
+        positions = list(range(start, min(start + _QDRANT_RETRIEVE_BATCH_SIZE, len(chunks))))
+        try:
+            records = client.retrieve(
+                collection_name=collection_name,
+                ids=positions,
+                with_payload=True,
+                with_vectors=False,
+            )
+        except Exception:
+            return False
+        by_position: dict[int, Any] = {}
+        for record in records or []:
+            try:
+                by_position[int(getattr(record, "id", -1))] = record
+            except (TypeError, ValueError):
+                continue
+        if len(by_position) != len(positions):
+            return False
+        for position in positions:
+            payload = getattr(by_position[position], "payload", None)
+            if not isinstance(payload, Mapping):
+                return False
+            if not _qdrant_payload_matches_chunk(
+                payload,
+                chunks[position],
+                position=position,
+                index_digest=expected_digest,
+                embedding_model=embedding_model,
+                embedding_backend_id=embedding_backend_id,
+                vector_size=vector_size,
+            ):
+                return False
+    return True
+
+
+def _qdrant_point_count(client: Any, collection_name: str) -> int | None:
+    try:
+        result = client.count(collection_name=collection_name, exact=True)
+    except Exception:
+        return None
+    raw_count = getattr(result, "count", result)
+    try:
+        return int(raw_count)
+    except (TypeError, ValueError):
+        return None
+
+
+def _qdrant_payload_matches_chunk(
+    payload: Mapping[str, Any],
+    chunk: EvidenceChunk,
+    *,
+    position: int,
+    index_digest: str,
+    embedding_model: str,
+    embedding_backend_id: str,
+    vector_size: int,
+) -> bool:
+    expected_chunk_hash = str(chunk.metadata.get("chunk_hash") or content_hash(chunk.text))
+    return (
+        str(payload.get("index_digest") or "") == index_digest
+        and _safe_int(payload.get("position")) == position
+        and str(payload.get("evidence_id") or "") == chunk.evidence_id
+        and str(payload.get("chunk_hash") or "") == expected_chunk_hash
+        and str(payload.get("embedding_model") or "") == embedding_model
+        and str(payload.get("embedding_backend_id") or "") == embedding_backend_id
+        and _safe_int(payload.get("vector_size")) == vector_size
+    )
+
+
+def _safe_int(value: Any) -> int | None:
+    if isinstance(value, bool):
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _sanitize_qdrant_collection_name(raw: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9_-]+", "_", raw.strip()).strip("_")
+    if not cleaned:
+        raise ProviderUnavailable("QDRANT_COLLECTION must include at least one alphanumeric character")
+    return cleaned[:255]
 
 
 def _cap_per_document(

@@ -9,8 +9,9 @@ the grounding contract.
 Stack:
 
 - **Backend** — Python 3.14 / FastAPI / OpenAI Responses + PyMuPDF.
-  Hybrid (BM25 + dense) retrieval with optional FAISS, verbatim citation
-  grounding, typed-intent edit learning, deterministic evaluation suite.
+  Hybrid (BM25 + dense) retrieval with Qdrant vector storage, verbatim
+  citation grounding, typed-intent edit learning, deterministic
+  evaluation suite.
 - **Frontend** — React 18 + TypeScript + Vite + TanStack Query v5 +
   react-router. A multi-page operator console (`frontend/`) talks to
   the FastAPI surface over JSON. The single piece of cross-page UI
@@ -53,6 +54,9 @@ Node build of the React UI before the operator console renders.
 # Backend
 uv sync --extra dev
 export OPENAI_API_KEY=...
+export PIPELINE_INDEX_BACKEND=qdrant
+export QDRANT_PATH=state/qdrant
+export QDRANT_COLLECTION=legal_rag
 
 # Frontend (required for /ui to work under uv run pipeline-api)
 cd frontend
@@ -72,11 +76,11 @@ mounts under `/ui` with a SPA fallback. The bundle is committed to the
 repo so reviewers using only `uv run pipeline-api` still get the UI; the
 Docker image rebuilds it inside the container.
 
-The lockfile is resolved for Python 3.14 only. The OpenAI SDK, PyMuPDF,
-Pillow, FastAPI, and uvicorn are declared as required runtime
-dependencies in `pyproject.toml` — no other provider SDKs are pulled.
-The optional Cohere reranker uses direct HTTPS, so no Cohere SDK
-dependency is required.
+The lockfile is resolved for Python 3.14 only. The OpenAI SDK,
+`qdrant-client`, PyMuPDF, Pillow, FastAPI, and uvicorn are declared as
+required runtime dependencies in `pyproject.toml` — no other provider
+SDKs are pulled. The optional Cohere reranker uses direct HTTPS, so no
+Cohere SDK dependency is required.
 
 ## Defaults
 
@@ -86,14 +90,14 @@ dependency is required.
 | Reranker | off by default; optional Cohere `rerank-v4.0-pro` via direct HTTPS over the rerank candidate pool |
 | Reasoning effort | `low` (override via `OPENAI_REASONING_EFFORT=low\|medium\|high`) |
 | Embedding model | `text-embedding-3-large` |
-| Retrieval backend | hybrid dense + BM25 + metadata/retrieval feedback; optional FAISS acceleration and `openai-cached` embeddings |
+| Retrieval backend | hybrid dense + BM25 + metadata/retrieval feedback; vector backend `memory` or `qdrant`; optional `openai-cached` embeddings |
 | PDF preprocessing | local PyMuPDF, cap 100 pages, 180 DPI render fallback |
 
 Override draft/extraction and retrieval knobs via `OPENAI_MODEL`,
 `OPENAI_MODEL_DRAFT`, `OPENAI_EMBEDDING_MODEL`,
 `PIPELINE_RETRIEVAL_PROVIDER`, `PIPELINE_EMBEDDING_CACHE_DIR`,
-`PIPELINE_RETRIEVAL_MODE`, `PIPELINE_HYBRID_DENSE_WEIGHT`,
-`PIPELINE_HYBRID_BM25_WEIGHT`,
+`PIPELINE_RETRIEVAL_MODE`, `PIPELINE_INDEX_BACKEND`,
+`PIPELINE_HYBRID_DENSE_WEIGHT`, `PIPELINE_HYBRID_BM25_WEIGHT`,
 `PIPELINE_PDF_MAX_PAGES`, `PIPELINE_PDF_RENDER_DPI`, and
 `PIPELINE_EXTRACTION_CONFIDENCE_THRESHOLD`. The optional reranker is off
 by default. Enable it with `PIPELINE_RERANK_PROVIDER=cohere` plus either
@@ -101,6 +105,14 @@ by default. Enable it with `PIPELINE_RERANK_PROVIDER=cohere` plus either
 `rerank-v4.0-pro` and can be overridden with `COHERE_RERANK_MODEL` or
 `PIPELINE_RERANK_MODEL`; the call is made over direct HTTPS, not through
 a Cohere SDK dependency.
+
+Set `PIPELINE_INDEX_BACKEND=qdrant` for persistent vector storage.
+Without Docker, `QDRANT_PATH=state/qdrant` uses qdrant-client local
+storage. With Docker Compose, the bundled `qdrant` service is addressed
+through `QDRANT_URL=http://qdrant:6333`. For Qdrant Cloud, set
+`QDRANT_URL` and provide `QDRANT_API_KEY` or `QDRANT_API_KEY_FILE`;
+collection names are prefixed by `QDRANT_COLLECTION` and suffixed with
+an index digest so separate corpora do not overwrite one another.
 
 ## Run
 
@@ -129,6 +141,9 @@ open outputs/quick_eval/draft.md
 docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build
 # open http://localhost:8000/ui
 ```
+
+The base Compose file also starts `qdrant/qdrant` and defaults
+`PIPELINE_INDEX_BACKEND=qdrant` with `QDRANT_URL=http://qdrant:6333`.
 
 **Full curated 20-doc corpus run** (~3–4 min, ~$3–5):
 
@@ -333,7 +348,7 @@ Current implementation:
 - **Corpus** means originals plus parsed `ProcessedDocument` records under
   `corpus/`, with `manifest.json` as the catalog.
 - **Index** means a persisted JSON `RetrievalIndex` containing chunks,
-  embeddings, BM25 state, and optional FAISS acceleration rebuilt on load.
+  embeddings, BM25 state, and optional Qdrant collection identity.
 - **Edit memory** means `state/edit_memory.json` plus the typed learning
   state under `state/`: `operator_profile.json`, `knowledge_layer.json`,
   `retrieval_feedback.json`, `edits.jsonl`, `learn_suggestions.json`, and
@@ -455,6 +470,8 @@ docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build
 If you enable Cohere reranking and want to load that key from a secret
 file too, also write `secrets/cohere_api_key` and add
 `-f docker-compose.cohere-secrets.yml` to the compose command.
+For Qdrant Cloud, set `QDRANT_URL`, write `secrets/qdrant_api_key`, and
+add `-f docker-compose.qdrant-secrets.yml`.
 
 Leave `OPENAI_API_KEY=` blank in `.env` when using the secret-file override.
 `.dockerignore` excludes `.env`, `secrets/`, `outputs/`, and `state/`, so
@@ -462,7 +479,8 @@ the OpenAI key and local run artifacts are not copied into the Docker build
 context or baked into the image. `docker-compose.secrets.yml` mounts the key
 only at runtime as `/run/secrets/openai_api_key`; the entrypoint exports it
 for the Python process and does not print it. The optional Cohere secret
-overlay follows the same pattern for `/run/secrets/cohere_api_key`.
+overlay follows the same pattern for `/run/secrets/cohere_api_key`; the
+Qdrant Cloud overlay does the same for `/run/secrets/qdrant_api_key`.
 The base compose file forwards only an explicit allowlist of runtime
 settings, and the secret override forces `OPENAI_API_KEY` blank so a host
 environment variable is not copied into the container config.
@@ -896,8 +914,8 @@ See [docs/architecture.md](docs/architecture.md).
   normalization, and the ingestion stage adapter.
 - `corpus/` — durable corpus catalog with originals and parsed document JSON.
 - `retrieval/` — chunking, fields-chunk emission, cached OpenAI embeddings,
-  BM25 + dense hybrid ranking, metadata/retrieval-feedback boosts, optional
-  FAISS acceleration, optional Cohere reranking, and the retrieval stage adapter.
+  BM25 + dense hybrid ranking, metadata/retrieval-feedback boosts, Qdrant
+  vector storage, optional Cohere reranking, and the retrieval stage adapter.
 - `drafting/` — memo generation, citation sanitation, verbatim quote
   validation, markdown rendering, and the drafting stage adapter.
 - `learning/` — edit capture, profile/knowledge/retrieval-feedback state,
@@ -978,9 +996,11 @@ See [docs/architecture.md](docs/architecture.md).
   It is not a semantic entailment model and does not resolve negation or
   nuanced legal interpretation.
 - Retrieval indexes are persisted as portable JSON under `index/`. The
-  file includes chunks, embeddings, and BM25 state; FAISS is an optional
-  acceleration layer rebuilt from the stored vectors when available. The
-  optional `openai-cached` backend persists embedding vectors behind
+  file includes chunks, embeddings, BM25 state, and Qdrant collection
+  identity when `PIPELINE_INDEX_BACKEND=qdrant`. Qdrant collections are
+  validated against point count and per-chunk identity before reuse; if a
+  collection is missing or stale, it is rebuilt from the stored vectors.
+  The optional `openai-cached` backend persists embedding vectors behind
   exact-input/model/backend cache keys to reduce repeat OpenAI embedding
   calls.
 - **Language coverage is partial.** The data path runs on any language

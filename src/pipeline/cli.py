@@ -646,7 +646,8 @@ def _build_index_store(corpus_dir: Path, output: Path) -> dict[str, object]:
         "index": str(output),
         "chunk_count": len(index.chunks),
         "embedding_model": index.embedding_model,
-        "vector_backend": "faiss" if getattr(index, "faiss_index", None) is not None else "memory",
+        "vector_backend": getattr(index, "index_backend", "memory"),
+        "qdrant_collection": getattr(index, "qdrant_collection", ""),
     }
 
 
@@ -654,7 +655,7 @@ def _query_index(index_path: Path, task: str, top_k: int) -> dict[str, object]:
     from pipeline.retrieval import load_index, retrieve
 
     config = ProviderConfig.from_env()
-    index = load_index(index_path, build_faiss=config.index_backend.strip().lower() == "faiss")
+    index = load_index(index_path)
     # Let retrieve() resolve PIPELINE_RETRIEVAL_MODE. Persisted lexical indexes
     # store placeholder embeddings, so forcing hybrid weights here can make the
     # query path call dense embeddings and then fail on vector dimensions.
@@ -799,6 +800,10 @@ def _index_settings(output_dir: Path, state_dir: Path) -> dict[str, object]:
             "retrieval_provider": config.retrieval_provider,
             "retrieval_mode": config.retrieval_mode,
             "index_backend": config.index_backend,
+            "qdrant_url": config.qdrant_url,
+            "qdrant_path": config.qdrant_path,
+            "qdrant_collection": config.qdrant_collection,
+            "qdrant_prefer_grpc": config.qdrant_prefer_grpc,
             "embedding_model": config.openai_embedding_model,
             "hybrid_dense_weight": config.hybrid_dense_weight,
             "hybrid_bm25_weight": config.hybrid_bm25_weight,
@@ -820,6 +825,7 @@ def _index_settings(output_dir: Path, state_dir: Path) -> dict[str, object]:
         },
         "notes": [
             "Use `pipeline index build` to persist a queryable BM25+dense index.",
+            "Set PIPELINE_INDEX_BACKEND=qdrant to store dense vectors in Qdrant while keeping retrieval_index.json portable.",
             "A normal `pipeline run` also writes output/index/retrieval_index.json automatically.",
         ],
     }

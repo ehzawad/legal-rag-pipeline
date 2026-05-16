@@ -22,6 +22,9 @@ cd legal-rag-pipeline
 
 uv sync --extra dev
 export OPENAI_API_KEY=sk-...
+export PIPELINE_INDEX_BACKEND=qdrant
+export QDRANT_PATH=state/qdrant
+export QDRANT_COLLECTION=legal_rag
 ```
 
 ### Just open the UI and drag a PDF in
@@ -105,6 +108,10 @@ docker compose -f docker-compose.yml -f docker-compose.secrets.yml up --build -d
 
 # If Cohere reranking is enabled, also create secrets/cohere_api_key and
 # include -f docker-compose.cohere-secrets.yml in the compose command.
+#
+# Docker Compose starts a local qdrant/qdrant service by default. For
+# Qdrant Cloud, set QDRANT_URL, create secrets/qdrant_api_key, and include
+# -f docker-compose.qdrant-secrets.yml in the compose command.
 
 # Wait ~10 s for healthy, then:
 curl http://localhost:8000/healthz             # {"status":"ok"}

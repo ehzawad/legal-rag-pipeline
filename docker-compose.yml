@@ -17,7 +17,13 @@ services:
       PIPELINE_RERANK_MODEL: ${PIPELINE_RERANK_MODEL:-}
       PIPELINE_RETRIEVAL_PROVIDER: ${PIPELINE_RETRIEVAL_PROVIDER:-openai}
       PIPELINE_RETRIEVAL_MODE: ${PIPELINE_RETRIEVAL_MODE:-hybrid}
-      PIPELINE_INDEX_BACKEND: ${PIPELINE_INDEX_BACKEND:-memory}
+      PIPELINE_INDEX_BACKEND: ${PIPELINE_INDEX_BACKEND:-qdrant}
+      QDRANT_URL: ${QDRANT_URL:-http://qdrant:6333}
+      QDRANT_PATH: ${QDRANT_PATH:-}
+      QDRANT_COLLECTION: ${QDRANT_COLLECTION:-legal_rag}
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-}
+      QDRANT_API_KEY_FILE: ${QDRANT_API_KEY_FILE:-}
+      QDRANT_PREFER_GRPC: ${QDRANT_PREFER_GRPC:-false}
       PIPELINE_HYBRID_DENSE_WEIGHT: ${PIPELINE_HYBRID_DENSE_WEIGHT:-0.65}
       PIPELINE_HYBRID_BM25_WEIGHT: ${PIPELINE_HYBRID_BM25_WEIGHT:-0.35}
       PIPELINE_PLAYBOOK_RISK: ${PIPELINE_PLAYBOOK_RISK:-true}
@@ -32,6 +38,8 @@ services:
       - ./outputs:/app/outputs
       - ./state:/app/state
     restart: unless-stopped
+    depends_on:
+      - qdrant
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz').read()"]
       interval: 10s
@@ -39,3 +47,15 @@ services:
       retries: 5
       start_period: 10s
     command: ["/app/.venv/bin/uvicorn", "pipeline.api:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
