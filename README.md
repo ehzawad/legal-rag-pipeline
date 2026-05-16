@@ -179,12 +179,13 @@ uv run pipeline run \
 ```
 
 Artifacts: `processed_documents.json`, `corpus/manifest.json`,
-`retrieved_evidence.json`, `index/retrieval_index.json`, `draft.json`,
-`draft.md`, `risk_report.json`, `risk_report.md`, `audit.jsonl`,
-`case_run.json`, `workflow_manifest.json`. The operator UI surfaces the
-draft, source documents, citations, grounding check, and edit loop; the
-CLI/API expose the full artifact shelf for developer and reviewer checks
-(see §HTTP API).
+`retrieved_evidence.json`, `evidence_pack.json`,
+`index/retrieval_index.json`, `draft.json`, `draft.md`,
+`case_fact_summary.json`, `grounding_report.json`, `risk_report.json`,
+`risk_report.md`, `audit.jsonl`, `case_run.json`,
+`workflow_manifest.json`. The operator UI surfaces the draft, source
+documents, citations, grounding check, and edit loop; the CLI/API expose
+the full artifact shelf for developer and reviewer checks (see §HTTP API).
 
 ## Operator UI walkthrough
 
@@ -222,7 +223,7 @@ The same loop is exercised by the CLI command `pipeline learn` and by the
 
 The run pipeline is split into explicit components:
 `DocumentProcessingComponent`, `EvidenceRetrievalComponent`,
-`LearningGuidanceComponent`, and `MemoDraftingComponent`. `PipelineFeatures`
+`LearningGuidanceComponent`, and `CaseFactSummaryDraftingComponent`. `PipelineFeatures`
 lets you remove optional behavior or force a core stage to load an existing
 checkpoint.
 
@@ -333,7 +334,7 @@ uv run pipeline index settings \
 
 uv run pipeline edit-memory query \
   --state-dir state \
-  --task "Draft a concise operator-review memo." \
+  --task "Draft a concise operator-review case fact summary." \
   --json
 
 uv run pipeline edit-memory settings \

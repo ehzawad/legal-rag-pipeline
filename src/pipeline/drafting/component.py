@@ -13,16 +13,16 @@ from pipeline.io import write_json
 from pipeline.schemas import Draft, EvidenceChunk, EvidencePack, ProcessedDocument, to_jsonable
 
 
-class MemoDraftingComponent:
+class CaseFactSummaryDraftingComponent:
     name = "generate_draft"
 
     def __init__(
         self,
         *,
-        generate_internal_memo: Callable[..., Draft],
+        generate_case_fact_summary: Callable[..., Draft],
         render_draft_markdown: Callable[[Draft], str],
     ) -> None:
-        self._generate_internal_memo = generate_internal_memo
+        self._generate_case_fact_summary = generate_case_fact_summary
         self._render_draft_markdown = render_draft_markdown
 
     def run(
@@ -41,7 +41,7 @@ class MemoDraftingComponent:
         last_error: ValueError | None = None
         attempt_guidance = guidance
         for attempt in range(2):
-            draft = self._generate_internal_memo(
+            draft = self._generate_case_fact_summary(
                 processed_documents=processed,
                 evidence=evidence,
                 task=task,

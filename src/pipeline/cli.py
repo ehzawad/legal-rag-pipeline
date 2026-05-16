@@ -55,7 +55,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument(
         "--disable-drafting",
         action="store_true",
-        help="Do not generate the memo; load draft.json and draft.md from --output instead.",
+        help="Do not generate the case fact summary; load draft.json and draft.md from --output instead.",
     )
     run_parser.add_argument(
         "--disable-learning-guidance",

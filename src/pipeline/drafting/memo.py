@@ -149,7 +149,7 @@ class DraftingTask:
     preferred_sections: Sequence[str] = field(default_factory=tuple)
 
 
-def generate_internal_memo(
+def generate_case_fact_summary(
     task: DraftingTask | Mapping[str, Any] | str | None = None,
     evidence: Sequence[EvidenceChunk | Mapping[str, Any] | Any] | None = None,
     *,

@@ -1,7 +1,7 @@
-from pipeline.drafting.component import MemoDraftingComponent
+from pipeline.drafting.component import CaseFactSummaryDraftingComponent
 from pipeline.drafting.memo import (
     DraftingTask,
-    generate_internal_memo,
+    generate_case_fact_summary,
     normalize_quote_text,
     render_section_quotes_markdown,
     sections_from_case_summary,
@@ -11,8 +11,8 @@ from pipeline.drafting.rendering import render_draft_markdown
 
 __all__ = [
     "DraftingTask",
-    "MemoDraftingComponent",
-    "generate_internal_memo",
+    "CaseFactSummaryDraftingComponent",
+    "generate_case_fact_summary",
     "normalize_quote_text",
     "render_draft_markdown",
     "render_section_quotes_markdown",

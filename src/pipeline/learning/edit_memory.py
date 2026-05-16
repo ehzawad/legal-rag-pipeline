@@ -464,6 +464,7 @@ def _edit_signature(edit_record: Mapping[str, Any]) -> str:
     if existing:
         return existing
     payload = {
+        "draft_type": str(edit_record.get("draft_type") or "case_fact_summary"),
         "original_draft": str(edit_record.get("original_draft") or ""),
         "edited_draft": str(edit_record.get("edited_draft") or ""),
         "evidence_ids": sorted(str(item) for item in edit_record.get("evidence_ids", []) or []),

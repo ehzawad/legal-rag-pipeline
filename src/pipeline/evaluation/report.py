@@ -475,7 +475,7 @@ def evaluate_ab(
     ``state_dir`` the with-profile draft only sees the operator profile.
     """
 
-    from pipeline.drafting import generate_internal_memo
+    from pipeline.drafting import generate_case_fact_summary
     from pipeline.orchestration.run import (
         _dominant_category,
         _evidence_from_json,
@@ -573,14 +573,14 @@ def evaluate_ab(
 
 
 def _generate_grounded_eval_draft(kwargs: dict[str, Any]):
-    from pipeline.drafting import generate_internal_memo
+    from pipeline.drafting import generate_case_fact_summary
 
     attempt_kwargs = dict(kwargs)
     base_guidance = str(attempt_kwargs.get("learned_guidance") or "")
     last_error: ValueError | None = None
     for attempt in range(2):
         try:
-            return _ground_and_validate_eval_draft(generate_internal_memo(**attempt_kwargs))
+            return _ground_and_validate_eval_draft(generate_case_fact_summary(**attempt_kwargs))
         except ValueError as exc:
             last_error = exc
             if attempt:

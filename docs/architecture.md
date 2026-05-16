@@ -278,8 +278,9 @@ The pipeline composes the drafter's `learned_guidance` by concatenating:
    defaults.
 3. **state/exemplars/<category>.jsonl** → at draft time the pipeline
    determines the dominant retrieved-document category and pulls the most
-   recent matching exemplar (added section labels, opening of operator's
-   memo, preferred phrases) into the prompt as a few-shot.
+   recent matching exemplar (added section labels, opening of the
+   operator-edited case fact summary, preferred phrases) into the prompt
+   as a few-shot.
 4. **retrieval_feedback.json** → retrieval consumes evidence boosts/demotes
    as auditable score adjustments before candidate selection, and the same
    disputes remain available for gold promotion.
@@ -419,7 +420,7 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    capped-out results are refilled from Cohere's next-best candidates
    instead of falling back to the pre-rerank order.
 
-5. **Drafting** (`drafting/memo.py:generate_internal_memo`). The run
+5. **Drafting** (`drafting/memo.py:generate_case_fact_summary`). The run
    resolves `draft_type` through `drafting/specs.py`, loads the spec's
    response adapter, builds the prompt, calls the LLM, parses strict JSON,
    and converts the adapter response into a canonical `Draft`. The default
@@ -457,7 +458,7 @@ gold labels, retrieval/extraction behavior, or case-level annotations.
    records, retries, atomic JSON writes, manifest persistence, and
    fingerprint-based resume invalidation. `run_case` wires default
    `DocumentProcessingComponent`, `EvidenceRetrievalComponent`,
-   `LearningGuidanceComponent`, and `MemoDraftingComponent` instances,
+   `LearningGuidanceComponent`, and `CaseFactSummaryDraftingComponent` instances,
    but callers can inject replacements for tests or integrations. See
    "Feature Controls" and "Fingerprint Invalidation" below.
 
@@ -677,7 +678,7 @@ actually steering generation:
 
 1. Loads the checkpointed `processed_documents.json` and
    `retrieved_evidence.json` so both drafts see identical evidence.
-2. Calls `generate_internal_memo` once with `learned_guidance=""` and
+2. Calls `generate_case_fact_summary` once with `learned_guidance=""` and
    once with `learned_guidance=apply_profile_to_prompt_or_policy(profile)`.
 3. Computes section-label adoption delta, suppression delta (filtered
    through `REQUIRED_SECTION_LABELS`), caution-marker delta in body

@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from pipeline.drafting import generate_internal_memo
+from pipeline.drafting import generate_case_fact_summary
 from pipeline.providers import ProviderUnavailable
 from pipeline.schemas import EvidenceChunk
 
@@ -40,7 +40,7 @@ def test_registered_draft_spec_accepts_claim_summary_payload():
         "warnings": [],
     }
 
-    draft = generate_internal_memo(
+    draft = generate_case_fact_summary(
         "Draft a fact summary.",
         [chunk],
         generator=lambda _prompt: json.dumps(payload),
@@ -69,7 +69,7 @@ def test_registered_draft_spec_rejects_old_section_payload_shape():
     }
 
     with pytest.raises(ProviderUnavailable, match="requires a case-fact claims response"):
-        generate_internal_memo(
+        generate_case_fact_summary(
             "Draft a fact summary.",
             [chunk],
             generator=lambda _prompt: json.dumps(payload),
@@ -105,7 +105,7 @@ def test_non_open_question_scaffolding_claim_cannot_bypass_citation_contract():
     }
 
     with pytest.raises(ProviderUnavailable, match="uncited factual claim"):
-        generate_internal_memo(
+        generate_case_fact_summary(
             "Draft a fact summary.",
             [chunk],
             generator=lambda _prompt: json.dumps(payload),
@@ -141,7 +141,7 @@ def test_uncited_evidence_table_claim_cannot_bypass_citation_contract():
     }
 
     with pytest.raises(ProviderUnavailable, match="uncited factual claim"):
-        generate_internal_memo(
+        generate_case_fact_summary(
             "Draft a fact summary.",
             [chunk],
             generator=lambda _prompt: json.dumps(payload),

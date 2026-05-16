@@ -147,7 +147,7 @@ or demos.
 
 1. Open `http://localhost:8000/ui`.
 2. **Dashboard** lists every committed run; click `all-categories`.
-3. **Draft** tab shows the memo with clickable `[evidence_id]` chips;
+3. **Draft** tab shows the case fact summary with clickable `[evidence_id]` chips;
    clicking one pops the **Evidence panel** with the verbatim quote,
    page number, source filename, and chunk text.
 4. **Source documents**, **Citations**, and **Grounding** tabs are

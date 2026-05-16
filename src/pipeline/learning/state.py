@@ -178,7 +178,7 @@ def capture_operator_edit(
     note = str(operator_note or "")
     record = EditRecord(
         draft_id="",
-        draft_type="internal_memo",
+        draft_type="case_fact_summary",
         original_text=original,
         edited_text=edited,
         evidence_ids=[str(evidence_id) for evidence_id in evidence_ids],
@@ -620,7 +620,7 @@ def render_exemplars_guidance(exemplars: list[Mapping[str, Any]]) -> str:
     if not exemplars:
         return ""
     lines = [
-        "Past operator-edited memos for similar documents (for tone and structure reference):"
+        "Past operator-edited case fact summaries for similar documents (for tone and structure reference):"
     ]
     for index, exemplar in enumerate(exemplars, start=1):
         category = str(exemplar.get("category") or "unknown")
@@ -633,7 +633,7 @@ def render_exemplars_guidance(exemplars: list[Mapping[str, Any]]) -> str:
         if removed:
             lines.append(f"  Operator removed sections: {', '.join(removed[:4])}")
         if head:
-            lines.append(f"  Opening of operator-edited memo: {head[:300]}")
+            lines.append(f"  Opening of operator-edited case fact summary: {head[:300]}")
     lines.append(
         "Adapt structure and tone to match these prior operator edits where "
         "appropriate, but never relax the citation and grounding requirements."
@@ -999,6 +999,7 @@ def _edit_event_log_entry(
         "event_id": _event_id(captured, edit_signature),
         "edit_signature": edit_signature,
         "timestamp": captured["timestamp"],
+        "draft_type": str(captured.get("draft_type") or "case_fact_summary"),
         "actor": captured["actor"],
         "intent": captured["intent"],
         "draft_path": str(draft_path),
@@ -1888,6 +1889,7 @@ def _normalize_space(value: str) -> str:
 
 def _edit_signature(edit_record: Mapping[str, Any]) -> str:
     payload = {
+        "draft_type": str(edit_record.get("draft_type") or "case_fact_summary"),
         "original_draft": str(edit_record.get("original_draft") or ""),
         "edited_draft": str(edit_record.get("edited_draft") or ""),
         "evidence_ids": sorted(str(item) for item in edit_record.get("evidence_ids", [])),

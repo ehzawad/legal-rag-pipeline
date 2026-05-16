@@ -6,7 +6,7 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 
 from pipeline.drafting.specs import draft_spec_fingerprint, resolve_draft_spec
-from pipeline.drafting.component import MemoDraftingComponent
+from pipeline.drafting.component import CaseFactSummaryDraftingComponent
 from pipeline.drafting.rendering import render_draft_markdown as _render_draft_markdown
 from pipeline.drafting.validation import validate_draft_contract
 from pipeline.evidence_pack import build_evidence_pack
@@ -81,10 +81,10 @@ def _load_processor():
 
 
 def _load_retrieval_and_drafting():
-    from pipeline.drafting import generate_internal_memo
+    from pipeline.drafting import generate_case_fact_summary
     from pipeline.retrieval import build_index, retrieve
 
-    return build_index, retrieve, generate_internal_memo
+    return build_index, retrieve, generate_case_fact_summary
 
 
 def _load_learning():
@@ -113,13 +113,13 @@ def _load_learning():
 
 def _default_components() -> PipelineComponents:
     process_directory = _load_processor()
-    build_index, retrieve, generate_internal_memo = _load_retrieval_and_drafting()
+    build_index, retrieve, generate_case_fact_summary = _load_retrieval_and_drafting()
     return PipelineComponents(
         processing=DocumentProcessingComponent(process_directory),
         retrieval=EvidenceRetrievalComponent(build_index=build_index, retrieve=retrieve),
         guidance=LearningGuidanceComponent(),
-        drafting=MemoDraftingComponent(
-            generate_internal_memo=generate_internal_memo,
+        drafting=CaseFactSummaryDraftingComponent(
+            generate_case_fact_summary=generate_case_fact_summary,
             render_draft_markdown=_render_draft_markdown,
         ),
     )

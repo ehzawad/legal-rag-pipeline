@@ -144,6 +144,7 @@ class EditRecord:
 
     def to_learning_dict(self) -> dict[str, Any]:
         return {
+            "draft_type": self.draft_type,
             "original_draft": self.original_text,
             "edited_draft": self.edited_text,
             "evidence_ids": [str(evidence_id) for evidence_id in self.evidence_ids],
